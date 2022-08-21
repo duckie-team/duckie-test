@@ -1,0 +1,2024 @@
+<?xml version="1.0" ?>
+<report name="Intellij Coverage Report">
+<package name="team/duckie/quackquack/ui/component">
+<class name="team/duckie/quackquack/ui/component/ButtonKt" sourcefilename="button.kt">
+<method name="QuackLargeButton" desc="(ZLjava/lang/String;ZLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V">
+<counter type="INSTRUCTION" missed="200" covered="0"/>
+<counter type="BRANCH" missed="38" covered="0"/>
+<counter type="LINE" missed="16" covered="0"/>
+</method>
+<method name="QuackBasicButton-fDcXE1A" desc="(Lteam/duckie/quackquack/ui/constant/QuackWidth;Lteam/duckie/quackquack/ui/constant/QuackHeight;Landroidx/compose/foundation/layout/PaddingValues;ZJLandroidx/compose/foundation/BorderStroke;FFZJLjava/lang/String;Lteam/duckie/quackquack/ui/typography/QuackTextStyle;Landroidx/compose/foundation/layout/PaddingValues;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;III)V">
+<counter type="INSTRUCTION" missed="533" covered="0"/>
+<counter type="BRANCH" missed="112" covered="0"/>
+<counter type="LINE" missed="33" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="733" covered="0"/>
+<counter type="BRANCH" missed="150" covered="0"/>
+<counter type="LINE" missed="49" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/component/ButtonKt$QuackBasicButton$2" sourcefilename="button.kt">
+<method name="invoke" desc="(Landroidx/compose/foundation/layout/BoxScope;Landroidx/compose/runtime/Composer;I)V">
+<counter type="INSTRUCTION" missed="87" covered="0"/>
+<counter type="BRANCH" missed="10" covered="0"/>
+<counter type="LINE" missed="12" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="87" covered="0"/>
+<counter type="BRANCH" missed="10" covered="0"/>
+<counter type="LINE" missed="12" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/component/SurfaceKt" sourcefilename="surface.kt">
+<method name="QuackSurface-_KEIrJo" desc="(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;JLandroidx/compose/foundation/BorderStroke;FZJLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Alignment;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V">
+<counter type="INSTRUCTION" missed="435" covered="0"/>
+<counter type="BRANCH" missed="86" covered="0"/>
+<counter type="LINE" missed="30" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="435" covered="0"/>
+<counter type="BRANCH" missed="86" covered="0"/>
+<counter type="LINE" missed="30" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/component/TextKt" sourcefilename="text.kt">
+<method name="QuackText" desc="(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lteam/duckie/quackquack/ui/typography/QuackTextStyle;Landroidx/compose/runtime/Composer;II)V">
+<counter type="INSTRUCTION" missed="143" covered="0"/>
+<counter type="BRANCH" missed="30" covered="0"/>
+<counter type="LINE" missed="7" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="143" covered="0"/>
+<counter type="BRANCH" missed="30" covered="0"/>
+<counter type="LINE" missed="7" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="text.kt">
+<line nr="20" mi="9" ci="0" mb="2" cb="0"/>
+<line nr="23" mi="88" ci="0" mb="24" cb="0"/>
+<line nr="24" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="25" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="27" mi="21" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="18" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="143" covered="0"/>
+<counter type="BRANCH" missed="30" covered="0"/>
+<counter type="LINE" missed="7" covered="0"/>
+</sourcefile>
+<sourcefile name="surface.kt">
+<line nr="35" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="36" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="38" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="39" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="40" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="41" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="42" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="43" mi="9" ci="0" mb="2" cb="0"/>
+<line nr="45" mi="252" ci="0" mb="66" cb="0"/>
+<line nr="46" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="48" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="49" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="50" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="52" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="54" mi="12" ci="0" mb="2" cb="0"/>
+<line nr="55" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="57" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="59" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="60" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="61" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="62" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="64" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="65" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="68" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="71" mi="16" ci="0" mb="0" cb="0"/>
+<line nr="75" mi="25" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="435" covered="0"/>
+<counter type="BRANCH" missed="86" covered="0"/>
+<counter type="LINE" missed="30" covered="0"/>
+</sourcefile>
+<sourcefile name="button.kt">
+<line nr="42" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="44" mi="114" ci="0" mb="30" cb="0"/>
+<line nr="45" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="46" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="48" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="50" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="52" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="53" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="55" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="57" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="58" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="60" mi="21" ci="0" mb="0" cb="0"/>
+<line nr="62" mi="19" ci="0" mb="2" cb="0"/>
+<line nr="68" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="69" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="70" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="71" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="72" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="73" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="74" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="75" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="77" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="78" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="80" mi="348" ci="0" mb="92" cb="0"/>
+<line nr="81" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="82" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="83" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="86" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="87" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="88" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="89" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="92" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="93" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="96" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="97" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="99" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="100" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="101" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="102" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="104" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="105" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="106" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="107" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="108" mi="38" ci="0" mb="0" cb="0"/>
+<line nr="109" mi="34" ci="0" mb="6" cb="0"/>
+<line nr="110" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="111" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="112" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="113" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="115" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="116" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="11" ci="0" mb="4" cb="0"/>
+<line nr="119" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="120" mi="14" ci="0" mb="0" cb="0"/>
+<line nr="121" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="122" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="124" mi="30" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="820" covered="0"/>
+<counter type="BRANCH" missed="160" covered="0"/>
+<counter type="LINE" missed="61" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="1398" covered="0"/>
+<counter type="BRANCH" missed="276" covered="0"/>
+<counter type="LINE" missed="98" covered="0"/>
+<counter type="METHOD" missed="5" covered="0"/>
+<counter type="CLASS" missed="4" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/lint/quack">
+<class name="team/duckie/quackquack/lint/quack/DesignSystemDetector" sourcefilename="DesignSystemDetector.kt">
+<method name="createUastHandler" desc="(Lcom/android/tools/lint/detector/api/JavaContext;)Lcom/android/tools/lint/client/api/UElementHandler;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="reportIssue" desc="(Lcom/android/tools/lint/detector/api/JavaContext;Lorg/jetbrains/uast/UElement;Ljava/lang/String;Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="28"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="13"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getApplicableUastTypes" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="37"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="16"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="team/duckie/quackquack/lint/quack/DesignSystemDetector$createUastHandler$1" sourcefilename="DesignSystemDetector.kt">
+<method name="visitCallExpression" desc="(Lorg/jetbrains/uast/UCallExpression;)V">
+<counter type="INSTRUCTION" missed="2" covered="25"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="0" covered="8"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lteam/duckie/quackquack/lint/quack/DesignSystemDetector;Lcom/android/tools/lint/detector/api/JavaContext;)V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="27"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="0" covered="9"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/lint/quack/DesignSystemDetectorKt" sourcefilename="DesignSystemDetector.kt">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="16"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="10"/>
+</method>
+<method name="getDesignSystemIssue" desc="()Lcom/android/tools/lint/detector/api/Issue;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="20"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="11"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/lint/quack/DesignSystemIssueRegistry" sourcefilename="DesignSystemIssueRegistry.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="DesignSystemDetector.kt">
+<line nr="31" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="32" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="33" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="34" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="35" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="36" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="82" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="83" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="87" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="89" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="90" mi="1" ci="7" mb="1" cb="1"/>
+<line nr="91" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="92" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="93" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="94" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="95" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="106" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="107" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="108" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="109" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="110" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="111" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="112" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="115" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="116" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="117" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="118" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="119" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="84"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="0" covered="36"/>
+</sourcefile>
+<sourcefile name="DesignSystemIssueRegistry.kt">
+<line nr="24" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="25" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="33" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="34" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="35" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="33" covered="84"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="9" covered="36"/>
+<counter type="METHOD" missed="1" covered="8"/>
+<counter type="CLASS" missed="1" covered="3"/>
+</package>
+<package name="team/duckie/quackquack/ui/modifier">
+<class name="team/duckie/quackquack/ui/modifier/SizeKt" sourcefilename="size.kt">
+<method name="applyQuackSize" desc="(Landroidx/compose/ui/Modifier;Lteam/duckie/quackquack/ui/constant/QuackWidth;Lteam/duckie/quackquack/ui/constant/QuackHeight;)Landroidx/compose/ui/Modifier;">
+<counter type="INSTRUCTION" missed="69" covered="8"/>
+<counter type="BRANCH" missed="10" covered="2"/>
+<counter type="LINE" missed="12" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="69" covered="8"/>
+<counter type="BRANCH" missed="10" covered="2"/>
+<counter type="LINE" missed="12" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/modifier/SurfaceKt" sourcefilename="surface.kt">
+<method name="surface-8ww4TTg" desc="(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;JLandroidx/compose/foundation/BorderStroke;F)Landroidx/compose/ui/Modifier;">
+<counter type="INSTRUCTION" missed="30" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="14" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="30" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="14" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="surface.kt">
+<line nr="30" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="32" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="33" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="34" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="37" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="42" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="43" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="44" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="46" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="30" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="14" covered="0"/>
+</sourcefile>
+<sourcefile name="size.kt">
+<line nr="29" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="30" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="10" ci="0" mb="2" cb="0"/>
+<line nr="32" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="33" mi="6" ci="4" mb="1" cb="1"/>
+<line nr="34" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="37" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="10" ci="0" mb="2" cb="0"/>
+<line nr="39" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="40" mi="6" ci="4" mb="1" cb="1"/>
+<line nr="41" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="44" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="69" covered="8"/>
+<counter type="BRANCH" missed="10" covered="2"/>
+<counter type="LINE" missed="12" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="99" covered="8"/>
+<counter type="BRANCH" missed="12" covered="2"/>
+<counter type="LINE" missed="26" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+<counter type="CLASS" missed="2" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/ui/color">
+<class name="team/duckie/quackquack/ui/color/QuackColor" sourcefilename="color.kt">
+<method name="&lt;init&gt;" desc="(J)V">
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="30" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="16" covered="0"/>
+</method>
+<method name="getValue-0d7_KjU" desc="()J">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="37" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="18" covered="0"/>
+<counter type="METHOD" missed="3" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/color/QuackColor$Companion" sourcefilename="color.kt">
+<method name="getUnspecified-yvcWADs" desc="()J">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getBlack-yvcWADs" desc="()J">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getGreyish-yvcWADs" desc="()J">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getWhite-yvcWADs" desc="()J">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getPumpkinOrange-yvcWADs" desc="()J">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+<counter type="METHOD" missed="5" covered="0"/>
+</class>
+<sourcefile name="color.kt">
+<line nr="18" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="19" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="23" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="23" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="24" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="28" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="28" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="30" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="32" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="37" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="37" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="40" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="41" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="46" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="46" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="52" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="42" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="23" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="42" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="23" covered="0"/>
+<counter type="METHOD" missed="8" covered="0"/>
+<counter type="CLASS" missed="2" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/common">
+<class name="team/duckie/quackquack/common/AssertKt" sourcefilename="assert.kt">
+<method name="getDefaultMessage" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="runtimeCheck" desc="(ZLkotlin/jvm/functions/Function0;)V">
+<counter type="INSTRUCTION" missed="14" covered="16"/>
+<counter type="BRANCH" missed="4" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<method name="npe" desc="(Lkotlin/jvm/functions/Function0;)Ljava/lang/Void;">
+<counter type="INSTRUCTION" missed="0" covered="26"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="14" covered="45"/>
+<counter type="BRANCH" missed="4" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="team/duckie/quackquack/common/AssertKt$npe$1" sourcefilename="assert.kt">
+<method name="invoke" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="team/duckie/quackquack/common/AssertKt$runtimeCheck$1" sourcefilename="assert.kt">
+<method name="invoke" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="team/duckie/quackquack/common/RunIfKt" sourcefilename="runIf.kt">
+<method name="runIfBuilder" desc="(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="11" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="runIf" desc="(Ljava/lang/Object;ZLkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="11" covered="7"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="3" covered="3"/>
+<counter type="METHOD" missed="1" covered="1"/>
+</class>
+<sourcefile name="assert.kt">
+<line nr="15" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="18" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="29" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="29" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="30" mi="14" ci="4" mb="4" cb="0"/>
+<line nr="31" mi="0" ci="0" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="50" mi="0" ci="14" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="14" covered="47"/>
+<counter type="BRANCH" missed="4" covered="0"/>
+<counter type="LINE" missed="0" covered="9"/>
+</sourcefile>
+<sourcefile name="runIf.kt">
+<line nr="22" mi="0" ci="2" mb="0" cb="2"/>
+<line nr="23" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="24" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="34" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="35" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="11" covered="7"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="3" covered="3"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="25" covered="54"/>
+<counter type="BRANCH" missed="6" covered="2"/>
+<counter type="LINE" missed="3" covered="12"/>
+<counter type="METHOD" missed="1" covered="7"/>
+<counter type="CLASS" missed="0" covered="4"/>
+</package>
+<package name="team/duckie/quackquack/ui/typography">
+<class name="team/duckie/quackquack/ui/typography/QuackTextStyle" sourcefilename="style.kt">
+<method name="&lt;init&gt;" desc="(JJLandroidx/compose/ui/text/font/FontWeight;JJ)V">
+<counter type="INSTRUCTION" missed="44" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="7" covered="0"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="14" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+</method>
+<method name="toComposeStyle$ui_components_release" desc="()Landroidx/compose/ui/text/TextStyle;">
+<counter type="INSTRUCTION" missed="45" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="8" covered="0"/>
+</method>
+<method name="changeColor-Y-DWuX8$ui_components_release" desc="(J)Lteam/duckie/quackquack/ui/typography/QuackTextStyle;">
+<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="115" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="27" covered="0"/>
+<counter type="METHOD" missed="4" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/typography/QuackTextStyle$Companion" sourcefilename="style.kt">
+<method name="getM1420" desc="()Lteam/duckie/quackquack/ui/typography/QuackTextStyle;">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="style.kt">
+<line nr="27" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="30" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="32" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="33" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="17" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="16" ci="0" mb="0" cb="0"/>
+<line nr="40" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="41" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="42" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="43" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="44" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="45" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="46" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="52" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="53" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="54" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="55" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="64" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="65" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="66" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="67" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="68" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="116" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="28" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="116" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="28" covered="0"/>
+<counter type="METHOD" missed="5" covered="0"/>
+<counter type="CLASS" missed="2" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/common/lint/compose">
+<class name="team/duckie/quackquack/common/lint/compose/ComposableBodyVisitor" sourcefilename="ComposableUtils.kt">
+<method name="&lt;init&gt;" desc="(Lorg/jetbrains/uast/UExpression;)V">
+<counter type="INSTRUCTION" missed="0" covered="33"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="4"/>
+</method>
+<method name="isComposable" desc="()Z">
+<counter type="INSTRUCTION" missed="4" covered="16"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="0" covered="4"/>
+</method>
+<method name="parentUElements" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="6" covered="49"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="1" covered="8"/>
+<counter type="METHOD" missed="1" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/ComposableBodyVisitor$boundaryUElement$2" sourcefilename="ComposableUtils.kt">
+<method name="invoke$isPropertyInsideAnonymousClass" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
+<counter type="INSTRUCTION" missed="2" covered="13"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke$isContainingDeclaration" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
+<counter type="INSTRUCTION" missed="2" covered="10"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke$isLocalProperty" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
+<counter type="INSTRUCTION" missed="10" covered="11"/>
+<counter type="BRANCH" missed="4" covered="2"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke$isAnonymousClass" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke" desc="()Lorg/jetbrains/uast/UDeclaration;">
+<counter type="INSTRUCTION" missed="5" covered="12"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="1" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="19" covered="48"/>
+<counter type="BRANCH" missed="10" covered="10"/>
+<counter type="LINE" missed="1" covered="7"/>
+<counter type="METHOD" missed="0" covered="5"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/ComposableBodyVisitor$parentUElements$2" sourcefilename="ComposableUtils.kt">
+<method name="invoke" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="0" covered="40"/>
+<counter type="BRANCH" missed="2" covered="6"/>
+<counter type="LINE" missed="0" covered="8"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="40"/>
+<counter type="BRANCH" missed="2" covered="6"/>
+<counter type="LINE" missed="0" covered="8"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/ComposableUtilsKt" sourcefilename="ComposableUtils.kt">
+<method name="isComposable" desc="(Lorg/jetbrains/uast/ULambdaExpression;)Z">
+<counter type="INSTRUCTION" missed="33" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="7" covered="0"/>
+</method>
+<method name="isComposable" desc="(Lcom/intellij/psi/PsiMethod;)Z">
+<counter type="INSTRUCTION" missed="0" covered="20"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="isComposable" desc="(Lorg/jetbrains/uast/UVariable;)Z">
+<counter type="INSTRUCTION" missed="51" covered="0"/>
+<counter type="BRANCH" missed="14" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</method>
+<method name="isInvokedWithinComposable" desc="(Lorg/jetbrains/uast/UExpression;)Z">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="isComposable" desc="(Lorg/jetbrains/uast/UTypeReferenceExpression;)Z">
+<counter type="INSTRUCTION" missed="30" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="getHasComposableAnnotation" desc="(Lorg/jetbrains/kotlin/psi/KtAnnotated;)Z">
+<counter type="INSTRUCTION" missed="24" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="isComposable" desc="(Lcom/intellij/psi/PsiParameter;)Z">
+<counter type="INSTRUCTION" missed="117" covered="0"/>
+<counter type="BRANCH" missed="26" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="255" covered="25"/>
+<counter type="BRANCH" missed="58" covered="2"/>
+<counter type="LINE" missed="29" covered="3"/>
+<counter type="METHOD" missed="5" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/KotlinMetadataUtilsKt" sourcefilename="KotlinMetadataUtils.kt">
+<method name="toHeader$parseIntArray" desc="(Lcom/intellij/lang/jvm/annotation/JvmAnnotationAttributeValue;)[I">
+<counter type="INSTRUCTION" missed="28" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="toHeader$parseInt" desc="(Lcom/intellij/lang/jvm/annotation/JvmAnnotationAttributeValue;)I">
+<counter type="INSTRUCTION" missed="11" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="findKmFunctionForPsiMethod" desc="(Lkotlinx/metadata/KmDeclarationContainer;Lcom/intellij/psi/PsiMethod;)Lkotlinx/metadata/KmFunction;">
+<counter type="INSTRUCTION" missed="97" covered="0"/>
+<counter type="BRANCH" missed="16" covered="0"/>
+<counter type="LINE" missed="11" covered="0"/>
+</method>
+<method name="toHeader$parseStringArray" desc="(Lcom/intellij/lang/jvm/annotation/JvmAnnotationAttributeValue;)[Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="26" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="getKmDeclarationContainer" desc="(Lcom/intellij/psi/PsiClass;)Lkotlinx/metadata/KmDeclarationContainer;">
+<counter type="INSTRUCTION" missed="90" covered="4"/>
+<counter type="BRANCH" missed="19" covered="1"/>
+<counter type="LINE" missed="12" covered="0"/>
+</method>
+<method name="toHeader$parseString" desc="(Lcom/intellij/lang/jvm/annotation/JvmAnnotationAttributeValue;)Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="toKmFunction" desc="(Lcom/intellij/psi/PsiMethod;)Lkotlinx/metadata/KmFunction;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="toHeader" desc="(Lcom/intellij/psi/PsiAnnotation;)Lkotlinx/metadata/jvm/KotlinClassHeader;">
+<counter type="INSTRUCTION" missed="113" covered="0"/>
+<counter type="BRANCH" missed="14" covered="0"/>
+<counter type="LINE" missed="17" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="388" covered="4"/>
+<counter type="BRANCH" missed="51" covered="1"/>
+<counter type="LINE" missed="51" covered="0"/>
+<counter type="METHOD" missed="8" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/KotlinUtilsKt" sourcefilename="KotlinUtils.kt">
+<method name="findUnreferencedParameters" desc="(Lorg/jetbrains/uast/ULambdaExpression;)Ljava/util/List;">
+<counter type="INSTRUCTION" missed="20" covered="0"/>
+<counter type="BRANCH" missed="4" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="getHasImplicitItParameter" desc="(Lorg/jetbrains/kotlin/psi/KtLambdaExpression;)Z">
+<counter type="INSTRUCTION" missed="36" covered="0"/>
+<counter type="BRANCH" missed="12" covered="0"/>
+<counter type="LINE" missed="4" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="56" covered="0"/>
+<counter type="BRANCH" missed="16" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/LambdaParameterVisitor" sourcefilename="KotlinUtils.kt">
+<method name="isParameterReferenced" desc="(Ljava/lang/String;)Z">
+<counter type="INSTRUCTION" missed="100" covered="0"/>
+<counter type="BRANCH" missed="18" covered="0"/>
+<counter type="LINE" missed="14" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lorg/jetbrains/kotlin/psi/KtLambdaExpression;)V">
+<counter type="INSTRUCTION" missed="36" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="4" covered="0"/>
+</method>
+<method name="findUnreferencedParameters" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="73" covered="0"/>
+<counter type="BRANCH" missed="10" covered="0"/>
+<counter type="LINE" missed="11" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="209" covered="0"/>
+<counter type="BRANCH" missed="28" covered="0"/>
+<counter type="LINE" missed="29" covered="0"/>
+<counter type="METHOD" missed="3" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/LambdaParameterVisitor$innerLambdas$2" sourcefilename="KotlinUtils.kt">
+<method name="invoke" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/LambdaParameterVisitor$references$2" sourcefilename="KotlinUtils.kt">
+<method name="invoke" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/Name" sourcefilename="Names.kt">
+<method name="getShortName" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getJavaFqn" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="34"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="getKmClassName" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="34" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lteam/duckie/quackquack/common/lint/compose/PackageName;Ljava/util/List;)V">
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="38" covered="42"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="5"/>
+<counter type="METHOD" missed="2" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/Names" sourcefilename="Names.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/Names$Runtime" sourcefilename="Names.kt">
+<method name="getPackageName" desc="()Lteam/duckie/quackquack/common/lint/compose/PackageName;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getComposable" desc="()Lteam/duckie/quackquack/common/lint/compose/Name;">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="11"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/NamesKt" sourcefilename="Names.kt">
+<method name="Package" desc="(Lteam/duckie/quackquack/common/lint/compose/PackageName;Ljava/lang/String;)Lteam/duckie/quackquack/common/lint/compose/PackageName;">
+<counter type="INSTRUCTION" missed="23" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="Package" desc="(Ljava/lang/String;)Lteam/duckie/quackquack/common/lint/compose/PackageName;">
+<counter type="INSTRUCTION" missed="0" covered="18"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="Name" desc="(Lteam/duckie/quackquack/common/lint/compose/PackageName;Ljava/lang/String;)Lteam/duckie/quackquack/common/lint/compose/Name;">
+<counter type="INSTRUCTION" missed="0" covered="19"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="23" covered="37"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="5"/>
+<counter type="METHOD" missed="1" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/PackageName" sourcefilename="Names.kt">
+<method name="getJavaPackageName" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="(Ljava/util/List;)V">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="13" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="1"/>
+<counter type="METHOD" missed="1" covered="1"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/PsiUtilsKt" sourcefilename="PsiUtils.kt">
+<method name="isInPackageName" desc="(Lcom/intellij/psi/PsiMethod;Lteam/duckie/quackquack/common/lint/compose/PackageName;)Z">
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="4" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="isVoidOrUnit" desc="(Lcom/intellij/psi/PsiType;)Z">
+<counter type="INSTRUCTION" missed="2" covered="16"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="inheritsFrom" desc="(Lcom/intellij/psi/PsiClass;Lteam/duckie/quackquack/common/lint/compose/Name;)Z">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="inheritsFrom" desc="(Lcom/intellij/psi/PsiType;Lteam/duckie/quackquack/common/lint/compose/Name;)Z">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="isReturnsUnit" desc="(Lcom/intellij/psi/PsiMethod;)Z">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="31" covered="19"/>
+<counter type="BRANCH" missed="6" covered="4"/>
+<counter type="LINE" missed="4" covered="2"/>
+<counter type="METHOD" missed="3" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/compose/UnreferencedParameter" sourcefilename="KotlinUtils.kt">
+<method name="&lt;init&gt;" desc="(Ljava/lang/String;Lorg/jetbrains/kotlin/psi/KtParameter;)V">
+<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="KotlinUtils.kt">
+<line nr="34" mi="15" ci="0" mb="4" cb="0"/>
+<line nr="35" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="42" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="43" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="54" mi="4" ci="0" mb="2" cb="0"/>
+<line nr="55" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="56" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="58" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="61" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="62" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="63" mi="12" ci="0" mb="4" cb="0"/>
+<line nr="65" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="66" mi="12" ci="0" mb="2" cb="0"/>
+<line nr="68" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="75" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="76" mi="10" ci="0" mb="2" cb="0"/>
+<line nr="79" mi="4" ci="0" mb="2" cb="0"/>
+<line nr="81" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="82" mi="10" ci="0" mb="4" cb="0"/>
+<line nr="83" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="85" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="86" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="87" mi="12" ci="0" mb="4" cb="0"/>
+<line nr="89" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="95" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="96" mi="9" ci="0" mb="2" cb="0"/>
+<line nr="97" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="102" mi="14" ci="0" mb="0" cb="0"/>
+<line nr="103" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="105" mi="14" ci="0" mb="0" cb="0"/>
+<line nr="106" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="119" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="120" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="129" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="130" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="131" mi="28" ci="0" mb="10" cb="0"/>
+<line nr="132" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="295" covered="0"/>
+<counter type="BRANCH" missed="44" covered="0"/>
+<counter type="LINE" missed="40" covered="0"/>
+</sourcefile>
+<sourcefile name="Names.kt">
+<line nr="25" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="27" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="28" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="41" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="58" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="65" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="73" mi="21" ci="0" mb="0" cb="0"/>
+<line nr="74" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="80" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="81" mi="0" ci="15" mb="0" cb="0"/>
+<line nr="87" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="88" mi="20" ci="0" mb="0" cb="0"/>
+<line nr="94" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="95" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="96" mi="0" ci="15" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="76" covered="97"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="7" covered="13"/>
+</sourcefile>
+<sourcefile name="ComposableUtils.kt">
+<line nr="51" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="58" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="66" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="67" mi="3" ci="0" mb="2" cb="0"/>
+<line nr="68" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="3" ci="0" mb="2" cb="0"/>
+<line nr="70" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="72" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="75" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="77" mi="14" ci="0" mb="4" cb="0"/>
+<line nr="78" mi="7" ci="0" mb="4" cb="0"/>
+<line nr="85" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="86" mi="11" ci="0" mb="6" cb="0"/>
+<line nr="87" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="88" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="31" ci="0" mb="8" cb="0"/>
+<line nr="91" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="94" mi="38" ci="0" mb="12" cb="0"/>
+<line nr="95" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="98" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="105" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="106" mi="3" ci="0" mb="2" cb="0"/>
+<line nr="107" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="108" mi="13" ci="0" mb="4" cb="0"/>
+<line nr="110" mi="3" ci="0" mb="2" cb="0"/>
+<line nr="111" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="113" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="124" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="125" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="130" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="131" mi="0" ci="7" mb="0" cb="2"/>
+<line nr="132" mi="4" ci="3" mb="1" cb="1"/>
+<line nr="133" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="139" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="150" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="151" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="153" mi="10" ci="11" mb="4" cb="2"/>
+<line nr="154" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="156" mi="2" ci="13" mb="1" cb="3"/>
+<line nr="159" mi="2" ci="10" mb="3" cb="3"/>
+<line nr="161" mi="0" ci="5" mb="2" cb="2"/>
+<line nr="162" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="165" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="168" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="169" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="171" mi="0" ci="14" mb="1" cb="1"/>
+<line nr="172" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="173" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="174" mi="0" ci="3" mb="1" cb="1"/>
+<line nr="175" mi="0" ci="3" mb="0" cb="2"/>
+<line nr="176" mi="0" ci="7" mb="0" cb="2"/>
+<line nr="179" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="188" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="189" mi="22" ci="0" mb="6" cb="0"/>
+<line nr="196" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="197" mi="15" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="280" covered="162"/>
+<counter type="BRANCH" missed="71" covered="21"/>
+<counter type="LINE" missed="31" covered="26"/>
+</sourcefile>
+<sourcefile name="KotlinMetadataUtils.kt">
+<line nr="38" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="40" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="49" mi="35" ci="0" mb="6" cb="0"/>
+<line nr="50" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="53" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="54" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="57" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="58" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="59" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="60" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="61" mi="8" ci="0" mb="2" cb="0"/>
+<line nr="62" mi="5" ci="4" mb="1" cb="1"/>
+<line nr="73" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="74" mi="14" ci="0" mb="0" cb="0"/>
+<line nr="78" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="81" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="84" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="85" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="86" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="89" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="91" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="93" mi="12" ci="0" mb="2" cb="0"/>
+<line nr="94" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="95" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="96" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="97" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="98" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="99" mi="12" ci="0" mb="2" cb="0"/>
+<line nr="101" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="102" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="103" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="104" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="105" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="106" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="107" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="108" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="117" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="119" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="120" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="121" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="122" mi="16" ci="0" mb="2" cb="0"/>
+<line nr="123" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="126" mi="23" ci="0" mb="4" cb="0"/>
+<line nr="127" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="128" mi="11" ci="0" mb="4" cb="0"/>
+<line nr="129" mi="14" ci="0" mb="4" cb="0"/>
+<counter type="INSTRUCTION" missed="388" covered="4"/>
+<counter type="BRANCH" missed="51" covered="1"/>
+<counter type="LINE" missed="51" covered="0"/>
+</sourcefile>
+<sourcefile name="PsiUtils.kt">
+<line nr="26" mi="17" ci="0" mb="4" cb="0"/>
+<line nr="27" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="33" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="41" mi="2" ci="16" mb="2" cb="4"/>
+<line nr="46" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="51" mi="4" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="31" covered="19"/>
+<counter type="BRANCH" missed="6" covered="4"/>
+<counter type="LINE" missed="4" covered="2"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="1070" covered="282"/>
+<counter type="BRANCH" missed="172" covered="26"/>
+<counter type="LINE" missed="133" covered="41"/>
+<counter type="METHOD" missed="30" covered="19"/>
+<counter type="CLASS" missed="7" covered="9"/>
+</package>
+<package name="team/duckie/quackquack/ui/layout">
+<class name="team/duckie/quackquack/ui/layout/ComposableSingletons$LayoutKt" sourcefilename="layout.kt">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="18" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="18" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/ComposableSingletons$LayoutKt$lambda-1$1" sourcefilename="layout.kt">
+<method name="invoke" desc="(Landroidx/compose/foundation/layout/ColumnScope;Landroidx/compose/runtime/Composer;I)V">
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/ComposableSingletons$LayoutKt$lambda-2$1" sourcefilename="layout.kt">
+<method name="invoke" desc="(Landroidx/compose/foundation/layout/ColumnScope;Landroidx/compose/runtime/Composer;I)V">
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/ComposableSingletons$LayoutKt$lambda-3$1" sourcefilename="layout.kt">
+<method name="invoke" desc="(Landroidx/compose/foundation/layout/ColumnScope;Landroidx/compose/runtime/Composer;I)V">
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/LayoutKt" sourcefilename="layout.kt">
+<method name="QuackColumn" desc="(Landroidx/compose/foundation/layout/PaddingValues;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V">
+<counter type="INSTRUCTION" missed="207" covered="0"/>
+<counter type="BRANCH" missed="16" covered="0"/>
+<counter type="LINE" missed="32" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="207" covered="0"/>
+<counter type="BRANCH" missed="16" covered="0"/>
+<counter type="LINE" missed="32" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/QuackColumnScopeInstance" sourcefilename="layout.kt">
+<method name="&lt;init&gt;" desc="(Landroidx/compose/foundation/layout/ColumnScope;)V">
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="content" desc="(Lkotlin/jvm/functions/Function3;)V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getContentContent" desc="()Lkotlin/jvm/functions/Function3;">
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getFooterContent" desc="()Lkotlin/jvm/functions/Function3;">
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="footer" desc="(Lkotlin/jvm/functions/Function3;)V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="header" desc="(Lkotlin/jvm/functions/Function3;)V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getHeaderContent" desc="()Lkotlin/jvm/functions/Function3;">
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="41" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="8" covered="0"/>
+<counter type="METHOD" missed="7" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/layout/QuackLayoutDefault" sourcefilename="layout.kt">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getPaddingValues" desc="()Landroidx/compose/foundation/layout/PaddingValues;">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="7" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<sourcefile name="layout.kt">
+<line nr="35" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="52" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="55" mi="15" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="21" ci="0" mb="8" cb="0"/>
+<line nr="56" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="57" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="57" mi="21" ci="0" mb="8" cb="0"/>
+<line nr="57" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="58" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="58" mi="21" ci="0" mb="8" cb="0"/>
+<line nr="58" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="61" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="65" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="76" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="79" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="80" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="81" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="82" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="83" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="85" mi="25" ci="0" mb="4" cb="0"/>
+<line nr="86" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="87" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="91" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="92" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="93" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="94" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="96" mi="14" ci="0" mb="4" cb="0"/>
+<line nr="97" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="98" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="99" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="100" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="101" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="102" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="104" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="106" mi="14" ci="0" mb="4" cb="0"/>
+<line nr="107" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="108" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="109" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="110" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="111" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="113" mi="14" ci="0" mb="4" cb="0"/>
+<line nr="114" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="115" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="116" mi="0" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="336" covered="0"/>
+<counter type="BRANCH" missed="40" covered="0"/>
+<counter type="LINE" missed="48" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="336" covered="0"/>
+<counter type="BRANCH" missed="40" covered="0"/>
+<counter type="LINE" missed="48" covered="0"/>
+<counter type="METHOD" missed="14" covered="0"/>
+<counter type="CLASS" missed="7" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/ui">
+<class name="team/duckie/quackquack/ui/BuildConfig" sourcefilename="BuildConfig.java">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<sourcefile name="BuildConfig.java">
+<line nr="6" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="7" mi="3" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+<counter type="CLASS" missed="1" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/common/lint/test">
+<class name="team/duckie/quackquack/common/lint/test/ComposeFilesKt" sourcefilename="ComposeFiles.kt">
+<method name="getComposableAnnotationFile" desc="()Lcom/android/tools/lint/checks/infrastructure/TestFile;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="composableTestFile" desc="(Ljava/lang/String;)Lcom/android/tools/lint/checks/infrastructure/TestFile;">
+<counter type="INSTRUCTION" missed="0" covered="16"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="4"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="23"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="3"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/test/LintTestRule$DefaultImpls" sourcefilename="LintTestRule.kt">
+<method name="assertErrorCount" desc="(Lteam/duckie/quackquack/common/lint/test/LintTestRule;Ljava/util/List;Ljava/util/List;ILcom/android/tools/lint/checks/infrastructure/TestFile;)V">
+<counter type="INSTRUCTION" missed="0" covered="19"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="19"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/test/LintTestRuleImpl" sourcefilename="LintTestRule.kt">
+<method name="toComposableTestableFiles" desc="(Ljava/util/List;)[Lcom/android/tools/lint/checks/infrastructure/TestFile;">
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<method name="apply" desc="(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;)Lorg/junit/runners/model/Statement;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="assertErrorCount" desc="(Ljava/util/List;Ljava/util/List;ILcom/android/tools/lint/checks/infrastructure/TestFile;)V">
+<counter type="INSTRUCTION" missed="0" covered="54"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="11"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="78"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="16"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="team/duckie/quackquack/common/lint/test/LintTestRuleKt" sourcefilename="LintTestRule.kt">
+<method name="LintTestRule" desc="()Lteam/duckie/quackquack/common/lint/test/LintTestRule;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<sourcefile name="LintTestRule.kt">
+<line nr="31" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="46" mi="0" ci="17" mb="0" cb="0"/>
+<line nr="50" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="65" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="66" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="67" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="68" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="69" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="70" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="71" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="72" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="73" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="74" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="87" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="89" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="101"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="19"/>
+</sourcefile>
+<sourcefile name="ComposeFiles.kt">
+<line nr="25" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="48" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="23"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="6"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="0" covered="124"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="25"/>
+<counter type="METHOD" missed="0" covered="9"/>
+<counter type="CLASS" missed="0" covered="4"/>
+</package>
+<package name="team/duckie/quackquack/lint/compose">
+<class name="team/duckie/quackquack/lint/compose/ComposeIssueRegistry" sourcefilename="ComposeIssueRegistry.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/lint/compose/PreferredImmutableCollectionsDetector" sourcefilename="PreferredImmutableCollectionsDetector.kt">
+<method name="createUastHandler" desc="(Lcom/android/tools/lint/detector/api/JavaContext;)Lcom/android/tools/lint/client/api/UElementHandler;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getApplicableUastTypes" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+<counter type="METHOD" missed="0" covered="3"/>
+</class>
+<class name="team/duckie/quackquack/lint/compose/PreferredImmutableCollectionsDetector$createUastHandler$1" sourcefilename="PreferredImmutableCollectionsDetector.kt">
+<method name="visitMethod" desc="(Lorg/jetbrains/uast/UMethod;)V">
+<counter type="INSTRUCTION" missed="5" covered="99"/>
+<counter type="BRANCH" missed="5" covered="15"/>
+<counter type="LINE" missed="0" covered="15"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/android/tools/lint/detector/api/JavaContext;)V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="5" covered="101"/>
+<counter type="BRANCH" missed="5" covered="15"/>
+<counter type="LINE" missed="0" covered="16"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/lint/compose/PreferredImmutableCollectionsDetectorKt" sourcefilename="PreferredImmutableCollectionsDetector.kt">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="43"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="15"/>
+</method>
+<method name="getPreferredImmutableCollectionsIssue" desc="()Lcom/android/tools/lint/detector/api/Issue;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="47"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="16"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<sourcefile name="ComposeIssueRegistry.kt">
+<line nr="24" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="25" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="31" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="33" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="34" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="35" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="31" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="9" covered="0"/>
+</sourcefile>
+<sourcefile name="PreferredImmutableCollectionsDetector.kt">
+<line nr="34" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="35" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="36" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="41" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="63" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="65" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="98" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="99" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="103" mi="0" ci="8" mb="1" cb="3"/>
+<line nr="105" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="106" mi="3" ci="12" mb="2" cb="2"/>
+<line nr="107" mi="2" ci="5" mb="1" cb="1"/>
+<line nr="108" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="109" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="110" mi="0" ci="14" mb="0" cb="2"/>
+<line nr="112" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="14" mb="0" cb="2"/>
+<line nr="115" mi="0" ci="4" mb="1" cb="3"/>
+<line nr="116" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="117" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="118" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="119" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="120" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="5" covered="156"/>
+<counter type="BRANCH" missed="5" covered="15"/>
+<counter type="LINE" missed="0" covered="35"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="36" covered="156"/>
+<counter type="BRANCH" missed="5" covered="15"/>
+<counter type="LINE" missed="9" covered="35"/>
+<counter type="METHOD" missed="1" covered="7"/>
+<counter type="CLASS" missed="1" covered="3"/>
+</package>
+<package name="team/duckie/quackquack/playground">
+<class name="team/duckie/quackquack/playground/BuildConfig" sourcefilename="BuildConfig.java">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/playground/MainActivity" sourcefilename="MainActivity.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/playground/ToastWrapper" sourcefilename="ToastWrapper.kt">
+<method name="&lt;init&gt;" desc="(Landroid/content/Context;)V">
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="invoke" desc="(Lteam/duckie/quackquack/playground/ToastWrapper;Ljava/lang/String;I)V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="invoke" desc="(Ljava/lang/String;I)V">
+<counter type="INSTRUCTION" missed="16" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+</method>
+<method name="get_context" desc="()Landroid/content/Context;">
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="41" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="10" covered="0"/>
+<counter type="METHOD" missed="4" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/playground/ToastWrapperKt" sourcefilename="ToastWrapper.kt">
+<method name="getEmpty" desc="(Lkotlin/jvm/internal/StringCompanionObject;)Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="rememberToast" desc="(Landroidx/compose/runtime/Composer;I)Lteam/duckie/quackquack/playground/ToastWrapper;">
+<counter type="INSTRUCTION" missed="43" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="4" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="44" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<sourcefile name="ToastWrapper.kt">
+<line nr="23" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="25" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="27" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="28" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="32" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="34" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="35" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="37" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="43" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="44" mi="14" ci="0" mb="0" cb="0"/>
+<line nr="45" mi="20" ci="0" mb="2" cb="0"/>
+<line nr="46" mi="8" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="85" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="15" covered="0"/>
+</sourcefile>
+<sourcefile name="BuildConfig.java">
+<line nr="6" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</sourcefile>
+<sourcefile name="MainActivity.kt">
+<line nr="20" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="89" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="17" covered="0"/>
+<counter type="METHOD" missed="8" covered="0"/>
+<counter type="CLASS" missed="4" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/ui/animation">
+<class name="team/duckie/quackquack/ui/animation/SpecKt" sourcefilename="spec.kt">
+<method name="quackTween" desc="()Landroidx/compose/animation/core/TweenSpec;">
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="spec.kt">
+<line nr="20" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="21" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="22" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+<counter type="CLASS" missed="1" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/ui/benchmark">
+<class name="team/duckie/quackquack/ui/benchmark/BaselineProfileBenchmark" sourcefilename="BaselineProfileBenchmark.kt">
+<method name="startupNoCompilation" desc="()V">
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="startupBaselineProfile" desc="()V">
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="startup" desc="(Landroidx/benchmark/macro/CompilationMode;)V">
+<counter type="INSTRUCTION" missed="22" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="47" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="10" covered="0"/>
+<counter type="METHOD" missed="4" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/benchmark/BaselineProfileBenchmark$startup$1" sourcefilename="BaselineProfileBenchmark.kt">
+<method name="invoke" desc="(Landroidx/benchmark/macro/MacrobenchmarkScope;)V">
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/benchmark/BaselineProfileGenerator" sourcefilename="BaselineProfileGenerator.kt">
+<method name="startup" desc="()V">
+<counter type="INSTRUCTION" missed="6" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="15" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/benchmark/BaselineProfileGenerator$startup$1" sourcefilename="BaselineProfileGenerator.kt">
+<method name="invoke" desc="(Landroidx/benchmark/macro/MacrobenchmarkScope;)V">
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/benchmark/BuildConfig" sourcefilename="BuildConfig.java">
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<sourcefile name="BuildConfig.java">
+<line nr="6" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="7" mi="3" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</sourcefile>
+<sourcefile name="BaselineProfileBenchmark.kt">
+<line nr="22" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="25" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="29" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="34" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="40" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="41" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="42" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="43" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="45" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="46" mi="5" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="57" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="12" covered="0"/>
+</sourcefile>
+<sourcefile name="BaselineProfileGenerator.kt">
+<line nr="19" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="23" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="27" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="28" mi="5" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="25" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="87" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="19" covered="0"/>
+<counter type="METHOD" missed="10" covered="0"/>
+<counter type="CLASS" missed="5" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/common/lint">
+<class name="team/duckie/quackquack/common/lint/Empty" sourcefilename="empty.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="empty.kt">
+<line nr="12" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+<counter type="CLASS" missed="1" covered="0"/>
+</package>
+<package name="team/duckie/quackquack/ui/constant">
+<class name="team/duckie/quackquack/ui/constant/PaddingKt" sourcefilename="padding.kt">
+<method name="getNoPadding" desc="()Landroidx/compose/foundation/layout/PaddingValues;">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="7" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="2" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackHeight" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackHeight$Custom" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="(F)V">
+<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackHeight$Fill" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackHeight$Wrap" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackWidth" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackWidth$Custom" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="(F)V">
+<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackWidth$Fill" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/ui/constant/QuackWidth$Wrap" sourcefilename="size.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<sourcefile name="padding.kt">
+<line nr="17" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="18" mi="4" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="7" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</sourcefile>
+<sourcefile name="size.kt">
+<line nr="15" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="17" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="18" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="21" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="24" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="26" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="27" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="30" mi="8" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="32" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="8" covered="0"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="39" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="10" covered="0"/>
+<counter type="METHOD" missed="10" covered="0"/>
+<counter type="CLASS" missed="9" covered="0"/>
+</package>
+<counter type="INSTRUCTION" missed="3383" covered="708"/>
+<counter type="BRANCH" missed="515" covered="51"/>
+<counter type="LINE" missed="429" covered="149"/>
+<counter type="METHOD" missed="99" covered="50"/>
+<counter type="CLASS" missed="47" covered="23"/>
+</report>
+

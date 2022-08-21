@@ -1,0 +1,226 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LintTestRule</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.common.lint.test</a>
+</div>
+
+<h1>Coverage Summary for Class: LintTestRule (team.duckie.quackquack.common.lint.test)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+  <tr>
+    <td class="name">LintTestRule$DefaultImpls</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [LintTestRule.kt] created by Ji Sungbin on 22. 8. 19. 오전 7:31
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(
+&nbsp;    &quot;FunctionName&quot;,
+&nbsp;    &quot;UnstableApiUsage&quot;,
+&nbsp;)
+&nbsp;
+&nbsp;package team.duckie.quackquack.common.lint.test
+&nbsp;
+&nbsp;import com.android.tools.lint.checks.infrastructure.TestFile
+&nbsp;import com.android.tools.lint.checks.infrastructure.TestLintTask
+&nbsp;import com.android.tools.lint.checks.infrastructure.TestMode
+&nbsp;import com.android.tools.lint.detector.api.Issue
+&nbsp;import org.junit.rules.TestRule
+&nbsp;import org.junit.runner.Description
+&nbsp;import org.junit.runners.model.Statement
+&nbsp;import team.duckie.quackquack.common.runIf
+&nbsp;
+&nbsp;/**
+&nbsp; * [LintTestRule] 인터페이스를 반환합니다.
+&nbsp; *
+&nbsp; * @return [LintTestRule] 구현체
+&nbsp; */
+&nbsp;fun LintTestRule(): LintTestRule = LintTestRuleImpl()
+&nbsp;
+&nbsp;/**
+&nbsp; * 린트 테스트를 쉽게 하기 위한 커스텀 테스트 룰
+&nbsp; */
+&nbsp;interface LintTestRule : TestRule {
+&nbsp;    /**
+&nbsp;     * 린트 에러 개수를 검증합니다.
+&nbsp;     *
+&nbsp;     * @param files 테스트할 [TestFile] 목록
+&nbsp;     * @param issues 검증할 [Issue] 목록
+&nbsp;     * @param expectedCount 발생해야 하는 린트 에러 개수
+&nbsp;     * @param fixedFile QuickFix 가 가능하다면 QuickFix 가 적용된 후 [TestFile]
+&nbsp;     * 만약 QuickFix 가 불가능 하다면 null 입력, 기본값은 null
+&nbsp;     */
+<b class="fc">&nbsp;    fun assertErrorCount(</b>
+&nbsp;        files: List&lt;TestFile&gt;,
+&nbsp;        issues: List&lt;Issue&gt;,
+&nbsp;        expectedCount: Int,
+<b class="fc">&nbsp;        fixedFile: TestFile? = null,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;private class LintTestRuleImpl : LintTestRule {
+&nbsp;    override fun apply(base: Statement, description: Description) = base
+&nbsp;
+&nbsp;    override fun assertErrorCount(
+&nbsp;        files: List&lt;TestFile&gt;,
+&nbsp;        issues: List&lt;Issue&gt;,
+&nbsp;        expectedCount: Int,
+&nbsp;        fixedFile: TestFile?,
+&nbsp;    ) {
+&nbsp;        TestLintTask
+&nbsp;            .lint()
+&nbsp;            .allowMissingSdk()
+&nbsp;            .testModes(TestMode.DEFAULT)
+&nbsp;            .files(*files.toComposableTestableFiles())
+&nbsp;            .issues(*issues.toTypedArray())
+&nbsp;            .run()
+&nbsp;            .expectErrorCount(expectedCount)
+&nbsp;            .runIf(fixedFile != null) {
+&nbsp;                checkFix(
+&nbsp;                    fix = null, // 첫 번째 QuickFix 로 자동 선택됨
+&nbsp;                    after = fixedFile!!
+&nbsp;                )
+&nbsp;            }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * [TestFile] 목록에 [ComposableAnnotationFile] 를 추가합니다.
+&nbsp;     *
+&nbsp;     * @receiver [ComposableAnnotationFile] 이 추가되기 전 [TestFile] 목록
+&nbsp;     *
+&nbsp;     * @return receiver 로 받은 [TestFile] 목록에
+&nbsp;     * [ComposableAnnotationFile] 이 추가된 새로운 [TestFile] 목록
+&nbsp;     */
+&nbsp;    private fun List&lt;TestFile&gt;.toComposableTestableFiles() = ArrayList(this).apply {
+&nbsp;        add(ComposableAnnotationFile)
+&nbsp;    }.toTypedArray()
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-21 13:33</div>
+</div>
+</body>
+</html>

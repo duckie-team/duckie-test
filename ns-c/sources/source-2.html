@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SurfaceKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: SurfaceKt (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">SurfaceKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/86)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/435)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SurfaceKt$QuackSurface$2</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/86)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/435)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [surface.kt] created by Ji Sungbin on 22. 8. 14. 오후 7:02
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.animation.animateContentSize
+&nbsp;import androidx.compose.foundation.BorderStroke
+&nbsp;import androidx.compose.foundation.clickable
+&nbsp;import androidx.compose.foundation.interaction.MutableInteractionSource
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.BoxScope
+&nbsp;import androidx.compose.material.ripple.rememberRipple
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;import androidx.compose.ui.graphics.RectangleShape
+&nbsp;import androidx.compose.ui.graphics.Shape
+&nbsp;import androidx.compose.ui.semantics.Role
+&nbsp;import androidx.compose.ui.unit.Dp
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import team.duckie.quackquack.common.runIf
+&nbsp;import team.duckie.quackquack.ui.animation.quackTween
+&nbsp;import team.duckie.quackquack.ui.modifier.surface
+&nbsp;
+&nbsp;@Composable
+&nbsp;internal fun QuackSurface(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+<b class="nc">&nbsp;    shape: Shape = RectangleShape,</b>
+&nbsp;    backgroundColor: Color,
+<b class="nc">&nbsp;    border: BorderStroke? = null,</b>
+<b class="nc">&nbsp;    elevation: Dp = 0.dp,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="nc">&nbsp;    rippleColor: Color = Color.Unspecified,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;    contentAlignment: Alignment = Alignment.Center,</b>
+&nbsp;    content: @Composable BoxScope.() -&gt; Unit,
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    Box(</b>
+<b class="nc">&nbsp;        modifier = modifier</b>
+<b class="nc">&nbsp;            .surface(</b>
+<b class="nc">&nbsp;                shape = shape,</b>
+<b class="nc">&nbsp;                backgroundColor = backgroundColor,</b>
+<b class="nc">&nbsp;                border = border,</b>
+<b class="nc">&nbsp;                elevation = elevation,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .runIf(onClick != null) {</b>
+<b class="nc">&nbsp;                clickable(</b>
+<b class="nc">&nbsp;                    interactionSource = remember {</b>
+<b class="nc">&nbsp;                        MutableInteractionSource()</b>
+&nbsp;                    },
+<b class="nc">&nbsp;                    indication = rememberRipple(</b>
+<b class="nc">&nbsp;                        color = rippleColor,</b>
+<b class="nc">&nbsp;                    ).takeIf {</b>
+<b class="nc">&nbsp;                        rippleEnabled</b>
+&nbsp;                    },
+<b class="nc">&nbsp;                    role = Role.Button,</b>
+<b class="nc">&nbsp;                    onClick = onClick!!,</b>
+&nbsp;                )
+&nbsp;            }
+<b class="nc">&nbsp;            .animateContentSize(</b>
+<b class="nc">&nbsp;                animationSpec = quackTween(),</b>
+&nbsp;            ),
+<b class="nc">&nbsp;        propagateMinConstraints = true,</b>
+&nbsp;        contentAlignment = contentAlignment,
+&nbsp;        content = content,
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-21 13:33</div>
+</div>
+</body>
+</html>
