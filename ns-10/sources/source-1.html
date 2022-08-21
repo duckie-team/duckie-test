@@ -48,27 +48,27 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name">QuackTextStyle</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/4)
+    (4/4)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/27)
+    (27/27)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/115)
+    (115/115)
   </span>
 </td>
 </tr>
@@ -76,27 +76,27 @@ Current scope:     <a href="../../index.html">all classes</a>
     <td class="name">QuackTextStyle$Companion</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
   </tr>
@@ -104,27 +104,27 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/5)
+    (5/5)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/28)
+    (28/28)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/116)
+    (116/116)
   </span>
 </td>
 </tr>
@@ -161,36 +161,36 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import team.duckie.quackquack.ui.color.QuackColor
 &nbsp;
 &nbsp;// copy 사용을 방지하기 위해 data class 미사용
-<b class="nc">&nbsp;@Immutable</b>
+<b class="fc">&nbsp;@Immutable</b>
 &nbsp;class QuackTextStyle private constructor(
-<b class="nc">&nbsp;    val color: QuackColor,</b>
-<b class="nc">&nbsp;    val size: TextUnit,</b>
-<b class="nc">&nbsp;    val weight: FontWeight,</b>
-<b class="nc">&nbsp;    val letterSpacing: TextUnit,</b>
-<b class="nc">&nbsp;    val lineHeight: TextUnit,</b>
+<b class="fc">&nbsp;    val color: QuackColor,</b>
+<b class="fc">&nbsp;    val size: TextUnit,</b>
+<b class="fc">&nbsp;    val weight: FontWeight,</b>
+<b class="fc">&nbsp;    val letterSpacing: TextUnit,</b>
+<b class="fc">&nbsp;    val lineHeight: TextUnit,</b>
 &nbsp;) {
 &nbsp;    @Stable
-<b class="nc">&nbsp;    private val suit = FontFamily(Font(R.font.suit_variable))</b>
+<b class="fc">&nbsp;    private val suit = FontFamily(Font(R.font.suit_variable))</b>
 &nbsp;
 &nbsp;    @Stable
-<b class="nc">&nbsp;    internal fun toComposeStyle() = TextStyle(</b>
-<b class="nc">&nbsp;        color = color.value,</b>
-<b class="nc">&nbsp;        fontSize = size,</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = weight,</b>
-<b class="nc">&nbsp;        letterSpacing = letterSpacing,</b>
-<b class="nc">&nbsp;        textAlign = TextAlign.Center,</b>
-<b class="nc">&nbsp;        lineHeight = lineHeight,</b>
+<b class="fc">&nbsp;    internal fun toComposeStyle() = TextStyle(</b>
+<b class="fc">&nbsp;        color = color.value,</b>
+<b class="fc">&nbsp;        fontSize = size,</b>
+<b class="fc">&nbsp;        fontFamily = suit,</b>
+<b class="fc">&nbsp;        fontWeight = weight,</b>
+<b class="fc">&nbsp;        letterSpacing = letterSpacing,</b>
+<b class="fc">&nbsp;        textAlign = TextAlign.Center,</b>
+<b class="fc">&nbsp;        lineHeight = lineHeight,</b>
 &nbsp;    )
 &nbsp;
 &nbsp;    companion object {
 &nbsp;        @Stable
-<b class="nc">&nbsp;        val M1420 = QuackTextStyle(</b>
-<b class="nc">&nbsp;            color = QuackColor.Black,</b>
-<b class="nc">&nbsp;            size = 14.sp,</b>
-<b class="nc">&nbsp;            weight = FontWeight.Medium,</b>
-<b class="nc">&nbsp;            letterSpacing = 0.sp,</b>
-<b class="nc">&nbsp;            lineHeight = 20.sp,</b>
+<b class="fc">&nbsp;        val M1420 = QuackTextStyle(</b>
+<b class="fc">&nbsp;            color = QuackColor.Black,</b>
+<b class="fc">&nbsp;            size = 14.sp,</b>
+<b class="fc">&nbsp;            weight = FontWeight.Medium,</b>
+<b class="fc">&nbsp;            letterSpacing = 0.sp,</b>
+<b class="fc">&nbsp;            lineHeight = 20.sp,</b>
 &nbsp;        )
 &nbsp;    }
 &nbsp;
@@ -198,12 +198,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Stable
 &nbsp;    internal fun changeColor(
 &nbsp;        newColor: QuackColor,
-<b class="nc">&nbsp;    ) = QuackTextStyle(</b>
-<b class="nc">&nbsp;        color = newColor,</b>
-<b class="nc">&nbsp;        size = size,</b>
-<b class="nc">&nbsp;        weight = weight,</b>
-<b class="nc">&nbsp;        letterSpacing = letterSpacing,</b>
-<b class="nc">&nbsp;        lineHeight = lineHeight,</b>
+<b class="fc">&nbsp;    ) = QuackTextStyle(</b>
+<b class="fc">&nbsp;        color = newColor,</b>
+<b class="fc">&nbsp;        size = size,</b>
+<b class="fc">&nbsp;        weight = weight,</b>
+<b class="fc">&nbsp;        letterSpacing = letterSpacing,</b>
+<b class="fc">&nbsp;        lineHeight = lineHeight,</b>
 &nbsp;    )
 &nbsp;}
 </code>
@@ -229,7 +229,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-21 14:23</div>
+    <div style="float:right;">generated on 2022-08-21 22:34</div>
 </div>
 </body>
 </html>

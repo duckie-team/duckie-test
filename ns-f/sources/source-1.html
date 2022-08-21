@@ -59,34 +59,34 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    16.7%
+    50%
   </span>
   <span class="absValue">
-    (2/12)
+    (6/12)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    75%
   </span>
   <span class="absValue">
-    (0/12)
+    (9/12)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    10.4%
+    57.1%
   </span>
   <span class="absValue">
-    (8/77)
+    (44/77)
   </span>
 </td>
 </tr>
@@ -126,22 +126,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    width: QuackWidth,
 &nbsp;    height: QuackHeight,
 &nbsp;): Modifier {
-<b class="nc">&nbsp;    var modifier = this</b>
-<b class="nc">&nbsp;    modifier = when (width) {</b>
-<b class="nc">&nbsp;        QuackWidth.Fill -&gt; fillMaxWidth()</b>
+<b class="fc">&nbsp;    var modifier = this</b>
+<b class="fc">&nbsp;    modifier = when (width) {</b>
+<b class="pc">&nbsp;        QuackWidth.Fill -&gt; fillMaxWidth()</b>
 <b class="nc">&nbsp;        QuackWidth.Wrap -&gt; wrapContentWidth()</b>
 <b class="nc">&nbsp;        is QuackWidth.Custom -&gt; width(</b>
 <b class="nc">&nbsp;            width = width.width,</b>
 &nbsp;        )
 &nbsp;    }
-<b class="nc">&nbsp;    modifier = when (height) {</b>
-<b class="nc">&nbsp;        QuackHeight.Fill -&gt; fillMaxHeight()</b>
-<b class="nc">&nbsp;        QuackHeight.Wrap -&gt; wrapContentHeight()</b>
-<b class="nc">&nbsp;        is QuackHeight.Custom -&gt; height(</b>
-<b class="nc">&nbsp;            height = height.height,</b>
+<b class="fc">&nbsp;    modifier = when (height) {</b>
+<b class="pc">&nbsp;        QuackHeight.Fill -&gt; fillMaxHeight()</b>
+<b class="pc">&nbsp;        QuackHeight.Wrap -&gt; wrapContentHeight()</b>
+<b class="fc">&nbsp;        is QuackHeight.Custom -&gt; height(</b>
+<b class="fc">&nbsp;            height = height.height,</b>
 &nbsp;        )
 &nbsp;    }
-<b class="nc">&nbsp;    return modifier</b>
+<b class="fc">&nbsp;    return modifier</b>
 &nbsp;}
 </code>
 </pre>
@@ -166,7 +166,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-21 14:23</div>
+    <div style="float:right;">generated on 2022-08-21 22:34</div>
 </div>
 </body>
 </html>
