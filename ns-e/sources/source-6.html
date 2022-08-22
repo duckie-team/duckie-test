@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > LiveLiterals</title>
+  <title>Coverage Report > QuackColumnScope</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,10 +21,9 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.layout</a>
 </div>
 
-<h1>Coverage Summary for Class: LiveLiterals (team.duckie.quackquack.ui.layout)</h1>
+<h1>Coverage Summary for Class: QuackColumnScope (team.duckie.quackquack.ui.layout)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
 <th class="coverageStat 
@@ -32,20 +31,136 @@ Current scope:     <a href="../../index.html">all classes</a>
   Branch, %
 </th>
 </tr>
-  <tr>
-    <td class="name">LiveLiterals$LayoutKt</td>
-    <td class="coverageStat"/>
-  </tr>
 <tr>
-  <td class="name"><strong>Total</strong></td>
+  <td class="name">QuackColumnScope</td>
     <td class="coverageStat"/>
 </tr>
+
 </table>
 
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [layout.kt] created by Ji Sungbin on 22. 8. 14. 오후 5:17
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.layout
+&nbsp;
+&nbsp;import androidx.compose.foundation.layout.Arrangement
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.ColumnScope
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.fillMaxHeight
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.layout.wrapContentHeight
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.DisallowComposableCalls
+&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.runtime.Stable
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;
+&nbsp;private typealias ColumnContent = @Composable ColumnScope.() -&gt; Unit
+&nbsp;
+&nbsp;@Immutable
+&nbsp;object QuackLayoutDefault {
+&nbsp;    @Stable
+&nbsp;    val PaddingValues = PaddingValues(
+&nbsp;        all = 16.dp,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;@Immutable
+&nbsp;interface QuackColumnScope {
+&nbsp;    @Stable
+&nbsp;    fun header(content: ColumnContent)
+&nbsp;
+&nbsp;    @Stable
+&nbsp;    fun content(content: ColumnContent)
+&nbsp;
+&nbsp;    @Stable
+&nbsp;    fun footer(content: ColumnContent)
+&nbsp;}
+&nbsp;
+&nbsp;@PublishedApi
+&nbsp;internal class QuackColumnScopeInstance(
+&nbsp;    columnScope: ColumnScope,
+&nbsp;) : QuackColumnScope, ColumnScope by columnScope {
+&nbsp;    var headerContent: ColumnContent = {}
+&nbsp;    var contentContent: ColumnContent = {}
+&nbsp;    var footerContent: ColumnContent = {}
+&nbsp;
+&nbsp;    override fun header(content: ColumnContent) {
+&nbsp;        headerContent = content
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun content(content: ColumnContent) {
+&nbsp;        contentContent = content
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun footer(content: ColumnContent) {
+&nbsp;        footerContent = content
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;// NOT WORKING
+&nbsp;@Composable
+&nbsp;inline fun QuackColumn(
+&nbsp;    contentPadding: PaddingValues = QuackLayoutDefault.PaddingValues,
+&nbsp;    content: @DisallowComposableCalls QuackColumnScope.() -&gt; Unit,
+&nbsp;) {
+&nbsp;    Column(
+&nbsp;        modifier = Modifier
+&nbsp;            .fillMaxSize()
+&nbsp;            .padding(contentPadding),
+&nbsp;        verticalArrangement = Arrangement.SpaceBetween
+&nbsp;    ) {
+&nbsp;        val quackColumnScope = remember(this) {
+&nbsp;            QuackColumnScopeInstance(
+&nbsp;                columnScope = this,
+&nbsp;            )
+&nbsp;        }
+&nbsp;        quackColumnScope.content()
+&nbsp;        Box(
+&nbsp;            modifier = Modifier
+&nbsp;                .fillMaxWidth()
+&nbsp;                .wrapContentHeight()
+&nbsp;        ) {
+&nbsp;            quackColumnScope.headerContent
+&nbsp;        }
+&nbsp;        Box(
+&nbsp;            modifier = Modifier
+&nbsp;                .fillMaxWidth()
+&nbsp;                .weight(
+&nbsp;                    weight = 1f,
+&nbsp;                )
+&nbsp;                .fillMaxHeight()
+&nbsp;        ) {
+&nbsp;            quackColumnScope.contentContent
+&nbsp;        }
+&nbsp;        Box(
+&nbsp;            modifier = Modifier
+&nbsp;                .fillMaxWidth()
+&nbsp;                .wrapContentHeight()
+&nbsp;        ) {
+&nbsp;            quackColumnScope.footerContent
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -67,7 +182,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 01:56</div>
+    <div style="float:right;">generated on 2022-08-22 02:06</div>
 </div>
 </body>
 </html>
