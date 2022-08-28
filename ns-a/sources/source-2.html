@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BaselineProfileGenerator</title>
+  <title>Coverage Report > ShowkaseData</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,15 +18,18 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
+    <a href="../index.html">team.duckie.quackquack.ui</a>
 </div>
 
-<h1>Coverage Summary for Class: BaselineProfileGenerator (team.duckie.quackquack.ui.benchmark)</h1>
+<h1>Coverage Summary for Class: ShowkaseData (team.duckie.quackquack.ui)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -45,35 +48,15 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">BaselineProfileGenerator</td>
+  <td class="name">ShowkaseData</td>
 <td class="coverageStat">
   <span class="percent">
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/1)
   </span>
 </td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/15)
-  </span>
-</td>
-</tr>
-  <tr>
-    <td class="name">BaselineProfileGenerator$startup$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -88,46 +71,19 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
     (0/2)
   </span>
 </td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/10)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/5)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/25)
-  </span>
-</td>
 </tr>
+
 </table>
 
 <br/>
@@ -138,33 +94,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [BaselineProfileGenerator.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:50
+&nbsp; * [Showkase.kt] created by Ji Sungbin on 22. 8. 23. 오전 12:48
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.benchmark
+&nbsp;@file:Suppress(&quot;unused&quot;)
 &nbsp;
-&nbsp;import androidx.benchmark.macro.ExperimentalBaselineProfilesApi
-&nbsp;import androidx.benchmark.macro.junit4.BaselineProfileRule
-&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
-&nbsp;import org.junit.Rule
-&nbsp;import org.junit.Test
-&nbsp;import org.junit.runner.RunWith
+&nbsp;package team.duckie.quackquack.ui
 &nbsp;
-<b class="nc">&nbsp;@ExperimentalBaselineProfilesApi</b>
-&nbsp;@RunWith(AndroidJUnit4::class)
-&nbsp;class BaselineProfileGenerator {
-&nbsp;    @get:Rule
-<b class="nc">&nbsp;    val baselineProfileRule = BaselineProfileRule()</b>
+&nbsp;import androidx.compose.ui.graphics.Color
+&nbsp;import androidx.compose.ui.text.TextStyle
+&nbsp;import androidx.compose.ui.unit.sp
+&nbsp;import com.airbnb.android.showkase.annotation.ShowkaseColor
+&nbsp;import com.airbnb.android.showkase.annotation.ShowkaseRoot
+&nbsp;import com.airbnb.android.showkase.annotation.ShowkaseRootModule
+&nbsp;import com.airbnb.android.showkase.annotation.ShowkaseTypography
 &nbsp;
-&nbsp;    @Test
-<b class="nc">&nbsp;    fun startup() = baselineProfileRule.collectBaselineProfile(packageName = AppPackageName) {</b>
-<b class="nc">&nbsp;        pressHome()</b>
-<b class="nc">&nbsp;        startActivityAndWait()</b>
-&nbsp;    }
-&nbsp;}
+<b class="nc">&nbsp;@ShowkaseRoot</b>
+&nbsp;class ShowkaseData : ShowkaseRootModule
+&nbsp;
+&nbsp;@ShowkaseColor(name = &quot;Orange&quot;)
+&nbsp;val QuackOrange = Color(255, 131, 0)
+&nbsp;
+&nbsp;@ShowkaseColor(name = &quot;Gray&quot;)
+&nbsp;val QuackGray = Color(168, 168, 168)
+&nbsp;
+&nbsp;@ShowkaseTypography(name = &quot;Big&quot;)
+&nbsp;val QuackBig = TextStyle(fontSize = 20.sp)
+&nbsp;
+&nbsp;@ShowkaseTypography(name = &quot;Small&quot;)
+&nbsp;val QuackSmall = TextStyle(fontSize = 10.sp)
 </code>
 </pre>
 </div>
@@ -188,7 +149,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

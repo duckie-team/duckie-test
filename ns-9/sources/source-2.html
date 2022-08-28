@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ToastWrapperKt</title>
+  <title>Coverage Report > MainActivity</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.playground</a>
 </div>
 
-<h1>Coverage Summary for Class: ToastWrapperKt (team.duckie.quackquack.playground)</h1>
+<h1>Coverage Summary for Class: MainActivity (team.duckie.quackquack.playground)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,24 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ToastWrapperKt</td>
+  <td class="name">MainActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -65,30 +82,6 @@ Current scope:     <a href="../../index.html">all classes</a>
     (0/2)
   </span>
 </td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/5)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/44)
-  </span>
-</td>
 </tr>
 
 </table>
@@ -101,51 +94,44 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [ToastWrapper.kt] created by Ji Sungbin on 22. 8. 18. 오전 2:14
+&nbsp; * [MainActivity.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:59
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;@file:Suppress(&quot;MemberVisibilityCanBePrivate&quot;)
-&nbsp;@file:NoLiveLiterals
+&nbsp;@file:Suppress(
+&nbsp;    &quot;UNUSED_VARIABLE&quot;,
+&nbsp;    &quot;unused&quot;,
+&nbsp;    &quot;UNUSED_PARAMETER&quot;,
+&nbsp;)
 &nbsp;
 &nbsp;package team.duckie.quackquack.playground
 &nbsp;
-&nbsp;import android.content.Context
-&nbsp;import android.widget.Toast
-&nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.runtime.NoLiveLiterals
-&nbsp;import androidx.compose.runtime.remember
-&nbsp;import androidx.compose.ui.platform.LocalContext
-&nbsp;import java.lang.ref.WeakReference
+&nbsp;import androidx.activity.ComponentActivity
 &nbsp;
-<b class="nc">&nbsp;private val String.Companion.Empty get() = &quot;&quot;</b>
+<b class="nc">&nbsp;class MainActivity : ComponentActivity()</b>
 &nbsp;
-&nbsp;class ToastWrapper(context: Context) {
-&nbsp;    private val contextWrapper = WeakReference(context)
-&nbsp;    private val _context get() = contextWrapper.get()!!
-&nbsp;    private val toastInstance = Toast.makeText(_context, String.Empty, Toast.LENGTH_SHORT)
-&nbsp;
-&nbsp;    operator fun invoke(
-&nbsp;        message: String,
-&nbsp;        length: Int = Toast.LENGTH_SHORT,
-&nbsp;    ) {
-&nbsp;        toastInstance.run {
-&nbsp;            setText(message)
-&nbsp;            duration = length
-&nbsp;            show()
-&nbsp;        }
-&nbsp;    }
+&nbsp;/*@Composable
+&nbsp;fun Button() {
+&nbsp;    // stub!
 &nbsp;}
 &nbsp;
 &nbsp;@Composable
-<b class="nc">&nbsp;fun rememberToast(): ToastWrapper {</b>
-<b class="nc">&nbsp;    val context = LocalContext.current.applicationContext</b>
-<b class="nc">&nbsp;    return remember(context) {</b>
-<b class="nc">&nbsp;        ToastWrapper(context)</b>
-&nbsp;    }
+&nbsp;fun DesignSystem() {
+&nbsp;    Button()
 &nbsp;}
+&nbsp;
+&nbsp;interface ImmutableList&lt;T&gt;
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun PreferredMutableCollection(
+&nbsp;    list: List&lt;Any&gt;,
+&nbsp;    list2: MutableList&lt;Any&gt;,
+&nbsp;    list3: ImmutableList&lt;Any&gt;
+&nbsp;) {
+&nbsp;    // stub!
+&nbsp;}*/
 </code>
 </pre>
 </div>
@@ -169,7 +155,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

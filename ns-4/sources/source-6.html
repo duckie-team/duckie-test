@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Names</title>
+  <title>Coverage Report > Name</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,12 +21,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.common.lint.compose</a>
 </div>
 
-<h1>Coverage Summary for Class: Names (team.duckie.quackquack.common.lint.compose)</h1>
+<h1>Coverage Summary for Class: Name (team.duckie.quackquack.common.lint.compose)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -45,89 +48,42 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Names</td>
+  <td class="name">Name</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/4)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    62.5%
   </span>
   <span class="absValue">
-    (0/1)
+    (5/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    52.5%
   </span>
   <span class="absValue">
-    (0/2)
+    (42/80)
   </span>
 </td>
 </tr>
-  <tr>
-    <td class="name">Names$Runtime</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (2/2)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (2/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (11/11)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    66.7%
-  </span>
-  <span class="absValue">
-    (2/3)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    66.7%
-  </span>
-  <span class="absValue">
-    (2/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    84.6%
-  </span>
-  <span class="absValue">
-    (11/13)
-  </span>
-</td>
-</tr>
+
 </table>
 
 <br/>
@@ -159,10 +115,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;/**
 &nbsp; * Contains common names used for lint checks.
 &nbsp; */
-<b class="nc">&nbsp;object Names {</b>
+&nbsp;object Names {
 &nbsp;    object Runtime {
-<b class="fc">&nbsp;        val PackageName = Package(&quot;androidx.compose.runtime&quot;)</b>
-<b class="fc">&nbsp;        val Composable = Name(PackageName, &quot;Composable&quot;)</b>
+&nbsp;        val PackageName = Package(&quot;androidx.compose.runtime&quot;)
+&nbsp;        val Composable = Name(PackageName, &quot;Composable&quot;)
 &nbsp;    }
 &nbsp;}
 &nbsp;
@@ -185,21 +141,21 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @property nameSegments the segments representing the element - there can be multiple in the
 &nbsp; * case of nested classes.
 &nbsp; */
-&nbsp;class Name internal constructor(
-&nbsp;    private val pkg: PackageName,
-&nbsp;    private val nameSegments: List&lt;String&gt;,
+<b class="fc">&nbsp;class Name internal constructor(</b>
+<b class="fc">&nbsp;    private val pkg: PackageName,</b>
+<b class="fc">&nbsp;    private val nameSegments: List&lt;String&gt;,</b>
 &nbsp;) {
 &nbsp;    /**
 &nbsp;     * The short name for this [Name]
 &nbsp;     */
-&nbsp;    val shortName get() = nameSegments.last()
+<b class="nc">&nbsp;    val shortName get() = nameSegments.last()</b>
 &nbsp;
 &nbsp;    /**
 &nbsp;     * The Java-style fully qualified name for this [Name], separated with `.`
 &nbsp;     */
 &nbsp;    val javaFqn
-&nbsp;        get() = pkg.segments.joinToString(&quot;.&quot;, postfix = &quot;.&quot;) +
-&nbsp;                nameSegments.joinToString(&quot;.&quot;)
+<b class="fc">&nbsp;        get() = pkg.segments.joinToString(&quot;.&quot;, postfix = &quot;.&quot;) +</b>
+<b class="fc">&nbsp;                nameSegments.joinToString(&quot;.&quot;)</b>
 &nbsp;
 &nbsp;    /**
 &nbsp;     * The [ClassName] for use with kotlinx.metadata. Note that in kotlinx.metadata the actual
@@ -207,8 +163,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;     * kotlin/Int -&gt; java/lang/Integer
 &nbsp;     */
 &nbsp;    val kmClassName
-&nbsp;        get() = pkg.segments.joinToString(&quot;/&quot;, postfix = &quot;/&quot;) +
-&nbsp;                nameSegments.joinToString(&quot;.&quot;)
+<b class="nc">&nbsp;        get() = pkg.segments.joinToString(&quot;/&quot;, postfix = &quot;/&quot;) +</b>
+<b class="nc">&nbsp;                nameSegments.joinToString(&quot;.&quot;)</b>
 &nbsp;}
 &nbsp;
 &nbsp;/**
@@ -255,7 +211,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

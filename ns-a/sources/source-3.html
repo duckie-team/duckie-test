@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BuildConfig</title>
+  <title>Coverage Report > ShowkaseDataCodegen</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
+    <a href="../index.html">team.duckie.quackquack.ui</a>
 </div>
 
-<h1>Coverage Summary for Class: BuildConfig (team.duckie.quackquack.ui.benchmark)</h1>
+<h1>Coverage Summary for Class: ShowkaseDataCodegen (team.duckie.quackquack.ui)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">BuildConfig</td>
+  <td class="name">ShowkaseDataCodegen</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    80%
   </span>
   <span class="absValue">
-    (0/2)
+    (4/5)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    96.4%
   </span>
   <span class="absValue">
-    (0/2)
+    (27/28)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    97.4%
   </span>
   <span class="absValue">
-    (0/5)
+    (76/78)
   </span>
 </td>
 </tr>
@@ -89,7 +89,62 @@ Current scope:     <a href="../../index.html">all classes</a>
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// This is an auto-generated file. Please do not edit/modify this file.
+&nbsp;package team.duckie.quackquack.ui
+&nbsp;
+&nbsp;import com.airbnb.android.showkase.`annotation`.ShowkaseRootCodegen
+&nbsp;import com.airbnb.android.showkase.models.ShowkaseBrowserColor
+&nbsp;import com.airbnb.android.showkase.models.ShowkaseBrowserComponent
+&nbsp;import com.airbnb.android.showkase.models.ShowkaseBrowserTypography
+&nbsp;import com.airbnb.android.showkase.models.ShowkaseProvider
+&nbsp;import kotlin.collections.List
+&nbsp;
+<b class="fc">&nbsp;@ShowkaseRootCodegen(</b>
+&nbsp;  numComposablesWithoutPreviewParameter = 0,
+&nbsp;  numComposablesWithPreviewParameter = 0,
+&nbsp;  numColors = 2,
+&nbsp;  numTypography = 2,
+&nbsp;)
+&nbsp;public class ShowkaseDataCodegen : ShowkaseProvider {
+<b class="nc">&nbsp;  public val componentList: List&lt;ShowkaseBrowserComponent&gt; =</b>
+<b class="fc">&nbsp;      mutableListOf&lt;ShowkaseBrowserComponent&gt;()</b>
+&nbsp;
+<b class="fc">&nbsp;  public val colorList: List&lt;ShowkaseBrowserColor&gt; = listOf&lt;ShowkaseBrowserColor&gt;(</b>
+<b class="fc">&nbsp;        ShowkaseBrowserColor(</b>
+<b class="fc">&nbsp;            colorGroup = &quot;Default Group&quot;,</b>
+<b class="fc">&nbsp;            colorName = &quot;Orange&quot;,</b>
+<b class="fc">&nbsp;            colorKDoc = &quot;&quot;,</b>
+<b class="fc">&nbsp;            color = QuackOrange),</b>
+<b class="fc">&nbsp;        ShowkaseBrowserColor(</b>
+<b class="fc">&nbsp;            colorGroup = &quot;Default Group&quot;,</b>
+<b class="fc">&nbsp;            colorName = &quot;Gray&quot;,</b>
+<b class="fc">&nbsp;            colorKDoc = &quot;&quot;,</b>
+<b class="fc">&nbsp;            color = QuackGray)</b>
+&nbsp;      )
+&nbsp;
+<b class="fc">&nbsp;  public val typographyList: List&lt;ShowkaseBrowserTypography&gt; = listOf&lt;ShowkaseBrowserTypography&gt;(</b>
+<b class="fc">&nbsp;        ShowkaseBrowserTypography(</b>
+<b class="fc">&nbsp;            typographyGroup = &quot;Default Group&quot;,</b>
+<b class="fc">&nbsp;            typographyName = &quot;Big&quot;,</b>
+<b class="fc">&nbsp;            typographyKDoc = &quot;&quot;,</b>
+<b class="fc">&nbsp;            textStyle = QuackBig),</b>
+<b class="fc">&nbsp;        ShowkaseBrowserTypography(</b>
+<b class="fc">&nbsp;            typographyGroup = &quot;Default Group&quot;,</b>
+<b class="fc">&nbsp;            typographyName = &quot;Small&quot;,</b>
+<b class="fc">&nbsp;            typographyKDoc = &quot;&quot;,</b>
+<b class="fc">&nbsp;            textStyle = QuackSmall)</b>
+&nbsp;      )
+&nbsp;
+<b class="fc">&nbsp;  public override fun getShowkaseComponents(): List&lt;ShowkaseBrowserComponent&gt; = componentList</b>
+&nbsp;
+<b class="fc">&nbsp;  public override fun getShowkaseColors(): List&lt;ShowkaseBrowserColor&gt; = colorList</b>
+&nbsp;
+<b class="fc">&nbsp;  public override fun getShowkaseTypography(): List&lt;ShowkaseBrowserTypography&gt; = typographyList</b>
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -111,7 +166,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

@@ -1,0 +1,246 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PreferredImmutableCollectionsDetectorKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.lint.compose</a>
+</div>
+
+<h1>Coverage Summary for Class: PreferredImmutableCollectionsDetectorKt (team.duckie.quackquack.lint.compose)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">PreferredImmutableCollectionsDetectorKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (47/47)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [PreferredImmutableCollectionsDetector.kt] created by Ji Sungbin on 22. 8. 19. 오전 9:13
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(
+&nbsp;    &quot;UnstableApiUsage&quot;,
+&nbsp;    &quot;SameParameterValue&quot;,
+&nbsp;)
+&nbsp;
+&nbsp;package team.duckie.quackquack.lint.compose
+&nbsp;
+&nbsp;import com.android.tools.lint.client.api.UElementHandler
+&nbsp;import com.android.tools.lint.detector.api.Category
+&nbsp;import com.android.tools.lint.detector.api.Detector
+&nbsp;import com.android.tools.lint.detector.api.Implementation
+&nbsp;import com.android.tools.lint.detector.api.Issue
+&nbsp;import com.android.tools.lint.detector.api.JavaContext
+&nbsp;import com.android.tools.lint.detector.api.Scope
+&nbsp;import com.android.tools.lint.detector.api.Severity
+&nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
+&nbsp;import org.jetbrains.kotlin.psi.KtParameter
+&nbsp;import org.jetbrains.uast.UMethod
+&nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
+&nbsp;import team.duckie.quackquack.common.lint.compose.isReturnsUnit
+&nbsp;
+&nbsp;private const val BriefDescription = &quot;MutableCollections 사용 감지됨&quot;
+&nbsp;private const val Explanation = &quot;Skippable 을 위해 ImmutableCollections 사용을 지향해야 합니다.&quot;
+&nbsp;
+<b class="fc">&nbsp;val PreferredImmutableCollectionsIssue = Issue.create(</b>
+<b class="fc">&nbsp;    id = &quot;PreferredImmutableCollections&quot;,</b>
+<b class="fc">&nbsp;    briefDescription = BriefDescription,</b>
+<b class="fc">&nbsp;    explanation = Explanation,</b>
+<b class="fc">&nbsp;    category = Category.PERFORMANCE,</b>
+<b class="fc">&nbsp;    priority = 7,</b>
+<b class="fc">&nbsp;    severity = Severity.ERROR,</b>
+<b class="fc">&nbsp;    implementation = Implementation(</b>
+&nbsp;        PreferredImmutableCollectionsDetector::class.java,
+<b class="fc">&nbsp;        Scope.JAVA_FILE_SCOPE</b>
+&nbsp;    )
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * MutableCollections 접미사
+&nbsp; *
+&nbsp; * kotlin.collection 패키지에 있는 Collections 들 입니다.
+&nbsp; */
+<b class="fc">&nbsp;private val CollectionNames = listOf(</b>
+<b class="fc">&nbsp;    &quot;List&quot;,</b>
+<b class="fc">&nbsp;    &quot;Map&quot;,</b>
+<b class="fc">&nbsp;    &quot;Set&quot;,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * ImmutableCollections 접두사
+&nbsp; *
+&nbsp; * kotlinx.collections 패키지에 있는 Collections 들 입니다.
+&nbsp; */
+<b class="fc">&nbsp;private val ImmutableNames = listOf(</b>
+<b class="fc">&nbsp;    &quot;Immutable&quot;,</b>
+<b class="fc">&nbsp;    &quot;Persistent&quot;,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackQuack 린트의 PreferredImmutableCollections 규칙을 구현합니다.
+&nbsp; *
+&nbsp; * 다음과 같은 조건에서 린트 검사를 진행합니다.
+&nbsp; *
+&nbsp; * 1. 컴포저블 함수여야 함
+&nbsp; * 2. 컴포저블을 방출하는 역할이여야 함
+&nbsp; *
+&nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
+&nbsp; *
+&nbsp; * 1. 인자의 타입 이름에 &quot;List&quot;, &quot;Map&quot;, &quot;Set&quot; 이 포함됨 (MutableCollections)
+&nbsp; * 2. 인자의 타입 이름에 &quot;Immutable&quot;, &quot;Persistent&quot; 이 포함되지 않음 (ImmutableCollections)
+&nbsp; *
+&nbsp; * 현재 이 규칙은 인자 타입의 이름만을 이용하여 검사하도록 구현됐습니다.
+&nbsp; * 따라서 아래와 같이 ImmutableCollections 의 네이밍을 MutableCollections 으로 지정하여
+&nbsp; * 사용하면 린트 에러가 발생합니다.
+&nbsp; *
+&nbsp; * ```
+&nbsp; * typealias MyList = ImmutableList&lt;Any&gt;
+&nbsp; *
+&nbsp; * @Composable
+&nbsp; * fun MyComposable(list: MyList) {}
+&nbsp; * //               ~~~~ &lt;- MutableCollections 사용 감지됨
+&nbsp; * // list 인자의 타입명인 MyList 에서 MutableCollections 의 네이밍인 List 가
+&nbsp; * // 포함돼 있고, ImmutableCollections 의 네이밍이 포함돼 있지 않아
+&nbsp; * // MutableCollections 사용으로 판단하고 린트 에러가 발생함
+&nbsp; * ```
+&nbsp; *
+&nbsp; * 인자 타입의 패키지를 이용하여 검사하는 것으로 구현이 개선돼야 합니다.
+&nbsp; */
+&nbsp;class PreferredImmutableCollectionsDetector : Detector(), SourceCodeScanner {
+&nbsp;    override fun getApplicableUastTypes() = listOf(UMethod::class.java)
+&nbsp;
+&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {
+&nbsp;        override fun visitMethod(node: UMethod) {
+&nbsp;            if (!node.isComposable || !node.isReturnsUnit) return
+&nbsp;
+&nbsp;            for (parameter in node.uastParameters) {
+&nbsp;                val ktParameter = parameter.sourcePsi as? KtParameter ?: continue
+&nbsp;                val parameterType = ktParameter.typeReference ?: continue
+&nbsp;                val parameterTypeName = parameterType.text
+&nbsp;                val isCollection = CollectionNames.any { collectionName -&gt;
+&nbsp;                    parameterTypeName.contains(collectionName)
+&nbsp;                }
+&nbsp;                val isImmutable = ImmutableNames.any { immutableName -&gt;
+&nbsp;                    parameterTypeName.contains(immutableName)
+&nbsp;                }
+&nbsp;                if (isCollection &amp;&amp; !isImmutable) {
+&nbsp;                    context.report(
+&nbsp;                        issue = PreferredImmutableCollectionsIssue,
+&nbsp;                        scope = parameterType,
+&nbsp;                        location = context.getNameLocation(parameterType),
+&nbsp;                        message = Explanation,
+&nbsp;                    )
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
+</div>
+</body>
+</html>

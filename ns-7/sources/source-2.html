@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > MainActivity</title>
+  <title>Coverage Report > MutableCollectionPublicDetector</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,18 +18,15 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.playground</a>
+    <a href="../index.html">team.duckie.quackquack.lint.core</a>
 </div>
 
-<h1>Coverage Summary for Class: MainActivity (team.duckie.quackquack.playground)</h1>
+<h1>Coverage Summary for Class: MutableCollectionPublicDetector (team.duckie.quackquack.lint.core)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -48,42 +45,103 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">MainActivity</td>
+  <td class="name">MutableCollectionPublicDetector</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
+    (3/3)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (3/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/2)
+    (8/8)
   </span>
 </td>
 </tr>
-
+  <tr>
+    <td class="name">MutableCollectionPublicDetector$createUastHandler$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (67/67)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (75/75)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -94,44 +152,108 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [MainActivity.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:59
+&nbsp; * [MutableCollectionPublicDetector.kt] created by ricky_0_k on 22. 8. 21. 오전 12:43
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
 &nbsp;@file:Suppress(
-&nbsp;    &quot;UNUSED_VARIABLE&quot;,
-&nbsp;    &quot;unused&quot;,
-&nbsp;    &quot;UNUSED_PARAMETER&quot;,
+&nbsp;    &quot;UnstableApiUsage&quot;,
+&nbsp;    &quot;SameParameterValue&quot;,
 &nbsp;)
 &nbsp;
-&nbsp;package team.duckie.quackquack.playground
+&nbsp;package team.duckie.quackquack.lint.core
 &nbsp;
-&nbsp;import androidx.activity.ComponentActivity
+&nbsp;import com.android.tools.lint.client.api.UElementHandler
+&nbsp;import com.android.tools.lint.detector.api.Category
+&nbsp;import com.android.tools.lint.detector.api.Detector
+&nbsp;import com.android.tools.lint.detector.api.Implementation
+&nbsp;import com.android.tools.lint.detector.api.Issue
+&nbsp;import com.android.tools.lint.detector.api.JavaContext
+&nbsp;import com.android.tools.lint.detector.api.Scope
+&nbsp;import com.android.tools.lint.detector.api.Severity
+&nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
+&nbsp;import org.jetbrains.kotlin.psi.KtProperty
+&nbsp;import org.jetbrains.kotlin.psi.psiUtil.isPublic
+&nbsp;import org.jetbrains.uast.UDeclaration
+&nbsp;import org.jetbrains.uast.kotlin.KotlinUField
 &nbsp;
-<b class="nc">&nbsp;class MainActivity : ComponentActivity()</b>
+&nbsp;private const val BriefDescription = &quot;MutableCollections public 노출 금지&quot;
+&nbsp;private const val Explanation = &quot;캡슐화를 위해 MutableCollections public 노출은 금지됩니다.&quot;
 &nbsp;
-&nbsp;/*@Composable
-&nbsp;fun Button() {
-&nbsp;    // stub!
+&nbsp;val MutableCollectionPublicIssue = Issue.create(
+&nbsp;    id = &quot;MutableCollectionPublic&quot;,
+&nbsp;    briefDescription = BriefDescription,
+&nbsp;    explanation = Explanation,
+&nbsp;    category = Category.PERFORMANCE,
+&nbsp;    priority = 7,
+&nbsp;    severity = Severity.ERROR,
+&nbsp;    implementation = Implementation(
+&nbsp;        MutableCollectionPublicDetector::class.java,
+&nbsp;        Scope.JAVA_FILE_SCOPE
+&nbsp;    )
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * MutableCollections 접두사
+&nbsp; *
+&nbsp; * kotlinx.collections 패키지에 있는 Collections 들 입니다.
+&nbsp; *
+&nbsp; * @see [https://github.com/Kotlin/kotlinx.collections.immutable]
+&nbsp; */
+&nbsp;private val MutableNames = listOf(
+&nbsp;    &quot;Mutable&quot;,
+&nbsp;    &quot;PersistentCollection.Builder&quot;,
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackQuack 린트의 MutableCollectionPublic 규칙을 구현합니다.
+&nbsp; *
+&nbsp; * 다음과 같은 조건에서 린트 검사를 진행합니다.
+&nbsp; *
+&nbsp; * 1. MutableCollections 에서 public 을 사용할 시
+&nbsp; *
+&nbsp; * 현재 이 규칙은 MutableCollections 변수의 접근 제어 범위(visibility) 가 public 인지 검사하도록 구현됐습니다.
+&nbsp; * 따라서 아래와 같이 MutableCollections 접근 제어 범위가 public 일 시
+&nbsp; * 린트 에러가 발생합니다.
+&nbsp; *
+&nbsp; * ```
+&nbsp; * val variableName: MutableCollection&lt;Any&gt; = emptyList()
+&nbsp;//     ~~~~~~~~~~~~ &lt;- MutableCollections 의 접근 제어가 public 으로 감지됨
+&nbsp; * ```
+&nbsp; * TODO internal val variableName: MutableCollection&lt;Any&gt; &lt;- internal 은 private 으로 감지됨
+&nbsp; *      internal 에 대해서는 모니터링 필요
+&nbsp; */
+<b class="fc">&nbsp;class MutableCollectionPublicDetector : Detector(), SourceCodeScanner {</b>
+<b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(</b>
+&nbsp;        UDeclaration::class.java,
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
+&nbsp;        override fun visitDeclaration(node: UDeclaration) {
+&nbsp;            // Kotlin 특성 상 field 이외의 것 (ex. getter, setter 등) 도 체크하므로 해당 내용만 체크하도록 처리
+<b class="fc">&nbsp;            if (node !is KotlinUField) return</b>
+&nbsp;
+<b class="fc">&nbsp;            val property = node.sourcePsi as? KtProperty</b>
+<b class="pc">&nbsp;            val propertyType = property?.typeReference ?: return</b>
+<b class="fc">&nbsp;            val propertyTypeName = propertyType.text</b>
+<b class="fc">&nbsp;            val isMutable = MutableNames.any { immutableName -&gt;</b>
+<b class="fc">&nbsp;                propertyTypeName.startsWith(immutableName)</b>
+&nbsp;            }
+&nbsp;
+&nbsp;            // mutable Collection 인 경우 &amp;&amp; PUBLIC 인 경우
+<b class="fc">&nbsp;            if (isMutable &amp;&amp; property.isPublic) {</b>
+<b class="fc">&nbsp;                context.report(</b>
+<b class="fc">&nbsp;                    issue = MutableCollectionPublicIssue,</b>
+<b class="fc">&nbsp;                    scope = propertyType,</b>
+<b class="fc">&nbsp;                    location = context.getNameLocation(propertyType),</b>
+<b class="fc">&nbsp;                    message = Explanation,</b>
+&nbsp;                )
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
 &nbsp;}
-&nbsp;
-&nbsp;@Composable
-&nbsp;fun DesignSystem() {
-&nbsp;    Button()
-&nbsp;}
-&nbsp;
-&nbsp;interface ImmutableList&lt;T&gt;
-&nbsp;
-&nbsp;@Composable
-&nbsp;fun PreferredMutableCollection(
-&nbsp;    list: List&lt;Any&gt;,
-&nbsp;    list2: MutableList&lt;Any&gt;,
-&nbsp;    list3: ImmutableList&lt;Any&gt;
-&nbsp;) {
-&nbsp;    // stub!
-&nbsp;}*/
 </code>
 </pre>
 </div>
@@ -155,7 +277,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

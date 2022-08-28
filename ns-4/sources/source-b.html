@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > KotlinUtilsKt</title>
+  <title>Coverage Report > UnreferencedParameter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.common.lint.compose</a>
 </div>
 
-<h1>Coverage Summary for Class: KotlinUtilsKt (team.duckie.quackquack.common.lint.compose)</h1>
+<h1>Coverage Summary for Class: UnreferencedParameter (team.duckie.quackquack.common.lint.compose)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">KotlinUtilsKt</td>
+  <td class="name">UnreferencedParameter</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -62,7 +62,16 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
   </span>
 </td>
 <td class="coverageStat">
@@ -70,23 +79,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/16)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/6)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/56)
+    (0/12)
   </span>
 </td>
 </tr>
@@ -131,8 +124,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * [UnreferencedParameter] with `it` as the name.
 &nbsp; */
 &nbsp;fun ULambdaExpression.findUnreferencedParameters(): List&lt;UnreferencedParameter&gt; {
-<b class="nc">&nbsp;    val lambdaExpression = sourcePsi as? KtLambdaExpression ?: return emptyList()</b>
-<b class="nc">&nbsp;    return LambdaParameterVisitor(lambdaExpression).findUnreferencedParameters()</b>
+&nbsp;    val lambdaExpression = sourcePsi as? KtLambdaExpression ?: return emptyList()
+&nbsp;    return LambdaParameterVisitor(lambdaExpression).findUnreferencedParameters()
 &nbsp;}
 &nbsp;
 &nbsp;/**
@@ -215,9 +208,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @property parameter the parameter that is not referenced - can be null if the parameter is an
 &nbsp; * implicit `it` parameter
 &nbsp; */
-&nbsp;class UnreferencedParameter(
-&nbsp;    val name: String,
-&nbsp;    val parameter: KtParameter?,
+<b class="nc">&nbsp;class UnreferencedParameter(</b>
+<b class="nc">&nbsp;    val name: String,</b>
+<b class="nc">&nbsp;    val parameter: KtParameter?,</b>
 &nbsp;)
 &nbsp;
 &nbsp;/**
@@ -226,10 +219,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; */
 &nbsp;private val KtLambdaExpression.hasImplicitItParameter: Boolean // 타입 명시 필수
 &nbsp;    get() {
-<b class="nc">&nbsp;        return when {</b>
-<b class="nc">&nbsp;            functionLiteral.hasParameterSpecification() -&gt; false</b>
-<b class="nc">&nbsp;            (toUElement() as? ULambdaExpression)?.valueParameters?.size != 1 -&gt; false</b>
-<b class="nc">&nbsp;            else -&gt; true</b>
+&nbsp;        return when {
+&nbsp;            functionLiteral.hasParameterSpecification() -&gt; false
+&nbsp;            (toUElement() as? ULambdaExpression)?.valueParameters?.size != 1 -&gt; false
+&nbsp;            else -&gt; true
 &nbsp;        }
 &nbsp;    }
 </code>
@@ -255,7 +248,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackColumnScope</title>
+  <title>Coverage Report > LayoutKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,19 +21,74 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.layout</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackColumnScope (team.duckie.quackquack.ui.layout)</h1>
+<h1>Coverage Summary for Class: LayoutKt (team.duckie.quackquack.ui.layout)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 <th class="coverageStat 
 ">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
   Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
 </th>
 </tr>
 <tr>
-  <td class="name">QuackColumnScope</td>
-    <td class="coverageStat"/>
+  <td class="name">LayoutKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/31)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/207)
+  </span>
+</td>
 </tr>
 
 </table>
@@ -118,46 +173,46 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;// NOT WORKING
 &nbsp;@Composable
 &nbsp;inline fun QuackColumn(
-&nbsp;    contentPadding: PaddingValues = QuackLayoutDefault.PaddingValues,
+<b class="nc">&nbsp;    contentPadding: PaddingValues = QuackLayoutDefault.PaddingValues,</b>
 &nbsp;    content: @DisallowComposableCalls QuackColumnScope.() -&gt; Unit,
 &nbsp;) {
-&nbsp;    Column(
-&nbsp;        modifier = Modifier
-&nbsp;            .fillMaxSize()
-&nbsp;            .padding(contentPadding),
-&nbsp;        verticalArrangement = Arrangement.SpaceBetween
+<b class="nc">&nbsp;    Column(</b>
+<b class="nc">&nbsp;        modifier = Modifier</b>
+<b class="nc">&nbsp;            .fillMaxSize()</b>
+<b class="nc">&nbsp;            .padding(contentPadding),</b>
+<b class="nc">&nbsp;        verticalArrangement = Arrangement.SpaceBetween</b>
 &nbsp;    ) {
-&nbsp;        val quackColumnScope = remember(this) {
-&nbsp;            QuackColumnScopeInstance(
-&nbsp;                columnScope = this,
+<b class="nc">&nbsp;        val quackColumnScope = remember(this) {</b>
+<b class="nc">&nbsp;            QuackColumnScopeInstance(</b>
+<b class="nc">&nbsp;                columnScope = this,</b>
 &nbsp;            )
 &nbsp;        }
-&nbsp;        quackColumnScope.content()
-&nbsp;        Box(
-&nbsp;            modifier = Modifier
-&nbsp;                .fillMaxWidth()
-&nbsp;                .wrapContentHeight()
+<b class="nc">&nbsp;        quackColumnScope.content()</b>
+<b class="nc">&nbsp;        Box(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .fillMaxWidth()</b>
+<b class="nc">&nbsp;                .wrapContentHeight()</b>
 &nbsp;        ) {
-&nbsp;            quackColumnScope.headerContent
-&nbsp;        }
-&nbsp;        Box(
-&nbsp;            modifier = Modifier
-&nbsp;                .fillMaxWidth()
-&nbsp;                .weight(
-&nbsp;                    weight = 1f,
+<b class="nc">&nbsp;            quackColumnScope.headerContent</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        Box(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .fillMaxWidth()</b>
+<b class="nc">&nbsp;                .weight(</b>
+<b class="nc">&nbsp;                    weight = 1f,</b>
 &nbsp;                )
-&nbsp;                .fillMaxHeight()
+<b class="nc">&nbsp;                .fillMaxHeight()</b>
 &nbsp;        ) {
-&nbsp;            quackColumnScope.contentContent
-&nbsp;        }
-&nbsp;        Box(
-&nbsp;            modifier = Modifier
-&nbsp;                .fillMaxWidth()
-&nbsp;                .wrapContentHeight()
+<b class="nc">&nbsp;            quackColumnScope.contentContent</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        Box(</b>
+<b class="nc">&nbsp;            modifier = Modifier</b>
+<b class="nc">&nbsp;                .fillMaxWidth()</b>
+<b class="nc">&nbsp;                .wrapContentHeight()</b>
 &nbsp;        ) {
-&nbsp;            quackColumnScope.footerContent
-&nbsp;        }
-&nbsp;    }
+<b class="nc">&nbsp;            quackColumnScope.footerContent</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;    }</b>
 &nbsp;}
 </code>
 </pre>
@@ -182,7 +237,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

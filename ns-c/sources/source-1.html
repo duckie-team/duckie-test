@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ButtonKt</title>
+  <title>Coverage Report > BaselineProfileBenchmark</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: ButtonKt (team.duckie.quackquack.ui.component)</h1>
+<h1>Coverage Summary for Class: BaselineProfileBenchmark (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
 
@@ -45,115 +45,86 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ButtonKt</td>
+  <td class="name">BaselineProfileBenchmark</td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    0%
   </span>
   <span class="absValue">
-    (2/3)
+    (0/4)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    35.5%
+    0%
   </span>
   <span class="absValue">
-    (61/172)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    84%
-  </span>
-  <span class="absValue">
-    (42/50)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    56.8%
-  </span>
-  <span class="absValue">
-    (420/739)
+    (0/47)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">ButtonKt$QuackBasicButton$2</td>
+    <td class="name">BaselineProfileBenchmark$startup$1</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/1)
   </span>
 </td>
-<td class="coverageStat">
-  <span class="percent">
-    40%
-  </span>
-  <span class="absValue">
-    (4/10)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    91.7%
-  </span>
-  <span class="absValue">
-    (11/12)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    86.2%
-  </span>
-  <span class="absValue">
-    (75/87)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">ButtonKt$QuackBasicButton$3</td>
     <td class="coverageStat"/>
-  </tr>
-  <tr>
-    <td class="name">ButtonKt$QuackLargeButton$1</td>
-    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    0%
   </span>
   <span class="absValue">
-    (3/4)
+    (0/5)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    35.7%
+    0%
   </span>
   <span class="absValue">
-    (65/182)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    85.5%
-  </span>
-  <span class="absValue">
-    (53/62)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    59.9%
-  </span>
-  <span class="absValue">
-    (495/826)
+    (0/57)
   </span>
 </td>
 </tr>
@@ -167,127 +138,52 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [button.kt] created by Ji Sungbin on 22. 8. 14. 오후 6:54
+&nbsp; * [BaselineProfileBenchmark.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:50
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;@file:Suppress(&quot;ModifierParameter&quot;)
+&nbsp;package team.duckie.quackquack.ui.benchmark
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;import androidx.benchmark.macro.BaselineProfileMode
+&nbsp;import androidx.benchmark.macro.CompilationMode
+&nbsp;import androidx.benchmark.macro.StartupMode
+&nbsp;import androidx.benchmark.macro.StartupTimingMetric
+&nbsp;import androidx.benchmark.macro.junit4.MacrobenchmarkRule
+&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
+&nbsp;import org.junit.Rule
+&nbsp;import org.junit.Test
+&nbsp;import org.junit.runner.RunWith
 &nbsp;
-&nbsp;import androidx.compose.animation.animateColorAsState
-&nbsp;import androidx.compose.foundation.BorderStroke
-&nbsp;import androidx.compose.foundation.layout.Arrangement
-&nbsp;import androidx.compose.foundation.layout.PaddingValues
-&nbsp;import androidx.compose.foundation.layout.Row
-&nbsp;import androidx.compose.foundation.layout.fillMaxSize
-&nbsp;import androidx.compose.foundation.layout.imePadding
-&nbsp;import androidx.compose.foundation.layout.padding
-&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
-&nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.runtime.getValue
-&nbsp;import androidx.compose.ui.Alignment
-&nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.unit.Dp
-&nbsp;import androidx.compose.ui.unit.dp
-&nbsp;import team.duckie.quackquack.common.runIf
-&nbsp;import team.duckie.quackquack.ui.animation.quackTween
-&nbsp;import team.duckie.quackquack.ui.color.QuackColor
-&nbsp;import team.duckie.quackquack.ui.constant.NoPadding
-&nbsp;import team.duckie.quackquack.ui.constant.QuackHeight
-&nbsp;import team.duckie.quackquack.ui.constant.QuackWidth
-&nbsp;import team.duckie.quackquack.ui.modifier.applyQuackSize
-&nbsp;import team.duckie.quackquack.ui.typography.QuackTextStyle
+<b class="nc">&nbsp;@RunWith(AndroidJUnit4::class)</b>
+&nbsp;class BaselineProfileBenchmark {
+&nbsp;    @get:Rule
+<b class="nc">&nbsp;    val benchmarkRule = MacrobenchmarkRule()</b>
 &nbsp;
-&nbsp;@Composable
-&nbsp;fun QuackLargeButton(
-<b class="pc">&nbsp;    enabled: Boolean = true,</b>
-&nbsp;    text: String,
-<b class="pc">&nbsp;    imeAnimation: Boolean = false,</b>
-&nbsp;    onClick: () -&gt; Unit,
-<b class="pc">&nbsp;) {</b>
-<b class="pc">&nbsp;    QuackBasicButton(</b>
-<b class="fc">&nbsp;        width = QuackWidth.Fill,</b>
-<b class="fc">&nbsp;        height = QuackHeight.Custom(</b>
-<b class="fc">&nbsp;            height = 44.dp,</b>
-&nbsp;        ),
-<b class="fc">&nbsp;        imeAnimation = imeAnimation,</b>
-<b class="fc">&nbsp;        backgroundColor = when (enabled) {</b>
-<b class="pc">&nbsp;            true -&gt; QuackColor.PumpkinOrange</b>
-<b class="nc">&nbsp;            else -&gt; QuackColor.Greyish</b>
-&nbsp;        },
-<b class="fc">&nbsp;        radius = 8.dp,</b>
-<b class="fc">&nbsp;        text = text,</b>
-<b class="fc">&nbsp;        textStyle = QuackTextStyle.M1420.changeColor(</b>
-<b class="fc">&nbsp;            newColor = QuackColor.White,</b>
-&nbsp;        ),
-<b class="fc">&nbsp;        onClick = onClick</b>
-&nbsp;    )
-<b class="nc">&nbsp;}</b>
-&nbsp;
-&nbsp;@Composable
-&nbsp;internal fun QuackBasicButton(
-&nbsp;    width: QuackWidth,
-&nbsp;    height: QuackHeight,
-<b class="pc">&nbsp;    margin: PaddingValues = NoPadding,</b>
-<b class="nc">&nbsp;    imeAnimation: Boolean = false,</b>
-<b class="nc">&nbsp;    backgroundColor: QuackColor = QuackColor.Unspecified,</b>
-<b class="pc">&nbsp;    border: BorderStroke? = null,</b>
-<b class="fc">&nbsp;    elevation: Dp = 0.dp,</b>
-<b class="nc">&nbsp;    radius: Dp = 0.dp,</b>
-<b class="pc">&nbsp;    rippleEnabled: Boolean = true,</b>
-<b class="pc">&nbsp;    rippleColor: QuackColor = QuackColor.Unspecified,</b>
-&nbsp;    text: String,
-<b class="nc">&nbsp;    textStyle: QuackTextStyle = QuackTextStyle.M1420,</b>
-<b class="pc">&nbsp;    textPadding: PaddingValues = NoPadding,</b>
-&nbsp;    onClick: () -&gt; Unit,
-<b class="pc">&nbsp;) {</b>
-<b class="fc">&nbsp;    val animatedBackgroundColor by animateColorAsState(</b>
-<b class="fc">&nbsp;        targetValue = backgroundColor.value,</b>
-<b class="fc">&nbsp;        animationSpec = quackTween(),</b>
-&nbsp;    )
-&nbsp;
-<b class="pc">&nbsp;    QuackSurface(</b>
-<b class="fc">&nbsp;        modifier = Modifier</b>
-<b class="fc">&nbsp;            .applyQuackSize(</b>
-<b class="fc">&nbsp;                width = width,</b>
-<b class="fc">&nbsp;                height = height,</b>
-&nbsp;            )
-<b class="fc">&nbsp;            .padding(</b>
-<b class="fc">&nbsp;                paddingValues = margin,</b>
-&nbsp;            )
-&nbsp;            // TODO: ime 애니메이션에 따른 컴포넌트 사이즈 조정 애니메이션 지원
-<b class="fc">&nbsp;            .runIf(imeAnimation) {</b>
-<b class="nc">&nbsp;                imePadding()</b>
-&nbsp;            },
-<b class="fc">&nbsp;        border = border,</b>
-<b class="fc">&nbsp;        elevation = elevation,</b>
-<b class="fc">&nbsp;        shape = RoundedCornerShape(</b>
-<b class="fc">&nbsp;            size = radius,</b>
-&nbsp;        ),
-<b class="fc">&nbsp;        backgroundColor = animatedBackgroundColor,</b>
-<b class="fc">&nbsp;        rippleEnabled = rippleEnabled,</b>
-<b class="fc">&nbsp;        rippleColor = rippleColor.value,</b>
-<b class="fc">&nbsp;        onClick = onClick,</b>
-<b class="fc">&nbsp;    ) {</b>
-<b class="pc">&nbsp;        Row(</b>
-<b class="fc">&nbsp;            modifier = Modifier</b>
-<b class="fc">&nbsp;                .fillMaxSize()</b>
-<b class="fc">&nbsp;                .padding(</b>
-<b class="fc">&nbsp;                    paddingValues = textPadding,</b>
-&nbsp;                ),
-<b class="fc">&nbsp;            verticalAlignment = Alignment.CenterVertically,</b>
-<b class="fc">&nbsp;            horizontalArrangement = Arrangement.Center,</b>
-&nbsp;        ) {
-<b class="pc">&nbsp;            QuackText(</b>
-<b class="fc">&nbsp;                text = text,</b>
-<b class="fc">&nbsp;                style = textStyle,</b>
-<b class="nc">&nbsp;            )</b>
-<b class="fc">&nbsp;        }</b>
+&nbsp;    @Test
+&nbsp;    fun startupNoCompilation() {
+<b class="nc">&nbsp;        startup(CompilationMode.None())</b>
 &nbsp;    }
-<b class="nc">&nbsp;}</b>
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun startupBaselineProfile() {
+<b class="nc">&nbsp;        startup(CompilationMode.Partial(baselineProfileMode = BaselineProfileMode.Require))</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun startup(compilationMode: CompilationMode) {
+<b class="nc">&nbsp;        benchmarkRule.measureRepeated(</b>
+<b class="nc">&nbsp;            packageName = AppPackageName,</b>
+<b class="nc">&nbsp;            metrics = listOf(StartupTimingMetric()),</b>
+<b class="nc">&nbsp;            iterations = 10,</b>
+<b class="nc">&nbsp;            startupMode = StartupMode.COLD,</b>
+<b class="nc">&nbsp;            compilationMode = compilationMode</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            pressHome()</b>
+<b class="nc">&nbsp;            startActivityAndWait()</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -311,7 +207,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>

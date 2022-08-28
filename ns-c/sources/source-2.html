@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > SurfaceKt</title>
+  <title>Coverage Report > BaselineProfileGenerator</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: SurfaceKt (team.duckie.quackquack.ui.component)</h1>
+<h1>Coverage Summary for Class: BaselineProfileGenerator (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
 
@@ -45,76 +45,86 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">SurfaceKt</td>
+  <td class="name">BaselineProfileGenerator</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    38.3%
+    0%
   </span>
   <span class="absValue">
-    (36/94)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    73.3%
-  </span>
-  <span class="absValue">
-    (22/30)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    60.2%
-  </span>
-  <span class="absValue">
-    (262/435)
+    (0/15)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">SurfaceKt$QuackSurface$2</td>
+    <td class="name">BaselineProfileGenerator$startup$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
     <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/3)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    38.3%
+    0%
   </span>
   <span class="absValue">
-    (36/94)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    73.3%
-  </span>
-  <span class="absValue">
-    (22/30)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    60.2%
-  </span>
-  <span class="absValue">
-    (262/435)
+    (0/25)
   </span>
 </td>
 </tr>
@@ -128,78 +138,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [surface.kt] created by Ji Sungbin on 22. 8. 14. 오후 7:02
+&nbsp; * [BaselineProfileGenerator.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:50
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;package team.duckie.quackquack.ui.benchmark
 &nbsp;
-&nbsp;import androidx.compose.animation.animateContentSize
-&nbsp;import androidx.compose.foundation.BorderStroke
-&nbsp;import androidx.compose.foundation.clickable
-&nbsp;import androidx.compose.foundation.interaction.MutableInteractionSource
-&nbsp;import androidx.compose.foundation.layout.Box
-&nbsp;import androidx.compose.foundation.layout.BoxScope
-&nbsp;import androidx.compose.material.ripple.rememberRipple
-&nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.runtime.remember
-&nbsp;import androidx.compose.ui.Alignment
-&nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.graphics.Color
-&nbsp;import androidx.compose.ui.graphics.RectangleShape
-&nbsp;import androidx.compose.ui.graphics.Shape
-&nbsp;import androidx.compose.ui.semantics.Role
-&nbsp;import androidx.compose.ui.unit.Dp
-&nbsp;import androidx.compose.ui.unit.dp
-&nbsp;import team.duckie.quackquack.common.runIf
-&nbsp;import team.duckie.quackquack.ui.animation.quackTween
-&nbsp;import team.duckie.quackquack.ui.modifier.surface
+&nbsp;import androidx.benchmark.macro.ExperimentalBaselineProfilesApi
+&nbsp;import androidx.benchmark.macro.junit4.BaselineProfileRule
+&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
+&nbsp;import org.junit.Rule
+&nbsp;import org.junit.Test
+&nbsp;import org.junit.runner.RunWith
 &nbsp;
-&nbsp;@Composable
-&nbsp;internal fun QuackSurface(
-<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
-<b class="nc">&nbsp;    shape: Shape = RectangleShape,</b>
-&nbsp;    backgroundColor: Color,
-<b class="nc">&nbsp;    border: BorderStroke? = null,</b>
-<b class="nc">&nbsp;    elevation: Dp = 0.dp,</b>
-<b class="nc">&nbsp;    rippleEnabled: Boolean = true,</b>
-<b class="nc">&nbsp;    rippleColor: Color = Color.Unspecified,</b>
-<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
-<b class="pc">&nbsp;    contentAlignment: Alignment = Alignment.Center,</b>
-&nbsp;    content: @Composable BoxScope.() -&gt; Unit,
-<b class="pc">&nbsp;) {</b>
-<b class="fc">&nbsp;    Box(</b>
-<b class="fc">&nbsp;        modifier = modifier</b>
-<b class="fc">&nbsp;            .surface(</b>
-<b class="fc">&nbsp;                shape = shape,</b>
-<b class="fc">&nbsp;                backgroundColor = backgroundColor,</b>
-<b class="fc">&nbsp;                border = border,</b>
-<b class="fc">&nbsp;                elevation = elevation,</b>
-&nbsp;            )
-<b class="pc">&nbsp;            .runIf(onClick != null) {</b>
-<b class="fc">&nbsp;                clickable(</b>
-<b class="fc">&nbsp;                    interactionSource = remember {</b>
-<b class="fc">&nbsp;                        MutableInteractionSource()</b>
-&nbsp;                    },
-<b class="fc">&nbsp;                    indication = rememberRipple(</b>
-<b class="fc">&nbsp;                        color = rippleColor,</b>
-<b class="pc">&nbsp;                    ).takeIf {</b>
-<b class="fc">&nbsp;                        rippleEnabled</b>
-&nbsp;                    },
-<b class="fc">&nbsp;                    role = Role.Button,</b>
-<b class="fc">&nbsp;                    onClick = onClick!!,</b>
-&nbsp;                )
-&nbsp;            }
-<b class="fc">&nbsp;            .animateContentSize(</b>
-<b class="fc">&nbsp;                animationSpec = quackTween(),</b>
-&nbsp;            ),
-<b class="fc">&nbsp;        propagateMinConstraints = true,</b>
-&nbsp;        contentAlignment = contentAlignment,
-&nbsp;        content = content,
-&nbsp;    )
-<b class="nc">&nbsp;}</b>
+<b class="nc">&nbsp;@ExperimentalBaselineProfilesApi</b>
+&nbsp;@RunWith(AndroidJUnit4::class)
+&nbsp;class BaselineProfileGenerator {
+&nbsp;    @get:Rule
+<b class="nc">&nbsp;    val baselineProfileRule = BaselineProfileRule()</b>
+&nbsp;
+&nbsp;    @Test
+<b class="nc">&nbsp;    fun startup() = baselineProfileRule.collectBaselineProfile(packageName = AppPackageName) {</b>
+<b class="nc">&nbsp;        pressHome()</b>
+<b class="nc">&nbsp;        startActivityAndWait()</b>
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -223,7 +188,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-22 02:15</div>
+    <div style="float:right;">generated on 2022-08-28 16:14</div>
 </div>
 </body>
 </html>
