@@ -1832,18 +1832,18 @@
 </class>
 <class name="team/duckie/quackquack/lint/compose/FixedModifierOrderDetector$createUastHandler$1" sourcefilename="FixedModifierOrderDetector.kt">
 <method name="visitMethod" desc="(Lorg/jetbrains/uast/UMethod;)V">
-<counter type="INSTRUCTION" missed="6" covered="65"/>
-<counter type="BRANCH" missed="6" covered="10"/>
-<counter type="LINE" missed="0" covered="11"/>
+<counter type="INSTRUCTION" missed="9" covered="85"/>
+<counter type="BRANCH" missed="10" covered="16"/>
+<counter type="LINE" missed="0" covered="13"/>
 </method>
 <method name="&lt;init&gt;" desc="(Lcom/android/tools/lint/detector/api/JavaContext;)V">
 <counter type="INSTRUCTION" missed="0" covered="2"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="6" covered="67"/>
-<counter type="BRANCH" missed="6" covered="10"/>
-<counter type="LINE" missed="0" covered="12"/>
+<counter type="INSTRUCTION" missed="9" covered="87"/>
+<counter type="BRANCH" missed="10" covered="16"/>
+<counter type="LINE" missed="0" covered="14"/>
 <counter type="METHOD" missed="0" covered="2"/>
 </class>
 <class name="team/duckie/quackquack/lint/compose/FixedModifierOrderDetectorKt" sourcefilename="FixedModifierOrderDetector.kt">
@@ -1945,19 +1945,21 @@
 <line nr="77" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="77" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="79" mi="0" ci="8" mb="1" cb="3"/>
-<line nr="81" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="82" mi="4" ci="17" mb="3" cb="3"/>
-<line nr="83" mi="1" ci="5" mb="1" cb="1"/>
-<line nr="84" mi="1" ci="5" mb="1" cb="1"/>
-<line nr="86" mi="0" ci="14" mb="0" cb="2"/>
-<line nr="87" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="88" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="89" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="90" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="91" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="6" covered="90"/>
-<counter type="BRANCH" missed="6" covered="10"/>
-<counter type="LINE" missed="0" covered="24"/>
+<line nr="82" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="83" mi="3" ci="21" mb="3" cb="5"/>
+<line nr="86" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="87" mi="4" ci="17" mb="3" cb="3"/>
+<line nr="88" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="89" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="92" mi="0" ci="6" mb="1" cb="3"/>
+<line nr="93" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="94" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="95" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="96" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="9" covered="110"/>
+<counter type="BRANCH" missed="10" covered="16"/>
+<counter type="LINE" missed="0" covered="26"/>
 </sourcefile>
 <sourcefile name="PreferredImmutableCollectionsDetector.kt">
 <line nr="34" mi="0" ci="4" mb="0" cb="0"/>
@@ -1999,9 +2001,9 @@
 <counter type="BRANCH" missed="5" covered="15"/>
 <counter type="LINE" missed="0" covered="35"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="53" covered="246"/>
-<counter type="BRANCH" missed="11" covered="25"/>
-<counter type="LINE" missed="10" covered="59"/>
+<counter type="INSTRUCTION" missed="56" covered="266"/>
+<counter type="BRANCH" missed="15" covered="31"/>
+<counter type="LINE" missed="10" covered="61"/>
 <counter type="METHOD" missed="1" covered="14"/>
 <counter type="CLASS" missed="1" covered="6"/>
 </package>
@@ -2410,9 +2412,9 @@
 <counter type="METHOD" missed="10" covered="0"/>
 <counter type="CLASS" missed="9" covered="0"/>
 </package>
-<counter type="INSTRUCTION" missed="3463" covered="1059"/>
-<counter type="BRANCH" missed="524" covered="74"/>
-<counter type="LINE" missed="452" covered="235"/>
+<counter type="INSTRUCTION" missed="3466" covered="1079"/>
+<counter type="BRANCH" missed="528" covered="80"/>
+<counter type="LINE" missed="452" covered="237"/>
 <counter type="METHOD" missed="109" covered="73"/>
 <counter type="CLASS" missed="50" covered="32"/>
 </report>

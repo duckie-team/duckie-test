@@ -157,8 +157,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; *
 &nbsp; * ```
 &nbsp; * @Composable
-&nbsp; * fun MyComposable(params: not Modifier, modifier: Modifier) {}
-&nbsp; * //                       ~~~~~~~~~~~~ &lt;- 첫 번째 인자 타입이 Modifier 가 아님
+&nbsp; * fun MyComposable(wrapperModifier: WrapperModifier, modifier: Modifier) {}
+&nbsp; * //                                ~~~~~~~~~~~~~~~ &lt;- 첫 번째 인자 타입이 Modifier 가 아님
 &nbsp; * // 첫 번째 인자 타입이 Modifier 가 아님을 인지하고 린트 에러가 발생함
 &nbsp; * ```
 &nbsp; *
@@ -171,12 +171,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        override fun visitMethod(node: UMethod) {
 &nbsp;            if (!node.isComposable || !node.isReturnsUnit) return
 &nbsp;
+&nbsp;            // 함수 내에 Modifier 타입 파라미터가 존재하는지 확인
+&nbsp;            val modifierParameterExists = node.uastParameters.any { parameter -&gt;
+&nbsp;                (parameter.sourcePsi as? KtParameter)?.typeReference?.text == &quot;Modifier&quot;
+&nbsp;            }
+&nbsp;
 &nbsp;            val firstParameter =
 &nbsp;                node.uastParameters.firstOrNull()?.sourcePsi as? KtParameter ?: return
 &nbsp;            val firstParameterType = firstParameter.typeReference ?: return
 &nbsp;            val firstParameterTypeName = firstParameterType.text ?: return
 &nbsp;
-&nbsp;            if (!firstParameterTypeName.lowercase().contains(&quot;modifier&quot;)) {
+&nbsp;            // Modifier 타입 파라미터가 존재하는데, 첫 번쨰 인자 타입이 Modifier 가 아닌 경우 에러 발생
+&nbsp;            if (modifierParameterExists &amp;&amp; firstParameterTypeName != &quot;Modifier&quot;) {
 &nbsp;                return context.report(
 &nbsp;                    issue = FixedModifierOrderIssue,
 &nbsp;                    scope = firstParameterType,
@@ -210,7 +216,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-28 16:14</div>
+    <div style="float:right;">generated on 2022-08-29 15:43</div>
 </div>
 </body>
 </html>

@@ -84,10 +84,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    62.5%
+    61.5%
   </span>
   <span class="absValue">
-    (10/16)
+    (16/26)
   </span>
 </td>
 <td class="coverageStat">
@@ -95,15 +95,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (12/12)
+    (14/14)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    91.8%
+    90.6%
   </span>
   <span class="absValue">
-    (67/73)
+    (87/96)
   </span>
 </td>
   </tr>
@@ -119,10 +119,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    62.5%
+    61.5%
   </span>
   <span class="absValue">
-    (10/16)
+    (16/26)
   </span>
 </td>
 <td class="coverageStat">
@@ -130,15 +130,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (15/15)
+    (17/17)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.6%
+    91.3%
   </span>
   <span class="absValue">
-    (75/81)
+    (95/104)
   </span>
 </td>
 </tr>
@@ -215,8 +215,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; *
 &nbsp; * ```
 &nbsp; * @Composable
-&nbsp; * fun MyComposable(params: not Modifier, modifier: Modifier) {}
-&nbsp; * //                       ~~~~~~~~~~~~ &lt;- 첫 번째 인자 타입이 Modifier 가 아님
+&nbsp; * fun MyComposable(wrapperModifier: WrapperModifier, modifier: Modifier) {}
+&nbsp; * //                                ~~~~~~~~~~~~~~~ &lt;- 첫 번째 인자 타입이 Modifier 가 아님
 &nbsp; * // 첫 번째 인자 타입이 Modifier 가 아님을 인지하고 린트 에러가 발생함
 &nbsp; * ```
 &nbsp; *
@@ -229,12 +229,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        override fun visitMethod(node: UMethod) {
 <b class="pc">&nbsp;            if (!node.isComposable || !node.isReturnsUnit) return</b>
 &nbsp;
+&nbsp;            // 함수 내에 Modifier 타입 파라미터가 존재하는지 확인
+<b class="fc">&nbsp;            val modifierParameterExists = node.uastParameters.any { parameter -&gt;</b>
+<b class="pc">&nbsp;                (parameter.sourcePsi as? KtParameter)?.typeReference?.text == &quot;Modifier&quot;</b>
+&nbsp;            }
+&nbsp;
 <b class="fc">&nbsp;            val firstParameter =</b>
 <b class="pc">&nbsp;                node.uastParameters.firstOrNull()?.sourcePsi as? KtParameter ?: return</b>
 <b class="pc">&nbsp;            val firstParameterType = firstParameter.typeReference ?: return</b>
 <b class="pc">&nbsp;            val firstParameterTypeName = firstParameterType.text ?: return</b>
 &nbsp;
-<b class="fc">&nbsp;            if (!firstParameterTypeName.lowercase().contains(&quot;modifier&quot;)) {</b>
+&nbsp;            // Modifier 타입 파라미터가 존재하는데, 첫 번쨰 인자 타입이 Modifier 가 아닌 경우 에러 발생
+<b class="pc">&nbsp;            if (modifierParameterExists &amp;&amp; firstParameterTypeName != &quot;Modifier&quot;) {</b>
 <b class="fc">&nbsp;                return context.report(</b>
 <b class="fc">&nbsp;                    issue = FixedModifierOrderIssue,</b>
 <b class="fc">&nbsp;                    scope = firstParameterType,</b>
@@ -268,7 +274,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-28 16:14</div>
+    <div style="float:right;">generated on 2022-08-29 15:43</div>
 </div>
 </body>
 </html>
