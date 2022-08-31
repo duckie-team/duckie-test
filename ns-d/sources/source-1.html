@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackColor</title>
+  <title>Coverage Report > BaselineProfileBenchmark</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.color</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackColor (team.duckie.quackquack.ui.color)</h1>
+<h1>Coverage Summary for Class: BaselineProfileBenchmark (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
 
@@ -45,7 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackColor</td>
+  <td class="name">BaselineProfileBenchmark</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -60,7 +60,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/19)
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -68,18 +68,18 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/38)
+    (0/47)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">QuackColor$Companion</td>
+    <td class="name">BaselineProfileBenchmark$startup$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
   </span>
   <span class="absValue">
-    (0/5)
+    (0/1)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -88,7 +88,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/5)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -96,7 +96,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/5)
+    (0/10)
   </span>
 </td>
   </tr>
@@ -107,7 +107,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/9)
+    (0/5)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -116,7 +116,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/24)
+    (0/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -124,7 +124,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/43)
+    (0/57)
   </span>
 </td>
 </tr>
@@ -138,60 +138,51 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [color.kt] created by Ji Sungbin on 22. 8. 14. 오후 7:48
+&nbsp; * [BaselineProfileBenchmark.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:50
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.color
+&nbsp;package team.duckie.quackquack.ui.benchmark
 &nbsp;
-&nbsp;import androidx.compose.runtime.Immutable
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.ui.graphics.Color
-&nbsp;import kotlin.reflect.KProperty
+&nbsp;import androidx.benchmark.macro.BaselineProfileMode
+&nbsp;import androidx.benchmark.macro.CompilationMode
+&nbsp;import androidx.benchmark.macro.StartupMode
+&nbsp;import androidx.benchmark.macro.StartupTimingMetric
+&nbsp;import androidx.benchmark.macro.junit4.MacrobenchmarkRule
+&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
+&nbsp;import org.junit.Rule
+&nbsp;import org.junit.Test
+&nbsp;import org.junit.runner.RunWith
 &nbsp;
-&nbsp;@Immutable
-&nbsp;@JvmInline
-<b class="nc">&nbsp;value class QuackColor private constructor(</b>
-<b class="nc">&nbsp;    val value: Color,</b>
-&nbsp;) {
-&nbsp;    companion object {
-&nbsp;        @Stable
-<b class="nc">&nbsp;        val Unspecified = QuackColor(</b>
-<b class="nc">&nbsp;            value = Color.Unspecified,</b>
-&nbsp;        )
+<b class="nc">&nbsp;@RunWith(AndroidJUnit4::class)</b>
+&nbsp;class BaselineProfileBenchmark {
+&nbsp;    @get:Rule
+<b class="nc">&nbsp;    val benchmarkRule = MacrobenchmarkRule()</b>
 &nbsp;
-&nbsp;        @Stable
-<b class="nc">&nbsp;        val DuckieOrange = QuackColor(</b>
-<b class="nc">&nbsp;            value = Color(</b>
-<b class="nc">&nbsp;                red = 255,</b>
-<b class="nc">&nbsp;                green = 131,</b>
-<b class="nc">&nbsp;                blue = 0,</b>
-&nbsp;            )
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
-<b class="nc">&nbsp;        val Greyish = QuackColor(</b>
-<b class="nc">&nbsp;            value = Color(</b>
-<b class="nc">&nbsp;                red = 168,</b>
-<b class="nc">&nbsp;                green = 168,</b>
-<b class="nc">&nbsp;                blue = 168,</b>
-&nbsp;            )
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
-<b class="nc">&nbsp;        val White = QuackColor(</b>
-<b class="nc">&nbsp;            value = Color.White,</b>
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
-<b class="nc">&nbsp;        val Black = QuackColor(</b>
-<b class="nc">&nbsp;            value = Color.Black,</b>
-&nbsp;        )
+&nbsp;    @Test
+&nbsp;    fun startupNoCompilation() {
+<b class="nc">&nbsp;        startup(CompilationMode.None())</b>
 &nbsp;    }
 &nbsp;
-<b class="nc">&nbsp;    operator fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;) = value</b>
+&nbsp;    @Test
+&nbsp;    fun startupBaselineProfile() {
+<b class="nc">&nbsp;        startup(CompilationMode.Partial(baselineProfileMode = BaselineProfileMode.Require))</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun startup(compilationMode: CompilationMode) {
+<b class="nc">&nbsp;        benchmarkRule.measureRepeated(</b>
+<b class="nc">&nbsp;            packageName = AppPackageName,</b>
+<b class="nc">&nbsp;            metrics = listOf(StartupTimingMetric()),</b>
+<b class="nc">&nbsp;            iterations = 10,</b>
+<b class="nc">&nbsp;            startupMode = StartupMode.COLD,</b>
+<b class="nc">&nbsp;            compilationMode = compilationMode</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            pressHome()</b>
+<b class="nc">&nbsp;            startActivityAndWait()</b>
+&nbsp;        }
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -216,7 +207,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackHeight</title>
+  <title>Coverage Report > IconKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.constant</a>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackHeight (team.duckie.quackquack.ui.constant)</h1>
+<h1>Coverage Summary for Class: IconKt (team.duckie.quackquack.ui.component)</h1>
 
 <table class="coverageStats">
 
@@ -45,16 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackHeight</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
+  <td class="name">IconKt</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -68,12 +59,28 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/158)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">QuackHeight$Custom</td>
+    <td class="name">IconKt$QuackSimpleIcon$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -89,72 +96,12 @@ Current scope:     <a href="../../index.html">all classes</a>
   </span>
   <span class="absValue">
     (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/8)
   </span>
 </td>
   </tr>
   <tr>
-    <td class="name">QuackHeight$Fill</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
+    <td class="name">IconKt$QuackSimpleIcon$2</td>
     <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackHeight$Wrap</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -163,16 +110,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/4)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -180,7 +118,23 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/16)
+    (0/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/158)
   </span>
 </td>
 </tr>
@@ -194,34 +148,45 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [size.kt] created by Ji Sungbin on 22. 8. 15. 오전 1:15
+&nbsp; * [icon.kt] created by Ji Sungbin on 22. 8. 21. 오후 2:46
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.constant
+&nbsp;package team.duckie.quackquack.ui.component
 &nbsp;
-&nbsp;import androidx.compose.runtime.Immutable
-&nbsp;import androidx.compose.ui.unit.Dp
+&nbsp;import androidx.compose.foundation.Image
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.graphics.ColorFilter
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
 &nbsp;
-&nbsp;@Immutable
-&nbsp;internal sealed class QuackWidth {
-&nbsp;    object Fill : QuackWidth()
-&nbsp;    object Wrap : QuackWidth()
-&nbsp;
-&nbsp;    @Immutable
-&nbsp;    class Custom(val width: Dp) : QuackWidth()
-&nbsp;}
-&nbsp;
-<b class="nc">&nbsp;@Immutable</b>
-&nbsp;internal sealed class QuackHeight {
-<b class="nc">&nbsp;    object Fill : QuackHeight()</b>
-<b class="nc">&nbsp;    object Wrap : QuackHeight()</b>
-&nbsp;
-&nbsp;    @Immutable
-<b class="nc">&nbsp;    class Custom(val height: Dp) : QuackHeight()</b>
-&nbsp;}
+&nbsp;/**
+&nbsp; * 아이콘 하나만 표시하는 컴포넌트
+&nbsp; *
+&nbsp; * @param icon 표시할 아이콘의 drawable 아이디
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;internal fun QuackSimpleIcon(
+&nbsp;    icon: QuackIcon,
+<b class="nc">&nbsp;    tint: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    onClick: () -&gt; Unit = {},</b>
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    Image(</b>
+<b class="nc">&nbsp;        modifier = Modifier.quackClickable(</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        painter = painterResource(icon.drawableId),</b>
+<b class="nc">&nbsp;        contentDescription = null,</b>
+<b class="nc">&nbsp;        colorFilter = ColorFilter.tint(tint.value),</b>
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
 </code>
 </pre>
 </div>
@@ -245,7 +210,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>

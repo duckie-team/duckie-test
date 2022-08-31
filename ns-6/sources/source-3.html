@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > FixedModifierOrderDetectorKt</title>
+  <title>Coverage Report > MutableCollectionPublicDetectorKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.lint.compose</a>
+    <a href="../index.html">team.duckie.quackquack.lint.core</a>
 </div>
 
-<h1>Coverage Summary for Class: FixedModifierOrderDetectorKt (team.duckie.quackquack.lint.compose)</h1>
+<h1>Coverage Summary for Class: MutableCollectionPublicDetectorKt (team.duckie.quackquack.lint.core)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">FixedModifierOrderDetectorKt</td>
+  <td class="name">MutableCollectionPublicDetectorKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -71,7 +71,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (9/9)
+    (12/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -79,7 +79,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (15/15)
+    (29/29)
   </span>
 </td>
 </tr>
@@ -94,7 +94,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [FixedModifierOrderDetector.kt] created by riflockle7 on 22. 8. 28. 오후 11:09
+&nbsp; * [MutableCollectionPublicDetector.kt] created by ricky_0_k on 22. 8. 21. 오전 12:43
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
@@ -105,7 +105,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    &quot;SameParameterValue&quot;,
 &nbsp;)
 &nbsp;
-&nbsp;package team.duckie.quackquack.lint.compose
+&nbsp;package team.duckie.quackquack.lint.core
 &nbsp;
 &nbsp;import com.android.tools.lint.client.api.UElementHandler
 &nbsp;import com.android.tools.lint.detector.api.Category
@@ -116,77 +116,80 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Scope
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
-&nbsp;import org.jetbrains.kotlin.psi.KtParameter
-&nbsp;import org.jetbrains.uast.UMethod
-&nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
-&nbsp;import team.duckie.quackquack.common.lint.compose.isReturnsUnit
+&nbsp;import org.jetbrains.kotlin.psi.KtProperty
+&nbsp;import org.jetbrains.kotlin.psi.psiUtil.isPublic
+&nbsp;import org.jetbrains.uast.UDeclaration
+&nbsp;import org.jetbrains.uast.kotlin.KotlinUField
 &nbsp;
-&nbsp;private const val BriefDescription = &quot;Modifier 인자를 첫 번째 위치로 고정해야 함&quot;
-&nbsp;private const val Explanation = &quot;Modifier 은 컴포저블의 필수 인자이므로, &quot; +
-&nbsp;        &quot;매개변수 첫 번째 위치에 고정하여 도메인적 의미를 강조해야 합니다.\n&quot; +
-&nbsp;        &quot;(가장 많이 찾는 인자가 될 가능성이 높으니 첫 번째로 위치 고정을 함으로써 그 의미를 강화합니다.)&quot;
+&nbsp;private const val BriefDescription = &quot;MutableCollections public 노출 금지&quot;
+&nbsp;private const val Explanation = &quot;캡슐화를 위해 MutableCollections public 노출은 금지됩니다.&quot;
 &nbsp;
-<b class="fc">&nbsp;val FixedModifierOrderIssue = Issue.create(</b>
-<b class="fc">&nbsp;    id = &quot;FixedModifierOrder&quot;,</b>
+<b class="fc">&nbsp;val MutableCollectionPublicIssue = Issue.create(</b>
+<b class="fc">&nbsp;    id = &quot;MutableCollectionPublic&quot;,</b>
 <b class="fc">&nbsp;    briefDescription = BriefDescription,</b>
 <b class="fc">&nbsp;    explanation = Explanation,</b>
 <b class="fc">&nbsp;    category = Category.PERFORMANCE,</b>
 <b class="fc">&nbsp;    priority = 7,</b>
 <b class="fc">&nbsp;    severity = Severity.ERROR,</b>
 <b class="fc">&nbsp;    implementation = Implementation(</b>
-&nbsp;        FixedModifierOrderDetector::class.java,
+&nbsp;        MutableCollectionPublicDetector::class.java,
 <b class="fc">&nbsp;        Scope.JAVA_FILE_SCOPE</b>
 &nbsp;    )
 &nbsp;)
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 린트의 FixedModifierOrder 규칙을 구현합니다.
+&nbsp; * MutableCollections 접두사
+&nbsp; *
+&nbsp; * kotlinx.collections 패키지에 있는 Collections 들 입니다.
+&nbsp; *
+&nbsp; * @see [https://github.com/Kotlin/kotlinx.collections.immutable]
+&nbsp; */
+<b class="fc">&nbsp;private val MutableNames = listOf(</b>
+<b class="fc">&nbsp;    &quot;Mutable&quot;,</b>
+<b class="fc">&nbsp;    &quot;PersistentCollection.Builder&quot;,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackQuack 린트의 MutableCollectionPublic 규칙을 구현합니다.
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트 검사를 진행합니다.
 &nbsp; *
-&nbsp; * 1. 컴포저블 함수여야 함
-&nbsp; * 2. 컴포저블을 방출하는 역할이여야 함
+&nbsp; * 1. MutableCollections 에서 public 을 사용할 시
 &nbsp; *
-&nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
-&nbsp; *
-&nbsp; * 1. 컴포저블 함수에서 첫 번째 인자가 Modifier 타입 변수가 아닐 경우 (Modifier 타입 변수가 인자로 없는 경우는 고려하지 않음)
-&nbsp; *
-&nbsp; * 현재 이 규칙은 인자 타입의 이름만을 이용하여 검사하도록 구현됐습니다.
-&nbsp; * 따라서 아래와 같이 첫 번째 인자의 타입 네임을 체크하여
-&nbsp; * 조건에 부합되지 않을 경우 린트 에러가 발생합니다.
+&nbsp; * 현재 이 규칙은 MutableCollections 변수의 접근 제어 범위(visibility) 가 public 인지 검사하도록 구현됐습니다.
+&nbsp; * 따라서 아래와 같이 MutableCollections 접근 제어 범위가 public 일 시
+&nbsp; * 린트 에러가 발생합니다.
 &nbsp; *
 &nbsp; * ```
-&nbsp; * @Composable
-&nbsp; * fun MyComposable(wrapperModifier: WrapperModifier, modifier: Modifier) {}
-&nbsp; * //                                ~~~~~~~~~~~~~~~ &lt;- 첫 번째 인자 타입이 Modifier 가 아님
-&nbsp; * // 첫 번째 인자 타입이 Modifier 가 아님을 인지하고 린트 에러가 발생함
+&nbsp; * val variableName: MutableCollection&lt;Any&gt; = emptyList()
+&nbsp;//     ~~~~~~~~~~~~ &lt;- MutableCollections 의 접근 제어가 public 으로 감지됨
 &nbsp; * ```
-&nbsp; *
-&nbsp; * 인자 타입의 패키지를 이용하여 검사하는 것으로 구현이 개선돼야 합니다.
+&nbsp; * TODO internal val variableName: MutableCollection&lt;Any&gt; &lt;- internal 은 private 으로 감지됨
+&nbsp; *      internal 에 대해서는 모니터링 필요
 &nbsp; */
-&nbsp;class FixedModifierOrderDetector : Detector(), SourceCodeScanner {
-&nbsp;    override fun getApplicableUastTypes() = listOf(UMethod::class.java)
+&nbsp;class MutableCollectionPublicDetector : Detector(), SourceCodeScanner {
+&nbsp;    override fun getApplicableUastTypes() = listOf(
+&nbsp;        UDeclaration::class.java,
+&nbsp;    )
 &nbsp;
 &nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {
-&nbsp;        override fun visitMethod(node: UMethod) {
-&nbsp;            if (!node.isComposable || !node.isReturnsUnit) return
+&nbsp;        override fun visitDeclaration(node: UDeclaration) {
+&nbsp;            // Kotlin 특성 상 field 이외의 것 (ex. getter, setter 등) 도 체크하므로 해당 내용만 체크하도록 처리
+&nbsp;            if (node !is KotlinUField) return
 &nbsp;
-&nbsp;            // 함수 내에 Modifier 타입 파라미터가 존재하는지 확인
-&nbsp;            val modifierParameterExists = node.uastParameters.any { parameter -&gt;
-&nbsp;                (parameter.sourcePsi as? KtParameter)?.typeReference?.text == &quot;Modifier&quot;
+&nbsp;            val property = node.sourcePsi as? KtProperty
+&nbsp;            val propertyType = property?.typeReference ?: return
+&nbsp;            val propertyTypeName = propertyType.text
+&nbsp;            val isMutable = MutableNames.any { immutableName -&gt;
+&nbsp;                propertyTypeName.startsWith(immutableName)
 &nbsp;            }
 &nbsp;
-&nbsp;            val firstParameter =
-&nbsp;                node.uastParameters.firstOrNull()?.sourcePsi as? KtParameter ?: return
-&nbsp;            val firstParameterType = firstParameter.typeReference ?: return
-&nbsp;            val firstParameterTypeName = firstParameterType.text ?: return
-&nbsp;
-&nbsp;            // Modifier 타입 파라미터가 존재하는데, 첫 번쨰 인자 타입이 Modifier 가 아닌 경우 에러 발생
-&nbsp;            if (modifierParameterExists &amp;&amp; firstParameterTypeName != &quot;Modifier&quot;) {
-&nbsp;                return context.report(
-&nbsp;                    issue = FixedModifierOrderIssue,
-&nbsp;                    scope = firstParameterType,
-&nbsp;                    location = context.getNameLocation(firstParameterType),
+&nbsp;            // mutable Collection 인 경우 &amp;&amp; PUBLIC 인 경우
+&nbsp;            if (isMutable &amp;&amp; property.isPublic) {
+&nbsp;                context.report(
+&nbsp;                    issue = MutableCollectionPublicIssue,
+&nbsp;                    scope = propertyType,
+&nbsp;                    location = context.getNameLocation(propertyType),
 &nbsp;                    message = Explanation,
 &nbsp;                )
 &nbsp;            }
@@ -216,7 +219,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>

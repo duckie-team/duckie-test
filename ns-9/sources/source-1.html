@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BuildConfig</title>
+  <title>Coverage Report > BaseActivity</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,15 +21,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.playground</a>
 </div>
 
-<h1>Coverage Summary for Class: BuildConfig (team.duckie.quackquack.playground)</h1>
+<h1>Coverage Summary for Class: BaseActivity (team.duckie.quackquack.playground)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -48,13 +45,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">BuildConfig</td>
+  <td class="name">BaseActivity</td>
 <td class="coverageStat">
   <span class="percent">
     0%
   </span>
   <span class="absValue">
-    (0/1)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -62,10 +59,28 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/1)
+    (0/2)
   </span>
 </td>
-    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/55)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BaseActivity$isDarkMode$2</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -82,14 +97,139 @@ Current scope:     <a href="../../index.html">all classes</a>
     (0/2)
   </span>
 </td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">BaseActivity$onCreate$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/78)
+  </span>
+</td>
 </tr>
-
 </table>
 
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [BaseActivity.kt] created by Ji Sungbin on 22. 8. 31. 오전 7:21
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.playground
+&nbsp;
+&nbsp;import android.content.res.Configuration
+&nbsp;import android.graphics.Color
+&nbsp;import android.os.Bundle
+&nbsp;import android.view.WindowManager
+&nbsp;import androidx.activity.ComponentActivity
+&nbsp;import androidx.activity.addCallback
+&nbsp;import androidx.core.view.WindowCompat
+&nbsp;import land.sungbin.systemuicontroller.setSystemBarsColor
+&nbsp;
+<b class="nc">&nbsp;open class BaseActivity : ComponentActivity() {</b>
+<b class="nc">&nbsp;    private val isDarkMode by lazy {</b>
+<b class="nc">&nbsp;        val uiMode = resources.configuration.uiMode</b>
+<b class="nc">&nbsp;        (uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState)</b>
+<b class="nc">&nbsp;        window.addFlags(</b>
+<b class="nc">&nbsp;            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS</b>
+&nbsp;        )
+<b class="nc">&nbsp;        WindowCompat.setDecorFitsSystemWindows(window, false)</b>
+<b class="nc">&nbsp;        setSystemBarsColor(</b>
+<b class="nc">&nbsp;            color = Color.TRANSPARENT,</b>
+<b class="nc">&nbsp;            darkIcons = !isDarkMode</b>
+&nbsp;        )
+<b class="nc">&nbsp;        onBackPressedDispatcher.addCallback(</b>
+<b class="nc">&nbsp;            owner = this,</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            finish()</b>
+<b class="nc">&nbsp;            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -111,7 +251,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>

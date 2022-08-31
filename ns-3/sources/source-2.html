@@ -1,0 +1,325 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ComposableUtilsKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.common.lint.compose</a>
+</div>
+
+<h1>Coverage Summary for Class: ComposableUtilsKt (team.duckie.quackquack.common.lint.compose)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">ComposableUtilsKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    28.6%
+  </span>
+  <span class="absValue">
+    (2/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    3.3%
+  </span>
+  <span class="absValue">
+    (2/60)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    9.4%
+  </span>
+  <span class="absValue">
+    (3/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    8.9%
+  </span>
+  <span class="absValue">
+    (25/280)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [ComposableUtils.kt] created by Ji Sungbin on 22. 8. 18. 오후 10:32
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;// TAKEN FROM: https://github.com/androidx/androidx/tree/androidx-main/compose/lint/common/src/main/java/androidx/compose/lint
+&nbsp;
+&nbsp;@file:Suppress(&quot;unused&quot;)
+&nbsp;
+&nbsp;package team.duckie.quackquack.common.lint.compose
+&nbsp;
+&nbsp;import com.intellij.lang.java.JavaLanguage
+&nbsp;import com.intellij.psi.PsiMethod
+&nbsp;import com.intellij.psi.PsiParameter
+&nbsp;import com.intellij.psi.impl.compiled.ClsParameterImpl
+&nbsp;import com.intellij.psi.impl.light.LightParameter
+&nbsp;import kotlinx.metadata.jvm.annotations
+&nbsp;import org.jetbrains.kotlin.psi.KtAnnotated
+&nbsp;import org.jetbrains.kotlin.psi.KtFunction
+&nbsp;import org.jetbrains.kotlin.psi.KtProperty
+&nbsp;import org.jetbrains.kotlin.psi.KtTypeReference
+&nbsp;import org.jetbrains.kotlin.psi.psiUtil.getParentOfType
+&nbsp;import org.jetbrains.uast.UAnnotation
+&nbsp;import org.jetbrains.uast.UAnonymousClass
+&nbsp;import org.jetbrains.uast.UCallExpression
+&nbsp;import org.jetbrains.uast.UDeclaration
+&nbsp;import org.jetbrains.uast.UElement
+&nbsp;import org.jetbrains.uast.UExpression
+&nbsp;import org.jetbrains.uast.ULambdaExpression
+&nbsp;import org.jetbrains.uast.UMethod
+&nbsp;import org.jetbrains.uast.UParameter
+&nbsp;import org.jetbrains.uast.UTypeReferenceExpression
+&nbsp;import org.jetbrains.uast.UVariable
+&nbsp;import org.jetbrains.uast.getContainingDeclaration
+&nbsp;import org.jetbrains.uast.getContainingUClass
+&nbsp;import org.jetbrains.uast.getParameterForArgument
+&nbsp;import org.jetbrains.uast.toUElement
+&nbsp;import org.jetbrains.uast.withContainingElements
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this [UExpression] is invoked within the body of a Composable function or
+&nbsp; * lambda.
+&nbsp; *
+&nbsp; * This searches parent declarations until we find a lambda expression or a function, and looks
+&nbsp; * to see if these are Composable.
+&nbsp; */
+<b class="fc">&nbsp;fun UExpression.isInvokedWithinComposable() = ComposableBodyVisitor(this).isComposable()</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this method is @Composable or not
+&nbsp; */
+&nbsp;val PsiMethod.isComposable
+<b class="fc">&nbsp;    get() = annotations.any { annotation -&gt;</b>
+<b class="fc">&nbsp;        annotation.qualifiedName == Names.Runtime.Composable.javaFqn</b>
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this variable&#39;s type is @Composable or not
+&nbsp; */
+&nbsp;val UVariable.isComposable: Boolean // 타입 명시 필수
+&nbsp;    get() {
+<b class="nc">&nbsp;        val annotationOnLambda = when (val initializer = uastInitializer) {</b>
+<b class="nc">&nbsp;            is ULambdaExpression -&gt; {</b>
+<b class="nc">&nbsp;                val source = initializer.sourcePsi</b>
+<b class="nc">&nbsp;                if (source is KtFunction) {</b>
+<b class="nc">&nbsp;                    source.hasComposableAnnotation</b>
+&nbsp;                } else {
+<b class="nc">&nbsp;                    initializer.findAnnotation(Names.Runtime.Composable.javaFqn) != null</b>
+&nbsp;                }
+&nbsp;            }
+<b class="nc">&nbsp;            else -&gt; false</b>
+&nbsp;        }
+<b class="nc">&nbsp;        val annotationOnType = typeReference?.isComposable == true</b>
+<b class="nc">&nbsp;        return annotationOnLambda || annotationOnType</b>
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this parameter&#39;s type is @Composable or not
+&nbsp; */
+&nbsp;private val PsiParameter.isComposable
+<b class="nc">&nbsp;    get() = when {</b>
+<b class="nc">&nbsp;        this is ClsParameterImpl || (this is LightParameter &amp;&amp; this.language is JavaLanguage) -&gt; {</b>
+<b class="nc">&nbsp;            val containingMethod = getParentOfType&lt;PsiMethod&gt;(true)</b>
+<b class="nc">&nbsp;            val kmFunction = containingMethod!!.toKmFunction()</b>
+&nbsp;
+<b class="nc">&nbsp;            val kmValueParameter = kmFunction?.valueParameters?.find { parameter -&gt;</b>
+<b class="nc">&nbsp;                parameter.name == name</b>
+&nbsp;            }
+&nbsp;
+<b class="nc">&nbsp;            kmValueParameter?.type?.annotations?.find { annotation -&gt;</b>
+<b class="nc">&nbsp;                annotation.className == Names.Runtime.Composable.kmClassName</b>
+&nbsp;            } != null
+&nbsp;        }
+<b class="nc">&nbsp;        else -&gt; (toUElement() as UParameter).typeReference!!.isComposable</b>
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this lambda expression is @Composable or not
+&nbsp; */
+&nbsp;val ULambdaExpression.isComposable
+<b class="nc">&nbsp;    get() = when (val lambdaParent = uastParent) {</b>
+<b class="nc">&nbsp;        is UCallExpression -&gt; {</b>
+<b class="nc">&nbsp;            val parameter = lambdaParent.getParameterForArgument(this)</b>
+<b class="nc">&nbsp;            parameter?.isComposable == true</b>
+&nbsp;        }
+<b class="nc">&nbsp;        is UVariable -&gt; {</b>
+<b class="nc">&nbsp;            lambdaParent.isComposable</b>
+&nbsp;        }
+<b class="nc">&nbsp;        else -&gt; false</b>
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * Helper class that visits parent declarations above the provided [expression], until it
+&nbsp; * finds a lambda or method. This &#39;boundary&#39; is used as the indicator for whether this
+&nbsp; * [expression] can be considered to be inside a Composable body or not.
+&nbsp; *
+&nbsp; * @see isComposable
+&nbsp; * @see parentUElements
+&nbsp; */
+&nbsp;private class ComposableBodyVisitor(
+&nbsp;    private val expression: UExpression,
+&nbsp;) {
+&nbsp;    /**
+&nbsp;     * @return whether the body can be considered Composable or not
+&nbsp;     */
+&nbsp;    fun isComposable() = when (val element = parentUElements.last()) {
+&nbsp;        is UMethod -&gt; element.isComposable
+&nbsp;        is ULambdaExpression -&gt; element.isComposable
+&nbsp;        else -&gt; false
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns all parent [UElement]s until and including the boundary lambda / method.
+&nbsp;     */
+&nbsp;    fun parentUElements() = parentUElements
+&nbsp;
+&nbsp;    /**
+&nbsp;     * The outermost UElement that corresponds to the surrounding UDeclaration that contains
+&nbsp;     * [expression], with the following special cases:
+&nbsp;     *
+&nbsp;     * - if the containing UDeclaration is a local property, we ignore it and search above as
+&nbsp;     * it still could be created in the context of a Composable body
+&nbsp;     * - if the containing UDeclaration is an anonymous class (object { }), we ignore it and
+&nbsp;     * search above as it still could be created in the context of a Composable body
+&nbsp;     */
+&nbsp;    private val boundaryUElement by lazy {
+&nbsp;        var containingDeclaration = expression.getContainingDeclaration()
+&nbsp;
+&nbsp;        fun UDeclaration.isLocalProperty() = (sourcePsi as? KtProperty)?.isLocal == true
+&nbsp;        fun UDeclaration.isAnonymousClass() = this is UAnonymousClass
+&nbsp;        fun UDeclaration.isPropertyInsideAnonymousClass() =
+&nbsp;            getContainingUClass()?.isAnonymousClass() == true
+&nbsp;
+&nbsp;        fun UDeclaration.isContainingDeclaration() =
+&nbsp;            isLocalProperty() || isAnonymousClass() || isPropertyInsideAnonymousClass()
+&nbsp;
+&nbsp;        while (containingDeclaration != null &amp;&amp; containingDeclaration.isContainingDeclaration()) {
+&nbsp;            containingDeclaration = containingDeclaration.getContainingDeclaration()
+&nbsp;        }
+&nbsp;
+&nbsp;        containingDeclaration
+&nbsp;    }
+&nbsp;
+&nbsp;    private val parentUElements by lazy {
+&nbsp;        val elements = mutableListOf&lt;UElement&gt;()
+&nbsp;
+&nbsp;        for (element in expression.withContainingElements) {
+&nbsp;            elements += element
+&nbsp;            when (element) {
+&nbsp;                is ULambdaExpression -&gt; break
+&nbsp;                is UMethod -&gt; break
+&nbsp;                boundaryUElement -&gt; break
+&nbsp;            }
+&nbsp;        }
+&nbsp;        elements
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this type reference is @Composable or not
+&nbsp; */
+&nbsp;private val UTypeReferenceExpression.isComposable: Boolean // 타입 명시 필수
+&nbsp;    get() {
+<b class="nc">&nbsp;        if (type.hasAnnotation(Names.Runtime.Composable.javaFqn)) return true</b>
+<b class="nc">&nbsp;        return (sourcePsi as? KtTypeReference)?.hasComposableAnnotation == true</b>
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether this annotated declaration has a Composable annotation
+&nbsp; */
+&nbsp;private val KtAnnotated.hasComposableAnnotation
+<b class="nc">&nbsp;    get() = annotationEntries.any { annotationEntry -&gt;</b>
+<b class="nc">&nbsp;        (annotationEntry.toUElement() as UAnnotation).qualifiedName == Names.Runtime.Composable.javaFqn</b>
+&nbsp;    }
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
+</div>
+</body>
+</html>

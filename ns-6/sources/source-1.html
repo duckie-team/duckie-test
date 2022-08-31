@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ComposeIssueRegistry</title>
+  <title>Coverage Report > CoreIssueRegistry</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.lint.compose</a>
+    <a href="../index.html">team.duckie.quackquack.lint.core</a>
 </div>
 
-<h1>Coverage Summary for Class: ComposeIssueRegistry (team.duckie.quackquack.lint.compose)</h1>
+<h1>Coverage Summary for Class: CoreIssueRegistry (team.duckie.quackquack.lint.core)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ComposeIssueRegistry</td>
+  <td class="name">CoreIssueRegistry</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -71,7 +71,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/10)
+    (0/9)
   </span>
 </td>
 <td class="coverageStat">
@@ -79,7 +79,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/42)
+    (0/31)
   </span>
 </td>
 </tr>
@@ -94,15 +94,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [PreferredImmutableCollectionsIssueRegistry.kt] created by Ji Sungbin on 22. 8. 19. 오전 9:13
+&nbsp; * [CoreIssueRegistry.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:57
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;@file:Suppress(&quot;UnstableApiUsage&quot;)
-&nbsp;
-&nbsp;package team.duckie.quackquack.lint.compose
+&nbsp;package team.duckie.quackquack.lint.core
 &nbsp;
 &nbsp;import com.android.tools.lint.client.api.IssueRegistry
 &nbsp;import com.android.tools.lint.client.api.Vendor
@@ -110,14 +108,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Detector
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 의 Jetpack Compose 카테고리 린트 [Detector] 들을
+&nbsp; * QuackQuack 의 Core 카테고리 린트 [Detector] 들을
 &nbsp; * 린트 시스템 등록해 주는 [IssueRegistry] 클래스
 &nbsp; */
-&nbsp;// NOTE: 상수 값들 하드코딩 안하면 빌드 타임에서 레퍼런스를 참조하지 못해 빌드 에러뜸
-<b class="nc">&nbsp;class ComposeIssueRegistry : IssueRegistry() {</b>
+&nbsp;// 상수 값들 하드코딩 안하면 빌드 타임에서 레퍼런스를 참조하지 못해 빌드 에러뜸
+<b class="nc">&nbsp;class CoreIssueRegistry : IssueRegistry() {</b>
 <b class="nc">&nbsp;    override val issues = listOf(</b>
-<b class="nc">&nbsp;        PreferredImmutableCollectionsIssue,</b>
-<b class="nc">&nbsp;        FixedModifierOrderIssue,</b>
+<b class="nc">&nbsp;        MutableCollectionPublicIssue,</b>
 &nbsp;    )
 &nbsp;
 <b class="nc">&nbsp;    override val api = CURRENT_API</b>
@@ -153,7 +150,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>

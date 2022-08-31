@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackWidth</title>
+  <title>Coverage Report > SurfaceKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.constant</a>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackWidth (team.duckie.quackquack.ui.constant)</h1>
+<h1>Coverage Summary for Class: SurfaceKt (team.duckie.quackquack.ui.component)</h1>
 
 <table class="coverageStats">
 
@@ -45,16 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackWidth</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
+  <td class="name">SurfaceKt</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -68,93 +59,29 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/84)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/375)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">QuackWidth$Custom</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
+    <td class="name">SurfaceKt$QuackSurface$1</td>
     <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/8)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackWidth$Fill</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackWidth$Wrap</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -163,16 +90,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/4)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
@@ -180,7 +98,23 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/16)
+    (0/84)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/375)
   </span>
 </td>
 </tr>
@@ -194,34 +128,81 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [size.kt] created by Ji Sungbin on 22. 8. 15. 오전 1:15
+&nbsp; * [surface.kt] created by Ji Sungbin on 22. 8. 14. 오후 7:02
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.constant
+&nbsp;package team.duckie.quackquack.ui.component
 &nbsp;
-&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.animation.animateContentSize
+&nbsp;import androidx.compose.foundation.BorderStroke
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.BoxScope
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.graphics.RectangleShape
+&nbsp;import androidx.compose.ui.graphics.Shape
 &nbsp;import androidx.compose.ui.unit.Dp
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import team.duckie.quackquack.ui.animation.quackTween
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;import team.duckie.quackquack.ui.modifier.surface
 &nbsp;
-<b class="nc">&nbsp;@Immutable</b>
-&nbsp;internal sealed class QuackWidth {
-<b class="nc">&nbsp;    object Fill : QuackWidth()</b>
-<b class="nc">&nbsp;    object Wrap : QuackWidth()</b>
-&nbsp;
-&nbsp;    @Immutable
-<b class="nc">&nbsp;    class Custom(val width: Dp) : QuackWidth()</b>
-&nbsp;}
-&nbsp;
-&nbsp;@Immutable
-&nbsp;internal sealed class QuackHeight {
-&nbsp;    object Fill : QuackHeight()
-&nbsp;    object Wrap : QuackHeight()
-&nbsp;
-&nbsp;    @Immutable
-&nbsp;    class Custom(val height: Dp) : QuackHeight()
-&nbsp;}
+&nbsp;/**
+&nbsp; * 모든 Quack 컴포넌트에서 최하위로 사용되는 컴포넌트입니다.
+&nbsp; * 컴포넌트의 기본 모양을 정의합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포저블에 적용할 [Modifier]
+&nbsp; * @param shape 컴포저블의 [Shape]
+&nbsp; * @param backgroundColor 컴포저블의 배경 색상
+&nbsp; * @param border 컴포저블의 테두리.
+&nbsp; * null 이 입력된다면 테두리를 설정하지 않습니다.
+&nbsp; * @param elevation 컴포저블의 그림자 고도
+&nbsp; * @param rippleEnabled 컴포저블이 클릭됐을 때 리플 효과를 적용할지 여부
+&nbsp; * @param rippleColor 컴포저블이 클릭됐을 때 리플 효과의 색상.
+&nbsp; * [rippleEnabled] 이 켜져 있을 때만 사용됩니다.
+&nbsp; * @param onClick 컴포저블이 클릭됐을 때 실행할 람다식
+&nbsp; * @param contentAlignment 컴포저블의 정렬 상태
+&nbsp; * @param content 표시할 컴포저블. BoxScope 를 receive 로 받습니다.
+&nbsp; */
+&nbsp;@Composable
+&nbsp;internal fun QuackSurface(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+<b class="nc">&nbsp;    shape: Shape = RectangleShape,</b>
+<b class="nc">&nbsp;    backgroundColor: QuackColor = QuackColor.Unspecified,</b>
+<b class="nc">&nbsp;    border: BorderStroke? = null,</b>
+<b class="nc">&nbsp;    elevation: Dp = 0.dp,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="nc">&nbsp;    rippleColor: QuackColor = QuackColor.Unspecified,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;    contentAlignment: Alignment = Alignment.Center,</b>
+&nbsp;    content: @Composable BoxScope.() -&gt; Unit,
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    Box(</b>
+<b class="nc">&nbsp;        modifier = modifier</b>
+<b class="nc">&nbsp;            .surface(</b>
+<b class="nc">&nbsp;                shape = shape,</b>
+<b class="nc">&nbsp;                backgroundColor = backgroundColor,</b>
+<b class="nc">&nbsp;                border = border,</b>
+<b class="nc">&nbsp;                elevation = elevation,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .quackClickable(</b>
+<b class="nc">&nbsp;                onClick = onClick,</b>
+<b class="nc">&nbsp;                rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;                rippleColor = rippleColor,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .animateContentSize(</b>
+<b class="nc">&nbsp;                animationSpec = quackTween(),</b>
+&nbsp;            ),
+<b class="nc">&nbsp;        propagateMinConstraints = true,</b>
+&nbsp;        contentAlignment = contentAlignment,
+&nbsp;        content = content,
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
 </code>
 </pre>
 </div>
@@ -245,7 +226,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-29 15:43</div>
+    <div style="float:right;">generated on 2022-08-31 11:53</div>
 </div>
 </body>
 </html>
