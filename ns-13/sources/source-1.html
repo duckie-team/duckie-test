@@ -67,7 +67,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (62/62)
+    (63/63)
   </span>
 </td>
 <td class="coverageStat">
@@ -75,7 +75,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     99.6%
   </span>
   <span class="absValue">
-    (255/256)
+    (278/279)
   </span>
 </td>
 </tr>
@@ -127,18 +127,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    91.4%
+    91.5%
   </span>
   <span class="absValue">
-    (64/70)
+    (65/71)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    97.3%
+    97.6%
   </span>
   <span class="absValue">
-    (257/264)
+    (280/287)
   </span>
 </td>
 </tr>
@@ -164,8 +164,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;package team.duckie.quackquack.ui.typography
 &nbsp;
 &nbsp;import androidx.compose.animation.core.AnimationSpec
+&nbsp;import androidx.compose.animation.core.AnimationVector1D
+&nbsp;import androidx.compose.animation.core.TwoWayConverter
 &nbsp;import androidx.compose.animation.core.animateFloatAsState
 &nbsp;import androidx.compose.animation.core.animateIntAsState
+&nbsp;import androidx.compose.animation.core.animateValueAsState
 &nbsp;import androidx.compose.runtime.Composable
 &nbsp;import androidx.compose.runtime.Immutable
 &nbsp;import androidx.compose.runtime.Stable
@@ -182,7 +185,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.ui.unit.TextUnit
 &nbsp;import androidx.compose.ui.unit.TextUnitType
 &nbsp;import androidx.compose.ui.unit.sp
+&nbsp;import kotlin.math.roundToInt
 &nbsp;import kotlinx.coroutines.flow.combine
+&nbsp;import team.duckie.quackquack.common.AllowMagicNumber
 &nbsp;import team.duckie.quackquack.ui.R
 &nbsp;import team.duckie.quackquack.ui.animation.quackTween
 &nbsp;import team.duckie.quackquack.ui.color.QuackColor
@@ -210,6 +215,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    val weight: FontWeight,</b>
 <b class="fc">&nbsp;    val letterSpacing: TextUnit,</b>
 <b class="fc">&nbsp;    val lineHeight: TextUnit,</b>
+<b class="fc">&nbsp;    val textAlign: TextAlign = TextAlign.Center,</b>
 &nbsp;) {
 &nbsp;    @Stable
 <b class="fc">&nbsp;    private val suit = FontFamily(Font(R.font.suit_variable))</b>
@@ -222,7 +228,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        fontFamily = suit,</b>
 <b class="fc">&nbsp;        fontWeight = weight,</b>
 <b class="fc">&nbsp;        letterSpacing = letterSpacing,</b>
-<b class="fc">&nbsp;        textAlign = TextAlign.Center,</b>
+<b class="fc">&nbsp;        textAlign = textAlign,</b>
 <b class="fc">&nbsp;        lineHeight = lineHeight,</b>
 &nbsp;    )
 &nbsp;
@@ -313,6 +319,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    )
 &nbsp;}
 &nbsp;
+&nbsp;/**
+&nbsp; * TextUnit 에 Long 곱셈을 구현합니다.
+&nbsp; *
+&nbsp; * @receiver 곱셈의 대상이 될 원본 TextUnit
+&nbsp; * @param times 곱할 소숫점 값
+&nbsp; * @return receiver 로 받은 [TextUnit] 의 값에
+&nbsp; * [times] 를 곱한 새로운 [TextUnit] 값
+&nbsp; */
 &nbsp;@Stable
 &nbsp;private operator fun TextUnit.times(times: Long) = TextUnit(
 &nbsp;    value = (value.toDouble() * times.toDouble()).toFloat(),
@@ -321,6 +335,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;/**
 &nbsp; * Float 를 Sp 로 변환합니다.
+&nbsp; *
+&nbsp; * @receiver Sp 로 변환할 [Float]
+&nbsp; * @return receiver 로 받은 [Float] 를 [TextUnit] 중 Sp 로 변환한 값
 &nbsp; */
 &nbsp;@Stable
 &nbsp;private fun Float.toSp() = TextUnit(
@@ -337,6 +354,47 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;private fun &lt;T&gt; State&lt;T&gt;.toFlow() = snapshotFlow { this }
 &nbsp;
 &nbsp;/**
+&nbsp; * TextAlign 의 TwoWayConverter 를 구현합니다.
+&nbsp; *
+&nbsp; * TextAlign 의 생성자와 필드가 다 internal 로 돼있어서
+&nbsp; *
+&nbsp; * ```kotlin
+&nbsp; * value class TextAlign internal constructor(internal val value: Int)
+&nbsp; * ```
+&nbsp; *
+&nbsp; * TextAlign 의 인자 값으로 될 수 있는 1 ~ 6 까지의 Int 값을
+&nbsp; * 애니메이션 하여 각각 값에 맞는 TextAlign 을 찾아서 생성하는
+&nbsp; * 식으로 구현하였습니다.
+&nbsp; */
+&nbsp;private val TextAlign.Companion.VectorConverter
+&nbsp;    get() = object : TwoWayConverter&lt;TextAlign, AnimationVector1D&gt; {
+&nbsp;        override val convertFromVector: (vector: AnimationVector1D) -&gt; TextAlign
+&nbsp;            get() = { vector -&gt;
+&nbsp;                @AllowMagicNumber
+&nbsp;                val index = vector.value.roundToInt().coerceIn(
+&nbsp;                    // TextAlign 의 값이 1 부터 시작
+&nbsp;                    range = 1..6,
+&nbsp;                )
+&nbsp;                values()[index]
+&nbsp;            }
+&nbsp;        override val convertToVector: (value: TextAlign) -&gt; AnimationVector1D
+&nbsp;            get() = { value -&gt;
+&nbsp;                // TextAlign 의 값이 1 부터 시작해서 +1
+&nbsp;                AnimationVector1D(values().indexOf(value) + 1f)
+&nbsp;            }
+&nbsp;    }
+&nbsp;
+&nbsp;/**
+&nbsp; * [Array] 에 대한 component 정의가 5 까지만 있어서
+&nbsp; * 6번째 component 를 추가로 정의합니다.
+&nbsp; *
+&nbsp; * @receiver 구조분해 할당의 대상이 될 Array 객체
+&nbsp; * @return receiver 로 받은 [Array] 의 6번째 요소
+&nbsp; */
+&nbsp;@AllowMagicNumber
+&nbsp;private operator fun &lt;T&gt; Array&lt;T&gt;.component6() = get(6)
+&nbsp;
+&nbsp;/**
 &nbsp; * [QuackTextStyle] 에 변경이 있을 때 애니메이션을 적용합니다.
 &nbsp; *
 &nbsp; * @param targetValue 변경을 감지할 [QuackTextStyle]
@@ -344,7 +402,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; *
 &nbsp; * @return Typography 가 변경됐을 때 변경되는 애니메이션의 [State] 객체
 &nbsp; *
-&nbsp; * // FIXME: 현재 weight 애니메이션이 제대로 적용되지 않습니다.
+&nbsp; * FIXME: 현재 weight 애니메이션이 적용되지 않습니다.
+&nbsp; *        weight 는 100 단위로 증가하기 때문에 100 ~ n00 으로
+&nbsp; *        애니메이션 되는 weight 가 구현돼 있지 않아 생기는
+&nbsp; *        이슈 입니다. 이를 해결하는건 불가능한 것으로 보입니다.
 &nbsp; */
 &nbsp;@Suppress(&quot;UNCHECKED_CAST&quot;)
 &nbsp;@Composable
@@ -372,6 +433,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        targetValue = targetValue.lineHeight.value,
 &nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,
 &nbsp;    ).toFlow()
+&nbsp;    val targetTextAlignAnimationFlow = animateValueAsState(
+&nbsp;        targetValue = targetValue.textAlign,
+&nbsp;        typeConverter = TextAlign.VectorConverter,
+&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;TextAlign&gt;,
+&nbsp;    ).toFlow()
 &nbsp;
 &nbsp;    return combine(
 &nbsp;        targetColorAnimationFlow,
@@ -379,16 +445,27 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        targetWeightAnimationFlow,
 &nbsp;        targetLetterSpacingAnimationFlow,
 &nbsp;        targetLineHeightAnimationFlow,
+&nbsp;        targetTextAlignAnimationFlow,
 &nbsp;    ) { animationFlows -&gt;
-&nbsp;        val (color, size, weight, letterSpacing, lineHeight) = animationFlows
+&nbsp;        val (
+&nbsp;            color,
+&nbsp;            size,
+&nbsp;            weight,
+&nbsp;            letterSpacing,
+&nbsp;            lineHeight,
+&nbsp;            textAlign,
+&nbsp;        ) = animationFlows
 &nbsp;        QuackTextStyle(
 &nbsp;            color = color.value as QuackColor,
 &nbsp;            size = (size.value as Float).toSp(),
 &nbsp;            weight = FontWeight(weight.value as Int),
 &nbsp;            letterSpacing = (letterSpacing.value as Float).toSp(),
 &nbsp;            lineHeight = (lineHeight.value as Float).toSp(),
+&nbsp;            textAlign = textAlign.value as TextAlign,
 &nbsp;        )
-&nbsp;    }.collectAsState(initial = targetValue)
+&nbsp;    }.collectAsState(
+&nbsp;        initial = targetValue,
+&nbsp;    )
 &nbsp;}
 </code>
 </pre>
@@ -413,7 +490,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-31 11:53</div>
+    <div style="float:right;">generated on 2022-09-01 03:54</div>
 </div>
 </body>
 </html>
