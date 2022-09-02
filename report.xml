@@ -383,15 +383,20 @@
 <counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/ImageKt" sourcefilename="image.kt">
+<method name="QuackImage-uVEhdmY" desc="(Landroidx/compose/ui/Modifier;Ljava/lang/Object;JLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V">
+<counter type="INSTRUCTION" missed="71" covered="0"/>
+<counter type="BRANCH" missed="12" covered="0"/>
+<counter type="LINE" missed="11" covered="0"/>
+</method>
 <method name="QuackImage-vhnH_ec" desc="(Lteam/duckie/quackquack/ui/icon/QuackIcon;JLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V">
 <counter type="INSTRUCTION" missed="14" covered="48"/>
 <counter type="BRANCH" missed="5" covered="5"/>
 <counter type="LINE" missed="2" covered="10"/>
 </method>
-<counter type="INSTRUCTION" missed="14" covered="48"/>
-<counter type="BRANCH" missed="5" covered="5"/>
-<counter type="LINE" missed="2" covered="10"/>
-<counter type="METHOD" missed="0" covered="1"/>
+<counter type="INSTRUCTION" missed="85" covered="48"/>
+<counter type="BRANCH" missed="17" covered="5"/>
+<counter type="LINE" missed="13" covered="10"/>
+<counter type="METHOD" missed="1" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/ImageKt$QuackImage$1" sourcefilename="image.kt">
 <method name="invoke" desc="()V">
@@ -404,15 +409,26 @@
 <counter type="LINE" missed="1" covered="0"/>
 <counter type="METHOD" missed="1" covered="0"/>
 </class>
+<class name="team/duckie/quackquack/ui/component/ImageKt$QuackImage$2" sourcefilename="image.kt">
+<method name="invoke" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
 <class name="team/duckie/quackquack/ui/component/SurfaceKt" sourcefilename="surface.kt">
 <method name="QuackSurface-NtTcZSg" desc="(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;JLteam/duckie/quackquack/ui/border/QuackBorder;FZJLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Alignment;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V">
-<counter type="INSTRUCTION" missed="56" covered="105"/>
-<counter type="BRANCH" missed="16" covered="8"/>
-<counter type="LINE" missed="9" covered="21"/>
+<counter type="INSTRUCTION" missed="189" covered="245"/>
+<counter type="BRANCH" missed="62" covered="38"/>
+<counter type="LINE" missed="9" covered="22"/>
 </method>
-<counter type="INSTRUCTION" missed="56" covered="105"/>
-<counter type="BRANCH" missed="16" covered="8"/>
-<counter type="LINE" missed="9" covered="21"/>
+<counter type="INSTRUCTION" missed="189" covered="245"/>
+<counter type="BRANCH" missed="62" covered="38"/>
+<counter type="LINE" missed="9" covered="22"/>
 <counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TabKt" sourcefilename="tab.kt">
@@ -1015,39 +1031,40 @@
 <counter type="LINE" missed="3" covered="13"/>
 </sourcefile>
 <sourcefile name="surface.kt">
+<line nr="66" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="67" mi="6" ci="0" mb="2" cb="0"/>
 <line nr="68" mi="7" ci="0" mb="2" cb="0"/>
 <line nr="69" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="70" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="70" mi="4" ci="0" mb="0" cb="0"/>
 <line nr="71" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="72" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="72" mi="7" ci="0" mb="2" cb="0"/>
 <line nr="73" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="74" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="75" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="76" mi="4" ci="5" mb="1" cb="1"/>
-<line nr="78" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="79" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="82" mi="0" ci="14" mb="0" cb="2"/>
-<line nr="83" mi="0" ci="5" mb="0" cb="2"/>
-<line nr="84" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="86" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="89" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="74" mi="4" ci="5" mb="4" cb="2"/>
+<line nr="76" mi="109" ci="140" mb="41" cb="29"/>
+<line nr="77" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="78" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="80" mi="0" ci="14" mb="0" cb="2"/>
+<line nr="81" mi="0" ci="5" mb="0" cb="2"/>
+<line nr="82" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="87" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="89" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="90" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="91" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="92" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="93" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="94" mi="2" ci="9" mb="1" cb="3"/>
+<line nr="91" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="92" mi="2" ci="9" mb="1" cb="3"/>
+<line nr="93" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="95" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="96" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="97" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="98" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="99" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="100" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="102" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="103" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="105" mi="0" ci="16" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="56" covered="105"/>
-<counter type="BRANCH" missed="16" covered="8"/>
-<counter type="LINE" missed="9" covered="21"/>
+<line nr="98" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="100" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="103" mi="0" ci="16" mb="0" cb="0"/>
+<line nr="107" mi="25" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="189" covered="245"/>
+<counter type="BRANCH" missed="62" covered="38"/>
+<counter type="LINE" missed="9" covered="22"/>
 </sourcefile>
 <sourcefile name="button.kt">
 <line nr="41" mi="0" ci="2" mb="0" cb="0"/>
@@ -1215,22 +1232,34 @@
 <counter type="LINE" missed="6" covered="154"/>
 </sourcefile>
 <sourcefile name="image.kt">
-<line nr="34" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="35" mi="4" ci="5" mb="1" cb="1"/>
-<line nr="35" mi="0" ci="0" mb="0" cb="0"/>
-<line nr="36" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="37" mi="1" ci="6" mb="1" cb="3"/>
-<line nr="38" mi="1" ci="5" mb="1" cb="1"/>
-<line nr="39" mi="0" ci="12" mb="0" cb="0"/>
-<line nr="40" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="42" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="43" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="45" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="46" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="47" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="14" covered="48"/>
-<counter type="BRANCH" missed="5" covered="5"/>
-<counter type="LINE" missed="3" covered="10"/>
+<line nr="35" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="36" mi="4" ci="5" mb="1" cb="1"/>
+<line nr="36" mi="0" ci="0" mb="0" cb="0"/>
+<line nr="37" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="38" mi="1" ci="6" mb="1" cb="3"/>
+<line nr="39" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="40" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="41" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="46" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="47" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="48" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="66" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="68" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="69" mi="9" ci="0" mb="2" cb="0"/>
+<line nr="69" mi="0" ci="0" mb="0" cb="0"/>
+<line nr="70" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="71" mi="7" ci="0" mb="4" cb="0"/>
+<line nr="72" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="73" mi="15" ci="0" mb="0" cb="0"/>
+<line nr="74" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="76" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="77" mi="16" ci="0" mb="0" cb="0"/>
+<line nr="78" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="85" covered="48"/>
+<counter type="BRANCH" missed="17" covered="5"/>
+<counter type="LINE" missed="15" covered="10"/>
 </sourcefile>
 <sourcefile name="typography.kt">
 <line nr="30" mi="7" ci="0" mb="2" cb="0"/>
@@ -1293,11 +1322,11 @@
 <counter type="BRANCH" missed="48" covered="0"/>
 <counter type="LINE" missed="56" covered="0"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="1462" covered="1985"/>
-<counter type="BRANCH" missed="297" covered="135"/>
-<counter type="LINE" missed="188" covered="317"/>
-<counter type="METHOD" missed="27" covered="35"/>
-<counter type="CLASS" missed="5" covered="20"/>
+<counter type="INSTRUCTION" missed="1666" covered="2125"/>
+<counter type="BRANCH" missed="355" covered="165"/>
+<counter type="LINE" missed="200" covered="318"/>
+<counter type="METHOD" missed="29" covered="35"/>
+<counter type="CLASS" missed="6" covered="20"/>
 </package>
 <package name="team/duckie/quackquack/lint/quack">
 <class name="team/duckie/quackquack/lint/quack/DesignSystemDetector" sourcefilename="DesignSystemDetector.kt">
@@ -5808,10 +5837,10 @@
 <counter type="METHOD" missed="4" covered="6"/>
 <counter type="CLASS" missed="3" covered="6"/>
 </package>
-<counter type="INSTRUCTION" missed="9034" covered="4389"/>
-<counter type="BRANCH" missed="1060" covered="282"/>
-<counter type="LINE" missed="1142" covered="868"/>
-<counter type="METHOD" missed="268" covered="168"/>
-<counter type="CLASS" missed="115" covered="82"/>
+<counter type="INSTRUCTION" missed="9238" covered="4529"/>
+<counter type="BRANCH" missed="1118" covered="312"/>
+<counter type="LINE" missed="1154" covered="869"/>
+<counter type="METHOD" missed="270" covered="168"/>
+<counter type="CLASS" missed="116" covered="82"/>
 </report>
 
