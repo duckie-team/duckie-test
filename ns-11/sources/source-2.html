@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > LiveLiterals</title>
+  <title>Coverage Report > QuackBorderKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.icon</a>
+    <a href="../index.html">team.duckie.quackquack.ui.border</a>
 </div>
 
-<h1>Coverage Summary for Class: LiveLiterals (team.duckie.quackquack.ui.icon)</h1>
+<h1>Coverage Summary for Class: QuackBorderKt (team.duckie.quackquack.ui.border)</h1>
 
 <table class="coverageStats">
 
@@ -29,23 +29,226 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 <th class="coverageStat 
 ">
+  Method, %
+</th>
+<th class="coverageStat 
+">
   Branch, %
 </th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuackBorderKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.8%
+  </span>
+  <span class="absValue">
+    (15/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.2%
+  </span>
+  <span class="absValue">
+    (55/61)
+  </span>
+</td>
 </tr>
   <tr>
-    <td class="name">LiveLiterals$QuackIconKt</td>
+    <td class="name">QuackBorderKt$animateQuackBorderAsState$$inlined$animateQuackAsState$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">QuackBorderKt$animateQuackBorderAsState$$inlined$animateQuackAsState$1$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">QuackBorderKt$animateQuackBorderAsState$$inlined$animateQuackAsState$1$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
-    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (2/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.8%
+  </span>
+  <span class="absValue">
+    (15/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.2%
+  </span>
+  <span class="absValue">
+    (55/61)
+  </span>
+</td>
 </tr>
 </table>
 
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [QuackBorder.kt] created by Ji Sungbin on 22. 9. 1. 오후 10:27
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.border
+&nbsp;
+&nbsp;import androidx.compose.animation.core.AnimationSpec
+&nbsp;import androidx.compose.animation.core.animateDpAsState
+&nbsp;import androidx.compose.foundation.BorderStroke
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.runtime.Stable
+&nbsp;import androidx.compose.runtime.State
+&nbsp;import androidx.compose.ui.graphics.SolidColor
+&nbsp;import androidx.compose.ui.unit.Dp
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import team.duckie.quackquack.ui.animation.animateQuackAsState
+&nbsp;import team.duckie.quackquack.ui.animation.quackSpec
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.color.animateQuackColorAsState
+&nbsp;
+&nbsp;/**
+&nbsp; * [BorderStroke] 에서 [BorderStroke.brush] 값을 [QuackColor] 로 받기 위한
+&nbsp; * [BorderStroke] 의 wrapper 클래스 입니다.
+&nbsp; *
+&nbsp; * @param width border 의 굵기
+&nbsp; * @param color border 의 색상
+&nbsp; */
+&nbsp;// 기본 값으로 정해진게 없기에 internal constructor
+&nbsp;@Immutable
+&nbsp;internal class QuackBorder(
+&nbsp;    val width: Dp = 1.dp,
+&nbsp;    val color: QuackColor,
+&nbsp;) {
+&nbsp;    /**
+&nbsp;     * [QuackBorder] 를 [BorderStroke] 로 변환합니다.
+&nbsp;     *
+&nbsp;     * @return 변환된 [BorderStroke]
+&nbsp;     */
+&nbsp;    @Stable
+&nbsp;    fun asComposeBorder() = BorderStroke(
+&nbsp;        width = width,
+&nbsp;        brush = SolidColor(
+&nbsp;            value = color.value,
+&nbsp;        ),
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBorder] 의 변화에 애니메이션을 적용합니다.
+&nbsp; * [QuackBorder.width] 와 [QuackBorder.color] 모두
+&nbsp; * 애니메이션이 적용됩니다.
+&nbsp; *
+&nbsp; * @param targetValue 애니메이션을 적용할 [QuackBorder]
+&nbsp; * @param animationSpec 애니메이션에 사용할 [AnimationSpec]
+&nbsp; */
+&nbsp;@Suppress(&quot;UNCHECKED_CAST&quot;)
+&nbsp;@Composable
+&nbsp;internal fun animateQuackBorderAsState(
+&nbsp;    targetValue: QuackBorder,
+<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackSpec(),</b>
+<b class="nc">&nbsp;): State&lt;QuackBorder&gt; {</b>
+<b class="fc">&nbsp;    val widthAnimationState = animateDpAsState(</b>
+<b class="fc">&nbsp;        targetValue = targetValue.width,</b>
+<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Dp&gt;,</b>
+&nbsp;    )
+<b class="fc">&nbsp;    val colorAnimationState = animateQuackColorAsState(</b>
+<b class="fc">&nbsp;        targetValue = targetValue.color,</b>
+<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;QuackColor&gt;,</b>
+&nbsp;    )
+<b class="pc">&nbsp;    return animateQuackAsState(</b>
+&nbsp;        initialValue = targetValue,
+<b class="fc">&nbsp;        animationStates = listOf(</b>
+<b class="fc">&nbsp;            widthAnimationState,</b>
+<b class="fc">&nbsp;            colorAnimationState,</b>
+&nbsp;        ),
+&nbsp;        targetBuilder = { animationFlows -&gt;
+<b class="fc">&nbsp;            val (width, color) = animationFlows</b>
+<b class="fc">&nbsp;            QuackBorder(</b>
+<b class="fc">&nbsp;                width = width as Dp,</b>
+<b class="fc">&nbsp;                color = color as QuackColor,</b>
+&nbsp;            )
+&nbsp;        },
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -67,7 +270,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-01 03:54</div>
+    <div style="float:right;">generated on 2022-09-02 02:30</div>
 </div>
 </body>
 </html>

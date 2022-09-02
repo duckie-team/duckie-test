@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > SpecKt</title>
+  <title>Coverage Report > ColorKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.animation</a>
+    <a href="../index.html">team.duckie.quackquack.playground.theme</a>
 </div>
 
-<h1>Coverage Summary for Class: SpecKt (team.duckie.quackquack.ui.animation)</h1>
+<h1>Coverage Summary for Class: ColorKt (team.duckie.quackquack.playground.theme)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">SpecKt</td>
+  <td class="name">ColorKt</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    0%
   </span>
   <span class="absValue">
-    (2/3)
+    (0/57)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (4/4)
+    (0/57)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (33/33)
+    (0/228)
   </span>
 </td>
 </tr>
@@ -91,46 +91,78 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp; /*
+<code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [spec.kt] created by Ji Sungbin on 22. 8. 14. 오후 8:13
+&nbsp; * [color.kt] created by Ji Sungbin on 22. 8. 31. 오전 7:13
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.animation
+&nbsp;package team.duckie.quackquack.playground.theme
 &nbsp;
-&nbsp;import androidx.compose.animation.core.FastOutSlowInEasing
-&nbsp;import androidx.compose.animation.core.TweenSpec
-&nbsp;import androidx.compose.animation.core.tween
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.runtime.getValue
-&nbsp;import androidx.compose.runtime.mutableStateOf
-&nbsp;import androidx.compose.runtime.setValue
+&nbsp;import androidx.compose.ui.graphics.Color
 &nbsp;
-&nbsp;/**
-&nbsp; * 덕키에서 사용할 애니메이션의 지속 시간
-&nbsp; *
-&nbsp; * 애니메이션 디버깅 용도로 수정 허용. Transition API 를 사용하는
-&nbsp; * 방법도 있지만 컴포즈에서 Preview 가 최적하게 돌아가지 않아
-&nbsp; * 수동 애니메이션 디버깅을 선호함.
-&nbsp; *
-&nbsp; * Playground 에서 자유로운 디버깅을 위해 public 으로 설정함
-&nbsp; */
-<b class="fc">&nbsp;var QuackAnimationMills by mutableStateOf(250)</b>
+<b class="nc">&nbsp;val md_theme_light_primary = Color(0xFF954A00)</b>
+<b class="nc">&nbsp;val md_theme_light_onPrimary = Color(0xFFFFFFFF)</b>
+<b class="nc">&nbsp;val md_theme_light_primaryContainer = Color(0xFFFFDCC6)</b>
+<b class="nc">&nbsp;val md_theme_light_onPrimaryContainer = Color(0xFF301400)</b>
+<b class="nc">&nbsp;val md_theme_light_secondary = Color(0xFF755845)</b>
+<b class="nc">&nbsp;val md_theme_light_onSecondary = Color(0xFFFFFFFF)</b>
+<b class="nc">&nbsp;val md_theme_light_secondaryContainer = Color(0xFFFFDCC6)</b>
+<b class="nc">&nbsp;val md_theme_light_onSecondaryContainer = Color(0xFF2B1708)</b>
+<b class="nc">&nbsp;val md_theme_light_tertiary = Color(0xFF5F6135)</b>
+<b class="nc">&nbsp;val md_theme_light_onTertiary = Color(0xFFFFFFFF)</b>
+<b class="nc">&nbsp;val md_theme_light_tertiaryContainer = Color(0xFFE5E6AE)</b>
+<b class="nc">&nbsp;val md_theme_light_onTertiaryContainer = Color(0xFF1C1D00)</b>
+<b class="nc">&nbsp;val md_theme_light_error = Color(0xFFBA1A1A)</b>
+<b class="nc">&nbsp;val md_theme_light_errorContainer = Color(0xFFFFDAD6)</b>
+<b class="nc">&nbsp;val md_theme_light_onError = Color(0xFFFFFFFF)</b>
+<b class="nc">&nbsp;val md_theme_light_onErrorContainer = Color(0xFF410002)</b>
+<b class="nc">&nbsp;val md_theme_light_background = Color(0xFFFFFBFF)</b>
+<b class="nc">&nbsp;val md_theme_light_onBackground = Color(0xFF201A17)</b>
+<b class="nc">&nbsp;val md_theme_light_surface = Color(0xFFFFFBFF)</b>
+<b class="nc">&nbsp;val md_theme_light_onSurface = Color(0xFF201A17)</b>
+<b class="nc">&nbsp;val md_theme_light_surfaceVariant = Color(0xFFF3DED3)</b>
+<b class="nc">&nbsp;val md_theme_light_onSurfaceVariant = Color(0xFF52443B)</b>
+<b class="nc">&nbsp;val md_theme_light_outline = Color(0xFF84746A)</b>
+<b class="nc">&nbsp;val md_theme_light_inverseOnSurface = Color(0xFFFBEEE8)</b>
+<b class="nc">&nbsp;val md_theme_light_inverseSurface = Color(0xFF362F2B)</b>
+<b class="nc">&nbsp;val md_theme_light_inversePrimary = Color(0xFFFFB785)</b>
+<b class="nc">&nbsp;val md_theme_light_shadow = Color(0xFF000000)</b>
+<b class="nc">&nbsp;val md_theme_light_surfaceTint = Color(0xFF954A00)</b>
 &nbsp;
-&nbsp;/**
-&nbsp; * 덕키에서 사용할 애니메이션 중 [Tween][TweenSpec] 의 기본 스팩
-&nbsp; *
-&nbsp; * @return 덕키에서 사용할 [TweenSpec] 의 기본 스팩
-&nbsp; */
-&nbsp;@Stable
-<b class="fc">&nbsp;internal fun &lt;T&gt; quackTween() = tween&lt;T&gt;(</b>
-<b class="fc">&nbsp;    durationMillis = QuackAnimationMills,</b>
-<b class="fc">&nbsp;    easing = FastOutSlowInEasing,</b>
-&nbsp;)
+<b class="nc">&nbsp;val md_theme_dark_primary = Color(0xFFFFB785)</b>
+<b class="nc">&nbsp;val md_theme_dark_onPrimary = Color(0xFF502500)</b>
+<b class="nc">&nbsp;val md_theme_dark_primaryContainer = Color(0xFF713700)</b>
+<b class="nc">&nbsp;val md_theme_dark_onPrimaryContainer = Color(0xFFFFDCC6)</b>
+<b class="nc">&nbsp;val md_theme_dark_secondary = Color(0xFFE4BFA8)</b>
+<b class="nc">&nbsp;val md_theme_dark_onSecondary = Color(0xFF422B1B)</b>
+<b class="nc">&nbsp;val md_theme_dark_secondaryContainer = Color(0xFF5B412F)</b>
+<b class="nc">&nbsp;val md_theme_dark_onSecondaryContainer = Color(0xFFFFDCC6)</b>
+<b class="nc">&nbsp;val md_theme_dark_tertiary = Color(0xFFC8CA94)</b>
+<b class="nc">&nbsp;val md_theme_dark_onTertiary = Color(0xFF31320B)</b>
+<b class="nc">&nbsp;val md_theme_dark_tertiaryContainer = Color(0xFF47491F)</b>
+<b class="nc">&nbsp;val md_theme_dark_onTertiaryContainer = Color(0xFFE5E6AE)</b>
+<b class="nc">&nbsp;val md_theme_dark_error = Color(0xFFFFB4AB)</b>
+<b class="nc">&nbsp;val md_theme_dark_errorContainer = Color(0xFF93000A)</b>
+<b class="nc">&nbsp;val md_theme_dark_onError = Color(0xFF690005)</b>
+<b class="nc">&nbsp;val md_theme_dark_onErrorContainer = Color(0xFFFFDAD6)</b>
+<b class="nc">&nbsp;val md_theme_dark_background = Color(0xFF201A17)</b>
+<b class="nc">&nbsp;val md_theme_dark_onBackground = Color(0xFFECE0DA)</b>
+<b class="nc">&nbsp;val md_theme_dark_surface = Color(0xFF201A17)</b>
+<b class="nc">&nbsp;val md_theme_dark_onSurface = Color(0xFFECE0DA)</b>
+<b class="nc">&nbsp;val md_theme_dark_surfaceVariant = Color(0xFF52443B)</b>
+<b class="nc">&nbsp;val md_theme_dark_onSurfaceVariant = Color(0xFFD7C3B7)</b>
+<b class="nc">&nbsp;val md_theme_dark_outline = Color(0xFF9F8D83)</b>
+<b class="nc">&nbsp;val md_theme_dark_inverseOnSurface = Color(0xFF201A17)</b>
+<b class="nc">&nbsp;val md_theme_dark_inverseSurface = Color(0xFFECE0DA)</b>
+<b class="nc">&nbsp;val md_theme_dark_inversePrimary = Color(0xFF954A00)</b>
+<b class="nc">&nbsp;val md_theme_dark_shadow = Color(0xFF000000)</b>
+<b class="nc">&nbsp;val md_theme_dark_surfaceTint = Color(0xFFFFB785)</b>
+&nbsp;
+<b class="nc">&nbsp;val seed = Color(0xFFFF8300)</b>
 </code>
 </pre>
 </div>
@@ -154,7 +186,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-01 03:54</div>
+    <div style="float:right;">generated on 2022-09-02 02:30</div>
 </div>
 </body>
 </html>

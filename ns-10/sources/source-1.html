@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > PaddingKt</title>
+  <title>Coverage Report > BaselineProfileBenchmark</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,18 +18,15 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.constant</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: PaddingKt (team.duckie.quackquack.ui.constant)</h1>
+<h1>Coverage Summary for Class: BaselineProfileBenchmark (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -48,13 +45,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">PaddingKt</td>
+  <td class="name">BaselineProfileBenchmark</td>
 <td class="coverageStat">
   <span class="percent">
     0%
   </span>
   <span class="absValue">
-    (0/1)
+    (0/4)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -62,7 +68,18 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/47)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BaselineProfileBenchmark$startup$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -79,11 +96,38 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/7)
+    (0/10)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/57)
   </span>
 </td>
 </tr>
-
 </table>
 
 <br/>
@@ -94,25 +138,52 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [padding.kt] created by Ji Sungbin on 22. 8. 31. 오전 5:36
+&nbsp; * [BaselineProfileBenchmark.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:50
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.constant
+&nbsp;package team.duckie.quackquack.ui.benchmark
 &nbsp;
-&nbsp;import androidx.compose.foundation.layout.PaddingValues
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.benchmark.macro.BaselineProfileMode
+&nbsp;import androidx.benchmark.macro.CompilationMode
+&nbsp;import androidx.benchmark.macro.StartupMode
+&nbsp;import androidx.benchmark.macro.StartupTimingMetric
+&nbsp;import androidx.benchmark.macro.junit4.MacrobenchmarkRule
+&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
+&nbsp;import org.junit.Rule
+&nbsp;import org.junit.Test
+&nbsp;import org.junit.runner.RunWith
 &nbsp;
-&nbsp;/**
-&nbsp; * 패딩이 없는 상태를 도메인적으로 나타내기 위해 사용됩니다.
-&nbsp; */
-&nbsp;@Stable
-<b class="nc">&nbsp;internal val NoPadding = PaddingValues(</b>
-<b class="nc">&nbsp;    all = 0.dp,</b>
-&nbsp;)
+<b class="nc">&nbsp;@RunWith(AndroidJUnit4::class)</b>
+&nbsp;class BaselineProfileBenchmark {
+&nbsp;    @get:Rule
+<b class="nc">&nbsp;    val benchmarkRule = MacrobenchmarkRule()</b>
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun startupNoCompilation() {
+<b class="nc">&nbsp;        startup(CompilationMode.None())</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun startupBaselineProfile() {
+<b class="nc">&nbsp;        startup(CompilationMode.Partial(baselineProfileMode = BaselineProfileMode.Require))</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun startup(compilationMode: CompilationMode) {
+<b class="nc">&nbsp;        benchmarkRule.measureRepeated(</b>
+<b class="nc">&nbsp;            packageName = AppPackageName,</b>
+<b class="nc">&nbsp;            metrics = listOf(StartupTimingMetric()),</b>
+<b class="nc">&nbsp;            iterations = 10,</b>
+<b class="nc">&nbsp;            startupMode = StartupMode.COLD,</b>
+<b class="nc">&nbsp;            compilationMode = compilationMode</b>
+&nbsp;        ) {
+<b class="nc">&nbsp;            pressHome()</b>
+<b class="nc">&nbsp;            startActivityAndWait()</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -136,7 +207,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-01 03:54</div>
+    <div style="float:right;">generated on 2022-09-02 02:30</div>
 </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackWidth</title>
+  <title>Coverage Report > BuildConfig</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,15 +18,18 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.constant</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackWidth (team.duckie.quackquack.ui.constant)</h1>
+<h1>Coverage Summary for Class: BuildConfig (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -45,16 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackWidth</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
+  <td class="name">BuildConfig</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -71,24 +65,13 @@ Current scope:     <a href="../../index.html">all classes</a>
     (0/2)
   </span>
 </td>
-</tr>
-  <tr>
-    <td class="name">QuackWidth$Custom</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     0%
   </span>
   <span class="absValue">
-    (0/1)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -96,208 +79,17 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/8)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackWidth$Fill</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackWidth$Wrap</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/3)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/16)
+    (0/5)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
 <br/>
 
-
-<pre>
-<code class="sourceCode" id="sourceCode">&nbsp;/*
-&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
-&nbsp; *
-&nbsp; * [size.kt] created by Ji Sungbin on 22. 8. 15. 오전 1:15
-&nbsp; *
-&nbsp; * Licensed under the MIT.
-&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
-&nbsp; */
-&nbsp;
-&nbsp;package team.duckie.quackquack.ui.constant
-&nbsp;
-&nbsp;import androidx.compose.foundation.layout.fillMaxHeight
-&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
-&nbsp;import androidx.compose.foundation.layout.height
-&nbsp;import androidx.compose.foundation.layout.width
-&nbsp;import androidx.compose.foundation.layout.wrapContentHeight
-&nbsp;import androidx.compose.foundation.layout.wrapContentWidth
-&nbsp;import androidx.compose.runtime.Immutable
-&nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.unit.Dp
-&nbsp;import team.duckie.quackquack.ui.modifier.applyQuackSize
-&nbsp;
-&nbsp;/**
-&nbsp; * 컴포넌트의 추상화를 위해 [Modifier] 를 그대로 노출하는게 아닌,
-&nbsp; * Modifier 을 통한 조정이 필요할 것이라고 예상되는 옵션들만
-&nbsp; * 인자로 받을 수 있게 따로 클래스를 만들어서 노출시킵니다.
-&nbsp; *
-&nbsp; * width 와 같은 경우에는 조정이 필요한 옵션이라고 예상되어
-&nbsp; * 이 클래스를 통해 조정할 수 있습니다.
-&nbsp; *
-&nbsp; * @see Modifier.applyQuackSize
-&nbsp; */
-<b class="nc">&nbsp;@Immutable</b>
-&nbsp;internal sealed class QuackWidth {
-&nbsp;    /**
-&nbsp;     * 현재 보이는 화면의 가로 사이즈로 꽉 채웁니다.
-&nbsp;     * Modifier.fillMaxWidth() 와 동일합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.fillMaxWidth
-&nbsp;     */
-&nbsp;    @Immutable
-<b class="nc">&nbsp;    object Fill : QuackWidth()</b>
-&nbsp;
-&nbsp;    /**
-&nbsp;     * 현재 컴포넌트의 가로 사이즈로 꽉 채웁니다.
-&nbsp;     * Modifier.wrapContentWidth() 와 동일합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.wrapContentWidth
-&nbsp;     */
-&nbsp;    @Immutable
-<b class="nc">&nbsp;    object Wrap : QuackWidth()</b>
-&nbsp;
-&nbsp;    /**
-&nbsp;     * width 로 지정할 사이즈를 직접 지정합니다.
-&nbsp;     * 주어진 사이즈로 Modifier.width() 를 수행합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.width
-&nbsp;     *
-&nbsp;     * @param width width 로 지정할 사이즈
-&nbsp;     */
-&nbsp;    @Immutable
-<b class="nc">&nbsp;    class Custom(val width: Dp) : QuackWidth()</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * 컴포넌트의 추상화를 위해 [Modifier] 를 그대로 노출하는게 아닌,
-&nbsp; * Modifier 을 통한 조정이 필요할 것이라고 예상되는 옵션들만
-&nbsp; * 인자로 받을 수 있게 따로 클래스를 만들어서 노출시킵니다.
-&nbsp; *
-&nbsp; * height 와 같은 경우에는 조정이 필요한 옵션이라고 예상되어
-&nbsp; * 이 클래스를 통해 조정할 수 있습니다.
-&nbsp; *
-&nbsp; * @see Modifier.applyQuackSize
-&nbsp; */
-&nbsp;@Immutable
-&nbsp;internal sealed class QuackHeight {
-&nbsp;    /**
-&nbsp;     * 현재 보이는 화면의 세로 사이즈로 꽉 채웁니다.
-&nbsp;     * Modifier.fillMaxHeight() 와 동일합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.fillMaxHeight
-&nbsp;     */
-&nbsp;    @Immutable
-&nbsp;    object Fill : QuackHeight()
-&nbsp;
-&nbsp;    /**
-&nbsp;     * 현재 컴포넌트의 세로 사이즈로 꽉 채웁니다.
-&nbsp;     * Modifier.wrapContentHeight() 와 동일합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.wrapContentHeight
-&nbsp;     */
-&nbsp;    @Immutable
-&nbsp;    object Wrap : QuackHeight()
-&nbsp;
-&nbsp;    /**
-&nbsp;     * height 로 지정할 사이즈를 직접 지정합니다.
-&nbsp;     * 주어진 사이즈로 Modifier.height() 를 수행합니다.
-&nbsp;     *
-&nbsp;     * @see Modifier.height
-&nbsp;     *
-&nbsp;     * @param height height 로 지정할 사이즈
-&nbsp;     */
-&nbsp;    @Immutable
-&nbsp;    class Custom(val height: Dp) : QuackHeight()
-&nbsp;}
-</code>
-</pre>
+  <code class="sourceCode">Source code is not available<br /></code>
 </div>
 
 <script type="text/javascript">
@@ -319,7 +111,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-01 03:54</div>
+    <div style="float:right;">generated on 2022-09-02 02:30</div>
 </div>
 </body>
 </html>
