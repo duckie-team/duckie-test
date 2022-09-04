@@ -175,11 +175,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.runtime.Immutable
 &nbsp;import androidx.compose.runtime.Stable
 &nbsp;import androidx.compose.runtime.State
+&nbsp;import androidx.compose.ui.graphics.Brush
 &nbsp;import androidx.compose.ui.graphics.SolidColor
 &nbsp;import androidx.compose.ui.unit.Dp
 &nbsp;import androidx.compose.ui.unit.dp
 &nbsp;import team.duckie.quackquack.ui.animation.animateQuackAsState
-&nbsp;import team.duckie.quackquack.ui.animation.quackSpec
+&nbsp;import team.duckie.quackquack.ui.animation.quackAnimationSpec
 &nbsp;import team.duckie.quackquack.ui.color.QuackColor
 &nbsp;import team.duckie.quackquack.ui.color.animateQuackColorAsState
 &nbsp;
@@ -197,6 +198,15 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    val color: QuackColor,
 &nbsp;) {
 &nbsp;    /**
+&nbsp;     * [color] 를 [Brush] 로 변환합니다.
+&nbsp;     *
+&nbsp;     * @return [color] 를 [Brush] 로 변환한 값
+&nbsp;     */
+&nbsp;    val brush = SolidColor(
+&nbsp;        value = color.value,
+&nbsp;    )
+&nbsp;
+&nbsp;    /**
 &nbsp;     * [QuackBorder] 를 [BorderStroke] 로 변환합니다.
 &nbsp;     *
 &nbsp;     * @return 변환된 [BorderStroke]
@@ -204,16 +214,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Stable
 &nbsp;    fun asComposeBorder() = BorderStroke(
 &nbsp;        width = width,
-&nbsp;        brush = SolidColor(
-&nbsp;            value = color.value,
-&nbsp;        ),
+&nbsp;        brush = brush,
 &nbsp;    )
 &nbsp;}
 &nbsp;
 &nbsp;/**
 &nbsp; * [QuackBorder] 의 변화에 애니메이션을 적용합니다.
-&nbsp; * [QuackBorder.width] 와 [QuackBorder.color] 모두
-&nbsp; * 애니메이션이 적용됩니다.
+&nbsp; * [QuackBorder.width] 와 [QuackBorder.color] 모두 애니메이션이 적용됩니다.
 &nbsp; *
 &nbsp; * @param targetValue 애니메이션을 적용할 [QuackBorder]
 &nbsp; * @param animationSpec 애니메이션에 사용할 [AnimationSpec]
@@ -222,7 +229,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;@Composable
 &nbsp;internal fun animateQuackBorderAsState(
 &nbsp;    targetValue: QuackBorder,
-<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackSpec(),</b>
+<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackAnimationSpec(),</b>
 <b class="nc">&nbsp;): State&lt;QuackBorder&gt; {</b>
 <b class="fc">&nbsp;    val widthAnimationState = animateDpAsState(</b>
 <b class="fc">&nbsp;        targetValue = targetValue.width,</b>
@@ -270,7 +277,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-02 18:50</div>
+    <div style="float:right;">generated on 2022-09-04 05:54</div>
 </div>
 </body>
 </html>

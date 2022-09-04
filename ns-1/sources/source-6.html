@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > NewCollection</title>
+  <title>Coverage Report > DoNotUseDirectly</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.lint.custom.rule.annotation</a>
+    <a href="../index.html">team.duckie.quackquack.common</a>
 </div>
 
-<h1>Coverage Summary for Class: NewCollection (team.duckie.quackquack.lint.custom.rule.annotation)</h1>
+<h1>Coverage Summary for Class: DoNotUseDirectly (team.duckie.quackquack.common)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -32,7 +32,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">NewCollection</td>
+  <td class="name">DoNotUseDirectly</td>
     <td class="coverageStat"/>
 </tr>
 
@@ -46,17 +46,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [NewCollection.kt] created by Ji Sungbin on 22. 8. 29. 오전 6:38
+&nbsp; * [optin.kt] created by Ji Sungbin on 22. 9. 3. 오전 11:29
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.lint.custom.rule.annotation
+&nbsp;package team.duckie.quackquack.common
 &nbsp;
-&nbsp;@Retention(AnnotationRetention.SOURCE)
-&nbsp;@Target(AnnotationTarget.CLASS)
-&nbsp;annotation class NewCollection
+&nbsp;/**
+&nbsp; * 직접적으로 사용되면 안되는 API 임을 나타내기 위해 사용됩니다.
+&nbsp; */
+&nbsp;@RequiresOptIn(
+&nbsp;    message = &quot;이 API 는 직접적으로 사용하면 안됩니다. &quot; +
+&nbsp;            &quot;이 수단을 가져올 수 있는 다른 API 를 사용해 주세요.&quot;
+&nbsp;)
+&nbsp;annotation class DoNotUseDirectly
 </code>
 </pre>
 </div>
@@ -80,7 +85,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-02 18:50</div>
+    <div style="float:right;">generated on 2022-09-04 05:54</div>
 </div>
 </body>
 </html>

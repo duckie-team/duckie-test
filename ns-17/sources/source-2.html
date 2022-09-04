@@ -48,10 +48,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name">QuackTextStyleKt</td>
 <td class="coverageStat">
   <span class="percent">
-    85.7%
+    66.7%
   </span>
   <span class="absValue">
-    (6/7)
+    (4/6)
   </span>
 </td>
 <td class="coverageStat">
@@ -64,18 +64,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98%
+    92.6%
   </span>
   <span class="absValue">
-    (48/49)
+    (25/27)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96.3%
+    90.7%
   </span>
   <span class="absValue">
-    (157/163)
+    (88/97)
   </span>
 </td>
 </tr>
@@ -115,98 +115,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
     <td class="coverageStat"/>
   </tr>
-  <tr>
-    <td class="name">QuackTextStyleKt$VectorConverter$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    66.7%
-  </span>
-  <span class="absValue">
-    (2/3)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    66.7%
-  </span>
-  <span class="absValue">
-    (2/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    57.1%
-  </span>
-  <span class="absValue">
-    (8/14)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackTextStyleKt$VectorConverter$1$convertFromVector$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/18)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">QuackTextStyleKt$VectorConverter$1$convertToVector$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (12/12)
-  </span>
-</td>
-  </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    56.2%
+    40%
   </span>
   <span class="absValue">
-    (9/16)
+    (4/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -219,18 +135,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    89.5%
+    92.6%
   </span>
   <span class="absValue">
-    (51/57)
+    (25/27)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    85.5%
+    90.7%
   </span>
   <span class="absValue">
-    (177/207)
+    (88/97)
   </span>
 </td>
 </tr>
@@ -256,11 +172,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;package team.duckie.quackquack.ui.textstyle
 &nbsp;
 &nbsp;import androidx.compose.animation.core.AnimationSpec
-&nbsp;import androidx.compose.animation.core.AnimationVector1D
-&nbsp;import androidx.compose.animation.core.TwoWayConverter
 &nbsp;import androidx.compose.animation.core.animateFloatAsState
-&nbsp;import androidx.compose.animation.core.animateIntAsState
-&nbsp;import androidx.compose.animation.core.animateValueAsState
 &nbsp;import androidx.compose.runtime.Composable
 &nbsp;import androidx.compose.runtime.Immutable
 &nbsp;import androidx.compose.runtime.Stable
@@ -277,11 +189,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.ui.unit.TextUnit
 &nbsp;import androidx.compose.ui.unit.TextUnitType
 &nbsp;import androidx.compose.ui.unit.sp
-&nbsp;import kotlin.math.roundToInt
 &nbsp;import team.duckie.quackquack.common.AllowMagicNumber
 &nbsp;import team.duckie.quackquack.ui.R
 &nbsp;import team.duckie.quackquack.ui.animation.animateQuackAsState
-&nbsp;import team.duckie.quackquack.ui.animation.quackSpec
+&nbsp;import team.duckie.quackquack.ui.animation.quackAnimationSpec
 &nbsp;import team.duckie.quackquack.ui.color.QuackColor
 &nbsp;import team.duckie.quackquack.ui.color.animateQuackColorAsState
 &nbsp;
@@ -317,7 +228,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; */
 &nbsp;// animateQuackTextStyleAsState() 있어서 internal constructor
 &nbsp;@Immutable
-&nbsp;internal class QuackTextStyle(
+&nbsp;class QuackTextStyle internal constructor(
 &nbsp;    val color: QuackColor = QuackColor.Black,
 &nbsp;    val size: TextUnit,
 &nbsp;    val weight: FontWeight,
@@ -329,13 +240,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    private val suit = FontFamily(Font(R.font.suit_variable))
 &nbsp;
 &nbsp;    /**
-&nbsp;     * [QuackTextStyle] 을 컴포즈 기본 컴포넌트에 사용하기 위해
+&nbsp;     * [QuackTextStyle] 을 컴포즈 Text 컴포넌트에 사용하기 위해
 &nbsp;     * [TextStyle] 로 변환합니다.
 &nbsp;     *
 &nbsp;     * @return 변환된 [TextStyle]
 &nbsp;     */
 &nbsp;    @Stable
-&nbsp;    @Composable
 &nbsp;    internal fun asComposeStyle() = TextStyle(
 &nbsp;        color = color.value,
 &nbsp;        fontSize = size * QuackFontScale,
@@ -426,12 +336,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    internal fun change(
 &nbsp;        color: QuackColor = this.color,
 &nbsp;        weight: FontWeight = this.weight,
+&nbsp;        textAlign: TextAlign = this.textAlign,
 &nbsp;    ) = QuackTextStyle(
 &nbsp;        color = color,
 &nbsp;        size = size,
 &nbsp;        weight = weight,
 &nbsp;        letterSpacing = letterSpacing,
 &nbsp;        lineHeight = lineHeight,
+&nbsp;        textAlign = textAlign,
 &nbsp;    )
 &nbsp;}
 &nbsp;
@@ -447,36 +359,36 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    type = TextUnitType.Sp,</b>
 &nbsp;)
 &nbsp;
-&nbsp;/**
-&nbsp; * TextAlign 의 TwoWayConverter 를 구현합니다.
-&nbsp; *
-&nbsp; * TextAlign 의 생성자와 필드가 다 internal 로 돼있어서
-&nbsp; *
-&nbsp; * ```kotlin
-&nbsp; * value class TextAlign internal constructor(internal val value: Int)
-&nbsp; * ```
-&nbsp; *
-&nbsp; * TextAlign 의 인자 값으로 될 수 있는 1 ~ 6 까지의 Int 값을
-&nbsp; * 애니메이션 하여 각각 값에 맞는 TextAlign 을 찾아서 생성하는
-&nbsp; * 식으로 구현하였습니다.
-&nbsp; */
-&nbsp;private val TextAlign.Companion.VectorConverter
-<b class="fc">&nbsp;    get() = object : TwoWayConverter&lt;TextAlign, AnimationVector1D&gt; {</b>
-&nbsp;        override val convertFromVector: (vector: AnimationVector1D) -&gt; TextAlign
-<b class="nc">&nbsp;            get() = { vector -&gt;</b>
-<b class="nc">&nbsp;                @AllowMagicNumber</b>
-<b class="nc">&nbsp;                val index = vector.value.roundToInt().coerceIn(</b>
-&nbsp;                    // TextAlign 의 값이 1 부터 시작
-<b class="nc">&nbsp;                    range = 1..6,</b>
-&nbsp;                )
-<b class="nc">&nbsp;                values()[index]</b>
-&nbsp;            }
-&nbsp;        override val convertToVector: (value: TextAlign) -&gt; AnimationVector1D
-<b class="fc">&nbsp;            get() = { value -&gt;</b>
-&nbsp;                // TextAlign 의 값이 1 부터 시작해서 +1
-<b class="fc">&nbsp;                AnimationVector1D(values().indexOf(value) + 1f)</b>
-&nbsp;            }
-&nbsp;    }
+&nbsp;// /**
+&nbsp;//  * TextAlign 의 TwoWayConverter 를 구현합니다.
+&nbsp;//  *
+&nbsp;//  * TextAlign 의 생성자와 필드가 다 internal 로 돼있어서
+&nbsp;//  *
+&nbsp;//  * ```kotlin
+&nbsp;//  * value class TextAlign internal constructor(internal val value: Int)
+&nbsp;//  * ```
+&nbsp;//  *
+&nbsp;//  * TextAlign 의 인자 값으로 될 수 있는 1 ~ 6 까지의 Int 값을
+&nbsp;//  * 애니메이션 하여 각각 값에 맞는 TextAlign 을 찾아서 생성하는
+&nbsp;//  * 식으로 구현하였습니다.
+&nbsp;//  */
+&nbsp;// private val TextAlign.Companion.VectorConverter
+&nbsp;//     get() = object : TwoWayConverter&lt;TextAlign, AnimationVector1D&gt; {
+&nbsp;//         override val convertFromVector: (vector: AnimationVector1D) -&gt; TextAlign
+&nbsp;//             get() = { vector -&gt;
+&nbsp;//                 @AllowMagicNumber
+&nbsp;//                 val index = vector.value.roundToInt().coerceIn(
+&nbsp;//                     // TextAlign 의 값이 1 부터 시작
+&nbsp;//                     range = 1..6,
+&nbsp;//                 )
+&nbsp;//                 values()[index]
+&nbsp;//             }
+&nbsp;//         override val convertToVector: (value: TextAlign) -&gt; AnimationVector1D
+&nbsp;//             get() = { value -&gt;
+&nbsp;//                 // TextAlign 의 값이 1 부터 시작해서 +1
+&nbsp;//                 AnimationVector1D(values().indexOf(value) + 1f)
+&nbsp;//             }
+&nbsp;//     }
 &nbsp;
 &nbsp;/**
 &nbsp; * [List] 에 대한 component 정의가 5 까지만 있어서
@@ -486,29 +398,43 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @return receiver 로 받은 [List] 의 6번째 요소
 &nbsp; */
 &nbsp;@AllowMagicNumber
-<b class="fc">&nbsp;private operator fun &lt;T&gt; List&lt;T&gt;.component6() = get(5)</b>
+<b class="nc">&nbsp;private operator fun &lt;T&gt; List&lt;T&gt;.component6() = get(5)</b>
 &nbsp;
 &nbsp;/**
 &nbsp; * [QuackTextStyle] 에 변경이 있을 때 애니메이션을 적용합니다.
 &nbsp; *
-&nbsp; * [QuackTextStyle.color], [QuackTextStyle.size], [QuackTextStyle.weight],
-&nbsp; * [QuackTextStyle.letterSpacing], [QuackTextStyle.lineHeight], [QuackTextStyle.textAlign]
-&nbsp; * 에 애니메이션을 적용합니다.
-&nbsp; *
-&nbsp; * 현재 weight 애니메이션이 적용되지 않습니다. weight 는
-&nbsp; * 100 단위로 증가하기 때문에 100 ~ n00 으로 애니메이션 되는
-&nbsp; * weight 가 구현돼 있지 않아 생기는 이슈 입니다.
+&nbsp; * [QuackTextStyle.color], [QuackTextStyle.size] 에 애니메이션을 적용합니다.
 &nbsp; *
 &nbsp; * @param targetValue 변경을 감지할 [QuackTextStyle]
 &nbsp; * @param animationSpec 변경을 감지했을 때 적용할 애니메이션 스팩
 &nbsp; *
-&nbsp; * @return Typography 가 변경됐을 때 변경되는 애니메이션의 [State] 객체
+&nbsp; * @return [targetValue] 가 변경됐을 때 변경되는 애니메이션의 [State] 객체
 &nbsp; */
+&nbsp;// /**
+&nbsp;//  * [QuackTextStyle] 에 변경이 있을 때 애니메이션을 적용합니다.
+&nbsp;//  *
+&nbsp;//  * [QuackTextStyle.color], [QuackTextStyle.size], [QuackTextStyle.weight],
+&nbsp;//  * [QuackTextStyle.letterSpacing], [QuackTextStyle.lineHeight], [QuackTextStyle.textAlign]
+&nbsp;//  * 에 애니메이션을 적용합니다.
+&nbsp;//  *
+&nbsp;//  * 현재 weight 애니메이션이 적용되지 않습니다. weight 는
+&nbsp;//  * 100 단위로 증가하기 때문에 100 ~ n00 으로 애니메이션 되는
+&nbsp;//  * weight 가 구현돼 있지 않아 생기는 이슈 입니다.
+&nbsp;//  *
+&nbsp;//  * @param targetValue 변경을 감지할 [QuackTextStyle]
+&nbsp;//  * @param animationSpec 변경을 감지했을 때 적용할 애니메이션 스팩
+&nbsp;//  *
+&nbsp;//  * @return Typography 가 변경됐을 때 변경되는 애니메이션의 [State] 객체
+&nbsp;//  */
+&nbsp;// FIXME: [QuackTextStyle.color], [QuackTextStyle.size] 의외에 애니메이션을 적용하면
+&nbsp;//        애니메이션이 정상적으로 진행되지 않을 뿐더러, 올바른 리컴포지션 타이밍에
+&nbsp;//        값 갱신이 되지 않고, 추후 두 번째 리컴포지션 때 값 변경이 반영됩니다.
+&nbsp;//        따라서 현재는 [QuackTextStyle.color], [QuackTextStyle.size] 에만 애니메이션을 적용합니다.
 &nbsp;@Suppress(&quot;UNCHECKED_CAST&quot;)
 &nbsp;@Composable
 &nbsp;internal fun animateQuackTextStyleAsState(
 &nbsp;    targetValue: QuackTextStyle,
-<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackSpec(),</b>
+<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackAnimationSpec(),</b>
 <b class="nc">&nbsp;): State&lt;QuackTextStyle&gt; {</b>
 <b class="fc">&nbsp;    val targetColorAnimationState = animateQuackColorAsState(</b>
 <b class="fc">&nbsp;        targetValue = targetValue.color,</b>
@@ -518,50 +444,54 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        targetValue = targetValue.size.value,</b>
 <b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,</b>
 &nbsp;    )
-<b class="fc">&nbsp;    val targetWeightAnimationState = animateIntAsState(</b>
-<b class="fc">&nbsp;        targetValue = targetValue.weight.weight,</b>
-<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Int&gt;,</b>
+&nbsp;    /*val targetWeightAnimationState = animateIntAsState(
+&nbsp;        targetValue = targetValue.weight.weight,
+&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Int&gt;,
 &nbsp;    )
-<b class="fc">&nbsp;    val targetLetterSpacingAnimationState = animateFloatAsState(</b>
-<b class="fc">&nbsp;        targetValue = targetValue.letterSpacing.value,</b>
-<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,</b>
+&nbsp;    val targetLetterSpacingAnimationState = animateFloatAsState(
+&nbsp;        targetValue = targetValue.letterSpacing.value,
+&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,
 &nbsp;    )
-<b class="fc">&nbsp;    val targetLineHeightAnimationState = animateFloatAsState(</b>
-<b class="fc">&nbsp;        targetValue = targetValue.lineHeight.value,</b>
-<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,</b>
+&nbsp;    val targetLineHeightAnimationState = animateFloatAsState(
+&nbsp;        targetValue = targetValue.lineHeight.value,
+&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Float&gt;,
 &nbsp;    )
-<b class="fc">&nbsp;    val targetTextAlignAnimationState = animateValueAsState(</b>
-<b class="fc">&nbsp;        targetValue = targetValue.textAlign,</b>
-<b class="fc">&nbsp;        typeConverter = TextAlign.VectorConverter,</b>
-<b class="fc">&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;TextAlign&gt;,</b>
-&nbsp;    )
+&nbsp;    val targetTextAlignAnimationState = animateValueAsState(
+&nbsp;        targetValue = targetValue.textAlign,
+&nbsp;        typeConverter = TextAlign.VectorConverter,
+&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;TextAlign&gt;,
+&nbsp;    )*/
 &nbsp;
 <b class="pc">&nbsp;    return animateQuackAsState(</b>
 &nbsp;        initialValue = targetValue,
 <b class="fc">&nbsp;        animationStates = listOf(</b>
 <b class="fc">&nbsp;            targetColorAnimationState,</b>
 <b class="fc">&nbsp;            targetSizeAnimationState,</b>
-<b class="fc">&nbsp;            targetWeightAnimationState,</b>
-<b class="fc">&nbsp;            targetLetterSpacingAnimationState,</b>
-<b class="fc">&nbsp;            targetLineHeightAnimationState,</b>
-<b class="fc">&nbsp;            targetTextAlignAnimationState,</b>
+&nbsp;            /*targetWeightAnimationState,
+&nbsp;            targetLetterSpacingAnimationState,
+&nbsp;            targetLineHeightAnimationState,
+&nbsp;            targetTextAlignAnimationState,*/
 &nbsp;        ),
 &nbsp;        targetBuilder = { animateValues -&gt;
 &nbsp;            val (
 <b class="fc">&nbsp;                color,</b>
 <b class="fc">&nbsp;                size,</b>
-<b class="fc">&nbsp;                weight,</b>
-<b class="fc">&nbsp;                letterSpacing,</b>
-<b class="fc">&nbsp;                lineHeight,</b>
-<b class="fc">&nbsp;                textAlign,</b>
+&nbsp;                    /*weight,
+&nbsp;                    letterSpacing,
+&nbsp;                    lineHeight,
+&nbsp;                    textAlign,*/
 <b class="fc">&nbsp;            ) = animateValues</b>
 <b class="fc">&nbsp;            QuackTextStyle(</b>
 <b class="fc">&nbsp;                color = color as QuackColor,</b>
 <b class="fc">&nbsp;                size = (size as Float).toSp(),</b>
-<b class="fc">&nbsp;                weight = FontWeight(weight as Int),</b>
-<b class="fc">&nbsp;                letterSpacing = (letterSpacing as Float).toSp(),</b>
-<b class="fc">&nbsp;                lineHeight = (lineHeight as Float).toSp(),</b>
-<b class="fc">&nbsp;                textAlign = textAlign as TextAlign,</b>
+&nbsp;                /*weight = FontWeight(weight as Int),
+&nbsp;                letterSpacing = (letterSpacing as Float).toSp(),
+&nbsp;                lineHeight = (lineHeight as Float).toSp(),
+&nbsp;                textAlign = textAlign as TextAlign,*/
+<b class="fc">&nbsp;                weight = targetValue.weight,</b>
+<b class="fc">&nbsp;                letterSpacing = targetValue.letterSpacing,</b>
+<b class="fc">&nbsp;                lineHeight = targetValue.lineHeight,</b>
+<b class="fc">&nbsp;                textAlign = targetValue.textAlign,</b>
 &nbsp;            )
 &nbsp;        },
 &nbsp;    )
@@ -589,7 +519,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-02 18:50</div>
+    <div style="float:right;">generated on 2022-09-04 05:54</div>
 </div>
 </body>
 </html>
