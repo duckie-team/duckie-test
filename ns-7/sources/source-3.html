@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > CustomRuleProcessorProvider</title>
+  <title>Coverage Report > PsiUtilsKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.lint.custom.rule.processor</a>
+    <a href="../index.html">team.duckie.quackquack.common.lint.util</a>
 </div>
 
-<h1>Coverage Summary for Class: CustomRuleProcessorProvider (team.duckie.quackquack.lint.custom.rule.processor)</h1>
+<h1>Coverage Summary for Class: PsiUtilsKt (team.duckie.quackquack.common.lint.util)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,45 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">CustomRuleProcessorProvider</td>
+  <td class="name">PsiUtilsKt</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    40%
   </span>
   <span class="absValue">
-    (0/2)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/4)
+    (2/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    40%
   </span>
   <span class="absValue">
-    (0/9)
+    (4/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (2/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    38%
+  </span>
+  <span class="absValue">
+    (19/50)
   </span>
 </td>
 </tr>
@@ -94,23 +101,54 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [CustomRuleProcessorProvider.kt] created by Ji Sungbin on 22. 8. 29. 오전 2:56
-&nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.lint.custom.rule.processor
+&nbsp;// TAKEN FROM: https://github.com/androidx/androidx/tree/androidx-main/compose/lint/common/src/main/java/androidx/compose/lint
 &nbsp;
-&nbsp;import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
-&nbsp;import com.google.devtools.ksp.processing.SymbolProcessorProvider
+&nbsp;@file:Suppress(&quot;unused&quot;)
 &nbsp;
-<b class="nc">&nbsp;class CustomRuleProcessorProvider : SymbolProcessorProvider {</b>
-<b class="nc">&nbsp;    override fun create(environment: SymbolProcessorEnvironment) = CustomRuleProcessor(</b>
-<b class="nc">&nbsp;        logger = environment.logger,</b>
-<b class="nc">&nbsp;        options = environment.options,</b>
-&nbsp;    )
+&nbsp;package team.duckie.quackquack.common.lint.util
+&nbsp;
+&nbsp;import com.intellij.psi.PsiClass
+&nbsp;import com.intellij.psi.PsiJavaFile
+&nbsp;import com.intellij.psi.PsiMethod
+&nbsp;import com.intellij.psi.PsiType
+&nbsp;import com.intellij.psi.util.InheritanceUtil
+&nbsp;import team.duckie.quackquack.common.lint.Name
+&nbsp;import team.duckie.quackquack.common.lint.PackageName
+&nbsp;
+&nbsp;/**
+&nbsp; * Returns whether [this] has [packageName] as its package name.
+&nbsp; */
+&nbsp;fun PsiMethod.isInPackageName(packageName: PackageName): Boolean {
+<b class="nc">&nbsp;    val actual = (containingFile as? PsiJavaFile)?.packageName</b>
+<b class="nc">&nbsp;    return packageName.javaPackageName == actual</b>
 &nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * Whether this [PsiMethod] returns Unit
+&nbsp; */
+<b class="fc">&nbsp;val PsiMethod.isReturnsUnit get() = returnType.isVoidOrUnit</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * Whether this [PsiType] is `void` or [Unit]
+&nbsp; *
+&nbsp; * In Kotlin 1.6 some expressions now explicitly return [Unit] instead of just being [PsiType.VOID],
+&nbsp; * so this returns whether this type is either.
+&nbsp; */
+<b class="pc">&nbsp;val PsiType?.isVoidOrUnit get() = this == PsiType.VOID || this?.canonicalText == Unit.toString()</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * @return whether [this] inherits from [name]. Returns `true` if [this] _is_ directly [name].
+&nbsp; */
+<b class="nc">&nbsp;fun PsiType.inheritsFrom(name: Name) = InheritanceUtil.isInheritor(this, name.javaFqn)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * @return whether [this] inherits from [name]. Returns `true` if [this] _is_ directly [name].
+&nbsp; */
+<b class="nc">&nbsp;fun PsiClass.inheritsFrom(name: Name) = InheritanceUtil.isInheritor(this, name.javaFqn)</b>
 </code>
 </pre>
 </div>
@@ -134,7 +172,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

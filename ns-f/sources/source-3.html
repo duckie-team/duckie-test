@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackAnimationSpec</title>
+  <title>Coverage Report > TypographyKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.animation</a>
+    <a href="../index.html">team.duckie.quackquack.playground.theme</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackAnimationSpec (team.duckie.quackquack.ui.animation)</h1>
+<h1>Coverage Summary for Class: TypographyKt (team.duckie.quackquack.playground.theme)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackAnimationSpec</td>
+  <td class="name">TypographyKt</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/2)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/85)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (2/2)
+    (0/555)
   </span>
 </td>
 </tr>
@@ -92,77 +92,127 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
-&nbsp;* Designed and developed by 2022 SungbinLand, Team Duckie
-&nbsp;*
-&nbsp;* [spec.kt] created by Ji Sungbin on 22. 8. 14. 오후 8:13
-&nbsp;*
-&nbsp;* Licensed under the MIT.
-&nbsp;* Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
-&nbsp;*/
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.animation
+&nbsp;package team.duckie.quackquack.playground.theme
 &nbsp;
-&nbsp;import androidx.compose.animation.core.FastOutSlowInEasing
-&nbsp;import androidx.compose.animation.core.SnapSpec
-&nbsp;import androidx.compose.animation.core.TweenSpec
-&nbsp;import androidx.compose.animation.core.snap
-&nbsp;import androidx.compose.animation.core.tween
+&nbsp;import androidx.compose.material3.Typography
 &nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.runtime.getValue
-&nbsp;import androidx.compose.runtime.mutableStateOf
-&nbsp;import androidx.compose.runtime.setValue
+&nbsp;import androidx.compose.ui.text.TextStyle
+&nbsp;import androidx.compose.ui.text.font.Font
+&nbsp;import androidx.compose.ui.text.font.FontFamily
+&nbsp;import androidx.compose.ui.text.font.FontWeight
+&nbsp;import androidx.compose.ui.unit.sp
+&nbsp;import team.duckie.quackquack.playground.R
 &nbsp;
-&nbsp;/**
-&nbsp; * 덕키에서 사용할 애니메이션의 기본 지속 시간
-&nbsp; *
-&nbsp; * Playground 에서 [QuackAnimationMillis] 편집 후 기본값으로 되돌리고
-&nbsp; * 싶을 때 기본값을 참조하기 위해 public 으로 설정함
-&nbsp; */
-&nbsp;const val QuackDefaultAnimationMillis = 250
-&nbsp;
-&nbsp;/**
-&nbsp; * 덕키에서 사용할 애니메이션의 지속 시간
-&nbsp; *
-&nbsp; * 애니메이션 디버깅 용도로 수정 허용. Transition API 를 사용하는
-&nbsp; * 방법도 있지만 컴포즈에서 Preview 가 최적하게 돌아가지 않아
-&nbsp; * 수동 애니메이션 디버깅을 선호함.
-&nbsp; *
-&nbsp; * Playground 에서 자유로운 지속 시간 편집으로 쉬운 디버깅을 위해 public 으로 설정함
-&nbsp; */
-&nbsp;var QuackAnimationMillis by mutableStateOf(QuackDefaultAnimationMillis)
-&nbsp;
-&nbsp;/**
-&nbsp; * [isSnapshotMode] 의 receiver 입니다.
-&nbsp; */
-<b class="fc">&nbsp;internal object QuackAnimationSpec</b>
-&nbsp;
-&nbsp;/**
-&nbsp; * 스냅샷 캡처 환경에서는 애니메이션이 진행중인 현황을 캡처하지 못합니다.
-&nbsp; * 따라서 스냅샷 캡처 환경에서는 애니메이션이 진행 시간 없이
-&nbsp; * 바로 완료돼야 합니다. 이 값은 현재 컴포저블이 실행중인 환경이
-&nbsp; * 스냅샷 캡처 환경인지를 나타냅니다. 스냅샷 캡처는 QuackQuack 내부 테스트
-&nbsp; * 에서만 진행되므로 internal 로 제한합니다.
-&nbsp; */
-&nbsp;internal var QuackAnimationSpec.isSnapshotMode by mutableStateOf(false)
-&nbsp;
-&nbsp;/**
-&nbsp; * 덕키에서 사용할 애니메이션의 기본 스팩
-&nbsp; *
-&nbsp; * @return 덕키에서 사용할 애니메이션의 기본 스팩.
-&nbsp; * [isSnapshotMode] 에 따라 반환값이 달라집니다. false 라면
-&nbsp; * 덕키에서 사용하는 애니메이션 스팩인 [TweenSpec] 이 반환되고,
-&nbsp; * true 라면 [SnapSpec] 이 반환됩니다.
-&nbsp; *
-&nbsp; * @see isSnapshotMode
-&nbsp; */
 &nbsp;@Stable
-&nbsp;internal fun &lt;T&gt; quackAnimationSpec() = when (QuackAnimationSpec.isSnapshotMode) {
-&nbsp;    true -&gt; snap()
-&nbsp;    else -&gt; tween&lt;T&gt;(
-&nbsp;        durationMillis = QuackAnimationMillis,
-&nbsp;        easing = FastOutSlowInEasing,
-&nbsp;    )
-&nbsp;}
+<b class="nc">&nbsp;private val suit = FontFamily(Font(resId = R.font.suit_variable))</b>
+&nbsp;
+&nbsp;@Stable
+<b class="nc">&nbsp;val PlaygroundTypography = Typography(</b>
+<b class="nc">&nbsp;    displayLarge = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 57.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 64.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = (-0.25).sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    displayMedium = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 45.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 52.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    displaySmall = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 36.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 44.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    headlineLarge = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 32.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 40.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    headlineMedium = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 28.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 36.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    headlineSmall = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 24.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 32.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    titleLarge = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W700,</b>
+<b class="nc">&nbsp;        fontSize = 22.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 28.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    titleMedium = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W700,</b>
+<b class="nc">&nbsp;        fontSize = 16.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 24.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    titleSmall = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W500,</b>
+<b class="nc">&nbsp;        fontSize = 14.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    bodyLarge = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 16.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 24.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.5.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    bodyMedium = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 14.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.25.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    bodySmall = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 12.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 16.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.4.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    labelLarge = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 14.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    labelMedium = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
+<b class="nc">&nbsp;        fontSize = 12.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 16.sp,</b>
+<b class="nc">&nbsp;        letterSpacing = 0.5.sp</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    labelSmall = TextStyle(</b>
+<b class="nc">&nbsp;        fontFamily = suit,</b>
+<b class="nc">&nbsp;        fontWeight = FontWeight.W500,</b>
+<b class="nc">&nbsp;        fontSize = 10.sp,</b>
+<b class="nc">&nbsp;        lineHeight = 16.sp</b>
+&nbsp;    ),
+&nbsp;)
 </code>
 </pre>
 </div>
@@ -186,7 +236,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

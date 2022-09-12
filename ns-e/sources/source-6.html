@@ -1,0 +1,270 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TabPlayground</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.playground.realworld</a>
+</div>
+
+<h1>Coverage Summary for Class: TabPlayground (team.duckie.quackquack.playground.realworld)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">TabPlayground</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/33)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TabPlayground$onCreate$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/36)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TabPlayground$onCreate$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/28)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/97)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.playground.realworld
+&nbsp;
+&nbsp;import android.os.Bundle
+&nbsp;import androidx.activity.compose.setContent
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.runtime.setValue
+&nbsp;import kotlinx.collections.immutable.persistentListOf
+&nbsp;import team.duckie.quackquack.playground.base.BaseActivity
+&nbsp;import team.duckie.quackquack.playground.base.PlaygroundSection
+&nbsp;import team.duckie.quackquack.playground.theme.PlaygroundTheme
+&nbsp;import team.duckie.quackquack.ui.component.QuackMainTab
+&nbsp;
+<b class="nc">&nbsp;class TabPlayground : BaseActivity() {</b>
+&nbsp;    @Suppress(&quot;RemoveExplicitTypeArguments&quot;)
+<b class="nc">&nbsp;    private val items = persistentListOf&lt;Pair&lt;String, @Composable () -&gt; Unit&gt;&gt;(</b>
+<b class="nc">&nbsp;        &quot;QuackMainTab&quot; to { QuackMainTabDemo() },</b>
+&nbsp;    )
+&nbsp;
+&nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState)</b>
+<b class="nc">&nbsp;        setContent {</b>
+<b class="nc">&nbsp;            PlaygroundTheme {</b>
+<b class="nc">&nbsp;                PlaygroundSection(</b>
+<b class="nc">&nbsp;                    title = &quot;Tab&quot;,</b>
+<b class="nc">&nbsp;                    items = items,</b>
+<b class="nc">&nbsp;                )</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun QuackMainTabDemo() {
+&nbsp;    var selectedMainTabIndex by remember { mutableStateOf(0) }
+&nbsp;
+&nbsp;    QuackMainTab(
+&nbsp;        titles = persistentListOf(
+&nbsp;            &quot;판매중&quot;,
+&nbsp;            &quot;거래완료&quot;,
+&nbsp;            &quot;숨김&quot;,
+&nbsp;        ),
+&nbsp;        selectedTabIndex = selectedMainTabIndex,
+&nbsp;        onTabSelected = { tabIndex -&gt;
+&nbsp;            selectedMainTabIndex = tabIndex
+&nbsp;        },
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
+</div>
+</body>
+</html>

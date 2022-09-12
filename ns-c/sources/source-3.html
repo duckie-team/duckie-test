@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > TypographyKt</title>
+  <title>Coverage Report > MainActivity</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.playground.theme</a>
+    <a href="../index.html">team.duckie.quackquack.playground</a>
 </div>
 
-<h1>Coverage Summary for Class: TypographyKt (team.duckie.quackquack.playground.theme)</h1>
+<h1>Coverage Summary for Class: MainActivity (team.duckie.quackquack.playground)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">TypographyKt</td>
+  <td class="name">MainActivity</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -71,7 +71,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/85)
+    (0/3)
   </span>
 </td>
 <td class="coverageStat">
@@ -79,7 +79,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/555)
+    (0/13)
   </span>
 </td>
 </tr>
@@ -94,127 +94,94 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [typography.kt] created by Ji Sungbin on 22. 8. 31. 오전 8:46
-&nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.playground.theme
+&nbsp;package team.duckie.quackquack.playground
 &nbsp;
-&nbsp;import androidx.compose.material3.Typography
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.ui.text.TextStyle
-&nbsp;import androidx.compose.ui.text.font.Font
-&nbsp;import androidx.compose.ui.text.font.FontFamily
-&nbsp;import androidx.compose.ui.text.font.FontWeight
-&nbsp;import androidx.compose.ui.unit.sp
-&nbsp;import team.duckie.quackquack.playground.R
+&nbsp;import android.os.Bundle
+&nbsp;import androidx.activity.compose.setContent
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.BoxScope
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.LaunchedEffect
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;import kotlinx.collections.immutable.persistentListOf
+&nbsp;import kotlinx.coroutines.flow.first
+&nbsp;import team.duckie.quackquack.playground.base.BaseActivity
+&nbsp;import team.duckie.quackquack.playground.base.PlaygroundActivities
+&nbsp;import team.duckie.quackquack.playground.realworld.ButtonPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.FabPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.TabPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.TextFieldPlayground
+&nbsp;import team.duckie.quackquack.playground.theme.PlaygroundTheme
+&nbsp;import team.duckie.quackquack.playground.util.PreferenceConfigs
+&nbsp;import team.duckie.quackquack.playground.util.dataStore
+&nbsp;import team.duckie.quackquack.ui.animation.QuackAnimationMillis
+&nbsp;import team.duckie.quackquack.ui.textstyle.QuackFontScale
 &nbsp;
-&nbsp;@Stable
-<b class="nc">&nbsp;private val suit = FontFamily(Font(resId = R.font.suit_variable))</b>
-&nbsp;
-&nbsp;@Stable
-<b class="nc">&nbsp;val PlaygroundTypography = Typography(</b>
-<b class="nc">&nbsp;    displayLarge = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 57.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 64.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = (-0.25).sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    displayMedium = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 45.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 52.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    displaySmall = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 36.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 44.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    headlineLarge = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 32.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 40.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    headlineMedium = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 28.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 36.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    headlineSmall = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 24.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 32.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    titleLarge = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W700,</b>
-<b class="nc">&nbsp;        fontSize = 22.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 28.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    titleMedium = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W700,</b>
-<b class="nc">&nbsp;        fontSize = 16.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 24.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    titleSmall = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W500,</b>
-<b class="nc">&nbsp;        fontSize = 14.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    bodyLarge = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 16.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 24.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.5.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    bodyMedium = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 14.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.25.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    bodySmall = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 12.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 16.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.4.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    labelLarge = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 14.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 20.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.1.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    labelMedium = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W400,</b>
-<b class="nc">&nbsp;        fontSize = 12.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 16.sp,</b>
-<b class="nc">&nbsp;        letterSpacing = 0.5.sp</b>
-&nbsp;    ),
-<b class="nc">&nbsp;    labelSmall = TextStyle(</b>
-<b class="nc">&nbsp;        fontFamily = suit,</b>
-<b class="nc">&nbsp;        fontWeight = FontWeight.W500,</b>
-<b class="nc">&nbsp;        fontSize = 10.sp,</b>
-<b class="nc">&nbsp;        lineHeight = 16.sp</b>
-&nbsp;    ),
+&nbsp;private val PlaygroundActivities = persistentListOf(
+&nbsp;    TabPlayground::class,
+&nbsp;    ButtonPlayground::class,
+&nbsp;    TextFieldPlayground::class,
+&nbsp;    FabPlayground::class,
 &nbsp;)
+&nbsp;
+<b class="nc">&nbsp;class MainActivity : BaseActivity() {</b>
+&nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState)</b>
+<b class="nc">&nbsp;        setContent {</b>
+&nbsp;            PlaygroundDemo()
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 하나의 디자인 컴포넌트만 보여주는 데모 컴포저블 입니다.
+&nbsp; *
+&nbsp; * @param content 표시할 단일 디자인 컴포넌트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;fun SingleDemo(
+&nbsp;    content: @Composable BoxScope.() -&gt; Unit,
+&nbsp;) {
+&nbsp;    Box(
+&nbsp;        modifier = Modifier.fillMaxSize(),
+&nbsp;        contentAlignment = Alignment.Center,
+&nbsp;        content = content,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 모든 디자인 컴포넌트를 리스트 형식으로 보여주는 데모 컴포저블 입니다.
+&nbsp; * [PlaygroundActivities] 에 포함된 액티비티에 있는 모든 디자인 컴포넌트를 보여줍니다.
+&nbsp; */
+&nbsp;@Composable
+&nbsp;fun PlaygroundDemo() {
+&nbsp;    val context = LocalContext.current.applicationContext
+&nbsp;    LaunchedEffect(
+&nbsp;        key1 = Unit,
+&nbsp;    ) {
+&nbsp;        context.dataStore.data.first().let { preference -&gt;
+&nbsp;            QuackAnimationMillis = (
+&nbsp;                    preference[PreferenceConfigs.AnimationDurationKey]
+&nbsp;                        ?: QuackAnimationMillis
+&nbsp;                    ).coerceAtLeast(minimumValue = 0)
+&nbsp;            QuackFontScale = (
+&nbsp;                    preference[PreferenceConfigs.FontScaleKey] ?: QuackFontScale
+&nbsp;                    ).coerceAtLeast(minimumValue = 0.0)
+&nbsp;        }
+&nbsp;    }
+&nbsp;    PlaygroundTheme {
+&nbsp;        PlaygroundActivities(
+&nbsp;            activities = PlaygroundActivities,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -238,7 +205,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

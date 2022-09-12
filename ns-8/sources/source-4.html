@@ -1,0 +1,308 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > NewLineArgumentDetector</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.lint.compose</a>
+</div>
+
+<h1>Coverage Summary for Class: NewLineArgumentDetector (team.duckie.quackquack.lint.compose)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">NewLineArgumentDetector</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (27/27)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">NewLineArgumentDetector$createUastHandler$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (21/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (27/27)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98%
+  </span>
+  <span class="absValue">
+    (147/150)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (21/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (32/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.3%
+  </span>
+  <span class="absValue">
+    (174/177)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(
+&nbsp;    &quot;UnstableApiUsage&quot;,
+&nbsp;    &quot;SameParameterValue&quot;,
+&nbsp;)
+&nbsp;
+&nbsp;package team.duckie.quackquack.lint.compose
+&nbsp;
+&nbsp;import com.android.tools.lint.client.api.UElementHandler
+&nbsp;import com.android.tools.lint.detector.api.Category
+&nbsp;import com.android.tools.lint.detector.api.Detector
+&nbsp;import com.android.tools.lint.detector.api.Implementation
+&nbsp;import com.android.tools.lint.detector.api.Issue
+&nbsp;import com.android.tools.lint.detector.api.JavaContext
+&nbsp;import com.android.tools.lint.detector.api.Scope
+&nbsp;import com.android.tools.lint.detector.api.Severity
+&nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
+&nbsp;import com.intellij.psi.impl.source.tree.CompositeElement
+&nbsp;import org.jetbrains.kotlin.psi.KtCallableReferenceExpression
+&nbsp;import org.jetbrains.uast.UExpression
+&nbsp;import org.jetbrains.uast.UMethod
+&nbsp;import org.jetbrains.uast.kotlin.KotlinUFunctionCallExpression
+&nbsp;import org.jetbrains.uast.kotlin.KotlinULambdaExpression
+&nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
+&nbsp;import team.duckie.quackquack.common.lint.compose.isInvokedWithinComposable
+&nbsp;
+&nbsp;private const val BriefDescription = &quot;인자들 각각 new-line 에 배치&quot;
+&nbsp;private const val Explanation = &quot;인자들을 쉽게 구분하기 위해 각각 new-line 에 배치해야 합니다.&quot;
+&nbsp;
+&nbsp;val NewLineArgumentIssue = Issue.create(
+&nbsp;    id = &quot;NewLineArgument&quot;,
+&nbsp;    briefDescription = BriefDescription,
+&nbsp;    explanation = Explanation,
+&nbsp;    category = Category.PERFORMANCE,
+&nbsp;    priority = 7,
+&nbsp;    severity = Severity.ERROR,
+&nbsp;    implementation = Implementation(
+&nbsp;        NewLineArgumentDetector::class.java,
+&nbsp;        Scope.JAVA_FILE_SCOPE,
+&nbsp;    ),
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackQuack 린트의 [NewLineArgumentDetector] 규칙을 정의합니다.
+&nbsp; *
+&nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
+&nbsp; *
+&nbsp; * 1. 컴포저블 함수여야 함
+&nbsp; *
+&nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
+&nbsp; *
+&nbsp; * 1. parameter 가 전부 new-line 에 배치되여야 함
+&nbsp; * 2. argument 가 전부 new-line 에 배치되어야 함
+&nbsp; *
+&nbsp; * 예외적으로, 이러한 경우에는 에러가 발생하지 않습니다.
+&nbsp; *
+&nbsp; * 1. 마지막 argument 가 LAMBDA_EXPRESSION 인 경우
+&nbsp; * 2. 레퍼런스를 참조하는 경우 (REFERENCES_EXPRESSION)
+&nbsp; *
+&nbsp; * ```
+&nbsp; * @Composable
+&nbsp; * fun MyComposable() {
+&nbsp; *     // 레퍼런스를 참조하는 경우이므로 예외적으로 허용 됨
+&nbsp; *     val animationFlows: List&lt;Flow&lt;*&gt;&gt; = animationStates.map(State&lt;*&gt;::toFlow)
+&nbsp; *
+&nbsp; *     Button() {
+&nbsp; *         // 마지막 argument 의 LAMBDA_EXPRESSION 이므로 예외적으로 허용 됨
+&nbsp; *     }
+&nbsp; * ```
+&nbsp; */
+<b class="fc">&nbsp;class NewLineArgumentDetector : Detector(), SourceCodeScanner {</b>
+<b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(</b>
+<b class="fc">&nbsp;        UMethod::class.java,</b>
+&nbsp;        UExpression::class.java,
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
+&nbsp;        // Parameter
+&nbsp;        override fun visitMethod(node: UMethod) {
+<b class="fc">&nbsp;            if (!node.isComposable) return</b>
+&nbsp;
+<b class="fc">&nbsp;            node.uastParameters.forEach { uParameter -&gt;</b>
+<b class="pc">&nbsp;                val parameterSourcePsi = uParameter.sourcePsi ?: return</b>
+<b class="fc">&nbsp;                val parameterPrevSibling = (parameterSourcePsi.node as CompositeElement).treePrev</b>
+&nbsp;
+<b class="fc">&nbsp;                if (!parameterPrevSibling.text.isNewLine()) {</b>
+<b class="fc">&nbsp;                    return context.report(</b>
+<b class="fc">&nbsp;                        issue = NewLineArgumentIssue,</b>
+<b class="fc">&nbsp;                        scope = parameterSourcePsi.node.psi,</b>
+<b class="fc">&nbsp;                        location = context.getLocation(parameterSourcePsi.node.psi),</b>
+<b class="fc">&nbsp;                        message = Explanation,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Argument
+&nbsp;        override fun visitExpression(node: UExpression) {
+<b class="fc">&nbsp;            if (!node.isInvokedWithinComposable() || node !is KotlinUFunctionCallExpression) return</b>
+&nbsp;
+<b class="fc">&nbsp;            node.valueArguments.forEach { argument -&gt;</b>
+<b class="pc">&nbsp;                val argumentSourcePsi = argument.sourcePsi ?: return</b>
+&nbsp;
+<b class="fc">&nbsp;                val argumentParentPrevSibling =</b>
+<b class="pc">&nbsp;                    (argumentSourcePsi.node as CompositeElement).treeParent.treePrev ?: return</b>
+<b class="fc">&nbsp;                val argumentPrevParentPrevSibling = argumentParentPrevSibling.treeParent.treePrev</b>
+&nbsp;
+<b class="fc">&nbsp;                if (argument == node.valueArguments.last() &amp;&amp; argument is KotlinULambdaExpression) return</b>
+<b class="fc">&nbsp;                if (argumentSourcePsi is KtCallableReferenceExpression) return</b>
+&nbsp;
+<b class="fc">&nbsp;                if (!(argumentParentPrevSibling.text.isNewLine() || argumentPrevParentPrevSibling.text.isNewLine())) {</b>
+<b class="fc">&nbsp;                    return context.report(</b>
+<b class="fc">&nbsp;                        issue = NewLineArgumentIssue,</b>
+<b class="fc">&nbsp;                        scope = argument,</b>
+<b class="fc">&nbsp;                        location = context.getLocation(argument),</b>
+<b class="fc">&nbsp;                        message = Explanation,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    private fun String.isNewLine() = startsWith(&quot;\n&quot;)</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
+</div>
+</body>
+</html>

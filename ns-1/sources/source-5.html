@@ -46,8 +46,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [detekt.kt] created by Ji Sungbin on 22. 8. 31. 오후 5:12
-&nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
@@ -55,7 +53,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;package team.duckie.quackquack.common
 &nbsp;
 &nbsp;@Retention(AnnotationRetention.SOURCE)
-&nbsp;annotation class AllowMagicNumber
+&nbsp;annotation class AllowMagicNumber(@Suppress(&quot;unused&quot;) val because: String)
 </code>
 </pre>
 </div>
@@ -79,7 +77,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

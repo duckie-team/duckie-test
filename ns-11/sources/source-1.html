@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackBorder</title>
+  <title>Coverage Report > BuildConfig</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.border</a>
+    <a href="../index.html">team.duckie.quackquack.ui</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackBorder (team.duckie.quackquack.ui.border)</h1>
+<h1>Coverage Summary for Class: BuildConfig (team.duckie.quackquack.ui)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackBorder</td>
+  <td class="name">BuildConfig</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (2/2)
+    (0/2)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (9/9)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (44/44)
+    (0/5)
   </span>
 </td>
 </tr>
@@ -89,107 +89,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <br/>
 <br/>
 
-
-<pre>
-<code class="sourceCode" id="sourceCode">&nbsp;/*
-&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
-&nbsp; *
-&nbsp; * [QuackBorder.kt] created by Ji Sungbin on 22. 9. 1. 오후 10:27
-&nbsp; *
-&nbsp; * Licensed under the MIT.
-&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
-&nbsp; */
-&nbsp;
-&nbsp;package team.duckie.quackquack.ui.border
-&nbsp;
-&nbsp;import androidx.compose.animation.core.AnimationSpec
-&nbsp;import androidx.compose.animation.core.animateDpAsState
-&nbsp;import androidx.compose.foundation.BorderStroke
-&nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.runtime.Immutable
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.runtime.State
-&nbsp;import androidx.compose.ui.graphics.Brush
-&nbsp;import androidx.compose.ui.graphics.SolidColor
-&nbsp;import androidx.compose.ui.unit.Dp
-&nbsp;import androidx.compose.ui.unit.dp
-&nbsp;import team.duckie.quackquack.ui.animation.animateQuackAsState
-&nbsp;import team.duckie.quackquack.ui.animation.quackAnimationSpec
-&nbsp;import team.duckie.quackquack.ui.color.QuackColor
-&nbsp;import team.duckie.quackquack.ui.color.animateQuackColorAsState
-&nbsp;
-&nbsp;/**
-&nbsp; * [BorderStroke] 에서 [BorderStroke.brush] 값을 [QuackColor] 로 받기 위한
-&nbsp; * [BorderStroke] 의 wrapper 클래스 입니다.
-&nbsp; *
-&nbsp; * @param width border 의 굵기
-&nbsp; * @param color border 의 색상
-&nbsp; */
-&nbsp;// 기본 값으로 정해진게 없기에 internal constructor
-<b class="fc">&nbsp;@Immutable</b>
-<b class="fc">&nbsp;internal class QuackBorder(</b>
-<b class="fc">&nbsp;    val width: Dp = 1.dp,</b>
-<b class="fc">&nbsp;    val color: QuackColor,</b>
-&nbsp;) {
-&nbsp;    /**
-&nbsp;     * [color] 를 [Brush] 로 변환합니다.
-&nbsp;     *
-&nbsp;     * @return [color] 를 [Brush] 로 변환한 값
-&nbsp;     */
-<b class="fc">&nbsp;    val brush = SolidColor(</b>
-<b class="fc">&nbsp;        value = color.value,</b>
-&nbsp;    )
-&nbsp;
-&nbsp;    /**
-&nbsp;     * [QuackBorder] 를 [BorderStroke] 로 변환합니다.
-&nbsp;     *
-&nbsp;     * @return 변환된 [BorderStroke]
-&nbsp;     */
-&nbsp;    @Stable
-<b class="fc">&nbsp;    fun asComposeBorder() = BorderStroke(</b>
-<b class="fc">&nbsp;        width = width,</b>
-<b class="fc">&nbsp;        brush = brush,</b>
-&nbsp;    )
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * [QuackBorder] 의 변화에 애니메이션을 적용합니다.
-&nbsp; * [QuackBorder.width] 와 [QuackBorder.color] 모두 애니메이션이 적용됩니다.
-&nbsp; *
-&nbsp; * @param targetValue 애니메이션을 적용할 [QuackBorder]
-&nbsp; * @param animationSpec 애니메이션에 사용할 [AnimationSpec]
-&nbsp; */
-&nbsp;@Suppress(&quot;UNCHECKED_CAST&quot;)
-&nbsp;@Composable
-&nbsp;internal fun animateQuackBorderAsState(
-&nbsp;    targetValue: QuackBorder,
-&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackAnimationSpec(),
-&nbsp;): State&lt;QuackBorder&gt; {
-&nbsp;    val widthAnimationState = animateDpAsState(
-&nbsp;        targetValue = targetValue.width,
-&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;Dp&gt;,
-&nbsp;    )
-&nbsp;    val colorAnimationState = animateQuackColorAsState(
-&nbsp;        targetValue = targetValue.color,
-&nbsp;        animationSpec = animationSpec as AnimationSpec&lt;QuackColor&gt;,
-&nbsp;    )
-&nbsp;    return animateQuackAsState(
-&nbsp;        initialValue = targetValue,
-&nbsp;        animationStates = listOf(
-&nbsp;            widthAnimationState,
-&nbsp;            colorAnimationState,
-&nbsp;        ),
-&nbsp;        targetBuilder = { animationFlows -&gt;
-&nbsp;            val (width, color) = animationFlows
-&nbsp;            QuackBorder(
-&nbsp;                width = width as Dp,
-&nbsp;                color = color as QuackColor,
-&nbsp;            )
-&nbsp;        },
-&nbsp;    )
-&nbsp;}
-</code>
-</pre>
+  <code class="sourceCode">Source code is not available<br /></code>
 </div>
 
 <script type="text/javascript">
@@ -211,7 +111,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

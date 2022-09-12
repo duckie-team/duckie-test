@@ -56,10 +56,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    100%
   </span>
   <span class="absValue">
-    (3/4)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
@@ -72,10 +72,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    89.1%
+    96.4%
   </span>
   <span class="absValue">
-    (49/55)
+    (53/55)
   </span>
 </td>
 </tr>
@@ -91,26 +91,26 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    75%
   </span>
   <span class="absValue">
-    (10/20)
+    (15/20)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    87.5%
+    100%
   </span>
   <span class="absValue">
-    (7/8)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    71.6%
+    91%
   </span>
   <span class="absValue">
-    (48/67)
+    (61/67)
   </span>
 </td>
   </tr>
@@ -126,10 +126,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    87.5%
   </span>
   <span class="absValue">
-    (6/8)
+    (7/8)
   </span>
 </td>
 <td class="coverageStat">
@@ -161,26 +161,26 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    59.4%
+    81.2%
   </span>
   <span class="absValue">
-    (19/32)
+    (26/32)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92%
+    96%
   </span>
   <span class="absValue">
-    (23/25)
+    (24/25)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    84.6%
+    95.1%
   </span>
   <span class="absValue">
-    (137/162)
+    (154/162)
   </span>
 </td>
 </tr>
@@ -193,8 +193,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
-&nbsp; *
-&nbsp; * [ComposableUtils.kt] created by Ji Sungbin on 22. 8. 18. 오후 10:32
 &nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
@@ -322,7 +320,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;     */
 <b class="fc">&nbsp;    fun isComposable() = when (val element = parentUElements.last()) {</b>
 <b class="fc">&nbsp;        is UMethod -&gt; element.isComposable</b>
-<b class="pc">&nbsp;        is ULambdaExpression -&gt; element.isComposable</b>
+<b class="fc">&nbsp;        is ULambdaExpression -&gt; element.isComposable</b>
 <b class="fc">&nbsp;        else -&gt; false</b>
 &nbsp;    }
 &nbsp;
@@ -352,7 +350,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="pc">&nbsp;            isLocalProperty() || isAnonymousClass() || isPropertyInsideAnonymousClass()</b>
 &nbsp;
 <b class="pc">&nbsp;        while (containingDeclaration != null &amp;&amp; containingDeclaration.isContainingDeclaration()) {</b>
-<b class="nc">&nbsp;            containingDeclaration = containingDeclaration.getContainingDeclaration()</b>
+<b class="fc">&nbsp;            containingDeclaration = containingDeclaration.getContainingDeclaration()</b>
 &nbsp;        }
 &nbsp;
 <b class="fc">&nbsp;        containingDeclaration</b>
@@ -364,7 +362,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="pc">&nbsp;        for (element in expression.withContainingElements) {</b>
 <b class="fc">&nbsp;            elements += element</b>
 <b class="fc">&nbsp;            when (element) {</b>
-<b class="pc">&nbsp;                is ULambdaExpression -&gt; break</b>
+<b class="fc">&nbsp;                is ULambdaExpression -&gt; break</b>
 <b class="fc">&nbsp;                is UMethod -&gt; break</b>
 <b class="fc">&nbsp;                boundaryUElement -&gt; break</b>
 &nbsp;            }
@@ -412,7 +410,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

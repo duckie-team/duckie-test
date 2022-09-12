@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BuildConfig</title>
+  <title>Coverage Report > ToastWrapper</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
+    <a href="../index.html">team.duckie.quackquack.playground.util</a>
 </div>
 
-<h1>Coverage Summary for Class: BuildConfig (team.duckie.quackquack.ui.benchmark)</h1>
+<h1>Coverage Summary for Class: ToastWrapper (team.duckie.quackquack.playground.util)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">BuildConfig</td>
+  <td class="name">ToastWrapper</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -62,7 +62,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/4)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -71,7 +71,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/2)
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -79,7 +79,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/5)
+    (0/40)
   </span>
 </td>
 </tr>
@@ -89,7 +89,59 @@ Current scope:     <a href="../../index.html">all classes</a>
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(&quot;MemberVisibilityCanBePrivate&quot;)
+&nbsp;@file:NoLiveLiterals
+&nbsp;
+&nbsp;package team.duckie.quackquack.playground.util
+&nbsp;
+&nbsp;import android.content.Context
+&nbsp;import android.widget.Toast
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.NoLiveLiterals
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;import java.lang.ref.WeakReference
+&nbsp;
+<b class="nc">&nbsp;class ToastWrapper(context: Context) {</b>
+<b class="nc">&nbsp;    private val contextWrapper = WeakReference(context)</b>
+<b class="nc">&nbsp;    private val _context get() = contextWrapper.get()!!</b>
+&nbsp;
+&nbsp;    // TODO: 토스트 폰트 변경 (가능?)
+&nbsp;    // 시도해 본 방법: https://stackoverflow.com/questions/2940465/change-toast-font 하지만 작동 X
+<b class="nc">&nbsp;    private val toastInstance = Toast.makeText(_context, &quot;&quot;, Toast.LENGTH_SHORT)</b>
+&nbsp;
+&nbsp;    operator fun invoke(
+&nbsp;        message: String,
+<b class="nc">&nbsp;        length: Int = Toast.LENGTH_SHORT,</b>
+<b class="nc">&nbsp;    ) = toastInstance.run {</b>
+<b class="nc">&nbsp;        setText(message)</b>
+<b class="nc">&nbsp;        duration = length</b>
+<b class="nc">&nbsp;        show()</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun rememberToast(): ToastWrapper {
+&nbsp;    val context = LocalContext.current.applicationContext
+&nbsp;    return remember(
+&nbsp;        key1 = context,
+&nbsp;    ) {
+&nbsp;        ToastWrapper(
+&nbsp;            context = context,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -111,7 +163,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>

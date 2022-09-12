@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > CoreIssueRegistry</title>
+  <title>Coverage Report > ComposeFilesKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.lint.core</a>
+    <a href="../index.html">team.duckie.quackquack.common.lint.test</a>
 </div>
 
-<h1>Coverage Summary for Class: CoreIssueRegistry (team.duckie.quackquack.lint.core)</h1>
+<h1>Coverage Summary for Class: ComposeFilesKt (team.duckie.quackquack.common.lint.test)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,38 +48,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">CoreIssueRegistry</td>
+  <td class="name">ComposeFilesKt</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (3/3)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/9)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/31)
+    (23/23)
   </span>
 </td>
 </tr>
@@ -94,39 +94,57 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
-&nbsp; * [CoreIssueRegistry.kt] created by Ji Sungbin on 22. 8. 14. 오전 12:57
-&nbsp; *
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.lint.core
+&nbsp;@file:Suppress(
+&nbsp;    &quot;unused&quot;,
+&nbsp;    &quot;UnstableApiUsage&quot;,
+&nbsp;    &quot;SameParameterValue&quot;,
+&nbsp;)
 &nbsp;
-&nbsp;import com.android.tools.lint.client.api.IssueRegistry
-&nbsp;import com.android.tools.lint.client.api.Vendor
-&nbsp;import com.android.tools.lint.detector.api.CURRENT_API
-&nbsp;import com.android.tools.lint.detector.api.Detector
+&nbsp;package team.duckie.quackquack.common.lint.test
+&nbsp;
+&nbsp;import com.android.tools.lint.checks.infrastructure.LintDetectorTest.kotlin
+&nbsp;import com.android.tools.lint.checks.infrastructure.TestFile
+&nbsp;import org.intellij.lang.annotations.Language
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 의 Core 카테고리 린트 [Detector] 들을
-&nbsp; * 린트 시스템 등록해 주는 [IssueRegistry] 클래스
+&nbsp; * [TestFile] 로 사용할 @Composable 어노테이션 더미 파일
 &nbsp; */
-&nbsp;// 상수 값들 하드코딩 안하면 빌드 타임에서 레퍼런스를 참조하지 못해 빌드 에러뜸
-<b class="nc">&nbsp;class CoreIssueRegistry : IssueRegistry() {</b>
-<b class="nc">&nbsp;    override val issues = listOf(</b>
-<b class="nc">&nbsp;        MutableCollectionPublicIssue,</b>
+<b class="fc">&nbsp;val ComposableAnnotationFile: TestFile = kotlin(</b>
+&nbsp;    &quot;&quot;&quot;
+&nbsp;    package androidx.compose.runtime
+&nbsp;
+&nbsp;    @MustBeDocumented
+&nbsp;    @Retention(AnnotationRetention.BINARY)
+&nbsp;    @Target(
+&nbsp;        AnnotationTarget.FUNCTION,
+&nbsp;        AnnotationTarget.TYPE,
+&nbsp;        AnnotationTarget.TYPE_PARAMETER,
+&nbsp;        AnnotationTarget.PROPERTY_GETTER,
 &nbsp;    )
+&nbsp;    annotation class Composable
+<b class="fc">&nbsp;    &quot;&quot;&quot;.trimIndent()</b>
+&nbsp;)
 &nbsp;
-<b class="nc">&nbsp;    override val api = CURRENT_API</b>
+&nbsp;/**
+&nbsp; * @Composable 을 사용하기 위한 준비를 마친 [TestFile] 로 만들어 줍니다.
+&nbsp; *
+&nbsp; * @param source @Composable 을 사용할 코틀린 코드
+&nbsp; *
+&nbsp; * @return [source] 코드에서 @Composable 을 사용하기 위한 준비를 마친 [TestFile]
+&nbsp; */
+<b class="fc">&nbsp;fun composableTestFile(@Language(&quot;kotlin&quot;) source: String): TestFile = kotlin(</b>
+<b class="fc">&nbsp;    &quot;&quot;&quot;</b>
+&nbsp;    package land.sungbin.dummy
 &nbsp;
-<b class="nc">&nbsp;    override val minApi = 12</b>
+&nbsp;    import androidx.compose.runtime.Composable
 &nbsp;
-<b class="nc">&nbsp;    override val vendor = Vendor(</b>
-<b class="nc">&nbsp;        vendorName = &quot;QuackQuack&quot;,</b>
-<b class="nc">&nbsp;        feedbackUrl = &quot;https://github.com/sungbinland/duckie-quack-quack/issues&quot;,</b>
-<b class="nc">&nbsp;        contact = &quot;https://github.com/sungbinland/duckie-quack-quack&quot;,</b>
-&nbsp;    )
-&nbsp;}
+<b class="fc">&nbsp;    ${source.trimIndent()}</b>
+<b class="fc">&nbsp;    &quot;&quot;&quot;.trimIndent()</b>
+&nbsp;)
 </code>
 </pre>
 </div>
@@ -150,7 +168,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-04 05:54</div>
+    <div style="float:right;">generated on 2022-09-12 04:28</div>
 </div>
 </body>
 </html>
