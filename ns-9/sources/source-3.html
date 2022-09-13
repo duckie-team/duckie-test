@@ -126,6 +126,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import org.jetbrains.kotlin.psi.KtReferenceExpression
 &nbsp;import org.jetbrains.uast.UMethod
 &nbsp;import org.jetbrains.uast.toUElement
+&nbsp;import team.duckie.quackquack.common.fastForEach
 &nbsp;import team.duckie.quackquack.common.lint.extension.content
 &nbsp;import team.duckie.quackquack.common.lint.util.isReturnsUnit
 &nbsp;
@@ -230,8 +231,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            // 오로지 함수만 체크하도록 함 (함수 아닐 경우 그대로 리턴)
 &nbsp;            val ktNamedFunction = (node.sourcePsi as? KtNamedFunction) ?: return
 &nbsp;
-&nbsp;            // 함수 영역에서 kDoc 데이터를 뽑아온다.
+&nbsp;            // ktNamedFunction.children 가 Array 여서 random access 가 안됨
+&nbsp;            // 그래서 fastFind 가 아닌 일반 find 사용
 &nbsp;            val kDocArea = ktNamedFunction.children.find { element -&gt;
+&nbsp;                // 함수 영역에서 kDoc 데이터를 뽑아온다.
 &nbsp;                element is KDoc
 &nbsp;            }
 &nbsp;
@@ -281,7 +284,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;            if (!isNoParams) {
 &nbsp;                // 각 &quot;param&quot; KDocTag 내용에 대해 분석한다.
-&nbsp;                kDocTags[&quot;param&quot;]?.forEach { kDocParameterTag -&gt;
+&nbsp;                kDocTags[&quot;param&quot;]?.fastForEach { kDocParameterTag -&gt;
 &nbsp;                    // &#39;variable name&#39; 과 kDocParameterTag.getSubjectName() 이 같은지 체크한다.
 &nbsp;                    val isDeleted = methodParameterNames.remove(kDocParameterTag.getSubjectName())
 &nbsp;
@@ -302,8 +305,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            }
 &nbsp;            kDocTags.remove(&quot;param&quot;)
 &nbsp;
-&nbsp;            // &quot;throws&quot; 명세가 필요한 지 체크
+&nbsp;            // bodyArea.children 가 Array 여서 random access 가 안됨
+&nbsp;            // 그래서 fastAny 가 아닌 일반 any 사용
 &nbsp;            val isThrowable = bodyArea?.children?.any { bodyElement -&gt;
+&nbsp;                // &quot;throws&quot; 명세가 필요한 지 체크
 &nbsp;                bodyElement.node.elementType == KtNodeTypes.THROW
 &nbsp;            } ?: false
 &nbsp;
@@ -316,7 +321,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                )
 &nbsp;            }
 &nbsp;
-&nbsp;            kDocTags[&quot;throws&quot;]?.forEach { kDocThrowsTag -&gt;
+&nbsp;            kDocTags[&quot;throws&quot;]?.fastForEach { kDocThrowsTag -&gt;
 &nbsp;                if (kDocThrowsTag.getSubjectName().isNullOrBlank()) {
 &nbsp;                    return sendErrorReport(
 &nbsp;                        context = context,
@@ -331,7 +336,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            if (!node.isReturnsUnit &amp;&amp; kDocTags[&quot;return&quot;].isNullOrEmpty()) {
 &nbsp;                return sendErrorReport(context, node, Return_명세_필요)
 &nbsp;            }
-&nbsp;            kDocTags[&quot;return&quot;]?.forEach { kDocReturnTag -&gt;
+&nbsp;            kDocTags[&quot;return&quot;]?.fastForEach { kDocReturnTag -&gt;
 &nbsp;                if (kDocReturnTag.content.isBlank()) {
 &nbsp;                    return sendErrorReport(context, node, KDocTag_에_대응하는_내용_없음)
 &nbsp;                }
@@ -376,7 +381,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-12 04:28</div>
+    <div style="float:right;">generated on 2022-09-13 09:45</div>
 </div>
 </body>
 </html>

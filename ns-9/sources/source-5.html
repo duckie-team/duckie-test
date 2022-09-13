@@ -118,6 +118,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import org.jetbrains.kotlin.psi.psiUtil.isPublic
 &nbsp;import org.jetbrains.uast.UDeclaration
 &nbsp;import org.jetbrains.uast.kotlin.KotlinUField
+&nbsp;import team.duckie.quackquack.common.fastAny
 &nbsp;
 &nbsp;private const val BriefDescription = &quot;MutableCollections public 노출 금지&quot;
 &nbsp;private const val Explanation = &quot;캡슐화를 위해 MutableCollections public 노출은 금지됩니다.&quot;
@@ -178,7 +179,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            val property = node.sourcePsi as? KtProperty
 &nbsp;            val propertyType = property?.typeReference ?: return
 &nbsp;            val propertyTypeName = propertyType.text
-&nbsp;            val isMutable = MutableNames.any { immutableName -&gt;
+&nbsp;            val isMutable = MutableNames.fastAny { immutableName -&gt;
 &nbsp;                propertyTypeName.startsWith(immutableName)
 &nbsp;            }
 &nbsp;
@@ -217,7 +218,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-12 04:28</div>
+    <div style="float:right;">generated on 2022-09-13 09:45</div>
 </div>
 </body>
 </html>

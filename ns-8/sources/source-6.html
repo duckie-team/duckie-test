@@ -103,7 +103,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     97.7%
   </span>
   <span class="absValue">
-    (86/88)
+    (84/86)
   </span>
 </td>
   </tr>
@@ -138,7 +138,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     97.9%
   </span>
   <span class="absValue">
-    (94/96)
+    (92/94)
   </span>
 </td>
 </tr>
@@ -173,6 +173,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
 &nbsp;import org.jetbrains.uast.UMethod
+&nbsp;import team.duckie.quackquack.common.fastAny
 &nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
 &nbsp;import team.duckie.quackquack.common.lint.util.isReturnsUnit
 &nbsp;import team.duckie.quackquack.common.lint.util.typed
@@ -192,8 +193,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        Scope.JAVA_FILE_SCOPE,
 &nbsp;    ),
 &nbsp;)
-&nbsp;
-&nbsp;// TODO: [#73](https://github.com/sungbinland/duckie-quack-quack/pull/73)
 &nbsp;
 &nbsp;/**
 &nbsp; * MutableCollections 접미사
@@ -245,9 +244,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * ```
 &nbsp; *
 &nbsp; * 인자 타입의 패키지를 이용하여 검사하는 것으로 구현이 개선돼야 합니다.
+&nbsp; * 또한 에외적으로 사용자 정의 타입을 허용할 수 있어야 합니다. [(#73)](https://github.com/sungbinland/duckie-quack-quack/pull/73)
 &nbsp; */
 <b class="fc">&nbsp;class PreferredImmutableCollectionsDetector : Detector(), SourceCodeScanner {</b>
-<b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(UMethod::class.java)</b>
+<b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(</b>
+&nbsp;        UMethod::class.java,
+&nbsp;    )
 &nbsp;
 <b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
 &nbsp;        override fun visitMethod(node: UMethod) {
@@ -256,10 +258,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;            for (parameter in node.uastParameters) {</b>
 <b class="pc">&nbsp;                val (parameterTypeReference, parameterTypeName) = parameter.typed ?: continue</b>
 &nbsp;
-<b class="fc">&nbsp;                val isCollection = CollectionNames.any { collectionName -&gt;</b>
+<b class="fc">&nbsp;                val isCollection = CollectionNames.fastAny { collectionName -&gt;</b>
 <b class="fc">&nbsp;                    parameterTypeName.contains(collectionName)</b>
 &nbsp;                }
-<b class="fc">&nbsp;                val isImmutable = ImmutableNames.any { immutableName -&gt;</b>
+<b class="fc">&nbsp;                val isImmutable = ImmutableNames.fastAny { immutableName -&gt;</b>
 <b class="fc">&nbsp;                    parameterTypeName.contains(immutableName)</b>
 &nbsp;                }
 <b class="pc">&nbsp;                if (isCollection &amp;&amp; !isImmutable) {</b>
@@ -297,7 +299,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-12 04:28</div>
+    <div style="float:right;">generated on 2022-09-13 09:45</div>
 </div>
 </body>
 </html>

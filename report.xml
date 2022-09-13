@@ -104,7 +104,7 @@
 <counter type="LINE" missed="0" covered="5"/>
 </method>
 <method name="visitMethod" desc="(Lorg/jetbrains/uast/UMethod;)V">
-<counter type="INSTRUCTION" missed="31" covered="367"/>
+<counter type="INSTRUCTION" missed="31" covered="361"/>
 <counter type="BRANCH" missed="20" covered="72"/>
 <counter type="LINE" missed="9" covered="57"/>
 </method>
@@ -113,7 +113,7 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="31" covered="382"/>
+<counter type="INSTRUCTION" missed="31" covered="376"/>
 <counter type="BRANCH" missed="20" covered="72"/>
 <counter type="LINE" missed="9" covered="63"/>
 <counter type="METHOD" missed="0" covered="3"/>
@@ -157,7 +157,7 @@
 </class>
 <class name="team/duckie/quackquack/lint/core/MutableCollectionPublicDetector$createUastHandler$1" sourcefilename="MutableCollectionPublicDetector.kt">
 <method name="visitDeclaration" desc="(Lorg/jetbrains/uast/UDeclaration;)V">
-<counter type="INSTRUCTION" missed="0" covered="65"/>
+<counter type="INSTRUCTION" missed="0" covered="64"/>
 <counter type="BRANCH" missed="1" covered="13"/>
 <counter type="LINE" missed="0" covered="12"/>
 </method>
@@ -166,7 +166,7 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="0" covered="67"/>
+<counter type="INSTRUCTION" missed="0" covered="66"/>
 <counter type="BRANCH" missed="1" covered="13"/>
 <counter type="LINE" missed="0" covered="13"/>
 <counter type="METHOD" missed="0" covered="2"/>
@@ -188,91 +188,91 @@
 <counter type="METHOD" missed="0" covered="2"/>
 </class>
 <sourcefile name="KDocFieldsDetector.kt">
-<line nr="49" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="50" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="50" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="51" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="52" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="53" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="54" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="55" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="56" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="58" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="130" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="131" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="135" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="135" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="138" mi="0" ci="14" mb="0" cb="4"/>
-<line nr="141" mi="0" ci="32" mb="0" cb="4"/>
-<line nr="142" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="146" mi="0" ci="8" mb="0" cb="4"/>
-<line nr="150" mi="0" ci="9" mb="0" cb="2"/>
-<line nr="151" mi="0" ci="5" mb="1" cb="1"/>
-<line nr="152" mi="0" ci="8" mb="1" cb="1"/>
-<line nr="154" mi="2" ci="20" mb="1" cb="5"/>
-<line nr="155" mi="2" ci="15" mb="1" cb="3"/>
-<line nr="158" mi="2" ci="13" mb="2" cb="6"/>
-<line nr="159" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="160" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="161" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="162" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="167" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="168" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="169" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="56" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="59" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="131" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="132" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="136" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="136" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="139" mi="0" ci="14" mb="0" cb="4"/>
+<line nr="143" mi="0" ci="32" mb="0" cb="4"/>
+<line nr="145" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="149" mi="0" ci="8" mb="0" cb="4"/>
+<line nr="153" mi="0" ci="9" mb="0" cb="2"/>
+<line nr="154" mi="0" ci="5" mb="1" cb="1"/>
+<line nr="155" mi="0" ci="8" mb="1" cb="1"/>
+<line nr="157" mi="2" ci="20" mb="1" cb="5"/>
+<line nr="158" mi="2" ci="15" mb="1" cb="3"/>
+<line nr="161" mi="2" ci="13" mb="2" cb="6"/>
+<line nr="162" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="163" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="164" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="165" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="170" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="172" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="175" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="176" mi="3" ci="16" mb="3" cb="3"/>
-<line nr="177" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="178" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="181" mi="0" ci="13" mb="0" cb="4"/>
-<line nr="182" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="183" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="184" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="185" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="189" mi="0" ci="2" mb="0" cb="2"/>
-<line nr="191" mi="2" ci="13" mb="1" cb="1"/>
-<line nr="193" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="195" mi="0" ci="2" mb="0" cb="2"/>
-<line nr="196" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="197" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="198" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="199" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="201" mi="2" ci="11" mb="3" cb="3"/>
-<line nr="202" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="203" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="204" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="205" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="208" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="210" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="213" mi="1" ci="11" mb="1" cb="3"/>
-<line nr="214" mi="0" ci="10" mb="0" cb="2"/>
-<line nr="215" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="218" mi="0" ci="16" mb="1" cb="7"/>
-<line nr="219" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="220" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="221" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="222" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="226" mi="0" ci="15" mb="0" cb="2"/>
-<line nr="227" mi="2" ci="11" mb="3" cb="3"/>
-<line nr="228" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="229" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="230" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="231" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="234" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="235" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="238" mi="0" ci="18" mb="1" cb="7"/>
-<line nr="239" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="241" mi="0" ci="15" mb="0" cb="2"/>
-<line nr="242" mi="0" ci="5" mb="1" cb="1"/>
-<line nr="243" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="245" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="246" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="254" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="255" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="256" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="257" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="258" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="31" covered="405"/>
+<line nr="171" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="172" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="173" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="175" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="178" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="179" mi="3" ci="16" mb="3" cb="3"/>
+<line nr="180" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="181" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="184" mi="0" ci="13" mb="0" cb="4"/>
+<line nr="185" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="186" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="187" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="188" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="192" mi="0" ci="2" mb="0" cb="2"/>
+<line nr="194" mi="2" ci="12" mb="1" cb="1"/>
+<line nr="196" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="198" mi="0" ci="2" mb="0" cb="2"/>
+<line nr="199" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="200" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="201" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="202" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="204" mi="2" ci="11" mb="3" cb="3"/>
+<line nr="205" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="206" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="207" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="208" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="211" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="213" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="217" mi="1" ci="11" mb="1" cb="3"/>
+<line nr="219" mi="0" ci="10" mb="0" cb="2"/>
+<line nr="220" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="223" mi="0" ci="16" mb="1" cb="7"/>
+<line nr="224" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="225" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="226" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="227" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="231" mi="0" ci="14" mb="0" cb="2"/>
+<line nr="232" mi="2" ci="11" mb="3" cb="3"/>
+<line nr="233" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="234" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="235" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="236" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="239" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="240" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="243" mi="0" ci="18" mb="1" cb="7"/>
+<line nr="244" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="246" mi="0" ci="14" mb="0" cb="2"/>
+<line nr="247" mi="0" ci="5" mb="1" cb="1"/>
+<line nr="248" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="250" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="251" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="259" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="260" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="261" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="262" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="263" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="31" covered="399"/>
 <counter type="BRANCH" missed="20" covered="72"/>
 <counter type="LINE" missed="9" covered="75"/>
 </sourcefile>
@@ -286,39 +286,39 @@
 <counter type="LINE" missed="4" covered="0"/>
 </sourcefile>
 <sourcefile name="MutableCollectionPublicDetector.kt">
-<line nr="32" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="33" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="33" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="34" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="35" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="36" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="37" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="38" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="39" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="41" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="53" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="54" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="75" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="76" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="83" mi="0" ci="3" mb="0" cb="2"/>
-<line nr="85" mi="0" ci="12" mb="0" cb="2"/>
-<line nr="86" mi="0" ci="8" mb="1" cb="3"/>
-<line nr="87" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="88" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="89" mi="0" ci="12" mb="0" cb="2"/>
-<line nr="93" mi="0" ci="6" mb="0" cb="4"/>
-<line nr="94" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="95" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="96" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="97" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="98" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="0" covered="104"/>
+<line nr="39" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="76" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="77" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="81" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="81" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="3" mb="0" cb="2"/>
+<line nr="86" mi="0" ci="12" mb="0" cb="2"/>
+<line nr="87" mi="0" ci="8" mb="1" cb="3"/>
+<line nr="88" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="89" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="90" mi="0" ci="12" mb="0" cb="2"/>
+<line nr="94" mi="0" ci="6" mb="0" cb="4"/>
+<line nr="95" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="96" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="98" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="99" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="103"/>
 <counter type="BRANCH" missed="1" covered="13"/>
 <counter type="LINE" missed="0" covered="28"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="46" covered="509"/>
+<counter type="INSTRUCTION" missed="46" covered="502"/>
 <counter type="BRANCH" missed="21" covered="85"/>
 <counter type="LINE" missed="13" covered="103"/>
 <counter type="METHOD" missed="1" covered="15"/>
@@ -349,13 +349,13 @@
 </class>
 <class name="team/duckie/quackquack/ui/modifier/SizeKt" sourcefilename="size.kt">
 <method name="applyQuackSize" desc="(Landroidx/compose/ui/Modifier;Lteam/duckie/quackquack/ui/constant/QuackWidth;Lteam/duckie/quackquack/ui/constant/QuackHeight;)Landroidx/compose/ui/Modifier;">
-<counter type="INSTRUCTION" missed="24" covered="59"/>
-<counter type="BRANCH" missed="5" covered="7"/>
-<counter type="LINE" missed="2" covered="9"/>
+<counter type="INSTRUCTION" missed="15" covered="68"/>
+<counter type="BRANCH" missed="3" covered="9"/>
+<counter type="LINE" missed="1" covered="10"/>
 </method>
-<counter type="INSTRUCTION" missed="24" covered="59"/>
-<counter type="BRANCH" missed="5" covered="7"/>
-<counter type="LINE" missed="2" covered="9"/>
+<counter type="INSTRUCTION" missed="15" covered="68"/>
+<counter type="BRANCH" missed="3" covered="9"/>
+<counter type="LINE" missed="1" covered="10"/>
 <counter type="METHOD" missed="0" covered="1"/>
 </class>
 <sourcefile name="size.kt">
@@ -368,11 +368,11 @@
 <line nr="49" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="50" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="51" mi="6" ci="4" mb="1" cb="1"/>
-<line nr="52" mi="0" ci="11" mb="1" cb="1"/>
-<line nr="53" mi="9" ci="4" mb="1" cb="1"/>
-<counter type="INSTRUCTION" missed="24" covered="59"/>
-<counter type="BRANCH" missed="5" covered="7"/>
-<counter type="LINE" missed="2" covered="9"/>
+<line nr="52" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="53" mi="0" ci="13" mb="0" cb="2"/>
+<counter type="INSTRUCTION" missed="15" covered="68"/>
+<counter type="BRANCH" missed="3" covered="9"/>
+<counter type="LINE" missed="1" covered="10"/>
 </sourcefile>
 <sourcefile name="clickable.kt">
 <line nr="36" mi="0" ci="2" mb="0" cb="0"/>
@@ -391,9 +391,9 @@
 <counter type="BRANCH" missed="1" covered="9"/>
 <counter type="LINE" missed="0" covered="12"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="25" covered="149"/>
-<counter type="BRANCH" missed="6" covered="16"/>
-<counter type="LINE" missed="2" covered="21"/>
+<counter type="INSTRUCTION" missed="16" covered="158"/>
+<counter type="BRANCH" missed="4" covered="18"/>
+<counter type="LINE" missed="1" covered="22"/>
 <counter type="METHOD" missed="0" covered="3"/>
 <counter type="CLASS" missed="0" covered="3"/>
 </package>
@@ -757,6 +757,62 @@
 <counter type="LINE" missed="0" covered="1"/>
 <counter type="METHOD" missed="0" covered="1"/>
 </class>
+<class name="team/duckie/quackquack/common/ListUtilKt" sourcefilename="ListUtil.kt">
+<method name="fastFirstOrNull" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="fastMap" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/util/List;">
+<counter type="INSTRUCTION" missed="21" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+</method>
+<method name="fastForEachIndexed" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function2;)V">
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="4"/>
+</method>
+<method name="fastSumBy" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)I">
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="6" covered="0"/>
+</method>
+<method name="fastAll" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Z">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
+</method>
+<method name="fastFind" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<method name="fastMaxBy" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="45" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="11" covered="0"/>
+</method>
+<method name="fastForEach" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)V">
+<counter type="INSTRUCTION" missed="0" covered="19"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="4"/>
+</method>
+<method name="fastMapTo" desc="(Ljava/util/List;Ljava/util/Collection;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+</method>
+<method name="fastAny" desc="(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Z">
+<counter type="INSTRUCTION" missed="1" covered="12"/>
+<counter type="BRANCH" missed="2" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="128" covered="52"/>
+<counter type="BRANCH" missed="14" covered="4"/>
+<counter type="LINE" missed="36" covered="11"/>
+<counter type="METHOD" missed="7" covered="3"/>
+</class>
 <class name="team/duckie/quackquack/common/RunIfKt" sourcefilename="runIf.kt">
 <method name="runIfBuilder" desc="(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;">
 <counter type="INSTRUCTION" missed="11" covered="0"/>
@@ -784,8 +840,60 @@
 <counter type="LINE" missed="1" covered="0"/>
 <counter type="METHOD" missed="1" covered="0"/>
 </class>
+<sourcefile name="ListUtil.kt">
+<line nr="19" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="20" mi="0" ci="10" mb="0" cb="2"/>
+<line nr="21" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="22" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="10" mb="0" cb="2"/>
+<line nr="39" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="54" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="55" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="56" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="70" mi="1" ci="10" mb="2" cb="0"/>
+<line nr="71" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="84" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="85" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="86" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="99" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="100" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="114" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="115" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="116" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="117" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="119" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="133" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="134" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="135" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="136" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="137" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="138" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="153" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="154" mi="4" ci="0" mb="2" cb="0"/>
+<line nr="155" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="156" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="157" mi="13" ci="0" mb="4" cb="0"/>
+<line nr="158" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="159" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="160" mi="4" ci="0" mb="2" cb="0"/>
+<line nr="161" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="162" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="165" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="182" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="183" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="184" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="185" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="186" mi="1" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="128" covered="52"/>
+<counter type="BRANCH" missed="14" covered="4"/>
+<counter type="LINE" missed="36" covered="11"/>
+</sourcefile>
 <sourcefile name="string.kt">
-<line nr="10" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="13" mi="1" ci="0" mb="0" cb="0"/>
 <counter type="INSTRUCTION" missed="1" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="1" covered="0"/>
@@ -814,11 +922,11 @@
 <counter type="BRANCH" missed="2" covered="2"/>
 <counter type="LINE" missed="3" covered="3"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="26" covered="54"/>
-<counter type="BRANCH" missed="6" covered="2"/>
-<counter type="LINE" missed="4" covered="11"/>
-<counter type="METHOD" missed="2" covered="7"/>
-<counter type="CLASS" missed="1" covered="4"/>
+<counter type="INSTRUCTION" missed="154" covered="106"/>
+<counter type="BRANCH" missed="20" covered="6"/>
+<counter type="LINE" missed="40" covered="22"/>
+<counter type="METHOD" missed="9" covered="10"/>
+<counter type="CLASS" missed="1" covered="5"/>
 </package>
 <package name="team/duckie/quackquack/common/lint/extension">
 <class name="team/duckie/quackquack/common/lint/extension/KDocKt" sourcefilename="KDoc.kt">
@@ -874,12 +982,12 @@
 </method>
 <method name="invoke$isContainingDeclaration" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
 <counter type="INSTRUCTION" missed="2" covered="10"/>
-<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="BRANCH" missed="3" covered="3"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="invoke$isLocalProperty" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
-<counter type="INSTRUCTION" missed="2" covered="19"/>
-<counter type="BRANCH" missed="1" covered="5"/>
+<counter type="INSTRUCTION" missed="10" covered="11"/>
+<counter type="BRANCH" missed="4" covered="2"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="invoke$isAnonymousClass" desc="(Lorg/jetbrains/uast/UDeclaration;)Z">
@@ -888,13 +996,13 @@
 <counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="invoke" desc="()Lorg/jetbrains/uast/UDeclaration;">
-<counter type="INSTRUCTION" missed="0" covered="17"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="0" covered="4"/>
+<counter type="INSTRUCTION" missed="5" covered="12"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="1" covered="3"/>
 </method>
-<counter type="INSTRUCTION" missed="6" covered="61"/>
-<counter type="BRANCH" missed="5" covered="15"/>
-<counter type="LINE" missed="0" covered="8"/>
+<counter type="INSTRUCTION" missed="19" covered="48"/>
+<counter type="BRANCH" missed="10" covered="10"/>
+<counter type="LINE" missed="1" covered="7"/>
 <counter type="METHOD" missed="0" covered="5"/>
 </class>
 <class name="team/duckie/quackquack/common/lint/compose/ComposableBodyVisitor$parentUElements$2" sourcefilename="ComposableUtils.kt">
@@ -1068,12 +1176,12 @@
 <line nr="137" mi="2" ci="0" mb="0" cb="0"/>
 <line nr="148" mi="0" ci="14" mb="0" cb="0"/>
 <line nr="149" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="151" mi="2" ci="19" mb="1" cb="5"/>
+<line nr="151" mi="10" ci="11" mb="4" cb="2"/>
 <line nr="152" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="154" mi="2" ci="13" mb="1" cb="3"/>
-<line nr="157" mi="2" ci="10" mb="2" cb="4"/>
-<line nr="159" mi="0" ci="5" mb="1" cb="3"/>
-<line nr="160" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="157" mi="2" ci="10" mb="3" cb="3"/>
+<line nr="159" mi="0" ci="5" mb="2" cb="2"/>
+<line nr="160" mi="5" ci="0" mb="0" cb="0"/>
 <line nr="163" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="166" mi="0" ci="14" mb="0" cb="0"/>
 <line nr="167" mi="0" ci="5" mb="0" cb="0"/>
@@ -1088,9 +1196,9 @@
 <line nr="187" mi="5" ci="17" mb="3" cb="3"/>
 <line nr="194" mi="0" ci="9" mb="0" cb="0"/>
 <line nr="195" mi="15" ci="0" mb="2" cb="0"/>
-<counter type="INSTRUCTION" missed="191" covered="251"/>
-<counter type="BRANCH" missed="55" covered="37"/>
-<counter type="LINE" missed="20" covered="37"/>
+<counter type="INSTRUCTION" missed="204" covered="238"/>
+<counter type="BRANCH" missed="60" covered="32"/>
+<counter type="LINE" missed="21" covered="36"/>
 </sourcefile>
 <sourcefile name="KotlinMetadataUtils.kt">
 <line nr="36" mi="4" ci="0" mb="0" cb="0"/>
@@ -1148,9 +1256,9 @@
 <counter type="BRANCH" missed="51" covered="1"/>
 <counter type="LINE" missed="51" covered="0"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="581" covered="266"/>
-<counter type="BRANCH" missed="106" covered="38"/>
-<counter type="LINE" missed="72" covered="39"/>
+<counter type="INSTRUCTION" missed="594" covered="253"/>
+<counter type="BRANCH" missed="111" covered="33"/>
+<counter type="LINE" missed="73" covered="38"/>
 <counter type="METHOD" missed="11" covered="16"/>
 <counter type="CLASS" missed="2" covered="5"/>
 </package>
@@ -1172,18 +1280,18 @@
 <counter type="LINE" missed="0" covered="8"/>
 </method>
 <method name="change-puzieeI$ui_components_release" desc="(Lteam/duckie/quackquack/ui/textstyle/QuackTextStyle;JLandroidx/compose/ui/text/font/FontWeight;I)Lteam/duckie/quackquack/ui/textstyle/QuackTextStyle;">
-<counter type="INSTRUCTION" missed="3" covered="6"/>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="2"/>
+<counter type="LINE" missed="0" covered="3"/>
 </method>
 <method name="change-puzieeI$ui_components_release" desc="(JLandroidx/compose/ui/text/font/FontWeight;I)Lteam/duckie/quackquack/ui/textstyle/QuackTextStyle;">
 <counter type="INSTRUCTION" missed="0" covered="13"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="7"/>
 </method>
-<counter type="INSTRUCTION" missed="3" covered="269"/>
+<counter type="INSTRUCTION" missed="0" covered="272"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="66"/>
+<counter type="LINE" missed="0" covered="67"/>
 <counter type="METHOD" missed="0" covered="5"/>
 </class>
 <class name="team/duckie/quackquack/ui/textstyle/QuackTextStyle$Companion" sourcefilename="QuackTextStyle.kt">
@@ -1330,7 +1438,7 @@
 <line nr="158" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="159" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="160" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="177" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="177" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="178" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="179" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="180" mi="0" ci="3" mb="0" cb="0"/>
@@ -1366,13 +1474,13 @@
 <line nr="259" mi="0" ci="0" mb="0" cb="0"/>
 <line nr="260" mi="0" ci="0" mb="0" cb="0"/>
 <line nr="261" mi="0" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="16" covered="361"/>
+<counter type="INSTRUCTION" missed="13" covered="364"/>
 <counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="7" covered="95"/>
+<counter type="LINE" missed="6" covered="96"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="16" covered="361"/>
+<counter type="INSTRUCTION" missed="13" covered="364"/>
 <counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="7" covered="95"/>
+<counter type="LINE" missed="6" covered="96"/>
 <counter type="METHOD" missed="5" covered="13"/>
 <counter type="CLASS" missed="0" covered="3"/>
 </package>
@@ -1615,18 +1723,18 @@
 <counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="visitExpression" desc="(Lorg/jetbrains/uast/UExpression;)V">
-<counter type="INSTRUCTION" missed="2" covered="88"/>
+<counter type="INSTRUCTION" missed="2" covered="87"/>
 <counter type="BRANCH" missed="2" covered="16"/>
-<counter type="LINE" missed="0" covered="15"/>
+<counter type="LINE" missed="0" covered="16"/>
 </method>
 <method name="visitMethod" desc="(Lorg/jetbrains/uast/UMethod;)V">
-<counter type="INSTRUCTION" missed="1" covered="57"/>
+<counter type="INSTRUCTION" missed="1" covered="55"/>
 <counter type="BRANCH" missed="1" covered="5"/>
 <counter type="LINE" missed="0" covered="11"/>
 </method>
-<counter type="INSTRUCTION" missed="3" covered="147"/>
+<counter type="INSTRUCTION" missed="3" covered="144"/>
 <counter type="BRANCH" missed="3" covered="21"/>
-<counter type="LINE" missed="0" covered="27"/>
+<counter type="LINE" missed="0" covered="28"/>
 <counter type="METHOD" missed="0" covered="3"/>
 </class>
 <class name="team/duckie/quackquack/lint/compose/NewLineArgumentDetectorKt" sourcefilename="NewLineArgumentDetector.kt">
@@ -1668,7 +1776,7 @@
 </class>
 <class name="team/duckie/quackquack/lint/compose/PreferredImmutableCollectionsDetector$createUastHandler$1" sourcefilename="PreferredImmutableCollectionsDetector.kt">
 <method name="visitMethod" desc="(Lorg/jetbrains/uast/UMethod;)V">
-<counter type="INSTRUCTION" missed="2" covered="84"/>
+<counter type="INSTRUCTION" missed="2" covered="82"/>
 <counter type="BRANCH" missed="3" covered="13"/>
 <counter type="LINE" missed="0" covered="13"/>
 </method>
@@ -1677,7 +1785,7 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="2" covered="86"/>
+<counter type="INSTRUCTION" missed="2" covered="84"/>
 <counter type="BRANCH" missed="3" covered="13"/>
 <counter type="LINE" missed="0" covered="14"/>
 <counter type="METHOD" missed="0" covered="2"/>
@@ -1721,7 +1829,7 @@
 </class>
 <class name="team/duckie/quackquack/lint/compose/TrailingCommaDetector$createUastHandler$1" sourcefilename="TrailingCommaDetector.kt">
 <method name="visitExpression" desc="(Lorg/jetbrains/uast/UExpression;)V">
-<counter type="INSTRUCTION" missed="5" covered="73"/>
+<counter type="INSTRUCTION" missed="5" covered="71"/>
 <counter type="BRANCH" missed="5" covered="13"/>
 <counter type="LINE" missed="0" covered="14"/>
 </method>
@@ -1735,7 +1843,7 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="10" covered="128"/>
+<counter type="INSTRUCTION" missed="10" covered="126"/>
 <counter type="BRANCH" missed="10" covered="24"/>
 <counter type="LINE" missed="0" covered="27"/>
 <counter type="METHOD" missed="0" covered="3"/>
@@ -1797,137 +1905,138 @@
 <counter type="LINE" missed="0" covered="24"/>
 </sourcefile>
 <sourcefile name="NewLineArgumentDetector.kt">
-<line nr="36" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="38" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="39" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="40" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="41" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="42" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="43" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="45" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="77" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="78" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="79" mi="0" ci="12" mb="0" cb="0"/>
-<line nr="83" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="83" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="86" mi="0" ci="4" mb="0" cb="2"/>
-<line nr="88" mi="0" ci="12" mb="0" cb="0"/>
-<line nr="89" mi="1" ci="5" mb="1" cb="1"/>
-<line nr="90" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="92" mi="0" ci="8" mb="0" cb="2"/>
-<line nr="93" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="94" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="95" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="96" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="97" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="100" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="105" mi="0" ci="6" mb="0" cb="4"/>
-<line nr="107" mi="0" ci="13" mb="0" cb="0"/>
-<line nr="108" mi="1" ci="5" mb="1" cb="1"/>
-<line nr="110" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="111" mi="1" ci="15" mb="1" cb="1"/>
-<line nr="112" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="114" mi="0" ci="10" mb="0" cb="4"/>
-<line nr="115" mi="0" ci="3" mb="0" cb="2"/>
-<line nr="117" mi="0" ci="16" mb="0" cb="4"/>
-<line nr="118" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="45" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="47" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="82" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="83" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="91" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="93" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="94" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="95" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="98" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="99" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="100" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="102" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="110" mi="0" ci="6" mb="0" cb="4"/>
+<line nr="112" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="6" mb="0" cb="4"/>
+<line nr="116" mi="1" ci="5" mb="1" cb="1"/>
+<line nr="117" mi="0" ci="3" mb="0" cb="2"/>
 <line nr="119" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="120" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="120" mi="1" ci="15" mb="1" cb="1"/>
 <line nr="121" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="122" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="125" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="129" mi="0" ci="6" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="3" covered="189"/>
+<line nr="123" mi="0" ci="16" mb="0" cb="4"/>
+<line nr="124" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="125" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="126" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="127" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="128" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="131" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="135" mi="0" ci="6" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="3" covered="186"/>
 <counter type="BRANCH" missed="3" covered="21"/>
-<counter type="LINE" missed="0" covered="41"/>
+<counter type="LINE" missed="0" covered="42"/>
 </sourcefile>
 <sourcefile name="PreferredImmutableCollectionsDetector.kt">
-<line nr="32" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="33" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="33" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="34" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="35" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="36" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="37" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="38" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="39" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="41" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="53" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="54" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="55" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="63" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="64" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="65" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="62" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="63" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="98" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="99" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="101" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="101" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="103" mi="0" ci="8" mb="1" cb="3"/>
-<line nr="105" mi="0" ci="11" mb="0" cb="2"/>
-<line nr="106" mi="2" ci="11" mb="1" cb="1"/>
-<line nr="108" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="109" mi="0" ci="11" mb="0" cb="2"/>
-<line nr="111" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="112" mi="0" ci="11" mb="0" cb="2"/>
-<line nr="114" mi="0" ci="4" mb="1" cb="3"/>
-<line nr="115" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="116" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="117" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="118" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="119" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="2" covered="141"/>
+<line nr="103" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="103" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="8" mb="1" cb="3"/>
+<line nr="107" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="108" mi="2" ci="11" mb="1" cb="1"/>
+<line nr="110" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="111" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="113" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="11" mb="0" cb="2"/>
+<line nr="116" mi="0" ci="4" mb="1" cb="3"/>
+<line nr="117" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="118" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="119" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="120" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="121" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="139"/>
 <counter type="BRANCH" missed="3" covered="13"/>
 <counter type="LINE" missed="0" covered="33"/>
 </sourcefile>
 <sourcefile name="TrailingCommaDetector.kt">
-<line nr="36" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="38" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="39" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="40" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="41" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="42" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="43" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="45" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="62" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="63" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="64" mi="0" ci="12" mb="0" cb="0"/>
-<line nr="68" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="68" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="71" mi="0" ci="6" mb="0" cb="4"/>
-<line nr="73" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="74" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="76" mi="0" ci="3" mb="0" cb="2"/>
-<line nr="78" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="79" mi="2" ci="7" mb="1" cb="1"/>
-<line nr="80" mi="3" ci="19" mb="4" cb="4"/>
-<line nr="82" mi="0" ci="4" mb="0" cb="2"/>
-<line nr="83" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="84" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="85" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="86" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="87" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="90" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="95" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="43" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="46" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="65" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="66" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="67" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="71" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="71" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="74" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="76" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="77" mi="0" ci="3" mb="0" cb="2"/>
+<line nr="79" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="80" mi="2" ci="6" mb="1" cb="1"/>
+<line nr="81" mi="3" ci="14" mb="4" cb="4"/>
+<line nr="83" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="84" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="86" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="87" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="95" mi="0" ci="6" mb="0" cb="4"/>
 <line nr="97" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="99" mi="0" ci="3" mb="0" cb="2"/>
-<line nr="101" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="102" mi="2" ci="6" mb="1" cb="1"/>
-<line nr="103" mi="3" ci="14" mb="4" cb="4"/>
+<line nr="98" mi="0" ci="3" mb="0" cb="2"/>
+<line nr="100" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="102" mi="2" ci="7" mb="1" cb="1"/>
+<line nr="103" mi="3" ci="19" mb="4" cb="4"/>
 <line nr="105" mi="0" ci="4" mb="0" cb="2"/>
-<line nr="106" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="106" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="107" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="108" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="109" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="108" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="109" mi="0" ci="7" mb="0" cb="0"/>
 <line nr="110" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="10" covered="163"/>
+<line nr="113" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="10" covered="161"/>
 <counter type="BRANCH" missed="10" covered="24"/>
 <counter type="LINE" missed="0" covered="40"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="41" covered="574"/>
+<counter type="INSTRUCTION" missed="41" covered="567"/>
 <counter type="BRANCH" missed="22" covered="70"/>
-<counter type="LINE" missed="6" covered="138"/>
+<counter type="LINE" missed="6" covered="139"/>
 <counter type="METHOD" missed="1" covered="31"/>
 <counter type="CLASS" missed="1" covered="12"/>
 </package>
@@ -2986,15 +3095,15 @@
 <line nr="110" mi="4" ci="0" mb="0" cb="0"/>
 <line nr="111" mi="22" ci="0" mb="0" cb="0"/>
 <line nr="112" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="114" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="115" mi="20" ci="0" mb="8" cb="0"/>
-<line nr="116" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="117" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="119" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="120" mi="20" ci="0" mb="8" cb="0"/>
-<line nr="121" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="122" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="125" mi="14" ci="0" mb="2" cb="0"/>
+<line nr="117" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="20" ci="0" mb="8" cb="0"/>
+<line nr="119" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="120" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="122" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="123" mi="20" ci="0" mb="8" cb="0"/>
+<line nr="124" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="125" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="128" mi="14" ci="0" mb="2" cb="0"/>
 <counter type="INSTRUCTION" missed="810" covered="0"/>
 <counter type="BRANCH" missed="120" covered="0"/>
 <counter type="LINE" missed="74" covered="0"/>
@@ -3598,13 +3707,13 @@
 <counter type="LINE" missed="10" covered="0"/>
 </method>
 <method name="QuackImage-vhnH_ec" desc="(Lteam/duckie/quackquack/ui/icon/QuackIcon;JLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V">
-<counter type="INSTRUCTION" missed="14" covered="47"/>
-<counter type="BRANCH" missed="5" covered="5"/>
-<counter type="LINE" missed="2" covered="10"/>
+<counter type="INSTRUCTION" missed="7" covered="54"/>
+<counter type="BRANCH" missed="4" covered="6"/>
+<counter type="LINE" missed="1" covered="11"/>
 </method>
-<counter type="INSTRUCTION" missed="78" covered="47"/>
-<counter type="BRANCH" missed="15" covered="5"/>
-<counter type="LINE" missed="12" covered="10"/>
+<counter type="INSTRUCTION" missed="71" covered="54"/>
+<counter type="BRANCH" missed="14" covered="6"/>
+<counter type="LINE" missed="11" covered="11"/>
 <counter type="METHOD" missed="1" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/QuackDialogMenuItem" sourcefilename="fab.kt">
@@ -3949,9 +4058,9 @@
 </class>
 <class name="team/duckie/quackquack/ui/component/TextfieldKt" sourcefilename="textfield.kt">
 <method name="QuackBasicTextField" desc="(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lteam/duckie/quackquack/ui/textstyle/QuackTextStyle;Lteam/duckie/quackquack/ui/constant/QuackWidth;Lteam/duckie/quackquack/ui/constant/QuackHeight;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V">
-<counter type="INSTRUCTION" missed="538" covered="0"/>
-<counter type="BRANCH" missed="94" covered="0"/>
-<counter type="LINE" missed="32" covered="0"/>
+<counter type="INSTRUCTION" missed="206" covered="328"/>
+<counter type="BRANCH" missed="67" covered="27"/>
+<counter type="LINE" missed="4" covered="28"/>
 </method>
 <method name="notFoundRequiredLayoutIdForQuackTextFieldMessage" desc="(Ljava/lang/String;)Ljava/lang/String;">
 <counter type="INSTRUCTION" missed="6" covered="0"/>
@@ -3959,79 +4068,63 @@
 <counter type="LINE" missed="2" covered="0"/>
 </method>
 <method name="QuackTextFieldDecorationBox-zTRF_AQ" desc="(JLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V">
-<counter type="INSTRUCTION" missed="294" covered="0"/>
-<counter type="BRANCH" missed="20" covered="0"/>
-<counter type="LINE" missed="43" covered="0"/>
+<counter type="INSTRUCTION" missed="20" covered="235"/>
+<counter type="BRANCH" missed="14" covered="6"/>
+<counter type="LINE" missed="1" covered="36"/>
 </method>
 <method name="&lt;clinit&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="5" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
-<method name="toDebugString" desc="(Landroidx/compose/ui/layout/Placeable;)Ljava/lang/String;">
-<counter type="INSTRUCTION" missed="9" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<counter type="INSTRUCTION" missed="852" covered="0"/>
-<counter type="BRANCH" missed="114" covered="0"/>
-<counter type="LINE" missed="79" covered="0"/>
-<counter type="METHOD" missed="5" covered="0"/>
+<counter type="INSTRUCTION" missed="232" covered="568"/>
+<counter type="BRANCH" missed="81" covered="33"/>
+<counter type="LINE" missed="7" covered="65"/>
+<counter type="METHOD" missed="1" covered="3"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TextfieldKt$QuackBasicTextField$1$1" sourcefilename="textfield.kt">
 <method name="invoke" desc="(Landroidx/compose/ui/layout/LayoutCoordinates;)V">
-<counter type="INSTRUCTION" missed="33" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="5" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="33" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="5" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TextfieldKt$QuackBasicTextField$2" sourcefilename="textfield.kt">
-<method name="invoke" desc="(Landroidx/compose/ui/text/TextLayoutResult;)V">
-<counter type="INSTRUCTION" missed="7" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<counter type="INSTRUCTION" missed="7" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
-</class>
-<class name="team/duckie/quackquack/ui/component/TextfieldKt$QuackBasicTextField$3" sourcefilename="textfield.kt">
 <method name="invoke" desc="(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V">
-<counter type="INSTRUCTION" missed="53" covered="0"/>
-<counter type="BRANCH" missed="6" covered="0"/>
-<counter type="LINE" missed="5" covered="0"/>
+<counter type="INSTRUCTION" missed="9" covered="44"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="4"/>
 </method>
-<counter type="INSTRUCTION" missed="53" covered="0"/>
-<counter type="BRANCH" missed="6" covered="0"/>
-<counter type="LINE" missed="5" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="INSTRUCTION" missed="9" covered="44"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="4"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TextfieldKt$QuackTextFieldDecorationBox$3" sourcefilename="textfield.kt">
 <method name="measure-3p2s80s" desc="(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;">
-<counter type="INSTRUCTION" missed="275" covered="0"/>
-<counter type="BRANCH" missed="28" covered="0"/>
-<counter type="LINE" missed="52" covered="0"/>
+<counter type="INSTRUCTION" missed="15" covered="174"/>
+<counter type="BRANCH" missed="10" covered="14"/>
+<counter type="LINE" missed="3" covered="31"/>
 </method>
-<counter type="INSTRUCTION" missed="275" covered="0"/>
-<counter type="BRANCH" missed="28" covered="0"/>
-<counter type="LINE" missed="52" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="INSTRUCTION" missed="15" covered="174"/>
+<counter type="BRANCH" missed="10" covered="14"/>
+<counter type="LINE" missed="3" covered="31"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TextfieldKt$QuackTextFieldDecorationBox$3$measure$1" sourcefilename="textfield.kt">
 <method name="invoke" desc="(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V">
-<counter type="INSTRUCTION" missed="103" covered="0"/>
-<counter type="BRANCH" missed="6" covered="0"/>
-<counter type="LINE" missed="17" covered="0"/>
+<counter type="INSTRUCTION" missed="4" covered="63"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="12"/>
 </method>
-<counter type="INSTRUCTION" missed="103" covered="0"/>
-<counter type="BRANCH" missed="6" covered="0"/>
-<counter type="LINE" missed="17" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="INSTRUCTION" missed="4" covered="63"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="12"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/component/TypographyKt" sourcefilename="typography.kt">
 <method name="QuackSubtitle-if1t6PI" desc="(Landroidx/compose/ui/Modifier;Ljava/lang/String;JLandroidx/compose/runtime/Composer;II)V">
@@ -4230,168 +4323,134 @@
 <counter type="LINE" missed="80" covered="65"/>
 </sourcefile>
 <sourcefile name="textfield.kt">
-<line nr="74" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="217" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="220" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="221" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="222" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="223" mi="17" ci="0" mb="2" cb="0"/>
-<line nr="224" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="226" mi="20" ci="0" mb="2" cb="0"/>
-<line nr="227" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="228" mi="29" ci="0" mb="6" cb="0"/>
-<line nr="229" mi="253" ci="0" mb="70" cb="0"/>
-<line nr="230" mi="33" ci="0" mb="0" cb="0"/>
-<line nr="231" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="232" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="235" mi="12" ci="0" mb="0" cb="0"/>
-<line nr="237" mi="10" ci="0" mb="2" cb="0"/>
-<line nr="238" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="239" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="240" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="241" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="243" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="244" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="246" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="247" mi="11" ci="0" mb="0" cb="0"/>
-<line nr="248" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="249" mi="10" ci="0" mb="0" cb="0"/>
-<line nr="250" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="251" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="253" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="254" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="256" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="257" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="258" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="259" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="260" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="261" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="265" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="267" mi="39" ci="0" mb="0" cb="0"/>
-<line nr="268" mi="21" ci="0" mb="6" cb="0"/>
-<line nr="269" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="271" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="272" mi="23" ci="0" mb="0" cb="0"/>
-<line nr="273" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="276" mi="25" ci="0" mb="2" cb="0"/>
-<line nr="283" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="292" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="293" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="295" mi="14" ci="0" mb="0" cb="0"/>
-<line nr="298" mi="14" ci="0" mb="0" cb="0"/>
-<line nr="299" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="302" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="306" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="307" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="308" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="309" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="312" mi="15" ci="0" mb="0" cb="0"/>
-<line nr="313" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="314" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="316" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="319" mi="16" ci="0" mb="0" cb="0"/>
-<line nr="320" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="321" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="325" mi="13" ci="0" mb="6" cb="0"/>
-<line nr="326" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="327" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="328" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="330" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="331" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="333" mi="21" ci="0" mb="4" cb="0"/>
-<line nr="334" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="336" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="337" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="338" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="340" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="341" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="343" mi="21" ci="0" mb="4" cb="0"/>
-<line nr="344" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="345" mi="2" ci="0" mb="2" cb="0"/>
-<line nr="346" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="347" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="348" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="350" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="351" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="353" mi="21" ci="0" mb="4" cb="0"/>
-<line nr="354" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="355" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="356" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="357" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="369" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="370" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="371" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="372" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="373" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="374" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="377" mi="25" ci="0" mb="4" cb="0"/>
-<line nr="378" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="379" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="380" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="381" mi="8" ci="0" mb="2" cb="0"/>
-<line nr="382" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="383" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="386" mi="25" ci="0" mb="4" cb="0"/>
-<line nr="387" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="388" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="389" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="390" mi="8" ci="0" mb="2" cb="0"/>
-<line nr="391" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="392" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="394" mi="16" ci="0" mb="0" cb="0"/>
-<line nr="395" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="396" mi="2" ci="0" mb="2" cb="0"/>
-<line nr="397" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="399" mi="2" ci="0" mb="2" cb="0"/>
-<line nr="400" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="402" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="403" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="404" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="406" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="407" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="408" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="409" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="411" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="412" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="413" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="416" mi="26" ci="0" mb="4" cb="0"/>
-<line nr="417" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="418" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="419" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="429" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="430" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="431" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="432" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="434" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="435" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="436" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="438" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="439" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="444" mi="16" ci="0" mb="0" cb="0"/>
-<line nr="445" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="446" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="448" mi="9" ci="0" mb="2" cb="0"/>
-<line nr="449" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="450" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="451" mi="12" ci="0" mb="0" cb="0"/>
-<line nr="453" mi="12" ci="0" mb="2" cb="0"/>
-<line nr="454" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="455" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="457" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="458" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="459" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="460" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="461" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="463" mi="12" ci="0" mb="2" cb="0"/>
-<line nr="464" mi="15" ci="0" mb="0" cb="0"/>
-<line nr="465" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="466" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="467" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="480" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="481" mi="4" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="1323" covered="0"/>
-<counter type="BRANCH" missed="154" covered="0"/>
-<counter type="LINE" missed="159" covered="0"/>
+<line nr="55" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="78" mi="0" ci="7" mb="1" cb="1"/>
+<line nr="81" mi="0" ci="7" mb="1" cb="1"/>
+<line nr="82" mi="0" ci="7" mb="1" cb="1"/>
+<line nr="83" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="84" mi="0" ci="17" mb="1" cb="1"/>
+<line nr="85" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="87" mi="0" ci="20" mb="1" cb="1"/>
+<line nr="88" mi="6" ci="0" mb="2" cb="0"/>
+<line nr="89" mi="29" ci="0" mb="6" cb="0"/>
+<line nr="90" mi="138" ci="115" mb="49" cb="21"/>
+<line nr="91" mi="0" ci="33" mb="0" cb="0"/>
+<line nr="92" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="93" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="97" mi="1" ci="4" mb="1" cb="1"/>
+<line nr="98" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="99" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="100" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="103" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="104" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="107" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="108" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="110" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="111" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="115" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="116" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="117" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="120" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="121" mi="0" ci="39" mb="0" cb="0"/>
+<line nr="122" mi="7" ci="14" mb="3" cb="3"/>
+<line nr="123" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="125" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="126" mi="0" ci="23" mb="0" cb="0"/>
+<line nr="127" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="130" mi="25" ci="0" mb="2" cb="0"/>
+<line nr="153" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="156" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="157" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="160" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="164" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="165" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="166" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="167" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="170" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="172" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="175" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="179" mi="3" ci="10" mb="4" cb="2"/>
+<line nr="180" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="181" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="182" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="184" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="185" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="187" mi="5" ci="16" mb="3" cb="1"/>
+<line nr="188" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="190" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="191" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="192" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="194" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="195" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="197" mi="5" ci="16" mb="3" cb="1"/>
+<line nr="198" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="199" mi="0" ci="2" mb="1" cb="1"/>
+<line nr="200" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="201" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="202" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="204" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="205" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="207" mi="5" ci="16" mb="3" cb="1"/>
+<line nr="208" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="209" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="210" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="211" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="225" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="226" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="227" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="231" mi="1" ci="24" mb="2" cb="2"/>
+<line nr="232" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="233" mi="1" ci="4" mb="1" cb="1"/>
+<line nr="234" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="238" mi="1" ci="24" mb="1" cb="3"/>
+<line nr="239" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="240" mi="1" ci="4" mb="1" cb="1"/>
+<line nr="241" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="247" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="248" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="249" mi="0" ci="2" mb="1" cb="1"/>
+<line nr="250" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="252" mi="0" ci="2" mb="1" cb="1"/>
+<line nr="253" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="255" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="256" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="257" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="261" mi="1" ci="29" mb="2" cb="4"/>
+<line nr="262" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="263" mi="0" ci="3" mb="1" cb="1"/>
+<line nr="264" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="271" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="272" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="273" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="274" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="276" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="278" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="279" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="284" mi="0" ci="16" mb="0" cb="0"/>
+<line nr="285" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="286" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="288" mi="1" ci="8" mb="1" cb="1"/>
+<line nr="289" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="290" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="293" mi="0" ci="12" mb="0" cb="0"/>
+<line nr="295" mi="1" ci="11" mb="1" cb="1"/>
+<line nr="296" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="297" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="299" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="300" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="301" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="303" mi="1" ci="11" mb="1" cb="1"/>
+<line nr="304" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="305" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="325" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="326" mi="4" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="260" covered="854"/>
+<counter type="BRANCH" missed="97" covered="53"/>
+<counter type="LINE" missed="12" covered="113"/>
 </sourcefile>
 <sourcefile name="tab.kt">
 <line nr="54" mi="0" ci="5" mb="0" cb="0"/>
@@ -4882,7 +4941,7 @@
 <counter type="LINE" missed="6" covered="154"/>
 </sourcefile>
 <sourcefile name="image.kt">
-<line nr="33" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="33" mi="0" ci="7" mb="1" cb="1"/>
 <line nr="34" mi="4" ci="4" mb="1" cb="1"/>
 <line nr="35" mi="1" ci="0" mb="0" cb="0"/>
 <line nr="36" mi="1" ci="6" mb="1" cb="3"/>
@@ -4904,9 +4963,9 @@
 <line nr="72" mi="1" ci="0" mb="0" cb="0"/>
 <line nr="73" mi="16" ci="0" mb="0" cb="0"/>
 <line nr="74" mi="1" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="78" covered="47"/>
-<counter type="BRANCH" missed="15" covered="5"/>
-<counter type="LINE" missed="12" covered="10"/>
+<counter type="INSTRUCTION" missed="71" covered="54"/>
+<counter type="BRANCH" missed="14" covered="6"/>
+<counter type="LINE" missed="11" covered="11"/>
 </sourcefile>
 <sourcefile name="typography.kt">
 <line nr="32" mi="7" ci="0" mb="2" cb="0"/>
@@ -4969,11 +5028,11 @@
 <counter type="BRANCH" missed="48" covered="0"/>
 <counter type="LINE" missed="56" covered="0"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="3639" covered="2857"/>
-<counter type="BRANCH" missed="579" covered="181"/>
-<counter type="LINE" missed="439" covered="406"/>
-<counter type="METHOD" missed="49" covered="45"/>
-<counter type="CLASS" missed="18" covered="25"/>
+<counter type="INSTRUCTION" missed="2569" covered="3718"/>
+<counter type="BRANCH" missed="521" covered="235"/>
+<counter type="LINE" missed="291" covered="520"/>
+<counter type="METHOD" missed="40" covered="52"/>
+<counter type="CLASS" missed="12" covered="30"/>
 </package>
 <package name="team/duckie/quackquack/lint/quack">
 <class name="team/duckie/quackquack/lint/quack/DesignSystemDetector" sourcefilename="DesignSystemDetector.kt">
@@ -5346,14 +5405,14 @@
 <counter type="LINE" missed="1" covered="0"/>
 </method>
 <method name="getArea-oyUPibY" desc="()I">
-<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="1"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="getImageEditBg-oyUPibY" desc="()I">
-<counter type="INSTRUCTION" missed="1" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="1"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
 <method name="getArrowSend-oyUPibY" desc="()I">
 <counter type="INSTRUCTION" missed="1" covered="0"/>
@@ -5495,10 +5554,10 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="1" covered="0"/>
 </method>
-<counter type="INSTRUCTION" missed="27" covered="5"/>
+<counter type="INSTRUCTION" missed="25" covered="7"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="27" covered="5"/>
-<counter type="METHOD" missed="27" covered="5"/>
+<counter type="LINE" missed="25" covered="7"/>
+<counter type="METHOD" missed="25" covered="7"/>
 </class>
 <sourcefile name="QuackIcon.kt">
 <line nr="28" mi="0" ci="5" mb="0" cb="0"/>
@@ -5555,7 +5614,7 @@
 <line nr="113" mi="1" ci="0" mb="0" cb="0"/>
 <line nr="114" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="118" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="118" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="118" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="119" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="123" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="123" mi="1" ci="0" mb="0" cb="0"/>
@@ -5585,7 +5644,7 @@
 <line nr="163" mi="1" ci="0" mb="0" cb="0"/>
 <line nr="164" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="168" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="168" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="168" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="169" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="173" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="173" mi="1" ci="0" mb="0" cb="0"/>
@@ -5599,14 +5658,14 @@
 <line nr="188" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="188" mi="0" ci="1" mb="0" cb="0"/>
 <line nr="189" mi="0" ci="1" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="29" covered="106"/>
+<counter type="INSTRUCTION" missed="27" covered="108"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="28" covered="70"/>
+<counter type="LINE" missed="26" covered="72"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="29" covered="106"/>
+<counter type="INSTRUCTION" missed="27" covered="108"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="28" covered="70"/>
-<counter type="METHOD" missed="28" covered="7"/>
+<counter type="LINE" missed="26" covered="72"/>
+<counter type="METHOD" missed="26" covered="9"/>
 <counter type="CLASS" missed="0" covered="2"/>
 </package>
 <package name="team/duckie/quackquack/lint/custom/rule/processor">
@@ -6336,17 +6395,17 @@
 </class>
 <class name="team/duckie/quackquack/playground/ComposableSingletons$MainActivityKt" sourcefilename="MainActivity.kt">
 <method name="&lt;clinit&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="INSTRUCTION" missed="18" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
 </method>
-<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="INSTRUCTION" missed="18" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="2" covered="0"/>
+<counter type="LINE" missed="3" covered="0"/>
 <counter type="METHOD" missed="1" covered="0"/>
 </class>
 <class name="team/duckie/quackquack/playground/ComposableSingletons$MainActivityKt$lambda-1$1" sourcefilename="MainActivity.kt">
-<method name="invoke" desc="(Landroidx/compose/runtime/Composer;I)V">
+<method name="invoke" desc="(Landroidx/compose/foundation/layout/BoxScope;Landroidx/compose/runtime/Composer;I)V">
 <counter type="INSTRUCTION" missed="24" covered="0"/>
 <counter type="BRANCH" missed="8" covered="0"/>
 <counter type="LINE" missed="1" covered="0"/>
@@ -6357,6 +6416,17 @@
 <counter type="METHOD" missed="1" covered="0"/>
 </class>
 <class name="team/duckie/quackquack/playground/ComposableSingletons$MainActivityKt$lambda-2$1" sourcefilename="MainActivity.kt">
+<method name="invoke" desc="(Landroidx/compose/runtime/Composer;I)V">
+<counter type="INSTRUCTION" missed="26" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="26" covered="0"/>
+<counter type="BRANCH" missed="8" covered="0"/>
+<counter type="LINE" missed="2" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="team/duckie/quackquack/playground/ComposableSingletons$MainActivityKt$lambda-3$1" sourcefilename="MainActivity.kt">
 <method name="invoke" desc="(Landroidx/compose/runtime/Composer;I)V">
 <counter type="INSTRUCTION" missed="27" covered="0"/>
 <counter type="BRANCH" missed="8" covered="0"/>
@@ -6422,46 +6492,49 @@
 <counter type="LINE" missed="1" covered="0"/>
 </sourcefile>
 <sourcefile name="MainActivity.kt">
-<line nr="34" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="35" mi="24" ci="0" mb="0" cb="0"/>
-<line nr="41" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="43" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="44" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="44" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="45" mi="24" ci="0" mb="8" cb="0"/>
-<line nr="58" mi="38" ci="0" mb="10" cb="0"/>
-<line nr="59" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="60" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="61" mi="11" ci="0" mb="0" cb="0"/>
-<line nr="64" mi="15" ci="0" mb="2" cb="0"/>
-<line nr="71" mi="19" ci="0" mb="6" cb="0"/>
-<line nr="72" mi="12" ci="0" mb="0" cb="0"/>
-<line nr="73" mi="15" ci="0" mb="0" cb="0"/>
-<line nr="74" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="76" mi="17" ci="0" mb="0" cb="0"/>
-<line nr="77" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="78" mi="10" ci="0" mb="2" cb="0"/>
-<line nr="79" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="80" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="35" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="36" mi="24" ci="0" mb="0" cb="0"/>
+<line nr="42" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="44" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="45" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="45" mi="8" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="47" mi="24" ci="0" mb="8" cb="0"/>
+<line nr="48" mi="24" ci="0" mb="8" cb="0"/>
+<line nr="49" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="62" mi="38" ci="0" mb="10" cb="0"/>
+<line nr="63" mi="9" ci="0" mb="0" cb="0"/>
+<line nr="64" mi="7" ci="0" mb="0" cb="0"/>
+<line nr="65" mi="11" ci="0" mb="0" cb="0"/>
+<line nr="68" mi="15" ci="0" mb="2" cb="0"/>
+<line nr="75" mi="19" ci="0" mb="6" cb="0"/>
+<line nr="76" mi="12" ci="0" mb="0" cb="0"/>
+<line nr="77" mi="15" ci="0" mb="0" cb="0"/>
+<line nr="78" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="80" mi="17" ci="0" mb="0" cb="0"/>
 <line nr="81" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="82" mi="11" ci="0" mb="2" cb="0"/>
-<line nr="83" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="84" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="86" mi="6" ci="0" mb="0" cb="0"/>
-<line nr="86" mi="5" ci="0" mb="2" cb="0"/>
-<line nr="87" mi="21" ci="0" mb="8" cb="0"/>
-<line nr="88" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="89" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="91" mi="14" ci="0" mb="2" cb="0"/>
-<counter type="INSTRUCTION" missed="294" covered="0"/>
-<counter type="BRANCH" missed="42" covered="0"/>
-<counter type="LINE" missed="31" covered="0"/>
+<line nr="82" mi="10" ci="0" mb="2" cb="0"/>
+<line nr="83" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="84" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="85" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="86" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="87" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="88" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="6" ci="0" mb="0" cb="0"/>
+<line nr="90" mi="5" ci="0" mb="2" cb="0"/>
+<line nr="91" mi="21" ci="0" mb="8" cb="0"/>
+<line nr="92" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="93" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="95" mi="14" ci="0" mb="2" cb="0"/>
+<counter type="INSTRUCTION" missed="326" covered="0"/>
+<counter type="BRANCH" missed="50" covered="0"/>
+<counter type="LINE" missed="34" covered="0"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="296" covered="0"/>
-<counter type="BRANCH" missed="42" covered="0"/>
-<counter type="LINE" missed="32" covered="0"/>
-<counter type="METHOD" missed="10" covered="0"/>
-<counter type="CLASS" missed="7" covered="0"/>
+<counter type="INSTRUCTION" missed="328" covered="0"/>
+<counter type="BRANCH" missed="50" covered="0"/>
+<counter type="LINE" missed="35" covered="0"/>
+<counter type="METHOD" missed="11" covered="0"/>
+<counter type="CLASS" missed="8" covered="0"/>
 </package>
 <package name="team/duckie/quackquack/ui/benchmark">
 <class name="team/duckie/quackquack/ui/benchmark/BaselineProfileBenchmark" sourcefilename="BaselineProfileBenchmark.kt">
@@ -6635,7 +6708,7 @@
 <counter type="LINE" missed="1" covered="0"/>
 </method>
 <method name="PlaygroundActivities" desc="(Ljava/lang/String;Lkotlinx/collections/immutable/PersistentList;Landroidx/compose/runtime/Composer;II)V">
-<counter type="INSTRUCTION" missed="160" covered="0"/>
+<counter type="INSTRUCTION" missed="161" covered="0"/>
 <counter type="BRANCH" missed="8" covered="0"/>
 <counter type="LINE" missed="11" covered="0"/>
 </method>
@@ -6645,7 +6718,7 @@
 <counter type="LINE" missed="1" covered="0"/>
 </method>
 <method name="PlaygroundSection" desc="(Ljava/lang/String;Lkotlinx/collections/immutable/PersistentList;Landroidx/compose/runtime/Composer;I)V">
-<counter type="INSTRUCTION" missed="227" covered="0"/>
+<counter type="INSTRUCTION" missed="228" covered="0"/>
 <counter type="BRANCH" missed="8" covered="0"/>
 <counter type="LINE" missed="17" covered="0"/>
 </method>
@@ -6664,7 +6737,7 @@
 <counter type="BRANCH" missed="4" covered="0"/>
 <counter type="LINE" missed="6" covered="0"/>
 </method>
-<counter type="INSTRUCTION" missed="963" covered="0"/>
+<counter type="INSTRUCTION" missed="965" covered="0"/>
 <counter type="BRANCH" missed="70" covered="0"/>
 <counter type="LINE" missed="99" covered="0"/>
 <counter type="METHOD" missed="8" covered="0"/>
@@ -7126,7 +7199,7 @@
 <line nr="119" mi="10" ci="0" mb="2" cb="0"/>
 <line nr="123" mi="19" ci="0" mb="4" cb="0"/>
 <line nr="124" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="125" mi="16" ci="0" mb="0" cb="0"/>
+<line nr="125" mi="17" ci="0" mb="0" cb="0"/>
 <line nr="126" mi="21" ci="0" mb="8" cb="0"/>
 <line nr="127" mi="20" ci="0" mb="0" cb="0"/>
 <line nr="128" mi="20" ci="0" mb="8" cb="0"/>
@@ -7186,7 +7259,7 @@
 <line nr="225" mi="2" ci="0" mb="0" cb="0"/>
 <line nr="227" mi="18" ci="0" mb="4" cb="0"/>
 <line nr="228" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="229" mi="16" ci="0" mb="0" cb="0"/>
+<line nr="229" mi="17" ci="0" mb="0" cb="0"/>
 <line nr="230" mi="21" ci="0" mb="8" cb="0"/>
 <line nr="231" mi="20" ci="0" mb="0" cb="0"/>
 <line nr="232" mi="20" ci="0" mb="8" cb="0"/>
@@ -7374,7 +7447,7 @@
 <line nr="521" mi="9" ci="0" mb="0" cb="0"/>
 <line nr="522" mi="7" ci="0" mb="0" cb="0"/>
 <line nr="524" mi="17" ci="0" mb="2" cb="0"/>
-<counter type="INSTRUCTION" missed="2606" covered="0"/>
+<counter type="INSTRUCTION" missed="2608" covered="0"/>
 <counter type="BRANCH" missed="256" covered="0"/>
 <counter type="LINE" missed="264" covered="0"/>
 </sourcefile>
@@ -7397,7 +7470,7 @@
 <counter type="BRANCH" missed="4" covered="0"/>
 <counter type="LINE" missed="14" covered="0"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="2684" covered="0"/>
+<counter type="INSTRUCTION" missed="2686" covered="0"/>
 <counter type="BRANCH" missed="260" covered="0"/>
 <counter type="LINE" missed="278" covered="0"/>
 <counter type="METHOD" missed="52" covered="0"/>
@@ -7433,14 +7506,14 @@
 </class>
 <class name="team/duckie/quackquack/ui/constant/QuackHeight$Custom" sourcefilename="size.kt">
 <method name="&lt;init&gt;" desc="(F)V">
-<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="8" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/ui/constant/QuackHeight$Fill" sourcefilename="size.kt">
 <method name="&lt;init&gt;" desc="()V">
@@ -7523,21 +7596,21 @@
 <line nr="73" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="82" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="91" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="102" mi="8" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="16" covered="16"/>
+<line nr="102" mi="0" ci="8" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="8" covered="24"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="2" covered="6"/>
+<counter type="LINE" missed="1" covered="7"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="23" covered="16"/>
+<counter type="INSTRUCTION" missed="15" covered="24"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="4" covered="6"/>
-<counter type="METHOD" missed="4" covered="6"/>
-<counter type="CLASS" missed="3" covered="6"/>
+<counter type="LINE" missed="3" covered="7"/>
+<counter type="METHOD" missed="3" covered="7"/>
+<counter type="CLASS" missed="2" covered="7"/>
 </package>
-<counter type="INSTRUCTION" missed="12553" covered="5954"/>
-<counter type="BRANCH" missed="1545" covered="437"/>
-<counter type="LINE" missed="1590" covered="1139"/>
-<counter type="METHOD" missed="353" covered="204"/>
-<counter type="CLASS" missed="157" covered="94"/>
+<counter type="INSTRUCTION" missed="11636" covered="6862"/>
+<counter type="BRANCH" missed="1512" covered="492"/>
+<counter type="LINE" missed="1477" covered="1269"/>
+<counter type="METHOD" missed="349" covered="217"/>
+<counter type="CLASS" missed="151" covered="101"/>
 </report>
 

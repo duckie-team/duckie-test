@@ -100,10 +100,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.5%
+    92.4%
   </span>
   <span class="absValue">
-    (382/413)
+    (376/407)
   </span>
 </td>
   </tr>
@@ -135,10 +135,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.6%
+    92.5%
   </span>
   <span class="absValue">
-    (390/421)
+    (384/415)
   </span>
 </td>
 </tr>
@@ -184,6 +184,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import org.jetbrains.kotlin.psi.KtReferenceExpression
 &nbsp;import org.jetbrains.uast.UMethod
 &nbsp;import org.jetbrains.uast.toUElement
+&nbsp;import team.duckie.quackquack.common.fastForEach
 &nbsp;import team.duckie.quackquack.common.lint.extension.content
 &nbsp;import team.duckie.quackquack.common.lint.util.isReturnsUnit
 &nbsp;
@@ -288,8 +289,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            // 오로지 함수만 체크하도록 함 (함수 아닐 경우 그대로 리턴)
 <b class="fc">&nbsp;            val ktNamedFunction = (node.sourcePsi as? KtNamedFunction) ?: return</b>
 &nbsp;
-&nbsp;            // 함수 영역에서 kDoc 데이터를 뽑아온다.
+&nbsp;            // ktNamedFunction.children 가 Array 여서 random access 가 안됨
+&nbsp;            // 그래서 fastFind 가 아닌 일반 find 사용
 <b class="fc">&nbsp;            val kDocArea = ktNamedFunction.children.find { element -&gt;</b>
+&nbsp;                // 함수 영역에서 kDoc 데이터를 뽑아온다.
 <b class="fc">&nbsp;                element is KDoc</b>
 &nbsp;            }
 &nbsp;
@@ -339,7 +342,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 <b class="fc">&nbsp;            if (!isNoParams) {</b>
 &nbsp;                // 각 &quot;param&quot; KDocTag 내용에 대해 분석한다.
-<b class="pc">&nbsp;                kDocTags[&quot;param&quot;]?.forEach { kDocParameterTag -&gt;</b>
+<b class="pc">&nbsp;                kDocTags[&quot;param&quot;]?.fastForEach { kDocParameterTag -&gt;</b>
 &nbsp;                    // &#39;variable name&#39; 과 kDocParameterTag.getSubjectName() 이 같은지 체크한다.
 <b class="fc">&nbsp;                    val isDeleted = methodParameterNames.remove(kDocParameterTag.getSubjectName())</b>
 &nbsp;
@@ -360,8 +363,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            }
 <b class="fc">&nbsp;            kDocTags.remove(&quot;param&quot;)</b>
 &nbsp;
-&nbsp;            // &quot;throws&quot; 명세가 필요한 지 체크
+&nbsp;            // bodyArea.children 가 Array 여서 random access 가 안됨
+&nbsp;            // 그래서 fastAny 가 아닌 일반 any 사용
 <b class="pc">&nbsp;            val isThrowable = bodyArea?.children?.any { bodyElement -&gt;</b>
+&nbsp;                // &quot;throws&quot; 명세가 필요한 지 체크
 <b class="fc">&nbsp;                bodyElement.node.elementType == KtNodeTypes.THROW</b>
 <b class="fc">&nbsp;            } ?: false</b>
 &nbsp;
@@ -374,7 +379,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                )
 &nbsp;            }
 &nbsp;
-<b class="fc">&nbsp;            kDocTags[&quot;throws&quot;]?.forEach { kDocThrowsTag -&gt;</b>
+<b class="fc">&nbsp;            kDocTags[&quot;throws&quot;]?.fastForEach { kDocThrowsTag -&gt;</b>
 <b class="pc">&nbsp;                if (kDocThrowsTag.getSubjectName().isNullOrBlank()) {</b>
 <b class="nc">&nbsp;                    return sendErrorReport(</b>
 <b class="nc">&nbsp;                        context = context,</b>
@@ -389,7 +394,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="pc">&nbsp;            if (!node.isReturnsUnit &amp;&amp; kDocTags[&quot;return&quot;].isNullOrEmpty()) {</b>
 <b class="fc">&nbsp;                return sendErrorReport(context, node, Return_명세_필요)</b>
 &nbsp;            }
-<b class="fc">&nbsp;            kDocTags[&quot;return&quot;]?.forEach { kDocReturnTag -&gt;</b>
+<b class="fc">&nbsp;            kDocTags[&quot;return&quot;]?.fastForEach { kDocReturnTag -&gt;</b>
 <b class="pc">&nbsp;                if (kDocReturnTag.content.isBlank()) {</b>
 <b class="nc">&nbsp;                    return sendErrorReport(context, node, KDocTag_에_대응하는_내용_없음)</b>
 &nbsp;                }
@@ -434,7 +439,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-12 04:28</div>
+    <div style="float:right;">generated on 2022-09-13 09:45</div>
 </div>
 </body>
 </html>

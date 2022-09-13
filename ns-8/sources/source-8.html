@@ -100,10 +100,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.8%
+    92.6%
   </span>
   <span class="absValue">
-    (128/138)
+    (126/136)
   </span>
 </td>
   </tr>
@@ -135,10 +135,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    93.7%
+    93.6%
   </span>
   <span class="absValue">
-    (148/158)
+    (146/156)
   </span>
 </td>
 </tr>
@@ -172,6 +172,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import org.jetbrains.uast.UExpression
 &nbsp;import org.jetbrains.uast.UMethod
 &nbsp;import org.jetbrains.uast.kotlin.KotlinUFunctionCallExpression
+&nbsp;import team.duckie.quackquack.common.fastForEach
 &nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
 &nbsp;import team.duckie.quackquack.common.lint.compose.isInvokedWithinComposable
 &nbsp;
@@ -203,7 +204,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
 &nbsp; *
 &nbsp; * 1. 컴포저블 함수여야 함
-&nbsp; * 2. 인자와 파라미터의 개수가 각각 [LimitArgumentNumber]개, [LimitParameterNumber]개 이상이여야 함
+&nbsp; * 2. 컴포저블 안에서 invoke 돼야 함
+&nbsp; * 3. 인자와 파라미터의 개수가 각각 [LimitArgumentNumber]개, [LimitParameterNumber]개 이상이여야 함
+&nbsp; * 4. 코틀린 함수여야 함
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
 &nbsp; *
@@ -217,36 +220,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    )
 &nbsp;
 <b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
-&nbsp;        // Argument 검사
-&nbsp;        override fun visitExpression(node: UExpression) {
-<b class="fc">&nbsp;            if (!node.isInvokedWithinComposable() || node !is KotlinUFunctionCallExpression) return</b>
-&nbsp;
-<b class="fc">&nbsp;            val valueArgumentSize = node.valueArgumentCount</b>
-<b class="fc">&nbsp;            val valueArgumentList = node.valueArguments</b>
-&nbsp;
-<b class="fc">&nbsp;            if (valueArgumentSize &lt; LimitArgumentNumber) return</b>
-&nbsp;
-<b class="fc">&nbsp;            valueArgumentList.forEach { argument -&gt;</b>
-<b class="pc">&nbsp;                val argumentNode = argument.sourcePsi?.node</b>
-<b class="pc">&nbsp;                val lastParameterNextSibling = argumentNode?.treeParent?.psi?.nextSibling ?: return</b>
-&nbsp;
-<b class="fc">&nbsp;                if (!lastParameterNextSibling.textContains(&#39;,&#39;)) {</b>
-<b class="fc">&nbsp;                    context.report(</b>
-<b class="fc">&nbsp;                        issue = TrailingCommaIssue,</b>
-<b class="fc">&nbsp;                        scope = argumentNode.psi,</b>
-<b class="fc">&nbsp;                        location = context.getLocation(argumentNode.psi),</b>
-<b class="fc">&nbsp;                        message = Explanation,</b>
-&nbsp;                    )
-&nbsp;                }
-<b class="fc">&nbsp;            }</b>
-&nbsp;        }
-&nbsp;
-&nbsp;        // Parameter 검사
+&nbsp;        // Parameter
 &nbsp;        override fun visitMethod(node: UMethod) {
 <b class="fc">&nbsp;            if (!node.isComposable) return</b>
 &nbsp;
 <b class="fc">&nbsp;            val parameterSize = node.uastParameters.size</b>
-&nbsp;
 <b class="fc">&nbsp;            if (parameterSize &lt; LimitParameterNumber) return</b>
 &nbsp;
 <b class="fc">&nbsp;            val lastParameter = node.uastParameters.lastOrNull()</b>
@@ -261,6 +239,29 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                    message = Explanation,</b>
 &nbsp;                )
 &nbsp;            }
+&nbsp;        }
+&nbsp;
+&nbsp;        // Argument
+&nbsp;        override fun visitExpression(node: UExpression) {
+<b class="fc">&nbsp;            if (!node.isInvokedWithinComposable() || node !is KotlinUFunctionCallExpression) return</b>
+&nbsp;
+<b class="fc">&nbsp;            val valueArgumentSize = node.valueArgumentCount</b>
+<b class="fc">&nbsp;            if (valueArgumentSize &lt; LimitArgumentNumber) return</b>
+&nbsp;
+<b class="fc">&nbsp;            val valueArgumentList = node.valueArguments</b>
+<b class="fc">&nbsp;            valueArgumentList.fastForEach { argument -&gt;</b>
+<b class="pc">&nbsp;                val argumentNode = argument.sourcePsi?.node</b>
+<b class="pc">&nbsp;                val lastParameterNextSibling = argumentNode?.treeParent?.psi?.nextSibling ?: return</b>
+&nbsp;
+<b class="fc">&nbsp;                if (!lastParameterNextSibling.textContains(&#39;,&#39;)) {</b>
+<b class="fc">&nbsp;                    context.report(</b>
+<b class="fc">&nbsp;                        issue = TrailingCommaIssue,</b>
+<b class="fc">&nbsp;                        scope = argumentNode.psi,</b>
+<b class="fc">&nbsp;                        location = context.getLocation(argumentNode.psi),</b>
+<b class="fc">&nbsp;                        message = Explanation,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
 &nbsp;        }
 &nbsp;    }
 &nbsp;}
@@ -287,7 +288,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-12 04:28</div>
+    <div style="float:right;">generated on 2022-09-13 09:45</div>
 </div>
 </body>
 </html>
