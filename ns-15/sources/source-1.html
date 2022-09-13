@@ -438,14 +438,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                            v4 = b,</b>
 &nbsp;                        )
 &nbsp;                    },
-&nbsp;                    convertFromVector = {
-<b class="nc">&nbsp;                        val l = it.v2.pow(</b>
+&nbsp;                    convertFromVector = { vector -&gt;
+<b class="nc">&nbsp;                        val l = vector.v2.pow(</b>
 <b class="nc">&nbsp;                            x = 3f,</b>
 &nbsp;                        )
-<b class="nc">&nbsp;                        val a = it.v3.pow(</b>
+<b class="nc">&nbsp;                        val a = vector.v3.pow(</b>
 <b class="nc">&nbsp;                            x = 3f,</b>
 &nbsp;                        )
-<b class="nc">&nbsp;                        val b = it.v4.pow(</b>
+<b class="nc">&nbsp;                        val b = vector.v4.pow(</b>
 <b class="nc">&nbsp;                            x = 3f,</b>
 &nbsp;                        )
 &nbsp;
@@ -472,7 +472,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                        )
 &nbsp;
 <b class="nc">&nbsp;                        val colorXyz = Color(</b>
-<b class="nc">&nbsp;                            alpha = it.v1.coerceIn(</b>
+<b class="nc">&nbsp;                            alpha = vector.v1.coerceIn(</b>
 <b class="nc">&nbsp;                                minimumValue = 0f,</b>
 <b class="nc">&nbsp;                                maximumValue = 1f,</b>
 &nbsp;                            ),
@@ -577,7 +577,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-13 09:45</div>
+    <div style="float:right;">generated on 2022-09-13 13:54</div>
 </div>
 </body>
 </html>

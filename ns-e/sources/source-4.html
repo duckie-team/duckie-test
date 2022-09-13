@@ -237,6 +237,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    )
 &nbsp;}
 &nbsp;
+&nbsp;@Suppress(&quot;RedundantLambdaArrow&quot;)
 &nbsp;@Composable
 &nbsp;fun QuackMenuFloatingActionButtonDemo() {
 &nbsp;    var expanded by remember {
@@ -263,7 +264,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                text = &quot;덕딜&quot;,
 &nbsp;            ),
 &nbsp;        ),
-&nbsp;        onClickMenuItem = {},
+&nbsp;        onClickMenuItem = { _ -&gt; },
 &nbsp;    )
 &nbsp;}
 </code>
@@ -289,7 +290,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-13 09:45</div>
+    <div style="float:right;">generated on 2022-09-13 13:55</div>
 </div>
 </body>
 </html>

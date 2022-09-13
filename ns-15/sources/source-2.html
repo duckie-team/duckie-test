@@ -317,14 +317,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                            v4 = b,
 &nbsp;                        )
 &nbsp;                    },
-&nbsp;                    convertFromVector = {
-&nbsp;                        val l = it.v2.pow(
+&nbsp;                    convertFromVector = { vector -&gt;
+&nbsp;                        val l = vector.v2.pow(
 &nbsp;                            x = 3f,
 &nbsp;                        )
-&nbsp;                        val a = it.v3.pow(
+&nbsp;                        val a = vector.v3.pow(
 &nbsp;                            x = 3f,
 &nbsp;                        )
-&nbsp;                        val b = it.v4.pow(
+&nbsp;                        val b = vector.v4.pow(
 &nbsp;                            x = 3f,
 &nbsp;                        )
 &nbsp;
@@ -351,7 +351,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                        )
 &nbsp;
 &nbsp;                        val colorXyz = Color(
-&nbsp;                            alpha = it.v1.coerceIn(
+&nbsp;                            alpha = vector.v1.coerceIn(
 &nbsp;                                minimumValue = 0f,
 &nbsp;                                maximumValue = 1f,
 &nbsp;                            ),
@@ -456,7 +456,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-13 09:45</div>
+    <div style="float:right;">generated on 2022-09-13 13:54</div>
 </div>
 </body>
 </html>

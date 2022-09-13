@@ -67,13 +67,13 @@
 <package name="team/duckie/quackquack/lint/core">
 <class name="team/duckie/quackquack/lint/core/CoreIssueRegistry" sourcefilename="CoreIssueRegistry.kt">
 <method name="&lt;init&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="15" covered="0"/>
+<counter type="INSTRUCTION" missed="19" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="4" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
 </method>
-<counter type="INSTRUCTION" missed="15" covered="0"/>
+<counter type="INSTRUCTION" missed="19" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="4" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
 <counter type="METHOD" missed="1" covered="0"/>
 </class>
 <class name="team/duckie/quackquack/lint/core/KDocFieldsDetector" sourcefilename="KDocFieldsDetector.kt">
@@ -187,6 +187,64 @@
 <counter type="LINE" missed="0" covered="12"/>
 <counter type="METHOD" missed="0" covered="2"/>
 </class>
+<class name="team/duckie/quackquack/lint/core/SpecifyLambdaParamsNameDetector" sourcefilename="SpecifyLambdaParamsNameDetector.kt">
+<method name="sendErrorReport" desc="(Lcom/android/tools/lint/detector/api/JavaContext;Lorg/jetbrains/uast/UExpression;Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<method name="createUastHandler" desc="(Lcom/android/tools/lint/detector/api/JavaContext;)Lcom/android/tools/lint/client/api/UElementHandler;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getApplicableUastTypes" desc="()Ljava/util/List;">
+<counter type="INSTRUCTION" missed="0" covered="1"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="22"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="8"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="team/duckie/quackquack/lint/core/SpecifyLambdaParamsNameDetector$createUastHandler$1" sourcefilename="SpecifyLambdaParamsNameDetector.kt">
+<method name="visitLambdaExpression" desc="(Lorg/jetbrains/uast/ULambdaExpression;)V">
+<counter type="INSTRUCTION" missed="3" covered="86"/>
+<counter type="BRANCH" missed="4" covered="12"/>
+<counter type="LINE" missed="0" covered="19"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lteam/duckie/quackquack/lint/core/SpecifyLambdaParamsNameDetector;Lcom/android/tools/lint/detector/api/JavaContext;)V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="3" covered="88"/>
+<counter type="BRANCH" missed="4" covered="12"/>
+<counter type="LINE" missed="0" covered="20"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="team/duckie/quackquack/lint/core/SpecifyLambdaParamsNameDetectorKt" sourcefilename="SpecifyLambdaParamsNameDetector.kt">
+<method name="getSpecifyLambdaParamsNameIssue" desc="()Lcom/android/tools/lint/detector/api/Issue;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;clinit&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="11"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="8"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="15"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="9"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
 <sourcefile name="KDocFieldsDetector.kt">
 <line nr="50" mi="0" ci="4" mb="0" cb="0"/>
 <line nr="51" mi="0" ci="1" mb="0" cb="0"/>
@@ -279,11 +337,54 @@
 <sourcefile name="CoreIssueRegistry.kt">
 <line nr="17" mi="2" ci="0" mb="0" cb="0"/>
 <line nr="18" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="19" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="19" mi="12" ci="0" mb="0" cb="0"/>
 <line nr="20" mi="2" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="15" covered="0"/>
+<line nr="21" mi="2" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="19" covered="0"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="4" covered="0"/>
+<counter type="LINE" missed="5" covered="0"/>
+</sourcefile>
+<sourcefile name="SpecifyLambdaParamsNameDetector.kt">
+<line nr="39" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="41" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="45" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="46" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="48" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="79" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="80" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="87" mi="2" ci="12" mb="2" cb="2"/>
+<line nr="88" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="91" mi="0" ci="6" mb="0" cb="4"/>
+<line nr="92" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="93" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="94" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="95" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="99" mi="1" ci="10" mb="1" cb="1"/>
+<line nr="100" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="104" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="10" mb="1" cb="3"/>
+<line nr="107" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="109" mi="0" ci="5" mb="0" cb="2"/>
+<line nr="111" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="112" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="117" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="126" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="127" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="128" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="129" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="130" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="3" covered="125"/>
+<counter type="BRANCH" missed="4" covered="12"/>
+<counter type="LINE" missed="0" covered="37"/>
 </sourcefile>
 <sourcefile name="MutableCollectionPublicDetector.kt">
 <line nr="33" mi="0" ci="4" mb="0" cb="0"/>
@@ -318,11 +419,11 @@
 <counter type="BRANCH" missed="1" covered="13"/>
 <counter type="LINE" missed="0" covered="28"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="46" covered="502"/>
-<counter type="BRANCH" missed="21" covered="85"/>
-<counter type="LINE" missed="13" covered="103"/>
-<counter type="METHOD" missed="1" covered="15"/>
-<counter type="CLASS" missed="1" covered="6"/>
+<counter type="INSTRUCTION" missed="53" covered="627"/>
+<counter type="BRANCH" missed="25" covered="97"/>
+<counter type="LINE" missed="14" covered="140"/>
+<counter type="METHOD" missed="1" covered="23"/>
+<counter type="CLASS" missed="1" covered="9"/>
 </package>
 <package name="team/duckie/quackquack/ui/modifier">
 <class name="team/duckie/quackquack/ui/modifier/ClickableKt" sourcefilename="clickable.kt">
@@ -2880,25 +2981,25 @@
 <line nr="49" mi="2" ci="0" mb="0" cb="0"/>
 <line nr="50" mi="0" ci="0" mb="0" cb="0"/>
 <line nr="52" mi="14" ci="0" mb="2" cb="0"/>
-<line nr="55" mi="21" ci="0" mb="6" cb="0"/>
-<line nr="56" mi="33" ci="0" mb="0" cb="0"/>
-<line nr="57" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="58" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="62" mi="9" ci="0" mb="2" cb="0"/>
-<line nr="63" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="64" mi="21" ci="0" mb="0" cb="0"/>
-<line nr="65" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="67" mi="22" ci="0" mb="0" cb="0"/>
-<line nr="68" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="70" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="71" mi="12" ci="0" mb="0" cb="0"/>
-<line nr="72" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="56" mi="21" ci="0" mb="6" cb="0"/>
+<line nr="57" mi="33" ci="0" mb="0" cb="0"/>
+<line nr="58" mi="5" ci="0" mb="0" cb="0"/>
+<line nr="59" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="63" mi="9" ci="0" mb="2" cb="0"/>
+<line nr="64" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="65" mi="21" ci="0" mb="0" cb="0"/>
+<line nr="66" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="68" mi="22" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="71" mi="1" ci="0" mb="0" cb="0"/>
+<line nr="72" mi="12" ci="0" mb="0" cb="0"/>
 <line nr="73" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="75" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="76" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="74" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="76" mi="4" ci="0" mb="0" cb="0"/>
 <line nr="77" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="0" mb="0" cb="0"/>
-<line nr="82" mi="14" ci="0" mb="2" cb="0"/>
+<line nr="78" mi="2" ci="0" mb="0" cb="0"/>
+<line nr="81" mi="0" ci="0" mb="0" cb="0"/>
+<line nr="83" mi="14" ci="0" mb="2" cb="0"/>
 <counter type="INSTRUCTION" missed="372" covered="0"/>
 <counter type="BRANCH" missed="52" covered="0"/>
 <counter type="LINE" missed="40" covered="0"/>
@@ -5168,67 +5269,67 @@
 <package name="team/duckie/quackquack/common/lint/util">
 <class name="team/duckie/quackquack/common/lint/util/KotlinUtilsKt" sourcefilename="KotlinUtils.kt">
 <method name="findUnreferencedParameters" desc="(Lorg/jetbrains/uast/ULambdaExpression;)Ljava/util/List;">
-<counter type="INSTRUCTION" missed="20" covered="0"/>
-<counter type="BRANCH" missed="4" covered="0"/>
-<counter type="LINE" missed="2" covered="0"/>
+<counter type="INSTRUCTION" missed="3" covered="17"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="2"/>
 </method>
 <method name="getHasImplicitItParameter" desc="(Lorg/jetbrains/kotlin/psi/KtLambdaExpression;)Z">
-<counter type="INSTRUCTION" missed="36" covered="0"/>
-<counter type="BRANCH" missed="12" covered="0"/>
-<counter type="LINE" missed="4" covered="0"/>
+<counter type="INSTRUCTION" missed="3" covered="33"/>
+<counter type="BRANCH" missed="3" covered="9"/>
+<counter type="LINE" missed="0" covered="4"/>
 </method>
 <method name="getTyped" desc="(Lorg/jetbrains/uast/UParameter;)Lteam/duckie/quackquack/common/lint/util/UParameterType;">
 <counter type="INSTRUCTION" missed="3" covered="19"/>
 <counter type="BRANCH" missed="3" covered="3"/>
 <counter type="LINE" missed="0" covered="3"/>
 </method>
-<counter type="INSTRUCTION" missed="59" covered="19"/>
-<counter type="BRANCH" missed="19" covered="3"/>
-<counter type="LINE" missed="6" covered="3"/>
-<counter type="METHOD" missed="2" covered="1"/>
+<counter type="INSTRUCTION" missed="9" covered="69"/>
+<counter type="BRANCH" missed="8" covered="14"/>
+<counter type="LINE" missed="0" covered="9"/>
+<counter type="METHOD" missed="0" covered="3"/>
 </class>
 <class name="team/duckie/quackquack/common/lint/util/LambdaParameterVisitor" sourcefilename="KotlinUtils.kt">
 <method name="isParameterReferenced" desc="(Ljava/lang/String;)Z">
-<counter type="INSTRUCTION" missed="100" covered="0"/>
-<counter type="BRANCH" missed="18" covered="0"/>
-<counter type="LINE" missed="14" covered="0"/>
+<counter type="INSTRUCTION" missed="57" covered="42"/>
+<counter type="BRANCH" missed="13" covered="5"/>
+<counter type="LINE" missed="8" covered="6"/>
 </method>
 <method name="&lt;init&gt;" desc="(Lorg/jetbrains/kotlin/psi/KtLambdaExpression;)V">
-<counter type="INSTRUCTION" missed="36" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="33"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="4" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
 </method>
 <method name="findUnreferencedParameters" desc="()Ljava/util/List;">
-<counter type="INSTRUCTION" missed="73" covered="0"/>
-<counter type="BRANCH" missed="10" covered="0"/>
-<counter type="LINE" missed="11" covered="0"/>
+<counter type="INSTRUCTION" missed="1" covered="70"/>
+<counter type="BRANCH" missed="2" covered="8"/>
+<counter type="LINE" missed="0" covered="11"/>
 </method>
-<counter type="INSTRUCTION" missed="209" covered="0"/>
-<counter type="BRANCH" missed="28" covered="0"/>
-<counter type="LINE" missed="29" covered="0"/>
-<counter type="METHOD" missed="3" covered="0"/>
+<counter type="INSTRUCTION" missed="58" covered="145"/>
+<counter type="BRANCH" missed="15" covered="13"/>
+<counter type="LINE" missed="8" covered="20"/>
+<counter type="METHOD" missed="0" covered="3"/>
 </class>
 <class name="team/duckie/quackquack/common/lint/util/LambdaParameterVisitor$innerLambdas$2" sourcefilename="KotlinUtils.kt">
 <method name="invoke" desc="()Ljava/util/List;">
-<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/common/lint/util/LambdaParameterVisitor$references$2" sourcefilename="KotlinUtils.kt">
 <method name="invoke" desc="()Ljava/util/List;">
-<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
 </method>
-<counter type="INSTRUCTION" missed="9" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <class name="team/duckie/quackquack/common/lint/util/PsiUtilsKt" sourcefilename="PsiUtils.kt">
 <method name="inheritsFrom" desc="(Lcom/intellij/psi/PsiClass;Lteam/duckie/quackquack/common/lint/Name;)Z">
@@ -5289,70 +5390,69 @@
 </class>
 <class name="team/duckie/quackquack/common/lint/util/UnreferencedParameter" sourcefilename="KotlinUtils.kt">
 <method name="&lt;init&gt;" desc="(Ljava/lang/String;Lorg/jetbrains/kotlin/psi/KtParameter;)V">
-<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="12"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="3" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
 </method>
-<counter type="INSTRUCTION" missed="12" covered="0"/>
+<counter type="INSTRUCTION" missed="0" covered="12"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="3" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+<counter type="METHOD" missed="0" covered="1"/>
 </class>
 <sourcefile name="KotlinUtils.kt">
-<line nr="32" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="33" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="34" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="36" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="38" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="41" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="42" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="50" mi="3" ci="15" mb="3" cb="3"/>
-<line nr="51" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="62" mi="15" ci="0" mb="4" cb="0"/>
-<line nr="63" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="70" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="71" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="82" mi="4" ci="0" mb="2" cb="0"/>
-<line nr="83" mi="5" ci="0" mb="2" cb="0"/>
-<line nr="84" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="86" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="89" mi="8" ci="0" mb="0" cb="0"/>
-<line nr="90" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="91" mi="12" ci="0" mb="4" cb="0"/>
-<line nr="93" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="94" mi="12" ci="0" mb="2" cb="0"/>
-<line nr="96" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="97" mi="13" ci="0" mb="0" cb="0"/>
-<line nr="103" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="104" mi="10" ci="0" mb="2" cb="0"/>
-<line nr="107" mi="4" ci="0" mb="2" cb="0"/>
-<line nr="109" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="110" mi="10" ci="0" mb="4" cb="0"/>
-<line nr="111" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="113" mi="7" ci="0" mb="0" cb="0"/>
-<line nr="114" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="115" mi="12" ci="0" mb="4" cb="0"/>
+<line nr="42" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="46" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="47" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="55" mi="3" ci="15" mb="3" cb="3"/>
+<line nr="56" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="67" mi="3" ci="12" mb="2" cb="2"/>
+<line nr="68" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="75" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="86" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="87" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="89" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="92" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="93" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="94" mi="1" ci="11" mb="2" cb="2"/>
+<line nr="96" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="12" mb="0" cb="2"/>
+<line nr="99" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="100" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="106" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="107" mi="0" ci="10" mb="0" cb="2"/>
+<line nr="110" mi="0" ci="4" mb="0" cb="2"/>
+<line nr="112" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="113" mi="10" ci="0" mb="4" cb="0"/>
+<line nr="114" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="116" mi="7" ci="0" mb="0" cb="0"/>
 <line nr="117" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="118" mi="7" ci="0" mb="2" cb="0"/>
-<line nr="123" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="124" mi="9" ci="0" mb="2" cb="0"/>
-<line nr="125" mi="11" ci="0" mb="2" cb="0"/>
-<line nr="130" mi="14" ci="0" mb="0" cb="0"/>
-<line nr="131" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="133" mi="14" ci="0" mb="0" cb="0"/>
-<line nr="134" mi="9" ci="0" mb="0" cb="0"/>
-<line nr="146" mi="2" ci="0" mb="0" cb="0"/>
-<line nr="147" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="148" mi="5" ci="0" mb="0" cb="0"/>
-<line nr="157" mi="1" ci="0" mb="0" cb="0"/>
-<line nr="158" mi="6" ci="0" mb="2" cb="0"/>
-<line nr="159" mi="28" ci="0" mb="10" cb="0"/>
-<line nr="160" mi="1" ci="0" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="298" covered="43"/>
-<counter type="BRANCH" missed="47" covered="3"/>
-<counter type="LINE" missed="40" covered="11"/>
+<line nr="118" mi="12" ci="0" mb="4" cb="0"/>
+<line nr="120" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="121" mi="7" ci="0" mb="2" cb="0"/>
+<line nr="126" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="127" mi="0" ci="9" mb="1" cb="1"/>
+<line nr="128" mi="11" ci="0" mb="2" cb="0"/>
+<line nr="133" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="134" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="136" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="137" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="149" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="150" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="151" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="160" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="161" mi="0" ci="6" mb="0" cb="2"/>
+<line nr="162" mi="3" ci="25" mb="3" cb="7"/>
+<line nr="163" mi="0" ci="1" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="67" covered="268"/>
+<counter type="BRANCH" missed="23" covered="27"/>
+<counter type="LINE" missed="8" covered="42"/>
 </sourcefile>
 <sourcefile name="PsiUtils.kt">
 <line nr="26" mi="17" ci="0" mb="4" cb="0"/>
@@ -5365,11 +5465,11 @@
 <counter type="BRANCH" missed="6" covered="4"/>
 <counter type="LINE" missed="4" covered="2"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="329" covered="62"/>
-<counter type="BRANCH" missed="53" covered="7"/>
-<counter type="LINE" missed="44" covered="13"/>
-<counter type="METHOD" missed="11" covered="7"/>
-<counter type="CLASS" missed="4" covered="3"/>
+<counter type="INSTRUCTION" missed="98" covered="287"/>
+<counter type="BRANCH" missed="29" covered="31"/>
+<counter type="LINE" missed="12" covered="44"/>
+<counter type="METHOD" missed="3" covered="15"/>
+<counter type="CLASS" missed="0" covered="7"/>
 </package>
 <package name="team/duckie/quackquack/ui/icon">
 <class name="team/duckie/quackquack/ui/icon/QuackIcon" sourcefilename="QuackIcon.kt">
@@ -7607,10 +7707,10 @@
 <counter type="METHOD" missed="3" covered="7"/>
 <counter type="CLASS" missed="2" covered="7"/>
 </package>
-<counter type="INSTRUCTION" missed="11636" covered="6862"/>
-<counter type="BRANCH" missed="1512" covered="492"/>
-<counter type="LINE" missed="1477" covered="1269"/>
-<counter type="METHOD" missed="349" covered="217"/>
-<counter type="CLASS" missed="151" covered="101"/>
+<counter type="INSTRUCTION" missed="11412" covered="7212"/>
+<counter type="BRANCH" missed="1492" covered="528"/>
+<counter type="LINE" missed="1446" covered="1337"/>
+<counter type="METHOD" missed="341" covered="233"/>
+<counter type="CLASS" missed="147" covered="108"/>
 </report>
 
