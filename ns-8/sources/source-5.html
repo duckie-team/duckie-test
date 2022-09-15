@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > NewLineArgumentDetectorKt</title>
+  <title>Coverage Report > ListNamingDetectorKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.lint.compose</a>
 </div>
 
-<h1>Coverage Summary for Class: NewLineArgumentDetectorKt (team.duckie.quackquack.lint.compose)</h1>
+<h1>Coverage Summary for Class: ListNamingDetectorKt (team.duckie.quackquack.lint.compose)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">NewLineArgumentDetectorKt</td>
+  <td class="name">ListNamingDetectorKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -114,118 +114,69 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Scope
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
-&nbsp;import com.intellij.psi.impl.source.tree.CompositeElement
-&nbsp;import org.jetbrains.kotlin.psi.KtCallableReferenceExpression
-&nbsp;import org.jetbrains.uast.UExpression
-&nbsp;import org.jetbrains.uast.UMethod
-&nbsp;import org.jetbrains.uast.kotlin.KotlinUFunctionCallExpression
-&nbsp;import org.jetbrains.uast.kotlin.KotlinULambdaExpression
-&nbsp;import team.duckie.quackquack.common.fastForEach
-&nbsp;import team.duckie.quackquack.common.fastForEachIndexed
-&nbsp;import team.duckie.quackquack.common.lint.compose.isComposable
-&nbsp;import team.duckie.quackquack.common.lint.compose.isInvokedWithinComposable
+&nbsp;import org.jetbrains.uast.UVariable
+&nbsp;import org.jetbrains.uast.kotlin.KotlinUField
 &nbsp;
-&nbsp;private const val BriefDescription = &quot;인자들 각각 new-line 에 배치&quot;
-&nbsp;private const val Explanation = &quot;인자들을 쉽게 구분하기 위해 각각 new-line 에 배치해야 합니다.&quot;
+&nbsp;private const val BriefDescription = &quot;List 네이밍 끝에는 s를 사용해야 합니다.&quot;
+&nbsp;private const val Explanation = &quot;네이밍 스타일을 통일하기 위해 List 네이밍 끝에는 s를 사용해야 합니다.&quot;
 &nbsp;
-<b class="fc">&nbsp;val NewLineArgumentIssue = Issue.create(</b>
-<b class="fc">&nbsp;    id = &quot;NewLineArgument&quot;,</b>
+&nbsp;// List Type의 QualifiedName
+&nbsp;private const val ListQualifiedName = &quot;java.util.List&quot;
+&nbsp;
+<b class="fc">&nbsp;val ListNamingIssue = Issue.create(</b>
+<b class="fc">&nbsp;    id = &quot;ListNaming&quot;,</b>
 <b class="fc">&nbsp;    briefDescription = BriefDescription,</b>
 <b class="fc">&nbsp;    explanation = Explanation,</b>
 <b class="fc">&nbsp;    category = Category.PERFORMANCE,</b>
 <b class="fc">&nbsp;    priority = 7,</b>
 <b class="fc">&nbsp;    severity = Severity.ERROR,</b>
 <b class="fc">&nbsp;    implementation = Implementation(</b>
-&nbsp;        NewLineArgumentDetector::class.java,
+&nbsp;        ListNamingDetector::class.java,
 <b class="fc">&nbsp;        Scope.JAVA_FILE_SCOPE,</b>
 &nbsp;    ),
 &nbsp;)
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 린트의 [NewLineArgumentDetector] 규칙을 정의합니다.
+&nbsp; * QuackQuack 린트의 [ListNamingDetector] 규칙을 정의합니다.
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
-&nbsp; *
-&nbsp; * 1. 컴포저블 함수여야 함
-&nbsp; * 2. 컴포저블 안에서 invoke 돼야 함
-&nbsp; * 3. 코틀린 함수여야 함
+&nbsp; * 1. Variable의 Type이 List여야 함
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
-&nbsp; *
-&nbsp; * 1. parameter 가 전부 new-line 에 배치되여야 함
-&nbsp; * 2. argument 가 전부 new-line 에 배치되어야 함
-&nbsp; *
-&nbsp; * 예외적으로, 이러한 경우에는 에러가 발생하지 않습니다.
-&nbsp; *
-&nbsp; * 1. 마지막 argument 가 LAMBDA_EXPRESSION 인 경우
-&nbsp; * 2. 레퍼런스를 참조하는 경우 (REFERENCES_EXPRESSION)
+&nbsp; * 1. Naming 끝에 &#39;s&#39;가 명시되지 않은 경우
 &nbsp; *
 &nbsp; * ```kotlin
-&nbsp; * @Composable
-&nbsp; * fun MyComposable() {
-&nbsp; *     // 레퍼런스를 참조하는 경우이므로 예외적으로 허용 됨
-&nbsp; *     (1..10).map(Int::toString)
+&nbsp; * // failed: Naming 끝에 &#39;s&#39;가 명시되지 않음
+&nbsp; * val peopleList: List&lt;String&gt; = emptyList&lt;String&gt;()
 &nbsp; *
-&nbsp; *     Button() {
-&nbsp; *         // 마지막 argument 의 LAMBDA_EXPRESSION 이므로 예외적으로 허용 됨
-&nbsp; *     }
-&nbsp; * }
+&nbsp; * // success
+&nbsp; * val peoples = emptyList&lt;String&gt;()
 &nbsp; * ```
 &nbsp; */
-&nbsp;class NewLineArgumentDetector : Detector(), SourceCodeScanner {
+&nbsp;class ListNamingDetector : Detector(), SourceCodeScanner {
+&nbsp;
 &nbsp;    override fun getApplicableUastTypes() = listOf(
-&nbsp;        UMethod::class.java,
-&nbsp;        UExpression::class.java,
+&nbsp;        UVariable::class.java
 &nbsp;    )
 &nbsp;
 &nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {
-&nbsp;        // Parameter
-&nbsp;        override fun visitMethod(node: UMethod) {
-&nbsp;            if (!node.isComposable) return
+&nbsp;        override fun visitVariable(node: UVariable) {
+&nbsp;            if (node !is KotlinUField) return
 &nbsp;
-&nbsp;            node.uastParameters.fastForEach { uParameter -&gt;
-&nbsp;                val parameterSourcePsi = uParameter.sourcePsi ?: return
-&nbsp;                val parameterPrevSibling = (parameterSourcePsi.node as CompositeElement).treePrev
+&nbsp;            val typeQualifiedName = node.typeReference?.getQualifiedName() ?: return
 &nbsp;
-&nbsp;                if (!parameterPrevSibling.text.isNewLine()) {
-&nbsp;                    return context.report(
-&nbsp;                        issue = NewLineArgumentIssue,
-&nbsp;                        scope = parameterSourcePsi.node.psi,
-&nbsp;                        location = context.getLocation(parameterSourcePsi.node.psi),
-&nbsp;                        message = Explanation,
-&nbsp;                    )
-&nbsp;                }
-&nbsp;            }
-&nbsp;        }
-&nbsp;
-&nbsp;        // Argument
-&nbsp;        override fun visitExpression(node: UExpression) {
-&nbsp;            if (!node.isInvokedWithinComposable() || node !is KotlinUFunctionCallExpression) return
-&nbsp;
-&nbsp;            val lastArgumentIndex = node.valueArguments.lastIndex
-&nbsp;            node.valueArguments.fastForEachIndexed { index, argument -&gt;
-&nbsp;                if (index == lastArgumentIndex &amp;&amp; argument is KotlinULambdaExpression) return
-&nbsp;
-&nbsp;                val argumentSourcePsi = argument.sourcePsi ?: return
-&nbsp;                if (argumentSourcePsi is KtCallableReferenceExpression) return
-&nbsp;
-&nbsp;                val argumentParentPrevSibling =
-&nbsp;                    (argumentSourcePsi.node as CompositeElement).treeParent.treePrev ?: return
-&nbsp;                val argumentPrevParentPrevSibling = argumentParentPrevSibling.treeParent.treePrev
-&nbsp;
-&nbsp;                if (!(argumentParentPrevSibling.text.isNewLine() || argumentPrevParentPrevSibling.text.isNewLine())) {
-&nbsp;                    return context.report(
-&nbsp;                        issue = NewLineArgumentIssue,
-&nbsp;                        scope = argument,
-&nbsp;                        location = context.getLocation(argument),
+&nbsp;            if (typeQualifiedName == ListQualifiedName) {
+&nbsp;                if (!node.name.endsWith(&#39;s&#39;)) {
+&nbsp;                    context.report(
+&nbsp;                        issue = ListNamingIssue,
+&nbsp;                        scope = node.sourcePsi,
+&nbsp;                        location = context.getLocation(node.sourcePsi),
 &nbsp;                        message = Explanation,
 &nbsp;                    )
 &nbsp;                }
 &nbsp;            }
 &nbsp;        }
 &nbsp;    }
-&nbsp;
-&nbsp;    private fun String.isNewLine() = startsWith(&quot;\n&quot;)
 &nbsp;}
 </code>
 </pre>
@@ -250,7 +201,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-13 14:04</div>
+    <div style="float:right;">generated on 2022-09-15 12:18</div>
 </div>
 </body>
 </html>

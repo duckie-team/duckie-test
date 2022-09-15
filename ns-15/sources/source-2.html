@@ -157,6 +157,20 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        value = value,
 &nbsp;    )
 &nbsp;
+&nbsp;    /**
+&nbsp;     * [QuackColor] 의 [alpha] 를 변경합니다.
+&nbsp;     *
+&nbsp;     * @param alpha 투명도
+&nbsp;     * @return [alpha] 값이 변경된 [QuackColor]
+&nbsp;     */
+&nbsp;    fun changeAlpha(
+&nbsp;        alpha: Float,
+&nbsp;    ) = QuackColor(
+&nbsp;        value.copy(
+&nbsp;            alpha = alpha,
+&nbsp;        )
+&nbsp;    )
+&nbsp;
 &nbsp;    companion object {
 &nbsp;        // Unspecified 는 색상의 기본 인자 값으로만 사용되야 하며,
 &nbsp;        // 실제 컴포넌트에서는 사용되서는 안됩니다.
@@ -254,7 +268,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            x: Float,
 &nbsp;            y: Float,
 &nbsp;            z: Float,
-&nbsp;            matrix: FloatArray
+&nbsp;            matrix: FloatArray,
 &nbsp;        ) = x * matrix[column] + y * matrix[3 + column] + z * matrix[6 + column]
 &nbsp;
 &nbsp;        // copied from compose original implementation
@@ -456,7 +470,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-13 14:04</div>
+    <div style="float:right;">generated on 2022-09-15 12:18</div>
 </div>
 </body>
 </html>
