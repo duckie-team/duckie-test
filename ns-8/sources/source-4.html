@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ListNamingDetector</title>
+  <title>Coverage Report > NamedArgumentDetector</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.lint.compose</a>
 </div>
 
-<h1>Coverage Summary for Class: ListNamingDetector (team.duckie.quackquack.lint.compose)</h1>
+<h1>Coverage Summary for Class: NamedArgumentDetector (team.duckie.quackquack.lint.compose)</h1>
 
 <table class="coverageStats">
 
@@ -45,13 +45,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ListNamingDetector</td>
+  <td class="name">NamedArgumentDetector</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (4/4)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -60,7 +60,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
@@ -68,12 +68,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (8/8)
+    (13/13)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">ListNamingDetector$createUastHandler$1</td>
+    <td class="name">NamedArgumentDetector$createUastHandler$1</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -84,45 +84,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    73.1%
   </span>
   <span class="absValue">
-    (9/12)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (17/17)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    98.5%
-  </span>
-  <span class="absValue">
-    (66/67)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (5/5)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    75%
-  </span>
-  <span class="absValue">
-    (9/12)
+    (19/26)
   </span>
 </td>
 <td class="coverageStat">
@@ -135,10 +100,45 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98.7%
+    94.4%
   </span>
   <span class="absValue">
-    (74/75)
+    (102/108)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    73.1%
+  </span>
+  <span class="absValue">
+    (19/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (24/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95%
+  </span>
+  <span class="absValue">
+    (115/121)
   </span>
 </td>
 </tr>
@@ -169,78 +169,99 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Implementation
 &nbsp;import com.android.tools.lint.detector.api.Issue
 &nbsp;import com.android.tools.lint.detector.api.JavaContext
-&nbsp;import com.android.tools.lint.detector.api.LintFix
 &nbsp;import com.android.tools.lint.detector.api.Scope
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
-&nbsp;import org.jetbrains.uast.UVariable
-&nbsp;import org.jetbrains.uast.kotlin.KotlinUField
-&nbsp;import team.duckie.quackquack.common.lint.isCollection
+&nbsp;import com.intellij.lang.ASTNode
+&nbsp;import org.jetbrains.kotlin.KtNodeTypes.VALUE_ARGUMENT_NAME
+&nbsp;import org.jetbrains.uast.UExpression
+&nbsp;import org.jetbrains.uast.kotlin.KotlinUFunctionCallExpression
+&nbsp;import org.jetbrains.uast.kotlin.KotlinULambdaExpression
+&nbsp;import team.duckie.quackquack.common.fastForEachIndexed
+&nbsp;import team.duckie.quackquack.common.lint.compose.isInvokedWithinComposable
 &nbsp;
-&nbsp;private const val BriefDescription = &quot;List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
-&nbsp;private const val Explanation = &quot;네이밍 스타일을 통일하기 위해 List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
+&nbsp;private const val BriefDescription = &quot;named argument 사용은 필수입니다.&quot;
+&nbsp;private const val Explanation = &quot;인자들을 쉽게 구별하기 위해 named argument는 필수적으로 사용해야 합니다.&quot;
 &nbsp;
-&nbsp;val ListNamingIssue = Issue.create(
-&nbsp;    id = &quot;ListNaming&quot;,
+&nbsp;val NamedArgumentIssue = Issue.create(
+&nbsp;    id = &quot;FixedModifierOrder&quot;,
 &nbsp;    briefDescription = BriefDescription,
 &nbsp;    explanation = Explanation,
 &nbsp;    category = Category.PERFORMANCE,
 &nbsp;    priority = 7,
 &nbsp;    severity = Severity.ERROR,
 &nbsp;    implementation = Implementation(
-&nbsp;        ListNamingDetector::class.java,
+&nbsp;        NamedArgumentDetector::class.java,
 &nbsp;        Scope.JAVA_FILE_SCOPE,
 &nbsp;    ),
 &nbsp;)
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 린트의 [ListNamingDetector] 규칙을 정의합니다.
+&nbsp; * QuackQuack 린트의 [NamedArgumentDetector] 규칙을 정의합니다.
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
-&nbsp; * 1. 변수의 타입이 Collection 이여야 함
+&nbsp; *
+&nbsp; * 2. 컴포저블 안에서 invoke 돼야 함
+&nbsp; * 3. 코틀린 함수여야 함
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
-&nbsp; * 1. Naming 끝에 &#39;s&#39;가 명시되지 않은 경우
 &nbsp; *
-&nbsp; * ```kotlin
-&nbsp; * // failed: Naming 끝에 &#39;s&#39;가 명시되지 않음
-&nbsp; * val peopleList: List&lt;String&gt; = emptyList&lt;String&gt;()
+&nbsp; * 1. named argument를 사용해야 함
 &nbsp; *
-&nbsp; * // success
-&nbsp; * val peoples = emptyList&lt;String&gt;()
-&nbsp; * ```
-&nbsp; */
-<b class="fc">&nbsp;class ListNamingDetector : Detector(), SourceCodeScanner {</b>
+&nbsp; * 다음과 같은 조건에서는 예외적으로 린트 에러가 발생하지 않습니다.
+&nbsp; * 1. function이 [IgnoredFunctions]인 경우
+&nbsp; *
+&nbsp; * [개선 요구]
+&nbsp; * 현재 이 규칙에서 호출되는 함수가 Composable인지 구별하는 방법은 아래와 같습니다.
+&nbsp; * 1. 컴포저블 안에서 invoke 돼야 함
+&nbsp; * 2. 호출되는 메서드의 함수가 대분자로 시작해야 함
+&nbsp; *
+&nbsp; * 이 방식은 Annotation으로 Composable을 구별하는 방식으로 개선해야 합니다.
+&nbsp; * */
+&nbsp;
+<b class="fc">&nbsp;class NamedArgumentDetector : Detector(), SourceCodeScanner {</b>
 &nbsp;
 <b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(</b>
-&nbsp;        UVariable::class.java
+&nbsp;        UExpression::class.java,
 &nbsp;    )
 &nbsp;
 <b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
-&nbsp;        override fun visitVariable(node: UVariable) {
-<b class="pc">&nbsp;            if (node !is KotlinUField) return</b>
+&nbsp;        override fun visitExpression(node: UExpression) {
+<b class="pc">&nbsp;            if (node !is KotlinUFunctionCallExpression || !node.isInvokedWithinComposable()) return</b>
 &nbsp;
-<b class="pc">&nbsp;            val typeQualifiedName = node.typeReference?.getQualifiedName() ?: return</b>
+<b class="fc">&nbsp;            val firstMethodName = node.methodName?.first() ?: return</b>
+<b class="pc">&nbsp;            if (firstMethodName !in &#39;A&#39;..&#39;Z&#39;) return</b>
 &nbsp;
-<b class="fc">&nbsp;            if (typeQualifiedName.isCollection &amp;&amp; !node.name.endsWith(&#39;s&#39;)) {</b>
-<b class="fc">&nbsp;                val namingFix = LintFix.create()</b>
-<b class="fc">&nbsp;                    .replace()</b>
-<b class="fc">&nbsp;                    .text(&quot;List&quot;)</b>
-<b class="fc">&nbsp;                    .with(&quot;s&quot;)</b>
-<b class="fc">&nbsp;                    .build()</b>
+<b class="fc">&nbsp;            val lastArgumentIndex = node.valueArguments.lastIndex</b>
+<b class="fc">&nbsp;            node.valueArguments.fastForEachIndexed { index, argument -&gt;</b>
+<b class="fc">&nbsp;                if (index == lastArgumentIndex &amp;&amp; argument is KotlinULambdaExpression) return</b>
 &nbsp;
-<b class="fc">&nbsp;                context.report(</b>
-<b class="fc">&nbsp;                    issue = ListNamingIssue,</b>
-<b class="fc">&nbsp;                    scope = node.sourcePsi,</b>
-<b class="fc">&nbsp;                    location = context.getLocation(node.sourcePsi),</b>
-<b class="fc">&nbsp;                    message = Explanation,</b>
-<b class="fc">&nbsp;                    quickfixData = if (node.name.endsWith(&quot;List&quot;)) {</b>
-<b class="fc">&nbsp;                        namingFix</b>
-<b class="fc">&nbsp;                    } else null</b>
+<b class="fc">&nbsp;                val expressionSourcePsi = argument.sourcePsi</b>
+&nbsp;
+<b class="pc">&nbsp;                val argumentParent = expressionSourcePsi?.node?.treeParent ?: return</b>
+&nbsp;
+<b class="fc">&nbsp;                val argumentFirstChildNode = argumentParent.firstChildNode</b>
+<b class="fc">&nbsp;                val argumentParentFirstChildNode = argumentParent.treeParent.firstChildNode</b>
+&nbsp;
+<b class="fc">&nbsp;                if (!(</b>
+<b class="fc">&nbsp;                    argumentFirstChildNode.isValueArgumentName() ||</b>
+<b class="fc">&nbsp;                            argumentParentFirstChildNode.isValueArgumentName()</b>
 &nbsp;                )
-&nbsp;            }
+&nbsp;                ) {
+<b class="fc">&nbsp;                    context.report(</b>
+<b class="fc">&nbsp;                        issue = NamedArgumentIssue,</b>
+<b class="fc">&nbsp;                        scope = expressionSourcePsi,</b>
+<b class="fc">&nbsp;                        location = context.getLocation(expressionSourcePsi),</b>
+<b class="fc">&nbsp;                        message = Explanation,</b>
+&nbsp;                    )
+&nbsp;                    return
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
 &nbsp;        }
 &nbsp;    }
+&nbsp;
+&nbsp;    private fun ASTNode.isValueArgumentName() =
+<b class="fc">&nbsp;        this.elementType == VALUE_ARGUMENT_NAME</b>
 &nbsp;}
 </code>
 </pre>
@@ -265,7 +286,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:08</div>
+    <div style="float:right;">generated on 2022-09-17 11:15</div>
 </div>
 </body>
 </html>
