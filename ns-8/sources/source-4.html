@@ -84,10 +84,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    80%
+    75%
   </span>
   <span class="absValue">
-    (8/10)
+    (9/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -95,15 +95,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (10/10)
+    (17/17)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98%
+    98.5%
   </span>
   <span class="absValue">
-    (49/50)
+    (66/67)
   </span>
 </td>
   </tr>
@@ -119,10 +119,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    80%
+    75%
   </span>
   <span class="absValue">
-    (8/10)
+    (9/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -130,15 +130,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (13/13)
+    (20/20)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98.3%
+    98.7%
   </span>
   <span class="absValue">
-    (57/58)
+    (74/75)
   </span>
 </td>
 </tr>
@@ -169,17 +169,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Implementation
 &nbsp;import com.android.tools.lint.detector.api.Issue
 &nbsp;import com.android.tools.lint.detector.api.JavaContext
+&nbsp;import com.android.tools.lint.detector.api.LintFix
 &nbsp;import com.android.tools.lint.detector.api.Scope
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
 &nbsp;import org.jetbrains.uast.UVariable
 &nbsp;import org.jetbrains.uast.kotlin.KotlinUField
+&nbsp;import team.duckie.quackquack.common.lint.isCollection
 &nbsp;
-&nbsp;private const val BriefDescription = &quot;List 네이밍 끝에는 s를 사용해야 합니다.&quot;
-&nbsp;private const val Explanation = &quot;네이밍 스타일을 통일하기 위해 List 네이밍 끝에는 s를 사용해야 합니다.&quot;
-&nbsp;
-&nbsp;// List Type의 QualifiedName
-&nbsp;private const val ListQualifiedName = &quot;java.util.List&quot;
+&nbsp;private const val BriefDescription = &quot;List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
+&nbsp;private const val Explanation = &quot;네이밍 스타일을 통일하기 위해 List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
 &nbsp;
 &nbsp;val ListNamingIssue = Issue.create(
 &nbsp;    id = &quot;ListNaming&quot;,
@@ -198,7 +197,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * QuackQuack 린트의 [ListNamingDetector] 규칙을 정의합니다.
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
-&nbsp; * 1. Variable의 Type이 List여야 함
+&nbsp; * 1. 변수의 타입이 Collection 이여야 함
 &nbsp; *
 &nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
 &nbsp; * 1. Naming 끝에 &#39;s&#39;가 명시되지 않은 경우
@@ -219,19 +218,26 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 <b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
 &nbsp;        override fun visitVariable(node: UVariable) {
-<b class="fc">&nbsp;            if (node !is KotlinUField) return</b>
+<b class="pc">&nbsp;            if (node !is KotlinUField) return</b>
 &nbsp;
 <b class="pc">&nbsp;            val typeQualifiedName = node.typeReference?.getQualifiedName() ?: return</b>
 &nbsp;
-<b class="fc">&nbsp;            if (typeQualifiedName == ListQualifiedName) {</b>
-<b class="fc">&nbsp;                if (!node.name.endsWith(&#39;s&#39;)) {</b>
-<b class="fc">&nbsp;                    context.report(</b>
-<b class="fc">&nbsp;                        issue = ListNamingIssue,</b>
-<b class="fc">&nbsp;                        scope = node.sourcePsi,</b>
-<b class="fc">&nbsp;                        location = context.getLocation(node.sourcePsi),</b>
-<b class="fc">&nbsp;                        message = Explanation,</b>
-&nbsp;                    )
-&nbsp;                }
+<b class="fc">&nbsp;            if (typeQualifiedName.isCollection &amp;&amp; !node.name.endsWith(&#39;s&#39;)) {</b>
+<b class="fc">&nbsp;                val namingFix = LintFix.create()</b>
+<b class="fc">&nbsp;                    .replace()</b>
+<b class="fc">&nbsp;                    .text(&quot;List&quot;)</b>
+<b class="fc">&nbsp;                    .with(&quot;s&quot;)</b>
+<b class="fc">&nbsp;                    .build()</b>
+&nbsp;
+<b class="fc">&nbsp;                context.report(</b>
+<b class="fc">&nbsp;                    issue = ListNamingIssue,</b>
+<b class="fc">&nbsp;                    scope = node.sourcePsi,</b>
+<b class="fc">&nbsp;                    location = context.getLocation(node.sourcePsi),</b>
+<b class="fc">&nbsp;                    message = Explanation,</b>
+<b class="fc">&nbsp;                    quickfixData = if (node.name.endsWith(&quot;List&quot;)) {</b>
+<b class="fc">&nbsp;                        namingFix</b>
+<b class="fc">&nbsp;                    } else null</b>
+&nbsp;                )
 &nbsp;            }
 &nbsp;        }
 &nbsp;    }
@@ -259,7 +265,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-15 12:18</div>
+    <div style="float:right;">generated on 2022-09-17 11:04</div>
 </div>
 </body>
 </html>
