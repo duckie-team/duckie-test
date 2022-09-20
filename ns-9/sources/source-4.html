@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > MutableCollectionPublicDetector</title>
+  <title>Coverage Report > ListNamingDetector</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.lint.core</a>
 </div>
 
-<h1>Coverage Summary for Class: MutableCollectionPublicDetector (team.duckie.quackquack.lint.core)</h1>
+<h1>Coverage Summary for Class: ListNamingDetector (team.duckie.quackquack.lint.core)</h1>
 
 <table class="coverageStats">
 
@@ -45,7 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">MutableCollectionPublicDetector</td>
+  <td class="name">ListNamingDetector</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -73,7 +73,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 </tr>
   <tr>
-    <td class="name">MutableCollectionPublicDetector$createUastHandler$1</td>
+    <td class="name">ListNamingDetector$createUastHandler$1</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -84,10 +84,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.9%
+    75%
   </span>
   <span class="absValue">
-    (13/14)
+    (9/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -95,15 +95,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (13/13)
+    (17/17)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    98.5%
   </span>
   <span class="absValue">
-    (66/66)
+    (66/67)
   </span>
 </td>
   </tr>
@@ -119,10 +119,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.9%
+    75%
   </span>
   <span class="absValue">
-    (13/14)
+    (9/12)
   </span>
 </td>
 <td class="coverageStat">
@@ -130,15 +130,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (16/16)
+    (20/20)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    98.7%
   </span>
   <span class="absValue">
-    (74/74)
+    (74/75)
   </span>
 </td>
 </tr>
@@ -150,6 +150,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;/*
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
 &nbsp; * Licensed under the MIT.
@@ -169,85 +176,74 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import com.android.tools.lint.detector.api.Implementation
 &nbsp;import com.android.tools.lint.detector.api.Issue
 &nbsp;import com.android.tools.lint.detector.api.JavaContext
+&nbsp;import com.android.tools.lint.detector.api.LintFix
 &nbsp;import com.android.tools.lint.detector.api.Scope
 &nbsp;import com.android.tools.lint.detector.api.Severity
 &nbsp;import com.android.tools.lint.detector.api.SourceCodeScanner
-&nbsp;import org.jetbrains.kotlin.psi.KtProperty
-&nbsp;import org.jetbrains.kotlin.psi.psiUtil.isPublic
-&nbsp;import org.jetbrains.uast.UDeclaration
+&nbsp;import org.jetbrains.uast.UVariable
 &nbsp;import org.jetbrains.uast.kotlin.KotlinUField
-&nbsp;import team.duckie.quackquack.common.fastAny
+&nbsp;import team.duckie.quackquack.common.lint.isCollection
 &nbsp;
-&nbsp;private const val BriefDescription = &quot;MutableCollections public 노출 금지&quot;
-&nbsp;private const val Explanation = &quot;캡슐화를 위해 MutableCollections public 노출은 금지됩니다.&quot;
+&nbsp;private const val BriefDescription = &quot;List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
+&nbsp;private const val Explanation = &quot;네이밍 스타일을 통일하기 위해 List 네이밍에는 s 접미사를 사용해야 합니다.&quot;
 &nbsp;
-&nbsp;val MutableCollectionPublicIssue = Issue.create(
-&nbsp;    id = &quot;MutableCollectionPublic&quot;,
+&nbsp;val ListNamingIssue = Issue.create(
+&nbsp;    id = &quot;ListNaming&quot;,
 &nbsp;    briefDescription = BriefDescription,
 &nbsp;    explanation = Explanation,
 &nbsp;    category = Category.PERFORMANCE,
 &nbsp;    priority = 7,
 &nbsp;    severity = Severity.ERROR,
 &nbsp;    implementation = Implementation(
-&nbsp;        MutableCollectionPublicDetector::class.java,
+&nbsp;        ListNamingDetector::class.java,
 &nbsp;        Scope.JAVA_FILE_SCOPE,
 &nbsp;    ),
 &nbsp;)
 &nbsp;
 &nbsp;/**
-&nbsp; * MutableCollections 접두사
+&nbsp; * QuackQuack 린트의 [ListNamingDetector] 규칙을 정의합니다.
 &nbsp; *
-&nbsp; * kotlinx.collections 패키지에 있는 Collections 들 입니다.
+&nbsp; * 다음과 같은 조건에서 린트를 검사합니다.
+&nbsp; * 1. 변수의 타입이 Collection 이여야 함
 &nbsp; *
-&nbsp; * @see [https://github.com/Kotlin/kotlinx.collections.immutable]
+&nbsp; * 다음과 같은 조건에서 린트 에러가 발생합니다.
+&nbsp; * 1. Naming 끝에 &#39;s&#39;가 명시되지 않은 경우
+&nbsp; *
+&nbsp; * ```kotlin
+&nbsp; * // failed: Naming 끝에 &#39;s&#39;가 명시되지 않음
+&nbsp; * val peopleList: List&lt;String&gt; = emptyList&lt;String&gt;()
+&nbsp; *
+&nbsp; * // success
+&nbsp; * val peoples = emptyList&lt;String&gt;()
+&nbsp; * ```
 &nbsp; */
-&nbsp;private val MutableNames = listOf(
-&nbsp;    &quot;Mutable&quot;,
-&nbsp;    &quot;PersistentCollection.Builder&quot;,
-&nbsp;)
+<b class="fc">&nbsp;class ListNamingDetector : Detector(), SourceCodeScanner {</b>
 &nbsp;
-&nbsp;/**
-&nbsp; * QuackQuack 린트의 MutableCollectionPublic 규칙을 구현합니다.
-&nbsp; *
-&nbsp; * 다음과 같은 조건에서 린트 검사를 진행합니다.
-&nbsp; *
-&nbsp; * 1. MutableCollections 에서 public 을 사용할 시
-&nbsp; *
-&nbsp; * 현재 이 규칙은 MutableCollections 변수의 접근 제어 범위(visibility) 가 public 인지 검사하도록 구현됐습니다.
-&nbsp; * 따라서 아래와 같이 MutableCollections 접근 제어 범위가 public 일 시
-&nbsp; * 린트 에러가 발생합니다.
-&nbsp; *
-&nbsp; * ```
-&nbsp; * val variableName: MutableCollection&lt;Any&gt; = emptyList()
-&nbsp;//     ~~~~~~~~~~~~ &lt;- MutableCollections 의 접근 제어가 public 으로 감지됨
-&nbsp; * ```
-&nbsp; * TODO internal val variableName: MutableCollection&lt;Any&gt; &lt;- internal 은 private 으로 감지됨
-&nbsp; *      internal 에 대해서는 모니터링 필요
-&nbsp; */
-<b class="fc">&nbsp;class MutableCollectionPublicDetector : Detector(), SourceCodeScanner {</b>
 <b class="fc">&nbsp;    override fun getApplicableUastTypes() = listOf(</b>
-&nbsp;        UDeclaration::class.java,
+&nbsp;        UVariable::class.java
 &nbsp;    )
 &nbsp;
 <b class="fc">&nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {</b>
-&nbsp;        override fun visitDeclaration(node: UDeclaration) {
-&nbsp;            // Kotlin 특성 상 field 이외의 것 (ex. getter, setter 등) 도 체크하므로 해당 내용만 체크하도록 처리
-<b class="fc">&nbsp;            if (node !is KotlinUField) return</b>
+&nbsp;        override fun visitVariable(node: UVariable) {
+<b class="pc">&nbsp;            if (node !is KotlinUField) return</b>
 &nbsp;
-<b class="fc">&nbsp;            val property = node.sourcePsi as? KtProperty</b>
-<b class="pc">&nbsp;            val propertyType = property?.typeReference ?: return</b>
-<b class="fc">&nbsp;            val propertyTypeName = propertyType.text</b>
-<b class="fc">&nbsp;            val isMutable = MutableNames.fastAny { immutableName -&gt;</b>
-<b class="fc">&nbsp;                propertyTypeName.startsWith(immutableName)</b>
-&nbsp;            }
+<b class="pc">&nbsp;            val typeQualifiedName = node.typeReference?.getQualifiedName() ?: return</b>
 &nbsp;
-&nbsp;            // mutable Collection 인 경우 &amp;&amp; PUBLIC 인 경우
-<b class="fc">&nbsp;            if (isMutable &amp;&amp; property.isPublic) {</b>
+<b class="fc">&nbsp;            if (typeQualifiedName.isCollection &amp;&amp; !node.name.endsWith(&#39;s&#39;)) {</b>
+<b class="fc">&nbsp;                val namingFix = LintFix.create()</b>
+<b class="fc">&nbsp;                    .replace()</b>
+<b class="fc">&nbsp;                    .text(&quot;List&quot;)</b>
+<b class="fc">&nbsp;                    .with(&quot;s&quot;)</b>
+<b class="fc">&nbsp;                    .build()</b>
+&nbsp;
 <b class="fc">&nbsp;                context.report(</b>
-<b class="fc">&nbsp;                    issue = MutableCollectionPublicIssue,</b>
-<b class="fc">&nbsp;                    scope = propertyType,</b>
-<b class="fc">&nbsp;                    location = context.getNameLocation(propertyType),</b>
+<b class="fc">&nbsp;                    issue = ListNamingIssue,</b>
+<b class="fc">&nbsp;                    scope = node.sourcePsi,</b>
+<b class="fc">&nbsp;                    location = context.getLocation(node.sourcePsi),</b>
 <b class="fc">&nbsp;                    message = Explanation,</b>
+<b class="fc">&nbsp;                    quickfixData = if (node.name.endsWith(&quot;List&quot;)) {</b>
+<b class="fc">&nbsp;                        namingFix</b>
+<b class="fc">&nbsp;                    } else null</b>
 &nbsp;                )
 &nbsp;            }
 &nbsp;        }
@@ -276,7 +272,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>

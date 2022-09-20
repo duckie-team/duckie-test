@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ListUtilKt</title>
+  <title>Coverage Report > MutableCollectionCheckerKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.common</a>
+    <a href="../index.html">team.duckie.quackquack.common.lint</a>
 </div>
 
-<h1>Coverage Summary for Class: ListUtilKt (team.duckie.quackquack.common)</h1>
+<h1>Coverage Summary for Class: MutableCollectionCheckerKt (team.duckie.quackquack.common.lint)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ListUtilKt</td>
+  <td class="name">MutableCollectionCheckerKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -59,34 +59,34 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    30%
+    40%
   </span>
   <span class="absValue">
-    (3/10)
+    (2/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    22.2%
+    25%
   </span>
   <span class="absValue">
-    (4/18)
+    (2/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    23.4%
+    84.6%
   </span>
   <span class="absValue">
-    (11/47)
+    (22/26)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    28.9%
+    75.6%
   </span>
   <span class="absValue">
-    (52/180)
+    (102/135)
   </span>
 </td>
 </tr>
@@ -98,193 +98,67 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;// TAKEN FROM: https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/ui/ui-util/src/commonMain/kotlin/androidx/compose/ui/util/ListUtils.kt
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.common
+&nbsp;package team.duckie.quackquack.common.lint
 &nbsp;
-&nbsp;import kotlin.contracts.ExperimentalContracts
-&nbsp;import kotlin.contracts.contract
+&nbsp;import java.awt.SystemColor.text
+&nbsp;import org.jetbrains.kotlin.psi.KtTypeReference
+&nbsp;import team.duckie.quackquack.common.lint.custom.CustomRule
 &nbsp;
 &nbsp;/**
-&nbsp; * Iterates through a [List] using the index and calls [action] for each item.
-&nbsp; * This does not allocate an iterator like [Iterable.forEach].
+&nbsp; * MutableCollection 접미사들
 &nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
+&nbsp; * Collection 으로 판단돼야 하는 클래스들의 접미사 입니다.
+&nbsp; * 사용자가 @Collection 어노테이션을 붙인 클래스들의 이름도 추가됩니다.
 &nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastForEach(action: (T) -&gt; Unit) {
-<b class="fc">&nbsp;    contract { callsInPlace(action) }</b>
-<b class="fc">&nbsp;    for (index in indices) {</b>
-<b class="fc">&nbsp;        val item = get(index)</b>
-<b class="fc">&nbsp;        action(item)</b>
+<b class="fc">&nbsp;private val CollectionsSuffix: List&lt;String&gt; = mutableListOf(</b>
+<b class="fc">&nbsp;    &quot;Collection&quot;,</b>
+<b class="fc">&nbsp;    &quot;List&quot;,</b>
+<b class="fc">&nbsp;    &quot;Set&quot;,</b>
+<b class="fc">&nbsp;    &quot;Map&quot;,</b>
+<b class="fc">&nbsp;).apply {</b>
+<b class="fc">&nbsp;    addAll(CustomRule.Collection)</b>
+<b class="fc">&nbsp;}</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * ImmutableCollection 이름들
+&nbsp; *
+&nbsp; * kotlinx.collections.immutable 패키지에 있는 Collection 이름들 입니다.
+&nbsp; * 사용자가 @ImmutableCollection 어노테이션을 붙인 클래스들의 이름도 추가됩니다.
+&nbsp; */
+<b class="fc">&nbsp;private val ImmutableCollectionsName: List&lt;String&gt; = mutableListOf(</b>
+<b class="fc">&nbsp;    &quot;ImmutableCollection&quot;,</b>
+<b class="fc">&nbsp;    &quot;ImmutableList&quot;,</b>
+<b class="fc">&nbsp;    &quot;ImmutableSet&quot;,</b>
+<b class="fc">&nbsp;    &quot;ImmutableMap&quot;,</b>
+<b class="fc">&nbsp;    &quot;PersistentCollection&quot;,</b>
+<b class="fc">&nbsp;    &quot;PersistentList&quot;,</b>
+<b class="fc">&nbsp;    &quot;PersistentSet&quot;,</b>
+<b class="fc">&nbsp;    &quot;PersistentMap&quot;,</b>
+<b class="fc">&nbsp;).apply {</b>
+<b class="fc">&nbsp;    addAll(CustomRule.ImmutableCollection)</b>
+<b class="fc">&nbsp;}</b>
+&nbsp;
+&nbsp;private val KtTypeReference.isCollection
+<b class="nc">&nbsp;    get() = CollectionsSuffix.any { suffix -&gt;</b>
+&nbsp;        // ListWrapper 같은 경우도 있어서 contains 로 체크 (endsWith 했다가 취소)
+<b class="nc">&nbsp;        text.contains(suffix)</b>
 &nbsp;    }
-&nbsp;}
 &nbsp;
-&nbsp;/**
-&nbsp; * Iterates through a [List] using the index and calls [action] for each item.
-&nbsp; * This does not allocate an iterator like [Iterable.forEachIndexed].
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastForEachIndexed(action: (Int, T) -&gt; Unit) {
-<b class="fc">&nbsp;    contract { callsInPlace(action) }</b>
-<b class="fc">&nbsp;    for (index in indices) {</b>
-<b class="fc">&nbsp;        val item = get(index)</b>
-<b class="fc">&nbsp;        action(index, item)</b>
+&nbsp;val String.isCollection
+<b class="fc">&nbsp;    get() = CollectionsSuffix.any { suffix -&gt;</b>
+<b class="fc">&nbsp;        this.contains(suffix)</b>
 &nbsp;    }
-&nbsp;}
 &nbsp;
-&nbsp;/**
-&nbsp; * Returns `true` if all elements match the given [predicate].
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastAll(predicate: (T) -&gt; Boolean): Boolean {
-<b class="nc">&nbsp;    contract { callsInPlace(predicate) }</b>
-<b class="nc">&nbsp;    fastForEach { if (!predicate(it)) return false }</b>
-<b class="nc">&nbsp;    return true</b>
-&nbsp;}
+<b class="nc">&nbsp;private val KtTypeReference.isImmutableCollection get() = ImmutableCollectionsName.contains(text)</b>
 &nbsp;
-&nbsp;/**
-&nbsp; * Returns `true` if at least one element matches the given [predicate].
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastAny(predicate: (T) -&gt; Boolean): Boolean {
-<b class="fc">&nbsp;    contract { callsInPlace(predicate) }</b>
-<b class="pc">&nbsp;    fastForEach { if (predicate(it)) return true }</b>
-<b class="fc">&nbsp;    return false</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * Returns the first value that [predicate] returns `true` for or `null` if nothing matches.
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastFirstOrNull(predicate: (T) -&gt; Boolean): T? {
-<b class="nc">&nbsp;    contract { callsInPlace(predicate) }</b>
-<b class="nc">&nbsp;    fastForEach { if (predicate(it)) return it }</b>
-<b class="nc">&nbsp;    return null</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * Returns the first value that [predicate] returns `true` for or `null` if nothing matches.
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastFind(predicate: (T) -&gt; Boolean): T? {
-<b class="nc">&nbsp;    contract { callsInPlace(predicate) }</b>
-<b class="nc">&nbsp;    return fastFirstOrNull(predicate)</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * Returns the sum of all values produced by [selector] function applied to each element in the
-&nbsp; * list.
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T&gt; List&lt;T&gt;.fastSumBy(selector: (T) -&gt; Int): Int {
-<b class="nc">&nbsp;    contract { callsInPlace(selector) }</b>
-<b class="nc">&nbsp;    var sum = 0</b>
-<b class="nc">&nbsp;    fastForEach { element -&gt;</b>
-<b class="nc">&nbsp;        sum += selector(element)</b>
-<b class="nc">&nbsp;    }</b>
-<b class="nc">&nbsp;    return sum</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * Returns a list containing the results of applying the given [transform] function
-&nbsp; * to each element in the original collection.
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T, R&gt; List&lt;T&gt;.fastMap(transform: (T) -&gt; R): List&lt;R&gt; {
-<b class="nc">&nbsp;    contract { callsInPlace(transform) }</b>
-<b class="nc">&nbsp;    val target = ArrayList&lt;R&gt;(size)</b>
-<b class="nc">&nbsp;    fastForEach {</b>
-<b class="nc">&nbsp;        target += transform(it)</b>
-<b class="nc">&nbsp;    }</b>
-<b class="nc">&nbsp;    return target</b>
-&nbsp;}
-&nbsp;
-&nbsp;// TODO: should be fastMaxByOrNull to match stdlib
-&nbsp;/**
-&nbsp; * Returns the first element yielding the largest value of the given function or `null` if there
-&nbsp; * are no elements.
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T, R : Comparable&lt;R&gt;&gt; List&lt;T&gt;.fastMaxBy(selector: (T) -&gt; R): T? {
-<b class="nc">&nbsp;    contract { callsInPlace(selector) }</b>
-<b class="nc">&nbsp;    if (isEmpty()) return null</b>
-<b class="nc">&nbsp;    var maxElem = get(0)</b>
-<b class="nc">&nbsp;    var maxValue = selector(maxElem)</b>
-<b class="nc">&nbsp;    for (i in 1..lastIndex) {</b>
-<b class="nc">&nbsp;        val e = get(i)</b>
-<b class="nc">&nbsp;        val v = selector(e)</b>
-<b class="nc">&nbsp;        if (maxValue &lt; v) {</b>
-<b class="nc">&nbsp;            maxElem = e</b>
-<b class="nc">&nbsp;            maxValue = v</b>
-&nbsp;        }
-&nbsp;    }
-<b class="nc">&nbsp;    return maxElem</b>
-&nbsp;}
-&nbsp;
-&nbsp;/**
-&nbsp; * Applies the given [transform] function to each element of the original collection
-&nbsp; * and appends the results to the given [destination].
-&nbsp; *
-&nbsp; * **Do not use for collections that come from public APIs**, since they may not support random
-&nbsp; * access in an efficient way, and this method may actually be a lot slower. Only use for
-&nbsp; * collections that are created by code we control and are known to support random access.
-&nbsp; */
-&nbsp;@Suppress(&quot;BanInlineOptIn&quot;)
-&nbsp;@OptIn(ExperimentalContracts::class)
-&nbsp;inline fun &lt;T, R, C : MutableCollection&lt;in R&gt;&gt; List&lt;T&gt;.fastMapTo(
-&nbsp;    destination: C,
-&nbsp;    transform: (T) -&gt; R
-&nbsp;): C {
-<b class="nc">&nbsp;    contract { callsInPlace(transform) }</b>
-<b class="nc">&nbsp;    fastForEach { item -&gt;</b>
-<b class="nc">&nbsp;        destination.add(transform(item))</b>
-<b class="nc">&nbsp;    }</b>
-<b class="nc">&nbsp;    return destination</b>
-&nbsp;}
+<b class="nc">&nbsp;val KtTypeReference.isMutableCollection get() = isCollection &amp;&amp; !isImmutableCollection</b>
 </code>
 </pre>
 </div>
@@ -308,7 +182,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>

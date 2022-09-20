@@ -128,8 +128,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    severity = Severity.ERROR,</b>
 <b class="fc">&nbsp;    implementation = Implementation(</b>
 &nbsp;        DesignSystemDetector::class.java,
-<b class="fc">&nbsp;        Scope.JAVA_FILE_SCOPE</b>
-&nbsp;    )
+<b class="fc">&nbsp;        Scope.JAVA_FILE_SCOPE,</b>
+&nbsp;    ),
 &nbsp;)
 &nbsp;
 &nbsp;/**
@@ -171,7 +171,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * 해당 함수가 컴포저블인지도 확인하도록 구현이 개선돼야 합니다.
 &nbsp; */
 &nbsp;class DesignSystemDetector : Detector(), Detector.UastScanner {
-&nbsp;    override fun getApplicableUastTypes() = listOf(UCallExpression::class.java)
+&nbsp;    override fun getApplicableUastTypes() = listOf(
+&nbsp;        UCallExpression::class.java,
+&nbsp;    )
 &nbsp;
 &nbsp;    override fun createUastHandler(context: JavaContext) = object : UElementHandler() {
 &nbsp;        override fun visitCallExpression(node: UCallExpression) {
@@ -234,7 +236,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>

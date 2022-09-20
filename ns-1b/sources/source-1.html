@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ConstraintsKt</title>
+  <title>Coverage Report > NewImmutableCollection</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,77 +18,22 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.util</a>
+    <a href="../index.html">team.duckie.quackquack.lint.custom.rule.annotation</a>
 </div>
 
-<h1>Coverage Summary for Class: ConstraintsKt (team.duckie.quackquack.ui.util)</h1>
+<h1>Coverage Summary for Class: NewImmutableCollection (team.duckie.quackquack.lint.custom.rule.annotation)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 <th class="coverageStat 
 ">
-  Class, %
-</th>
-<th class="coverageStat 
-">
-  Method, %
-</th>
-<th class="coverageStat 
-">
   Branch, %
-</th>
-<th class="coverageStat 
-">
-  Line, %
-</th>
-<th class="coverageStat 
-">
-  Instruction, %
 </th>
 </tr>
 <tr>
-  <td class="name">ConstraintsKt</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    50%
-  </span>
-  <span class="absValue">
-    (4/8)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    85.7%
-  </span>
-  <span class="absValue">
-    (6/7)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    67.6%
-  </span>
-  <span class="absValue">
-    (25/37)
-  </span>
-</td>
+  <td class="name">NewImmutableCollection</td>
+    <td class="coverageStat"/>
 </tr>
 
 </table>
@@ -105,33 +50,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.util
+&nbsp;package team.duckie.quackquack.lint.custom.rule.annotation
 &nbsp;
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.ui.unit.Constraints
-&nbsp;
-&nbsp;/**
-&nbsp; * 주어진 사이즈로 고정된 [Constraints] 를 생성합니다.
-&nbsp; *
-&nbsp; * 각각 주어진 사이즈로 min 과 max 를 모두 설정하는 [Constraints] 의
-&nbsp; * 유틸 함수 입니다. 만약 인자로 주어진 값이 null 이라면
-&nbsp; * min 과 max 에 맞는 원래의 값을 그대로 사용합니다.
-&nbsp; *
-&nbsp; * @param width [Constraints] 의 고정된 width 사이즈
-&nbsp; * @param height [Constraints] 의 고정된 height 사이즈
-&nbsp; * @return 인자로 주어진 고정된 사이즈를 갖는 [Constraints]
-&nbsp; * @see Constraints
-&nbsp; */
-&nbsp;@Stable
-&nbsp;internal fun Constraints.fixedCopy(
-<b class="nc">&nbsp;    width: Int? = null,</b>
-<b class="fc">&nbsp;    height: Int? = null,</b>
-<b class="fc">&nbsp;) = Constraints(</b>
-<b class="pc">&nbsp;    minWidth = width ?: this.minWidth,</b>
-<b class="pc">&nbsp;    maxWidth = width ?: this.maxWidth,</b>
-<b class="pc">&nbsp;    minHeight = height ?: this.minHeight,</b>
-<b class="pc">&nbsp;    maxHeight = height ?: this.maxHeight,</b>
-&nbsp;)
+&nbsp;@Retention(AnnotationRetention.SOURCE)
+&nbsp;@Target(AnnotationTarget.CLASS)
+&nbsp;annotation class NewImmutableCollection
 </code>
 </pre>
 </div>
@@ -155,7 +78,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ComposeFilesKt</title>
+  <title>Coverage Report > RunIfKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.common.lint.test</a>
+    <a href="../index.html">team.duckie.quackquack.common.lint.test.util</a>
 </div>
 
-<h1>Coverage Summary for Class: ComposeFilesKt (team.duckie.quackquack.common.lint.test)</h1>
+<h1>Coverage Summary for Class: RunIfKt (team.duckie.quackquack.common.lint.test.util)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -48,7 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ComposeFilesKt</td>
+  <td class="name">RunIfKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -59,27 +59,34 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    50%
   </span>
   <span class="absValue">
-    (3/3)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (6/6)
+    (1/2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    50%
   </span>
   <span class="absValue">
-    (23/23)
+    (2/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (3/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    38.9%
+  </span>
+  <span class="absValue">
+    (7/18)
   </span>
 </td>
 </tr>
@@ -98,53 +105,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;@file:Suppress(
-&nbsp;    &quot;unused&quot;,
-&nbsp;    &quot;UnstableApiUsage&quot;,
-&nbsp;    &quot;SameParameterValue&quot;,
-&nbsp;)
+&nbsp;@file:Suppress(&quot;unused&quot;)
 &nbsp;
-&nbsp;package team.duckie.quackquack.common.lint.test
-&nbsp;
-&nbsp;import com.android.tools.lint.checks.infrastructure.LintDetectorTest.kotlin
-&nbsp;import com.android.tools.lint.checks.infrastructure.TestFile
-&nbsp;import org.intellij.lang.annotations.Language
+&nbsp;package team.duckie.quackquack.common.lint.test.util
 &nbsp;
 &nbsp;/**
-&nbsp; * [TestFile] 로 사용할 @Composable 어노테이션 더미 파일
+&nbsp; * [condition] 이 참이면 [run] 을 실행합니다.
+&nbsp; *
+&nbsp; * @param condition 실행할 조건 [Boolean] 값
+&nbsp; * @param run [condition] 이 참일 때 실행할 람다
+&nbsp; *
+&nbsp; * @return [condition] 이 참일 때 [run] 을 실행한 결과
 &nbsp; */
-<b class="fc">&nbsp;val ComposableAnnotationFile: TestFile = kotlin(</b>
-&nbsp;    &quot;&quot;&quot;
-&nbsp;    package androidx.compose.runtime
-&nbsp;
-&nbsp;    @MustBeDocumented
-&nbsp;    @Retention(AnnotationRetention.BINARY)
-&nbsp;    @Target(
-&nbsp;        AnnotationTarget.FUNCTION,
-&nbsp;        AnnotationTarget.TYPE,
-&nbsp;        AnnotationTarget.TYPE_PARAMETER,
-&nbsp;        AnnotationTarget.PROPERTY_GETTER,
-&nbsp;    )
-&nbsp;    annotation class Composable
-<b class="fc">&nbsp;    &quot;&quot;&quot;.trimIndent()</b>
-&nbsp;)
+<b class="fc">&nbsp;inline fun &lt;T&gt; T.runIf(condition: Boolean, run: T.() -&gt; T) = if (condition) {</b>
+<b class="fc">&nbsp;    run()</b>
+<b class="fc">&nbsp;} else this</b>
 &nbsp;
 &nbsp;/**
-&nbsp; * @Composable 을 사용하기 위한 준비를 마친 [TestFile] 로 만들어 줍니다.
+&nbsp; * [condition] 이 true 이면 [run] 을 실행합니다.
 &nbsp; *
-&nbsp; * @param source @Composable 을 사용할 코틀린 코드
+&nbsp; * @param condition 실행할 조건 [Boolean] 값을 반환하는 람다
+&nbsp; * @param run [condition] 이 참일 때 실행할 람다
 &nbsp; *
-&nbsp; * @return [source] 코드에서 @Composable 을 사용하기 위한 준비를 마친 [TestFile]
+&nbsp; * @return [condition] 이 참일 때 [run] 을 실행한 결과
 &nbsp; */
-<b class="fc">&nbsp;fun composableTestFile(@Language(&quot;kotlin&quot;) source: String): TestFile = kotlin(</b>
-<b class="fc">&nbsp;    &quot;&quot;&quot;</b>
-&nbsp;    package land.sungbin.dummy
-&nbsp;
-&nbsp;    import androidx.compose.runtime.Composable
-&nbsp;
-<b class="fc">&nbsp;    ${source.trimIndent()}</b>
-<b class="fc">&nbsp;    &quot;&quot;&quot;.trimIndent()</b>
-&nbsp;)
+<b class="nc">&nbsp;inline fun &lt;T&gt; T.runIfBuilder(condition: (T) -&gt; Boolean, run: T.() -&gt; T) = if (condition(this)) {</b>
+<b class="nc">&nbsp;    run()</b>
+<b class="nc">&nbsp;} else this</b>
 </code>
 </pre>
 </div>
@@ -168,7 +155,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>

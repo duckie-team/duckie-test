@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > QuackAnimationSpec</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.animation</a>
+</div>
+
+<h1>Coverage Summary for Class: QuackAnimationSpec (team.duckie.quackquack.ui.animation)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuackAnimationSpec</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp;* Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp;*
+&nbsp;* [spec.kt] created by Ji Sungbin on 22. 8. 14. 오후 8:13
+&nbsp;*
+&nbsp;* Licensed under the MIT.
+&nbsp;* Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp;*/
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.animation
+&nbsp;
+&nbsp;import androidx.compose.animation.core.FastOutSlowInEasing
+&nbsp;import androidx.compose.animation.core.SnapSpec
+&nbsp;import androidx.compose.animation.core.TweenSpec
+&nbsp;import androidx.compose.animation.core.snap
+&nbsp;import androidx.compose.animation.core.tween
+&nbsp;import androidx.compose.runtime.Stable
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.setValue
+&nbsp;
+&nbsp;/**
+&nbsp; * 덕키에서 사용할 애니메이션의 기본 지속 시간
+&nbsp; *
+&nbsp; * Playground 에서 [QuackAnimationMillis] 편집 후 기본값으로 되돌리고
+&nbsp; * 싶을 때 기본값을 참조하기 위해 public 으로 설정함
+&nbsp; */
+&nbsp;const val QuackDefaultAnimationMillis = 250
+&nbsp;
+&nbsp;/**
+&nbsp; * 덕키에서 사용할 애니메이션의 지속 시간
+&nbsp; *
+&nbsp; * 애니메이션 디버깅 용도로 수정 허용. Transition API 를 사용하는
+&nbsp; * 방법도 있지만 컴포즈에서 Preview 가 최적하게 돌아가지 않아
+&nbsp; * 수동 애니메이션 디버깅을 선호함.
+&nbsp; *
+&nbsp; * Playground 에서 자유로운 지속 시간 편집으로 쉬운 디버깅을 위해 public 으로 설정함
+&nbsp; */
+&nbsp;var QuackAnimationMillis by mutableStateOf(QuackDefaultAnimationMillis)
+&nbsp;
+&nbsp;/**
+&nbsp; * [isSnapshotMode] 의 receiver 입니다.
+&nbsp; */
+<b class="fc">&nbsp;internal object QuackAnimationSpec</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * 스냅샷 캡처 환경에서는 애니메이션이 진행중인 현황을 캡처하지 못합니다.
+&nbsp; * 따라서 스냅샷 캡처 환경에서는 애니메이션이 진행 시간 없이
+&nbsp; * 바로 완료돼야 합니다. 이 값은 현재 컴포저블이 실행중인 환경이
+&nbsp; * 스냅샷 캡처 환경인지를 나타냅니다. 스냅샷 캡처는 QuackQuack 내부 테스트
+&nbsp; * 에서만 진행되므로 internal 로 제한합니다.
+&nbsp; */
+&nbsp;internal var QuackAnimationSpec.isSnapshotMode by mutableStateOf(false)
+&nbsp;
+&nbsp;/**
+&nbsp; * 덕키에서 사용할 애니메이션의 기본 스팩
+&nbsp; *
+&nbsp; * @return 덕키에서 사용할 애니메이션의 기본 스팩.
+&nbsp; * [isSnapshotMode] 에 따라 반환값이 달라집니다. false 라면
+&nbsp; * 덕키에서 사용하는 애니메이션 스팩인 [TweenSpec] 이 반환되고,
+&nbsp; * true 라면 [SnapSpec] 이 반환됩니다.
+&nbsp; *
+&nbsp; * @see isSnapshotMode
+&nbsp; */
+&nbsp;@Stable
+&nbsp;internal fun &lt;T&gt; quackAnimationSpec() = when (QuackAnimationSpec.isSnapshotMode) {
+&nbsp;    true -&gt; snap()
+&nbsp;    else -&gt; tween&lt;T&gt;(
+&nbsp;        durationMillis = QuackAnimationMillis,
+&nbsp;        easing = FastOutSlowInEasing,
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
+</div>
+</body>
+</html>

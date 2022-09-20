@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > AnimatedContentTransformKt</title>
+  <title>Coverage Report > BaselineProfileGenerator</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">team.duckie.quackquack.ui.animation</a>
+    <a href="../index.html">team.duckie.quackquack.ui.benchmark</a>
 </div>
 
-<h1>Coverage Summary for Class: AnimatedContentTransformKt (team.duckie.quackquack.ui.animation)</h1>
+<h1>Coverage Summary for Class: BaselineProfileGenerator (team.duckie.quackquack.ui.benchmark)</h1>
 
 <table class="coverageStats">
 
@@ -45,70 +45,35 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">AnimatedContentTransformKt</td>
+  <td class="name">BaselineProfileGenerator</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    42.9%
+    0%
   </span>
   <span class="absValue">
-    (18/42)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    87.5%
-  </span>
-  <span class="absValue">
-    (7/8)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    63.2%
-  </span>
-  <span class="absValue">
-    (127/201)
+    (0/15)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">AnimatedContentTransformKt$AnimatedContentTransform$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (6/6)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (31/31)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">AnimatedContentTransformKt$AnimatedContentTransform$1$1</td>
+    <td class="name">BaselineProfileGenerator$startup$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -123,7 +88,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/1)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -131,46 +96,35 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/6)
+    (0/10)
   </span>
 </td>
-  </tr>
-  <tr>
-    <td class="name">AnimatedContentTransformKt$AnimatedContentTransform$2</td>
-    <td class="coverageStat"/>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    0%
   </span>
   <span class="absValue">
-    (2/3)
+    (0/3)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    42.9%
+    0%
   </span>
   <span class="absValue">
-    (18/42)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    86.7%
-  </span>
-  <span class="absValue">
-    (13/15)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    66.4%
-  </span>
-  <span class="absValue">
-    (158/238)
+    (0/25)
   </span>
 </td>
 </tr>
@@ -188,59 +142,27 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
 &nbsp;
-&nbsp;package team.duckie.quackquack.ui.animation
+&nbsp;package team.duckie.quackquack.ui.benchmark
 &nbsp;
-&nbsp;import androidx.compose.animation.AnimatedContent
-&nbsp;import androidx.compose.animation.AnimatedVisibilityScope
-&nbsp;import androidx.compose.animation.ExperimentalAnimationApi
-&nbsp;import androidx.compose.animation.SizeTransform
-&nbsp;import androidx.compose.animation.core.AnimationSpec
-&nbsp;import androidx.compose.animation.core.FiniteAnimationSpec
-&nbsp;import androidx.compose.animation.fadeIn
-&nbsp;import androidx.compose.animation.fadeOut
-&nbsp;import androidx.compose.animation.with
-&nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.unit.IntSize
+&nbsp;import androidx.benchmark.macro.ExperimentalBaselineProfilesApi
+&nbsp;import androidx.benchmark.macro.junit4.BaselineProfileRule
+&nbsp;import androidx.test.ext.junit.runners.AndroidJUnit4
+&nbsp;import org.junit.Rule
+&nbsp;import org.junit.Test
+&nbsp;import org.junit.runner.RunWith
 &nbsp;
-&nbsp;/**
-&nbsp; * 컴포저블의 상태에 변화가 있을 때 자동으로 해당 상태에 맞춰
-&nbsp; * 애니메이션을 적용하는 컨테이너 입니다.
-&nbsp; *
-&nbsp; * @param modifier 이 컨테이너에 적용할 [Modifier]
-&nbsp; * @param targetState 변화를 감지할 컴포저블의 상태값
-&nbsp; * @param animationSpec 컴포저블 애니메이션에 사용할 [AnimationSpec]
-&nbsp; * @param content 상태 변화를 감지할 컴포저블 컨텐츠.
-&nbsp; * 인자로는 애니메이션이 적용되고 있는 [targetState] 의 값이 들어옵니다.
-&nbsp; * **애니메이션이 적용되기 위해선 필수로 이 값을 상태로 적용해야 합니다.**
-&nbsp; */
-&nbsp;@Suppress(&quot;UNCHECKED_CAST&quot;)
-&nbsp;@OptIn(ExperimentalAnimationApi::class)
-&nbsp;@Composable
-&nbsp;internal fun &lt;T&gt; AnimatedContentTransform(
-<b class="pc">&nbsp;    modifier: Modifier = Modifier,</b>
-&nbsp;    targetState: T,
-<b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;Any&gt; = quackAnimationSpec(),</b>
-&nbsp;    content: @Composable AnimatedVisibilityScope.(animatedTargetState: T) -&gt; Unit,
-<b class="pc">&nbsp;) {</b>
-<b class="pc">&nbsp;    AnimatedContent(</b>
-<b class="fc">&nbsp;        modifier = modifier,</b>
-<b class="fc">&nbsp;        targetState = targetState,</b>
-&nbsp;        transitionSpec = {
-<b class="fc">&nbsp;            fadeIn(</b>
-<b class="fc">&nbsp;                animationSpec = animationSpec as FiniteAnimationSpec&lt;Float&gt;,</b>
-<b class="fc">&nbsp;            ) with fadeOut(</b>
-<b class="fc">&nbsp;                animationSpec = animationSpec as FiniteAnimationSpec&lt;Float&gt;,</b>
-<b class="fc">&nbsp;            ) using SizeTransform(</b>
-<b class="fc">&nbsp;                clip = false,</b>
-&nbsp;                sizeAnimationSpec = { _, _ -&gt;
-<b class="nc">&nbsp;                    animationSpec as FiniteAnimationSpec&lt;IntSize&gt;</b>
-&nbsp;                },
-&nbsp;            )
-&nbsp;        },
-<b class="fc">&nbsp;        content = content,</b>
-&nbsp;    )
-<b class="nc">&nbsp;}</b>
+<b class="nc">&nbsp;@ExperimentalBaselineProfilesApi</b>
+&nbsp;@RunWith(AndroidJUnit4::class)
+&nbsp;class BaselineProfileGenerator {
+&nbsp;    @get:Rule
+<b class="nc">&nbsp;    val baselineProfileRule = BaselineProfileRule()</b>
+&nbsp;
+&nbsp;    @Test
+<b class="nc">&nbsp;    fun startup() = baselineProfileRule.collectBaselineProfile(packageName = AppPackageName) {</b>
+<b class="nc">&nbsp;        pressHome()</b>
+<b class="nc">&nbsp;        startActivityAndWait()</b>
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -264,7 +186,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-17 11:15</div>
+    <div style="float:right;">generated on 2022-09-20 14:04</div>
 </div>
 </body>
 </html>
