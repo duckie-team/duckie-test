@@ -75,7 +75,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/177)
+    (0/192)
   </span>
 </td>
 </tr>
@@ -153,7 +153,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/223)
+    (0/238)
   </span>
 </td>
 </tr>
@@ -170,7 +170,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
-&nbsp;
 &nbsp;package team.duckie.quackquack.playground
 &nbsp;
 &nbsp;import android.os.Bundle
@@ -188,7 +187,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import team.duckie.quackquack.playground.base.BaseActivity
 &nbsp;import team.duckie.quackquack.playground.base.PlaygroundActivities
 &nbsp;import team.duckie.quackquack.playground.realworld.ButtonPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.EtcPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.FabPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.NavigationPlayground
+&nbsp;import team.duckie.quackquack.playground.realworld.QuackBasicTextFieldWithAllDecorationDemo
+&nbsp;import team.duckie.quackquack.playground.realworld.SelectableImagePlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TabPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TextFieldPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TogglePlayground
@@ -203,6 +206,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    ButtonPlayground::class,
 &nbsp;    TextFieldPlayground::class,
 &nbsp;    FabPlayground::class,
+&nbsp;    SelectableImagePlayground::class,
+&nbsp;    EtcPlayground::class,
+&nbsp;    NavigationPlayground::class,
 &nbsp;    TogglePlayground::class,
 &nbsp;)
 &nbsp;
@@ -210,10 +216,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
 &nbsp;        super.onCreate(savedInstanceState)
 &nbsp;        setContent {
-&nbsp;            PlaygroundDemo()
-&nbsp;            /*SingleDemo {
-&nbsp;                QuackIconTextToggleDemo()
-&nbsp;            }*/
+&nbsp;            // PlaygroundDemo()
+&nbsp;            SingleDemo {
+&nbsp;                QuackBasicTextFieldWithAllDecorationDemo()
+&nbsp;            }
 &nbsp;        }
 &nbsp;    }
 &nbsp;}
@@ -246,12 +252,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    ) {
 <b class="nc">&nbsp;        context.dataStore.data.first().let { preference -&gt;</b>
 <b class="nc">&nbsp;            QuackAnimationMillis = (</b>
-<b class="nc">&nbsp;                    preference[PreferenceConfigs.AnimationDurationKey]</b>
-<b class="nc">&nbsp;                        ?: QuackAnimationMillis</b>
-<b class="nc">&nbsp;                    ).coerceAtLeast(minimumValue = 0)</b>
+<b class="nc">&nbsp;                preference[PreferenceConfigs.AnimationDurationKey]</b>
+<b class="nc">&nbsp;                    ?: QuackAnimationMillis</b>
+<b class="nc">&nbsp;                ).coerceAtLeast(minimumValue = 0)</b>
 <b class="nc">&nbsp;            QuackFontScale = (</b>
-<b class="nc">&nbsp;                    preference[PreferenceConfigs.FontScaleKey] ?: QuackFontScale</b>
-<b class="nc">&nbsp;                    ).coerceAtLeast(minimumValue = 0.0)</b>
+<b class="nc">&nbsp;                preference[PreferenceConfigs.FontScaleKey] ?: QuackFontScale</b>
+<b class="nc">&nbsp;                ).coerceAtLeast(minimumValue = 0.0)</b>
 <b class="nc">&nbsp;        }</b>
 &nbsp;    }
 <b class="nc">&nbsp;    PlaygroundTheme {</b>
@@ -283,7 +289,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-20 17:19</div>
+    <div style="float:right;">generated on 2022-09-21 07:11</div>
 </div>
 </body>
 </html>

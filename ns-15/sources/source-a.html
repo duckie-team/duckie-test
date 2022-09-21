@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > TextKt</title>
+  <title>Coverage Report > QuackDialogMenuItem</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,12 +21,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.component</a>
 </div>
 
-<h1>Coverage Summary for Class: TextKt (team.duckie.quackquack.ui.component)</h1>
+<h1>Coverage Summary for Class: QuackDialogMenuItem (team.duckie.quackquack.ui.component)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -45,42 +48,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">TextKt</td>
-<td class="coverageStat">
-  <span class="percent">
-    50%
-  </span>
-  <span class="absValue">
-    (1/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    38.6%
-  </span>
-  <span class="absValue">
-    (17/44)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    80%
-  </span>
-  <span class="absValue">
-    (8/10)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    61.1%
-  </span>
-  <span class="absValue">
-    (118/193)
-  </span>
-</td>
-</tr>
-  <tr>
-    <td class="name">TextKt$QuackText$1</td>
+  <td class="name">QuackDialogMenuItem</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -91,68 +59,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    33.3%
   </span>
   <span class="absValue">
-    (2/4)
+    (1/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    83.3%
+    0%
   </span>
   <span class="absValue">
-    (5/6)
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    67.9%
+    25%
   </span>
   <span class="absValue">
-    (19/28)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">TextKt$QuackText$2</td>
-    <td class="coverageStat"/>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    66.7%
-  </span>
-  <span class="absValue">
-    (2/3)
+    (3/12)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    39.6%
+    18.8%
   </span>
   <span class="absValue">
-    (19/48)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    81.2%
-  </span>
-  <span class="absValue">
-    (13/16)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    62%
-  </span>
-  <span class="absValue">
-    (137/221)
+    (12/64)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
@@ -166,57 +104,377 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
-&nbsp;
 &nbsp;package team.duckie.quackquack.ui.component
 &nbsp;
-&nbsp;import androidx.compose.foundation.text.BasicText
+&nbsp;import androidx.compose.animation.AnimatedVisibility
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.layout.Arrangement
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.BoxScope
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.Row
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.foundation.layout.offset
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.foundation.lazy.LazyColumn
+&nbsp;import androidx.compose.foundation.lazy.items
+&nbsp;import androidx.compose.foundation.shape.CircleShape
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
 &nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.runtime.NonRestartableComposable
 &nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.runtime.setValue
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.ExperimentalComposeUiApi
 &nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.text.TextStyle
-&nbsp;import team.duckie.quackquack.ui.animation.AnimatedContentTransform
-&nbsp;import team.duckie.quackquack.ui.textstyle.QuackTextStyle
-&nbsp;import team.duckie.quackquack.ui.textstyle.animateQuackTextStyleAsState
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.layout.boundsInWindow
+&nbsp;import androidx.compose.ui.layout.onGloballyPositioned
+&nbsp;import androidx.compose.ui.platform.LocalDensity
+&nbsp;import androidx.compose.ui.unit.Density
+&nbsp;import androidx.compose.ui.unit.IntOffset
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.compose.ui.window.Dialog
+&nbsp;import androidx.compose.ui.window.DialogProperties
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.constant.QuackHeight
+&nbsp;import team.duckie.quackquack.ui.constant.QuackWidth
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.applyQuackSize
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;
+&nbsp;private val QuackFabSize = 48.dp
+&nbsp;
+&nbsp;private val QuackFabShape = CircleShape
+&nbsp;private val QuackPopUpMenuShape = RoundedCornerShape(12.dp)
+&nbsp;
+&nbsp;private val QuackMenuTopPadding = 20.dp
+&nbsp;private val QuackMenuHorizontalPadding = 16.dp
+&nbsp;private val QuackFabItemPadding = 16.dp
+&nbsp;private val QuackFabItemSpacing = 8.dp
+&nbsp;private val QuackIconTextSpacing = 4.dp
+&nbsp;
+&nbsp;// TODO: KDoc 필요
+<b class="fc">&nbsp;@Immutable</b>
+&nbsp;class QuackDialogMenuItem(
+<b class="fc">&nbsp;    val icon: QuackIcon,</b>
+<b class="fc">&nbsp;    val text: String,</b>
+&nbsp;) {
+&nbsp;    override fun equals(other: Any?): Boolean {
+<b class="nc">&nbsp;        if (this === other) return true</b>
+<b class="nc">&nbsp;        if (javaClass != other?.javaClass) return false</b>
+&nbsp;
+<b class="nc">&nbsp;        other as QuackDialogMenuItem</b>
+&nbsp;
+<b class="nc">&nbsp;        if (icon != other.icon) return false</b>
+<b class="nc">&nbsp;        if (text != other.text) return false</b>
+&nbsp;
+<b class="nc">&nbsp;        return true</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun hashCode(): Int {
+<b class="nc">&nbsp;        var result = icon.hashCode()</b>
+<b class="nc">&nbsp;        result = 31 * result + text.hashCode()</b>
+<b class="nc">&nbsp;        return result</b>
+&nbsp;    }
+&nbsp;}
 &nbsp;
 &nbsp;/**
-&nbsp; * 주어진 조건에 따라 텍스트를 표시합니다. 꽥꽥에서 텍스트를 표시하는데
-&nbsp; * 사용되는 최하위 컴포넌트 입니다.
+&nbsp; * QuackMenuFloatingActionButton 를 구현하였습니다.
 &nbsp; *
-&nbsp; * **애니메이션 가능한 모든 요소들에는 자동으로 애니메이션이 적용됩니다.**
-&nbsp; * 현재 애니메이션이 적용되는 요소들은 다음과 같습니다.
+&nbsp; * [QuackFloatingActionButton] 과는 다르게, 버튼을 클릭하였을 때
+&nbsp; * DialogMenu 가 출력됩니다.
+&nbsp; * [QuackDialogMenuItem] 을 통해 메뉴 아이템에 들어갈 icon, text 를 설정할 수 있습니다.
 &nbsp; *
-&nbsp; * [text], [style]
-&nbsp; *
-&nbsp; * @param modifier 이 컴포저블에서 사용할 [Modifier]
-&nbsp; * @param text 표시할 텍스트 내용
-&nbsp; * @param style 텍스트를 그릴 [TextStyle] 의 QuackQuack 버전
-&nbsp; * @param singleLine 텍스트를 한 줄로 표시할지 여부
+&nbsp; * @param expanded 메뉴가 현재 열려 있고 사용자에게 표시되는지 여부
+&nbsp; * @param onClickButton 버튼을 클릭했을 때 호출되는 콜백
+&nbsp; * @param onDismissRequest 사용자가 메뉴 닫기를 요청할 때 호출되는 콜백
+&nbsp; * @param menuItems 버튼을 클릭했을 때 나오는 메뉴의 [QuackDialogMenuItem] 리스트
+&nbsp; * @param onClickMenuItem 사용자가 메뉴 아이템을 클릭했을 때 호출되는 콜백
+&nbsp; * @see QuackDialogMenuItem
 &nbsp; */
 &nbsp;@Composable
-&nbsp;internal fun QuackText(
-<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
-&nbsp;    text: String,
-&nbsp;    style: QuackTextStyle,
-<b class="pc">&nbsp;    singleLine: Boolean = true,</b>
-<b class="pc">&nbsp;) {</b>
-<b class="fc">&nbsp;    val styleAnimationState by animateQuackTextStyleAsState(</b>
-<b class="fc">&nbsp;        targetValue = style,</b>
-&nbsp;    )
+&nbsp;fun QuackMenuFloatingActionButton(
+&nbsp;    expanded: Boolean,
+&nbsp;    onClickButton: () -&gt; Unit,
+&nbsp;    onDismissRequest: () -&gt; Unit,
+&nbsp;    menuItems: PersistentList&lt;QuackDialogMenuItem&gt;,
+&nbsp;    onClickMenuItem: (
+&nbsp;        item: QuackDialogMenuItem,
+&nbsp;    ) -&gt; Unit,
+&nbsp;) {
+&nbsp;    val density = LocalDensity.current
+&nbsp;    var buttonXOffset by remember {
+&nbsp;        mutableStateOf(0.dp)
+&nbsp;    }
+&nbsp;    var buttonYOffset by remember {
+&nbsp;        mutableStateOf(0.dp)
+&nbsp;    }
+&nbsp;    var buttonWidth by remember {
+&nbsp;        mutableStateOf(0)
+&nbsp;    }
+&nbsp;    var dialogContentWidth by remember {
+&nbsp;        mutableStateOf(0)
+&nbsp;    }
+&nbsp;    var dialogContentHeight by remember {
+&nbsp;        mutableStateOf(0)
+&nbsp;    }
 &nbsp;
-<b class="pc">&nbsp;    AnimatedContentTransform(</b>
-<b class="fc">&nbsp;        modifier = modifier,</b>
-<b class="fc">&nbsp;        targetState = text,</b>
-<b class="fc">&nbsp;    ) { animatedText -&gt;</b>
-<b class="pc">&nbsp;        BasicText(</b>
-<b class="fc">&nbsp;            text = animatedText,</b>
-<b class="fc">&nbsp;            style = styleAnimationState.asComposeStyle(),</b>
-<b class="fc">&nbsp;            maxLines = when (singleLine) {</b>
-<b class="pc">&nbsp;                true -&gt; 1</b>
-<b class="nc">&nbsp;                else -&gt; Int.MAX_VALUE</b>
+&nbsp;    QuackBasicFloatingActionButton(
+&nbsp;        modifier = Modifier
+&nbsp;            .onGloballyPositioned { layoutCoordinates -&gt;
+&nbsp;                with(density) {
+&nbsp;                    buttonXOffset = layoutCoordinates.boundsInWindow().center.x.toDp()
+&nbsp;                    buttonYOffset = layoutCoordinates.boundsInWindow().center.y.toDp()
+&nbsp;                    buttonWidth = layoutCoordinates.size.width
+&nbsp;                }
 &nbsp;            },
+&nbsp;        icon = QuackIcon.Plus,
+&nbsp;        onClick = onClickButton,
+&nbsp;    )
+&nbsp;    AnimatedVisibility(
+&nbsp;        visible = expanded,
+&nbsp;    ) {
+&nbsp;        QuackDialog(
+&nbsp;            offsetProvider = {
+&nbsp;                IntOffset(
+&nbsp;                    x = buttonXOffset.roundToPx() - dialogContentWidth + buttonWidth / 2,
+&nbsp;                    y = buttonYOffset.roundToPx() - dialogContentHeight,
+&nbsp;                )
+&nbsp;            },
+&nbsp;            onDismissRequest = onDismissRequest,
+&nbsp;        ) {
+&nbsp;            Column(
+&nbsp;                modifier = Modifier
+&nbsp;                    .onGloballyPositioned { layoutCoordinates -&gt;
+&nbsp;                        dialogContentWidth = layoutCoordinates.size.width
+&nbsp;                        dialogContentHeight = layoutCoordinates.size.height
+&nbsp;                    },
+&nbsp;                horizontalAlignment = Alignment.End,
+&nbsp;                verticalArrangement = Arrangement.spacedBy(
+&nbsp;                    space = QuackFabItemSpacing,
+&nbsp;                ),
+&nbsp;            ) {
+&nbsp;                QuackDialogMenu(
+&nbsp;                    menuItems = menuItems,
+&nbsp;                    onClickMenuItem = onClickMenuItem,
+&nbsp;                    onDismissRequest = onDismissRequest,
+&nbsp;                )
+&nbsp;                QuackBasicFloatingActionButton(
+&nbsp;                    icon = QuackIcon.Close,
+&nbsp;                    onClick = onDismissRequest,
+&nbsp;                )
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackMenuFloatingActionButton] 를 클릭했을 때 나오는 다이얼로그 입니다.
+&nbsp; *
+&nbsp; * Dialog 는 내부적으로 Android Dialog 로 구현되어있고, Compose View 로 래핑되어 있습니다.
+&nbsp; * 따라서 위치를 수동으로 조절할 수는 없고, Full Size Box 에서 offset 으로 조정되어야 합니다.
+&nbsp; *
+&nbsp; * 따라서 FloatingActionButton 의 Offset 을 구한 다음,
+&nbsp; *
+&nbsp; * xOffset = buttonXOffset - dialogContentWidth + buttonWidth / 2
+&nbsp; *
+&nbsp; * yOffset = buttonYOffset - dialogContentHeight
+&nbsp; *
+&nbsp; * 으로 위치를 조정시킬 수 있습니다.
+&nbsp; *
+&nbsp; * @param offsetProvider 내부 Composable 이 배치 될 offset
+&nbsp; * @param onDismissRequest 사용자가 메뉴 닫기를 요청할 때 호출되는 콜백
+&nbsp; * @param content Dialog 내부에 들어갈 Composable
+&nbsp; */
+&nbsp;@OptIn(ExperimentalComposeUiApi::class)
+&nbsp;@Composable
+&nbsp;private fun QuackDialog(
+&nbsp;    offsetProvider: Density.() -&gt; IntOffset,
+&nbsp;    onDismissRequest: () -&gt; Unit,
+&nbsp;    content: @Composable BoxScope.() -&gt; Unit,
+&nbsp;) {
+&nbsp;    Dialog(
+&nbsp;        onDismissRequest = onDismissRequest,
+&nbsp;        properties = DialogProperties(
+&nbsp;            usePlatformDefaultWidth = false,
+&nbsp;        ),
+&nbsp;    ) {
+&nbsp;        Box(
+&nbsp;            modifier = Modifier
+&nbsp;                .fillMaxSize()
+&nbsp;                .quackClickable(
+&nbsp;                    onClick = onDismissRequest
+&nbsp;                ),
+&nbsp;        ) {
+&nbsp;            Box(
+&nbsp;                modifier = Modifier.offset(
+&nbsp;                    offset = offsetProvider,
+&nbsp;                ),
+&nbsp;                content = content,
+&nbsp;            )
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackDialogMenu 를 구현하였습니다.
+&nbsp; *
+&nbsp; * Dialog Menu 에 표시될 Item List 입니다.
+&nbsp; *
+&nbsp; * @param menuItems 버튼을 클릭했을 때 나오는 메뉴의 [QuackDialogMenuItem] 리스트
+&nbsp; * @param onClickMenuItem 사용자가 메뉴 아이템을 클릭했을 때 호출되는 콜백
+&nbsp; * @param onDismissRequest 사용자가 메뉴 닫기를 요청할 때 호출되는 콜백
+&nbsp; * @see QuackDialogMenuItem
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackDialogMenu(
+&nbsp;    menuItems: PersistentList&lt;QuackDialogMenuItem&gt;,
+&nbsp;    onClickMenuItem: (
+&nbsp;        item: QuackDialogMenuItem,
+&nbsp;    ) -&gt; Unit,
+&nbsp;    onDismissRequest: () -&gt; Unit,
+&nbsp;) {
+&nbsp;    QuackSurface(
+&nbsp;        modifier = Modifier.applyQuackSize(
+&nbsp;            width = QuackWidth.Wrap,
+&nbsp;            height = QuackHeight.Wrap,
+&nbsp;        ),
+&nbsp;        shape = QuackPopUpMenuShape,
+&nbsp;        backgroundColor = QuackColor.White,
+&nbsp;    ) {
+&nbsp;        LazyColumn(
+&nbsp;            contentPadding = PaddingValues(
+&nbsp;                start = QuackMenuHorizontalPadding,
+&nbsp;                end = QuackMenuHorizontalPadding,
+&nbsp;                top = QuackMenuTopPadding,
+&nbsp;            ),
+&nbsp;            verticalArrangement = Arrangement.Center,
+&nbsp;            horizontalAlignment = Alignment.CenterHorizontally,
+&nbsp;        ) {
+&nbsp;            items(
+&nbsp;                items = menuItems,
+&nbsp;                key = { item: QuackDialogMenuItem -&gt;
+&nbsp;                    item.text
+&nbsp;                },
+&nbsp;            ) { item: QuackDialogMenuItem -&gt;
+&nbsp;                QuackDialogMenuContent(
+&nbsp;                    menuItem = item,
+&nbsp;                    onClickMenuItem = onClickMenuItem,
+&nbsp;                    onDismissRequest = onDismissRequest,
+&nbsp;                )
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackDialogMenuContent 를 구현하였습니다.
+&nbsp; *
+&nbsp; * DialogMenu 의 item 이 어떻게 구성되는지 정의합니다.
+&nbsp; *
+&nbsp; * @param menuItem [QuackDialogMenu] 에 들어갈 [QuackDialogMenuItem]
+&nbsp; * @param onClickMenuItem 사용자가 메뉴 아이템을 클릭했을 때 호출되는 콜백
+&nbsp; * @param onDismissRequest 사용자가 메뉴 닫기를 요청할 때 호출되는 콜백
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;internal fun QuackDialogMenuContent(
+&nbsp;    menuItem: QuackDialogMenuItem,
+&nbsp;    onClickMenuItem: (
+&nbsp;        item: QuackDialogMenuItem,
+&nbsp;    ) -&gt; Unit,
+&nbsp;    onDismissRequest: () -&gt; Unit,
+&nbsp;) {
+&nbsp;    Row(
+&nbsp;        modifier = Modifier
+&nbsp;            .padding(
+&nbsp;                bottom = QuackFabItemPadding,
+&nbsp;            )
+&nbsp;            .quackClickable(
+&nbsp;                onClick = {
+&nbsp;                    onClickMenuItem(menuItem)
+&nbsp;                    onDismissRequest()
+&nbsp;                },
+&nbsp;            ),
+&nbsp;        verticalAlignment = Alignment.CenterVertically,
+&nbsp;        horizontalArrangement = Arrangement.spacedBy(
+&nbsp;            space = QuackIconTextSpacing,
+&nbsp;        ),
+&nbsp;    ) {
+&nbsp;        QuackImage(
+&nbsp;            icon = menuItem.icon,
+&nbsp;        )
+&nbsp;        QuackSubtitle(
+&nbsp;            text = menuItem.text,
 &nbsp;        )
 &nbsp;    }
-<b class="nc">&nbsp;}</b>
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackFloatingActionButton 을 구현하였습니다.
+&nbsp; *
+&nbsp; * Box 로 구현되어 있기 때문에, 다른 Composable 위에 배치될 수 있습니다.
+&nbsp; *
+&nbsp; * @param icon FloatingActionButton 에 들어갈 icon
+&nbsp; * @param onClick 버튼 클릭 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;fun QuackFloatingActionButton(
+&nbsp;    icon: QuackIcon,
+&nbsp;    onClick: () -&gt; Unit,
+&nbsp;) {
+&nbsp;    QuackBasicFloatingActionButton(
+&nbsp;        icon = icon,
+&nbsp;        onClick = onClick,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackFloatingActionButton 의 기초가 되는 Composable
+&nbsp; *
+&nbsp; * Content 의 사이즈를 알아야 하는 경우로 인해 Modifier 를 가집니다.
+&nbsp; *
+&nbsp; * @param modifier [Modifier]
+&nbsp; * @param icon FloatingActionButton 에 들어갈 icon
+&nbsp; * @param onClick 버튼 클릭 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;private fun QuackBasicFloatingActionButton(
+&nbsp;    modifier: Modifier = Modifier,
+&nbsp;    icon: QuackIcon,
+&nbsp;    onClick: () -&gt; Unit,
+&nbsp;) {
+&nbsp;    Box(
+&nbsp;        modifier = modifier
+&nbsp;            .size(
+&nbsp;                size = QuackFabSize,
+&nbsp;            )
+&nbsp;            .clip(
+&nbsp;                shape = QuackFabShape,
+&nbsp;            )
+&nbsp;            .background(
+&nbsp;                color = QuackColor.DuckieOrange.value,
+&nbsp;            )
+&nbsp;            .quackClickable(
+&nbsp;                onClick = onClick,
+&nbsp;            ),
+&nbsp;        contentAlignment = Alignment.Center,
+&nbsp;    ) {
+&nbsp;        QuackImage(
+&nbsp;            tint = QuackColor.White,
+&nbsp;            icon = icon,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -240,7 +498,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-20 17:19</div>
+    <div style="float:right;">generated on 2022-09-21 07:11</div>
 </div>
 </body>
 </html>

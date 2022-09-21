@@ -48,10 +48,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name">QuackTextStyleKt</td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    40%
   </span>
   <span class="absValue">
-    (4/6)
+    (2/5)
   </span>
 </td>
 <td class="coverageStat">
@@ -64,18 +64,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.6%
+    70.6%
   </span>
   <span class="absValue">
-    (25/27)
+    (12/17)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90.7%
+    86.6%
   </span>
   <span class="absValue">
-    (88/97)
+    (84/97)
   </span>
 </td>
 </tr>
@@ -119,10 +119,10 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name"><strong>Total</strong></td>
 <td class="coverageStat">
   <span class="percent">
-    40%
+    22.2%
   </span>
   <span class="absValue">
-    (4/10)
+    (2/9)
   </span>
 </td>
 <td class="coverageStat">
@@ -135,18 +135,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.6%
+    70.6%
   </span>
   <span class="absValue">
-    (25/27)
+    (12/17)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90.7%
+    86.6%
   </span>
   <span class="absValue">
-    (88/97)
+    (84/97)
   </span>
 </td>
 </tr>
@@ -284,7 +284,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            size = 14.sp,
 &nbsp;            weight = FontWeight.Bold,
 &nbsp;            letterSpacing = 0.sp,
-&nbsp;            lineHeight = 20.sp
+&nbsp;            lineHeight = 20.sp,
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
@@ -353,9 +353,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @return receiver 로 받은 [Float] 를 [TextUnit] 중 Sp 로 변환한 값
 &nbsp; */
 &nbsp;@Stable
-<b class="fc">&nbsp;private fun Float.toSp() = TextUnit(</b>
-<b class="fc">&nbsp;    value = this,</b>
-<b class="fc">&nbsp;    type = TextUnitType.Sp,</b>
+<b class="nc">&nbsp;private fun Float.toSp() = TextUnit(</b>
+<b class="nc">&nbsp;    value = this,</b>
+<b class="nc">&nbsp;    type = TextUnitType.Sp,</b>
 &nbsp;)
 &nbsp;
 &nbsp;/**
@@ -408,16 +408,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        ),
 &nbsp;        targetBuilder = { animateValues -&gt;
 &nbsp;            val (
-<b class="fc">&nbsp;                color,</b>
-<b class="fc">&nbsp;                size,</b>
-<b class="fc">&nbsp;            ) = animateValues</b>
-<b class="fc">&nbsp;            QuackTextStyle(</b>
-<b class="fc">&nbsp;                color = color as QuackColor,</b>
-<b class="fc">&nbsp;                size = (size as Float).toSp(),</b>
-<b class="fc">&nbsp;                weight = targetValue.weight,</b>
-<b class="fc">&nbsp;                letterSpacing = targetValue.letterSpacing,</b>
-<b class="fc">&nbsp;                lineHeight = targetValue.lineHeight,</b>
-<b class="fc">&nbsp;                textAlign = targetValue.textAlign,</b>
+&nbsp;                color,
+&nbsp;                size,
+&nbsp;            ) = animateValues
+&nbsp;            QuackTextStyle(
+&nbsp;                color = color as QuackColor,
+&nbsp;                size = (size as Float).toSp(),
+&nbsp;                weight = targetValue.weight,
+&nbsp;                letterSpacing = targetValue.letterSpacing,
+&nbsp;                lineHeight = targetValue.lineHeight,
+&nbsp;                textAlign = targetValue.textAlign,
 &nbsp;            )
 &nbsp;        },
 &nbsp;    )
@@ -445,7 +445,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-20 17:19</div>
+    <div style="float:right;">generated on 2022-09-21 07:11</div>
 </div>
 </body>
 </html>

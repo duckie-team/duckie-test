@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackDsl</title>
+  <title>Coverage Report > DoNotUseDirectly</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.util</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackDsl (team.duckie.quackquack.ui.util)</h1>
+<h1>Coverage Summary for Class: DoNotUseDirectly (team.duckie.quackquack.ui.util)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -32,7 +32,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackDsl</td>
+  <td class="name">DoNotUseDirectly</td>
     <td class="coverageStat"/>
 </tr>
 
@@ -53,10 +53,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;package team.duckie.quackquack.ui.util
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 에서 DSL Builder 를 만들 때 사용됩니다.
+&nbsp; * 직접적으로 사용되면 안되는 API 임을 나타내기 위해 사용됩니다.
 &nbsp; */
-&nbsp;@DslMarker
-&nbsp;internal annotation class QuackDsl
+&nbsp;@RequiresOptIn(
+&nbsp;    message = &quot;이 API 는 직접적으로 사용하면 안됩니다. &quot; +
+&nbsp;            &quot;이 수단을 가져올 수 있는 다른 API 를 사용해 주세요.&quot;
+&nbsp;)
+&nbsp;internal annotation class DoNotUseDirectly
 </code>
 </pre>
 </div>
@@ -80,7 +83,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-20 17:19</div>
+    <div style="float:right;">generated on 2022-09-21 07:11</div>
 </div>
 </body>
 </html>
