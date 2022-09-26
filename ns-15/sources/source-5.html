@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ComposableSingletons</title>
+  <title>Coverage Report > ImageKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,12 +21,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.component</a>
 </div>
 
-<h1>Coverage Summary for Class: ComposableSingletons (team.duckie.quackquack.ui.component)</h1>
+<h1>Coverage Summary for Class: ImageKt (team.duckie.quackquack.ui.component)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -44,110 +47,209 @@ Current scope:     <a href="../../index.html">all classes</a>
   Instruction, %
 </th>
 </tr>
-  <tr>
-    <td class="name">ComposableSingletons$ButtonKt</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (6/6)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">ComposableSingletons$ButtonKt$lambda-1$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    50%
-  </span>
-  <span class="absValue">
-    (1/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (3/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    95%
-  </span>
-  <span class="absValue">
-    (19/20)
-  </span>
-</td>
-  </tr>
 <tr>
-  <td class="name"><strong>Total</strong></td>
+  <td class="name">ImageKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    60%
   </span>
   <span class="absValue">
-    (1/2)
+    (3/5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    37%
   </span>
   <span class="absValue">
-    (4/4)
+    (17/46)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96.2%
+    51.1%
   </span>
   <span class="absValue">
-    (25/26)
+    (24/47)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    48.3%
+  </span>
+  <span class="absValue">
+    (127/263)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
 <br/>
 
-  <code class="sourceCode">Source code is not available<br /></code>
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.foundation.Image
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.NonRestartableComposable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.graphics.ColorFilter
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import com.skydoves.landscapist.glide.GlideImage
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;
+&nbsp;/**
+&nbsp; * 이미지 하나만 표시하는 컴포넌트의 아이콘 버전
+&nbsp; *
+&nbsp; * @param icon 표시할 아이콘의 drawable 아이디.
+&nbsp; * 만약 null 이 들어온다면 아이콘을 그리지 않습니다.
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param rippleEnabled 이미지 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;fun QuackImage(
+&nbsp;    icon: QuackIcon?,
+<b class="pc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="pc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="pc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="pc">&nbsp;    InternalQuackImage(</b>
+<b class="fc">&nbsp;        icon = icon,</b>
+<b class="fc">&nbsp;        tint = tint,</b>
+<b class="fc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="fc">&nbsp;        onClick = onClick,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 이미지 하나만 표시하는 컴포넌트의 이미지 버전
+&nbsp; *
+&nbsp; * @param image 표시할 이미지의 값.
+&nbsp; * 만약 null 이 들어온다면 이미지를 그리지 않습니다.
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param rippleEnabled 이미지 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;// TODO: 로딩 effect
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;fun QuackImage(
+&nbsp;    image: Any?,
+<b class="nc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    InternalQuackImage(</b>
+<b class="nc">&nbsp;        image = image,</b>
+<b class="nc">&nbsp;        tint = tint,</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 이미지 하나만 표시하는 컴포넌트의 아이콘 버전
+&nbsp; *
+&nbsp; * 모듈 내에서 [Modifier] 및 [tint] 변경하여 사용 가능
+&nbsp; *
+&nbsp; * @param modifier 이 컴포저블에서 사용할 [Modifier]
+&nbsp; * @param icon 표시할 아이콘의 drawable 아이디.
+&nbsp; * 만약 null 이 들어온다면 아이콘을 그리지 않습니다.
+&nbsp; * @param rippleEnabled 이미지 클릭시 ripple 발생 여부
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;internal fun InternalQuackImage(
+<b class="fc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    icon: QuackIcon?,
+<b class="fc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="fc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="pc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="pc">&nbsp;    if (icon == null) return</b>
+<b class="pc">&nbsp;    Image(</b>
+<b class="fc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="fc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="fc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="fc">&nbsp;        painter = painterResource(</b>
+<b class="fc">&nbsp;            id = icon.drawableId,</b>
+&nbsp;        ),
+<b class="fc">&nbsp;        contentDescription = null,</b>
+<b class="fc">&nbsp;        colorFilter = tint.toColorFilter(),</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 이미지 하나만 표시하는 컴포넌트의 이미지 버전
+&nbsp; *
+&nbsp; * 모듈 내에서 [Modifier] 및 [tint] 변경하여 사용 가능
+&nbsp; *
+&nbsp; * @param modifier 이 컴포저블에서 사용할 [Modifier]
+&nbsp; * @param image 표시할 이미지의 값.
+&nbsp; * 만약 null 이 들어온다면 이미지를 그리지 않습니다.
+&nbsp; * @param rippleEnabled 이미지 클릭시 ripple 발생 여부
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;// TODO: 로딩 effect
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;fun InternalQuackImage(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    image: Any?,
+<b class="nc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="nc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    if (image == null) return</b>
+<b class="nc">&nbsp;    GlideImage(</b>
+<b class="nc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        imageModel = image,</b>
+<b class="nc">&nbsp;        colorFilter = tint.toColorFilter(),</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackColor] 를 [ColorFilter] 로 변환합니다.
+&nbsp; *
+&nbsp; * @receiver 변환할 [QuackColor]
+&nbsp; * @return 변환된 [ColorFilter], 만약 receiver 로 null 이 들어왔다면 null 을 그대로 반환합니다.
+&nbsp; */
+<b class="fc">&nbsp;private fun QuackColor?.toColorFilter() = this?.run {</b>
+<b class="fc">&nbsp;    ColorFilter.tint(</b>
+<b class="fc">&nbsp;        color = composeColor,</b>
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
 </div>
 
 <script type="text/javascript">
@@ -169,7 +271,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

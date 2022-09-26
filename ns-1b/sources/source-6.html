@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > QuackDsl</title>
+  <title>Coverage Report > AllowMagicNumber</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.ui.util</a>
 </div>
 
-<h1>Coverage Summary for Class: QuackDsl (team.duckie.quackquack.ui.util)</h1>
+<h1>Coverage Summary for Class: AllowMagicNumber (team.duckie.quackquack.ui.util)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -32,7 +32,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">QuackDsl</td>
+  <td class="name">AllowMagicNumber</td>
     <td class="coverageStat"/>
 </tr>
 
@@ -53,10 +53,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;package team.duckie.quackquack.ui.util
 &nbsp;
 &nbsp;/**
-&nbsp; * QuackQuack 에서 DSL Builder 를 만들 때 사용됩니다.
+&nbsp; * MagicNumber 을 예외적으로 허용할 때 사용하는 어노테이션 입니다.
+&nbsp; *
+&nbsp; * @param because 이 경우에 MagicNumber 을 왜 허용하는지 명시해야 합니다.
 &nbsp; */
-&nbsp;@DslMarker
-&nbsp;internal annotation class QuackDsl
+&nbsp;@Retention(AnnotationRetention.SOURCE)
+&nbsp;internal annotation class AllowMagicNumber(
+&nbsp;    @Suppress(&quot;unused&quot;) val because: String,
+&nbsp;)
 </code>
 </pre>
 </div>
@@ -80,7 +84,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

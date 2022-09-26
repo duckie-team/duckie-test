@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > NavigationPlayground</title>
+  <title>Coverage Report > TextFieldPlayground</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.playground.realworld</a>
 </div>
 
-<h1>Coverage Summary for Class: NavigationPlayground (team.duckie.quackquack.playground.realworld)</h1>
+<h1>Coverage Summary for Class: TextFieldPlayground (team.duckie.quackquack.playground.realworld)</h1>
 
 <table class="coverageStats">
 
@@ -45,7 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">NavigationPlayground</td>
+  <td class="name">TextFieldPlayground</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -60,7 +60,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/6)
+    (0/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -68,12 +68,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/40)
+    (0/68)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">NavigationPlayground$onCreate$1</td>
+    <td class="name">TextFieldPlayground$onCreate$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -103,12 +103,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/36)
+    (0/37)
   </span>
 </td>
   </tr>
   <tr>
-    <td class="name">NavigationPlayground$onCreate$1$1</td>
+    <td class="name">TextFieldPlayground$onCreate$1$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -165,7 +165,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/12)
+    (0/16)
   </span>
 </td>
 <td class="coverageStat">
@@ -173,7 +173,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/104)
+    (0/133)
   </span>
 </td>
 </tr>
@@ -195,36 +195,28 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;import android.os.Bundle
 &nbsp;import androidx.activity.compose.setContent
-&nbsp;import androidx.compose.foundation.background
-&nbsp;import androidx.compose.foundation.layout.Arrangement
-&nbsp;import androidx.compose.foundation.layout.Box
-&nbsp;import androidx.compose.foundation.layout.Column
-&nbsp;import androidx.compose.foundation.layout.Row
-&nbsp;import androidx.compose.foundation.layout.fillMaxSize
-&nbsp;import androidx.compose.foundation.layout.padding
-&nbsp;import androidx.compose.foundation.layout.width
 &nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.getValue
 &nbsp;import androidx.compose.runtime.mutableStateOf
 &nbsp;import androidx.compose.runtime.remember
-&nbsp;import androidx.compose.ui.Modifier
-&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.compose.runtime.setValue
 &nbsp;import kotlinx.collections.immutable.persistentListOf
 &nbsp;import team.duckie.quackquack.playground.base.BaseActivity
 &nbsp;import team.duckie.quackquack.playground.base.PlaygroundSection
 &nbsp;import team.duckie.quackquack.playground.theme.PlaygroundTheme
-&nbsp;import team.duckie.quackquack.ui.color.QuackColor
-&nbsp;import team.duckie.quackquack.ui.component.BottomNavigationItem
-&nbsp;import team.duckie.quackquack.ui.component.QuackBody1
-&nbsp;import team.duckie.quackquack.ui.component.QuackBottomNavigation
 &nbsp;import team.duckie.quackquack.ui.component.QuackImage
-&nbsp;import team.duckie.quackquack.ui.component.QuackTopAppBar
+&nbsp;import team.duckie.quackquack.ui.component.QuackTextField
 &nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
 &nbsp;
-<b class="nc">&nbsp;class NavigationPlayground : BaseActivity() {</b>
+<b class="nc">&nbsp;class TextFieldPlayground : BaseActivity() {</b>
 &nbsp;    @Suppress(&quot;RemoveExplicitTypeArguments&quot;)
 <b class="nc">&nbsp;    private val items = persistentListOf&lt;Pair&lt;String, @Composable () -&gt; Unit&gt;&gt;(</b>
-<b class="nc">&nbsp;        &quot;QuackTopAppBar&quot; to { QuackTopAppBarDemo() },</b>
-<b class="nc">&nbsp;        &quot;QuackBottomNavigation&quot; to { QuackBottomNavigationDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldWithNoDecoration&quot; to { QuackTextFieldWithNoDecorationDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldWithLeadingDecoration&quot; to { QuackTextFieldWithLeadingDecorationDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldWithTrailingDecoration&quot; to { QuackTextFieldWithTrailingDecorationDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldWithAllDecoration&quot; to { QuackTextFieldWithAllDecorationDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldErrorState&quot; to { QuackTextFieldErrorStateDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackTextFieldErrorState - Live&quot; to { QuackTextFieldErrorStateLiveDemo() }</b>
 &nbsp;    )
 &nbsp;
 &nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
@@ -232,7 +224,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        setContent {</b>
 <b class="nc">&nbsp;            PlaygroundTheme {</b>
 <b class="nc">&nbsp;                PlaygroundSection(</b>
-<b class="nc">&nbsp;                    title = &quot;Navigation&quot;,</b>
+<b class="nc">&nbsp;                    title = &quot;TextField&quot;,</b>
 <b class="nc">&nbsp;                    items = items,</b>
 <b class="nc">&nbsp;                )</b>
 <b class="nc">&nbsp;            }</b>
@@ -241,130 +233,141 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;}
 &nbsp;
 &nbsp;@Composable
-&nbsp;fun QuackTopAppBarDemo() {
-&nbsp;    val headline = &quot;Headline2&quot;
-&nbsp;    val trailingText = &quot;완료&quot;
-&nbsp;    Column(
-&nbsp;        modifier = Modifier
-&nbsp;            .background(
-&nbsp;                color = QuackColor.Gray3.value
+&nbsp;fun QuackTextFieldWithNoDecorationDemo() {
+&nbsp;    // empty test
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;&quot;,
+&nbsp;        )
+&nbsp;    }
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        placeholderText = &quot;QuackTextFieldWithNoDecorationDemo&quot;,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun QuackTextFieldWithLeadingDecorationDemo() {
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;QuackTextFieldWithLeadingDecorationDemo&quot;,
+&nbsp;        )
+&nbsp;    }
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        leadingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
 &nbsp;            )
-&nbsp;            .fillMaxSize()
-&nbsp;            .padding(
-&nbsp;                top = 100.dp
-&nbsp;            ),
-&nbsp;        verticalArrangement = Arrangement.spacedBy(
-&nbsp;            space = 5.dp
-&nbsp;        ),
-&nbsp;    ) {
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.ArrowBack,
-&nbsp;            onClickLeadingIcon = {},
-&nbsp;        )
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.ArrowBack,
-&nbsp;            onClickLeadingIcon = {},
-&nbsp;            headline = headline,
-&nbsp;        )
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.ArrowBack,
-&nbsp;            onClickLeadingIcon = {},
-&nbsp;            trailingIcon = QuackIcon.More,
-&nbsp;            secondTrailingIcon = QuackIcon.Share,
-&nbsp;            onClickTrailingIcon = {},
-&nbsp;            onClickSecondTrailingIcon = {},
-&nbsp;        )
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.Profile,
-&nbsp;            trailingIcon = QuackIcon.Filter,
-&nbsp;            onClickTrailingIcon = {},
-&nbsp;            centerContent = {
-&nbsp;                DuckieLogo()
-&nbsp;            },
-&nbsp;        )
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.Close,
-&nbsp;            trailingText = trailingText,
-&nbsp;            onClickTrailingText = {},
-&nbsp;            centerContent = {
-&nbsp;                DropDown()
-&nbsp;            },
-&nbsp;        )
-&nbsp;        QuackTopAppBar(
-&nbsp;            leadingIcon = QuackIcon.Profile,
-&nbsp;            trailingIcon = QuackIcon.Setting,
-&nbsp;            onClickTrailingIcon = {},
-&nbsp;            headline = headline,
-&nbsp;        )
-&nbsp;    }
+&nbsp;        },
+&nbsp;    )
 &nbsp;}
 &nbsp;
 &nbsp;@Composable
-&nbsp;private fun DuckieLogo() {
-&nbsp;    Box(
-&nbsp;        modifier = Modifier.width(
-&nbsp;            width = 100.dp
-&nbsp;        ),
-&nbsp;    ) {
-&nbsp;        QuackImage(
-&nbsp;            image = team.duckie.quackquack.ui.R.drawable.duckie_text_logo
+&nbsp;fun QuackTextFieldWithTrailingDecorationDemo() {
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;QuackTextFieldWithTrailingDecorationDemo&quot;,
 &nbsp;        )
 &nbsp;    }
-&nbsp;}
-&nbsp;
-&nbsp;@Composable
-&nbsp;private fun DropDown() {
-&nbsp;    Row {
-&nbsp;        QuackBody1(
-&nbsp;            text = &quot;body1&quot;
-&nbsp;        )
-&nbsp;        QuackImage(
-&nbsp;            icon = QuackIcon.ArrowDown
-&nbsp;        )
-&nbsp;    }
-&nbsp;}
-&nbsp;
-&nbsp;@Composable
-&nbsp;fun QuackBottomNavigationDemo() {
-&nbsp;    val selectedIndex = remember { mutableStateOf(0) }
-&nbsp;    Column(
-&nbsp;        modifier = Modifier
-&nbsp;            .background(
-&nbsp;                color = QuackColor.Gray3.value
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        trailingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
 &nbsp;            )
-&nbsp;            .fillMaxSize()
-&nbsp;            .padding(
-&nbsp;                top = 100.dp
-&nbsp;            ),
-&nbsp;    ) {
-&nbsp;        QuackBottomNavigation(
-&nbsp;            icons = getBottomNavigationIcons(),
-&nbsp;            selectedIndex = selectedIndex.value,
-&nbsp;            onClick = { index -&gt;
-&nbsp;                selectedIndex.value = index
-&nbsp;            },
-&nbsp;        )
-&nbsp;    }
+&nbsp;        },
+&nbsp;    )
 &nbsp;}
 &nbsp;
-&nbsp;private fun getBottomNavigationIcons() = persistentListOf(
-&nbsp;    BottomNavigationItem(
-&nbsp;        defaultIcon = QuackIcon.ArrowDown,
-&nbsp;        selectedIcon = QuackIcon.ImageEdit,
-&nbsp;    ),
-&nbsp;    BottomNavigationItem(
-&nbsp;        defaultIcon = QuackIcon.Setting,
-&nbsp;        selectedIcon = QuackIcon.Delete,
-&nbsp;    ),
-&nbsp;    BottomNavigationItem(
-&nbsp;        defaultIcon = QuackIcon.ArrowRight,
-&nbsp;        selectedIcon = QuackIcon.Camera,
-&nbsp;    ),
-&nbsp;    BottomNavigationItem(
-&nbsp;        defaultIcon = QuackIcon.Feed,
-&nbsp;        selectedIcon = QuackIcon.MarketPrice,
-&nbsp;    ),
-&nbsp;)
+&nbsp;@Composable
+&nbsp;fun QuackTextFieldWithAllDecorationDemo() {
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;QuackTextFieldWithAllDecorationDemo&quot;,
+&nbsp;        )
+&nbsp;    }
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        leadingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;        trailingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun QuackTextFieldErrorStateDemo() {
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;wow!&quot;,
+&nbsp;        )
+&nbsp;    }
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        isError = true,
+&nbsp;        errorText = &quot;QuackTextFieldErrorStateDemo&quot;,
+&nbsp;        leadingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.Heart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;        trailingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.Heart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;@Composable
+&nbsp;fun QuackTextFieldErrorStateLiveDemo() {
+&nbsp;    var fieldState by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = &quot;1&quot;,
+&nbsp;        )
+&nbsp;    }
+&nbsp;    QuackTextField(
+&nbsp;        text = fieldState,
+&nbsp;        onTextChanged = { newText -&gt;
+&nbsp;            fieldState = newText
+&nbsp;        },
+&nbsp;        isError = fieldState.length &gt; 1,
+&nbsp;        errorText = &quot;한 글자만 가능!&quot;,
+&nbsp;        placeholderText = &quot;input something!&quot;,
+&nbsp;        leadingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;        trailingContent = {
+&nbsp;            QuackImage(
+&nbsp;                icon = QuackIcon.FilledHeart,
+&nbsp;            )
+&nbsp;        },
+&nbsp;    )
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -388,7 +391,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

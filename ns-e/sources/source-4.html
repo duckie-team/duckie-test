@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > EtcPlayground</title>
+  <title>Coverage Report > FabPlayground</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">team.duckie.quackquack.playground.realworld</a>
 </div>
 
-<h1>Coverage Summary for Class: EtcPlayground (team.duckie.quackquack.playground.realworld)</h1>
+<h1>Coverage Summary for Class: FabPlayground (team.duckie.quackquack.playground.realworld)</h1>
 
 <table class="coverageStats">
 
@@ -45,7 +45,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">EtcPlayground</td>
+  <td class="name">FabPlayground</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -73,7 +73,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 </tr>
   <tr>
-    <td class="name">EtcPlayground$onCreate$1</td>
+    <td class="name">FabPlayground$onCreate$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -103,12 +103,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/36)
+    (0/37)
   </span>
 </td>
   </tr>
   <tr>
-    <td class="name">EtcPlayground$onCreate$1$1</td>
+    <td class="name">FabPlayground$onCreate$1$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -173,7 +173,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/104)
+    (0/105)
   </span>
 </td>
 </tr>
@@ -195,22 +195,25 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;import android.os.Bundle
 &nbsp;import androidx.activity.compose.setContent
-&nbsp;import androidx.compose.foundation.layout.Arrangement
-&nbsp;import androidx.compose.foundation.layout.Row
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.runtime.setValue
 &nbsp;import kotlinx.collections.immutable.persistentListOf
 &nbsp;import team.duckie.quackquack.playground.base.BaseActivity
 &nbsp;import team.duckie.quackquack.playground.base.PlaygroundSection
 &nbsp;import team.duckie.quackquack.playground.theme.PlaygroundTheme
-&nbsp;import team.duckie.quackquack.ui.component.QuackDropDown
-&nbsp;import team.duckie.quackquack.ui.component.QuackSimpleLabel
+&nbsp;import team.duckie.quackquack.ui.component.QuackDialogMenuItem
+&nbsp;import team.duckie.quackquack.ui.component.QuackFloatingActionButton
+&nbsp;import team.duckie.quackquack.ui.component.QuackMenuFloatingActionButton
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
 &nbsp;
-<b class="nc">&nbsp;class EtcPlayground : BaseActivity() {</b>
+<b class="nc">&nbsp;class FabPlayground : BaseActivity() {</b>
 &nbsp;    @Suppress(&quot;RemoveExplicitTypeArguments&quot;)
 <b class="nc">&nbsp;    private val items = persistentListOf&lt;Pair&lt;String, @Composable () -&gt; Unit&gt;&gt;(</b>
-<b class="nc">&nbsp;        &quot;QuackSimpleLabel&quot; to { QuackSimpleLabelDemo() },</b>
-<b class="nc">&nbsp;        &quot;QuackDropDown &quot; to { QuackDropDownDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackFloatingActionButton&quot; to { QuackFloatingActionButtonDemo() },</b>
+<b class="nc">&nbsp;        &quot;QuackMenuFloatingActionButton&quot; to { QuackMenuFloatingActionButtonDemo() },</b>
 &nbsp;    )
 &nbsp;
 &nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
@@ -218,7 +221,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        setContent {</b>
 <b class="nc">&nbsp;            PlaygroundTheme {</b>
 <b class="nc">&nbsp;                PlaygroundSection(</b>
-<b class="nc">&nbsp;                    title = &quot;Etc&quot;,</b>
+<b class="nc">&nbsp;                    title = &quot;Fab&quot;,</b>
 <b class="nc">&nbsp;                    items = items,</b>
 <b class="nc">&nbsp;                )</b>
 <b class="nc">&nbsp;            }</b>
@@ -227,28 +230,41 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;}
 &nbsp;
 &nbsp;@Composable
-&nbsp;fun QuackSimpleLabelDemo() {
-&nbsp;    Row(
-&nbsp;        horizontalArrangement = Arrangement.spacedBy(
-&nbsp;            space = 10.dp
-&nbsp;        ),
-&nbsp;    ) {
-&nbsp;        QuackSimpleLabel(
-&nbsp;            text = &quot;거래완료&quot;,
-&nbsp;            active = false,
-&nbsp;        )
-&nbsp;        QuackSimpleLabel(
-&nbsp;            text = &quot;예약중&quot;,
-&nbsp;            active = true,
-&nbsp;        )
-&nbsp;    }
+&nbsp;fun QuackFloatingActionButtonDemo() {
+&nbsp;    QuackFloatingActionButton(
+&nbsp;        icon = QuackIcon.Dm,
+&nbsp;        onClick = {},
+&nbsp;    )
 &nbsp;}
 &nbsp;
+&nbsp;@Suppress(&quot;RedundantLambdaArrow&quot;)
 &nbsp;@Composable
-&nbsp;fun QuackDropDownDemo() {
-&nbsp;    QuackDropDown(
-&nbsp;        title = &quot;판매중&quot;,
-&nbsp;        onClick = {},
+&nbsp;fun QuackMenuFloatingActionButtonDemo() {
+&nbsp;    var expanded by remember {
+&nbsp;        mutableStateOf(
+&nbsp;            value = false,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    QuackMenuFloatingActionButton(
+&nbsp;        expanded = expanded,
+&nbsp;        onClickButton = {
+&nbsp;            expanded = true
+&nbsp;        },
+&nbsp;        onDismissRequest = {
+&nbsp;            expanded = false
+&nbsp;        },
+&nbsp;        menuItems = persistentListOf(
+&nbsp;            QuackDialogMenuItem(
+&nbsp;                icon = QuackIcon.Feed,
+&nbsp;                text = &quot;피드&quot;,
+&nbsp;            ),
+&nbsp;            QuackDialogMenuItem(
+&nbsp;                icon = QuackIcon.Buy,
+&nbsp;                text = &quot;덕딜&quot;,
+&nbsp;            ),
+&nbsp;        ),
+&nbsp;        onClickMenuItem = { _ -&gt; },
 &nbsp;    )
 &nbsp;}
 </code>
@@ -274,7 +290,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

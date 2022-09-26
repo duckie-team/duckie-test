@@ -97,28 +97,32 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Licensed under the MIT.
 &nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
 &nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(&quot;UnusedPrivateMember&quot;)
+&nbsp;
 &nbsp;package team.duckie.quackquack.playground
 &nbsp;
 &nbsp;import android.os.Bundle
 &nbsp;import androidx.activity.compose.setContent
+&nbsp;import androidx.compose.foundation.layout.Arrangement
 &nbsp;import androidx.compose.foundation.layout.Box
 &nbsp;import androidx.compose.foundation.layout.BoxScope
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.ColumnScope
 &nbsp;import androidx.compose.foundation.layout.fillMaxSize
 &nbsp;import androidx.compose.runtime.Composable
 &nbsp;import androidx.compose.runtime.LaunchedEffect
 &nbsp;import androidx.compose.ui.Alignment
 &nbsp;import androidx.compose.ui.Modifier
 &nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;import androidx.compose.ui.unit.dp
 &nbsp;import kotlinx.collections.immutable.persistentListOf
 &nbsp;import kotlinx.coroutines.flow.first
 &nbsp;import team.duckie.quackquack.playground.base.BaseActivity
+&nbsp;import team.duckie.quackquack.playground.base.ContentBorder
 &nbsp;import team.duckie.quackquack.playground.base.PlaygroundActivities
 &nbsp;import team.duckie.quackquack.playground.realworld.ButtonPlayground
-&nbsp;import team.duckie.quackquack.playground.realworld.EtcPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.FabPlayground
-&nbsp;import team.duckie.quackquack.playground.realworld.NavigationPlayground
-&nbsp;import team.duckie.quackquack.playground.realworld.QuackBasicTextFieldWithAllDecorationDemo
-&nbsp;import team.duckie.quackquack.playground.realworld.SelectableImagePlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TabPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TextFieldPlayground
 &nbsp;import team.duckie.quackquack.playground.realworld.TogglePlayground
@@ -133,9 +137,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    ButtonPlayground::class,
 &nbsp;    TextFieldPlayground::class,
 &nbsp;    FabPlayground::class,
-&nbsp;    SelectableImagePlayground::class,
-&nbsp;    EtcPlayground::class,
-&nbsp;    NavigationPlayground::class,
 &nbsp;    TogglePlayground::class,
 &nbsp;)
 &nbsp;
@@ -143,10 +144,17 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
 <b class="nc">&nbsp;        super.onCreate(savedInstanceState)</b>
 <b class="nc">&nbsp;        setContent {</b>
-&nbsp;            // PlaygroundDemo()
-&nbsp;            SingleDemo {
-&nbsp;                QuackBasicTextFieldWithAllDecorationDemo()
-&nbsp;            }
+&nbsp;            PlaygroundDemo()
+&nbsp;            /*SingleDemo {
+&nbsp;                QuackTextFieldErrorStateLiveDemo()
+&nbsp;            }*/
+&nbsp;            /*MultiDemo {
+&nbsp;                QuackTextFieldWithNoDecorationDemo()
+&nbsp;                QuackTextFieldWithLeadingDecorationDemo()
+&nbsp;                QuackTextFieldWithTrailingDecorationDemo()
+&nbsp;                QuackTextFieldWithAllDecorationDemo()
+&nbsp;                QuackTextFieldErrorStateDemo()
+&nbsp;            }*/
 &nbsp;        }
 &nbsp;    }
 &nbsp;}
@@ -157,12 +165,35 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @param content 표시할 단일 디자인 컴포넌트
 &nbsp; */
 &nbsp;@Composable
-&nbsp;fun SingleDemo(
+&nbsp;private fun SingleDemo(
 &nbsp;    content: @Composable BoxScope.() -&gt; Unit,
 &nbsp;) {
 &nbsp;    Box(
 &nbsp;        modifier = Modifier.fillMaxSize(),
 &nbsp;        contentAlignment = Alignment.Center,
+&nbsp;    ) {
+&nbsp;        ContentBorder {
+&nbsp;            content()
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 여러 디자인 컴포넌트를 보여주는 데모 컴포저블 입니다.
+&nbsp; *
+&nbsp; * @param content 표시할 디자인 컴포넌트들
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun MultiDemo(
+&nbsp;    content: @Composable ColumnScope.() -&gt; Unit,
+&nbsp;) {
+&nbsp;    Column(
+&nbsp;        modifier = Modifier.fillMaxSize(),
+&nbsp;        verticalArrangement = Arrangement.spacedBy(
+&nbsp;            space = 16.dp,
+&nbsp;            alignment = Alignment.CenterVertically,
+&nbsp;        ),
+&nbsp;        horizontalAlignment = Alignment.CenterHorizontally,
 &nbsp;        content = content,
 &nbsp;    )
 &nbsp;}
@@ -172,19 +203,24 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * [PlaygroundActivities] 에 포함된 액티비티에 있는 모든 디자인 컴포넌트를 보여줍니다.
 &nbsp; */
 &nbsp;@Composable
-&nbsp;fun PlaygroundDemo() {
+&nbsp;private fun PlaygroundDemo() {
 &nbsp;    val context = LocalContext.current.applicationContext
 &nbsp;    LaunchedEffect(
 &nbsp;        key1 = Unit,
 &nbsp;    ) {
 &nbsp;        context.dataStore.data.first().let { preference -&gt;
 &nbsp;            QuackAnimationMillis = (
-&nbsp;                preference[PreferenceConfigs.AnimationDurationKey]
-&nbsp;                    ?: QuackAnimationMillis
-&nbsp;                ).coerceAtLeast(minimumValue = 0)
+&nbsp;                    preference[PreferenceConfigs.AnimationDurationKey]
+&nbsp;                        ?: QuackAnimationMillis
+&nbsp;                    ).coerceAtLeast(
+&nbsp;                    minimumValue = 0,
+&nbsp;                )
 &nbsp;            QuackFontScale = (
-&nbsp;                preference[PreferenceConfigs.FontScaleKey] ?: QuackFontScale
-&nbsp;                ).coerceAtLeast(minimumValue = 0.0)
+&nbsp;                    preference[PreferenceConfigs.FontScaleKey]
+&nbsp;                        ?: QuackFontScale
+&nbsp;                    ).coerceAtLeast(
+&nbsp;                    minimumValue = 0.0,
+&nbsp;                )
 &nbsp;        }
 &nbsp;    }
 &nbsp;    PlaygroundTheme {
@@ -216,7 +252,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

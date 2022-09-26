@@ -67,26 +67,26 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (4/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (10/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
     75%
   </span>
   <span class="absValue">
-    (6/8)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    93.3%
-  </span>
-  <span class="absValue">
-    (14/15)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    92.5%
-  </span>
-  <span class="absValue">
-    (74/80)
+    (60/80)
   </span>
 </td>
 </tr>
@@ -112,6 +112,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import android.annotation.SuppressLint
 &nbsp;import androidx.compose.animation.core.AnimationSpec
 &nbsp;import androidx.compose.animation.core.AnimationVector4D
+&nbsp;import androidx.compose.animation.core.SnapSpec
 &nbsp;import androidx.compose.animation.core.TweenSpec
 &nbsp;import androidx.compose.animation.core.TwoWayConverter
 &nbsp;import androidx.compose.animation.core.animateValueAsState
@@ -140,12 +141,12 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; *
 &nbsp; * 색상 정의는 코드 스타일 통일을 위해 ARGB 형식이 아닌 Hex Color 형식으로 해야 합니다.
 &nbsp; *
-&nbsp; * @param value 색상 값. 이 인자로 색상을 사용하기 위해 컴포즈의 [Color] 로 받습니다.
+&nbsp; * @param composeColor 색상 값. 이 인자로 색상을 사용하기 위해 컴포즈의 [Color] 로 받습니다.
 &nbsp; */
 &nbsp;@Immutable
 &nbsp;@JvmInline
 &nbsp;value class QuackColor internal constructor(
-&nbsp;    val value: Color,
+&nbsp;    val composeColor: Color,
 &nbsp;) {
 &nbsp;    /**
 &nbsp;     * [QuackColor] 를 [Brush] 로 변환합니다.
@@ -153,7 +154,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;     * @return 현재 [QuackColor] 를 [Brush] 로 변환한 값
 &nbsp;     */
 &nbsp;    fun toBrush() = SolidColor(
-&nbsp;        value = value,
+&nbsp;        value = composeColor,
 &nbsp;    )
 &nbsp;
 &nbsp;    /**
@@ -165,7 +166,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    fun changeAlpha(
 &nbsp;        alpha: Float,
 &nbsp;    ) = QuackColor(
-&nbsp;        value.copy(
+&nbsp;        composeColor.copy(
 &nbsp;            alpha = alpha,
 &nbsp;        )
 &nbsp;    )
@@ -175,83 +176,62 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        // 실제 컴포넌트에서는 사용되서는 안됩니다.
 &nbsp;        @Stable
 &nbsp;        internal val Unspecified = QuackColor(
-&nbsp;            value = Color.Unspecified,
+&nbsp;            composeColor = Color.Unspecified,
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val DuckieOrange = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFFF8300,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val Black = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFF222222,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val Gray1 = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFF666666,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val Gray2 = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFA8A8A8,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val Gray3 = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFEFEFEF,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val Gray4 = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFF6F6F6,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
-&nbsp;        val Gray5 = QuackColor(
-&nbsp;            value = Color(
-&nbsp;                color = 0xFFD1D1D1,
-&nbsp;            ),
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
 &nbsp;        val White = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFFFFFFF,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
 &nbsp;        @Stable
 &nbsp;        val OrangeRed = QuackColor(
-&nbsp;            value = Color(
+&nbsp;            composeColor = Color(
 &nbsp;                color = 0xFFFF2929,
-&nbsp;            ),
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
-&nbsp;        val Black80 = QuackColor(
-&nbsp;            value = Color(
-&nbsp;                color = 0x80222222,
-&nbsp;            ),
-&nbsp;        )
-&nbsp;
-&nbsp;        @Stable
-&nbsp;        val SkyBlueColor = QuackColor(
-&nbsp;            value = Color(
-&nbsp;                color = 0xFF6DBBFF,
 &nbsp;            ),
 &nbsp;        )
 &nbsp;
@@ -405,7 +385,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                        )
 &nbsp;
 &nbsp;                        QuackColor(
-&nbsp;                            value = colorXyz.convert(
+&nbsp;                            composeColor = colorXyz.convert(
 &nbsp;                                colorSpace = colorSpace,
 &nbsp;                            ),
 &nbsp;                        )
@@ -415,7 +395,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    }
 &nbsp;
 &nbsp;    @SuppressLint(&quot;KDocFields&quot;)
-&nbsp;    operator fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;) = value
+&nbsp;    operator fun getValue(thisRef: Any?, property: KProperty&lt;*&gt;) = composeColor
 &nbsp;}
 &nbsp;
 &nbsp;/**
@@ -434,11 +414,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @return receiver 의 durationMillis 를 2로 나눈 새로운 [AnimationSpec]
 &nbsp; */
 &nbsp;private fun &lt;T&gt; AnimationSpec&lt;T&gt;.toColorSpec(): AnimationSpec&lt;T&gt; {
-<b class="fc">&nbsp;    val tweenSpec = this as? TweenSpec&lt;T&gt; ?: return this</b>
-<b class="fc">&nbsp;    return tween(</b>
-<b class="fc">&nbsp;        durationMillis = tweenSpec.durationMillis / 2,</b>
-<b class="fc">&nbsp;        delayMillis = tweenSpec.delay,</b>
-<b class="fc">&nbsp;        easing = tweenSpec.easing,</b>
+<b class="pc">&nbsp;    val tweenSpec = this as? TweenSpec&lt;T&gt; ?: return this</b>
+<b class="nc">&nbsp;    return tween(</b>
+<b class="nc">&nbsp;        durationMillis = tweenSpec.durationMillis / 2,</b>
+<b class="nc">&nbsp;        delayMillis = tweenSpec.delay,</b>
+<b class="nc">&nbsp;        easing = tweenSpec.easing,</b>
 &nbsp;    )
 &nbsp;}
 &nbsp;
@@ -456,9 +436,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="pc">&nbsp;    animationSpec: AnimationSpec&lt;QuackColor&gt; = quackAnimationSpec(),</b>
 <b class="nc">&nbsp;): State&lt;QuackColor&gt; {</b>
 <b class="fc">&nbsp;    val converter = remember(</b>
-<b class="fc">&nbsp;        key1 = targetValue.value.colorSpace,</b>
+<b class="fc">&nbsp;        key1 = targetValue.composeColor.colorSpace,</b>
 &nbsp;    ) {
-<b class="fc">&nbsp;        (QuackColor.VectorConverter)(targetValue.value.colorSpace)</b>
+<b class="fc">&nbsp;        (QuackColor.VectorConverter)(targetValue.composeColor.colorSpace)</b>
 &nbsp;    }
 <b class="pc">&nbsp;    return animateValueAsState(</b>
 <b class="fc">&nbsp;        targetValue = targetValue,</b>
@@ -490,7 +470,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

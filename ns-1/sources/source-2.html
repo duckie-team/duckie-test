@@ -75,18 +75,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    84.6%
+    80%
   </span>
   <span class="absValue">
-    (22/26)
+    (16/20)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75.6%
+    69.7%
   </span>
   <span class="absValue">
-    (102/135)
+    (76/109)
   </span>
 </td>
 </tr>
@@ -107,9 +107,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;package team.duckie.quackquack.common.lint
 &nbsp;
-&nbsp;import java.awt.SystemColor.text
 &nbsp;import org.jetbrains.kotlin.psi.KtTypeReference
-&nbsp;import team.duckie.quackquack.common.lint.custom.CustomRule
 &nbsp;
 &nbsp;/**
 &nbsp; * MutableCollection 접미사들
@@ -122,9 +120,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    &quot;List&quot;,</b>
 <b class="fc">&nbsp;    &quot;Set&quot;,</b>
 <b class="fc">&nbsp;    &quot;Map&quot;,</b>
-<b class="fc">&nbsp;).apply {</b>
-<b class="fc">&nbsp;    addAll(CustomRule.Collection)</b>
-<b class="fc">&nbsp;}</b>
+&nbsp;)/*.apply {
+&nbsp;    addAll(CustomRule.Collection)
+&nbsp;}*/
 &nbsp;
 &nbsp;/**
 &nbsp; * ImmutableCollection 이름들
@@ -141,9 +139,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    &quot;PersistentList&quot;,</b>
 <b class="fc">&nbsp;    &quot;PersistentSet&quot;,</b>
 <b class="fc">&nbsp;    &quot;PersistentMap&quot;,</b>
-<b class="fc">&nbsp;).apply {</b>
-<b class="fc">&nbsp;    addAll(CustomRule.ImmutableCollection)</b>
-<b class="fc">&nbsp;}</b>
+&nbsp;)/*.apply {
+&nbsp;    addAll(CustomRule.ImmutableCollection)
+&nbsp;}*/
 &nbsp;
 &nbsp;private val KtTypeReference.isCollection
 <b class="nc">&nbsp;    get() = CollectionsSuffix.any { suffix -&gt;</b>
@@ -182,7 +180,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>

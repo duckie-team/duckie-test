@@ -59,7 +59,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/34)
+    (0/54)
   </span>
 </td>
 <td class="coverageStat">
@@ -67,7 +67,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/66)
+    (0/73)
   </span>
 </td>
 <td class="coverageStat">
@@ -75,7 +75,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/319)
+    (0/382)
   </span>
 </td>
 </tr>
@@ -98,7 +98,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/34)
+    (0/54)
   </span>
 </td>
 <td class="coverageStat">
@@ -106,7 +106,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/66)
+    (0/73)
   </span>
 </td>
 <td class="coverageStat">
@@ -114,7 +114,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/319)
+    (0/382)
   </span>
 </td>
 </tr>
@@ -134,11 +134,15 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;package team.duckie.quackquack.playground.theme
 &nbsp;
+&nbsp;import android.os.Build
 &nbsp;import androidx.compose.foundation.isSystemInDarkTheme
 &nbsp;import androidx.compose.material3.MaterialTheme
 &nbsp;import androidx.compose.material3.darkColorScheme
+&nbsp;import androidx.compose.material3.dynamicDarkColorScheme
+&nbsp;import androidx.compose.material3.dynamicLightColorScheme
 &nbsp;import androidx.compose.material3.lightColorScheme
 &nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.platform.LocalContext
 &nbsp;
 <b class="nc">&nbsp;private val PlaygroundLightColors = lightColorScheme(</b>
 <b class="nc">&nbsp;    primary = md_theme_light_primary,</b>
@@ -200,38 +204,24 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;    surfaceTint = md_theme_dark_surfaceTint,</b>
 &nbsp;)
 &nbsp;
-&nbsp;// 왜??
-&nbsp;// java.lang.NoSuchMethodError: No static method PlaygroundTheme
-&nbsp;/*@Composable
-&nbsp;fun PlaygroundTheme(
-&nbsp;    useDarkTheme: Boolean = isSystemInDarkTheme(),
-&nbsp;    useDynamicColor: Boolean = false, // 더 못생겨져서 비활성화
-&nbsp;    content: @Composable () -&gt; Unit
-&nbsp;) {
-&nbsp;    val context = LocalContext.current
-&nbsp;    val isDynamicColor = useDynamicColor &amp;&amp; Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.S
-&nbsp;    val colorScheme = when {
-&nbsp;        useDarkTheme &amp;&amp; isDynamicColor -&gt; dynamicDarkColorScheme(context)
-&nbsp;        useDarkTheme &amp;&amp; !isDynamicColor -&gt; PlaygroundDarkColors
-&nbsp;        !useDarkTheme &amp;&amp; isDynamicColor -&gt; dynamicLightColorScheme(context)
-&nbsp;        else -&gt; PlaygroundLightColors // !useDarkTheme &amp;&amp; !supportsDynamicColor
-&nbsp;    }
-&nbsp;
-&nbsp;    MaterialTheme(
-&nbsp;        colorScheme = colorScheme,
-&nbsp;        typography = PlaygroundTypography,
-&nbsp;        content = content,
-&nbsp;    )
-&nbsp;}*/
-&nbsp;
 &nbsp;@Composable
+&nbsp;@Suppress(&quot;NewApi&quot;)
 &nbsp;fun PlaygroundTheme(
 <b class="nc">&nbsp;    useDarkTheme: Boolean = isSystemInDarkTheme(),</b>
+<b class="nc">&nbsp;    useDynamicColor: Boolean = true,</b>
 &nbsp;    content: @Composable () -&gt; Unit,
 <b class="nc">&nbsp;) {</b>
-<b class="nc">&nbsp;    val colorScheme = when (!useDarkTheme) {</b>
-<b class="nc">&nbsp;        true -&gt; PlaygroundLightColors</b>
-<b class="nc">&nbsp;        else -&gt; PlaygroundDarkColors</b>
+<b class="nc">&nbsp;    val context = LocalContext.current</b>
+<b class="nc">&nbsp;    val isDynamicColor = useDynamicColor &amp;&amp; Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.S</b>
+<b class="nc">&nbsp;    val colorScheme = when {</b>
+<b class="nc">&nbsp;        useDarkTheme &amp;&amp; isDynamicColor -&gt; dynamicDarkColorScheme(</b>
+<b class="nc">&nbsp;            context = context,</b>
+&nbsp;        )
+<b class="nc">&nbsp;        useDarkTheme &amp;&amp; !isDynamicColor -&gt; PlaygroundDarkColors</b>
+<b class="nc">&nbsp;        !useDarkTheme &amp;&amp; isDynamicColor -&gt; dynamicLightColorScheme(</b>
+<b class="nc">&nbsp;            context = context,</b>
+&nbsp;        )
+<b class="nc">&nbsp;        else -&gt; PlaygroundLightColors // !useDarkTheme &amp;&amp; !supportsDynamicColor</b>
 &nbsp;    }
 &nbsp;
 <b class="nc">&nbsp;    MaterialTheme(</b>
@@ -240,6 +230,25 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        content = content,</b>
 &nbsp;    )
 <b class="nc">&nbsp;}</b>
+&nbsp;
+&nbsp;/*
+&nbsp;@Composable
+&nbsp;fun PlaygroundTheme(
+&nbsp;    useDarkTheme: Boolean = isSystemInDarkTheme(),
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    val colorScheme = when (!useDarkTheme) {
+&nbsp;        true -&gt; PlaygroundLightColors
+&nbsp;        else -&gt; PlaygroundDarkColors
+&nbsp;    }
+&nbsp;
+&nbsp;    MaterialTheme(
+&nbsp;        colorScheme = colorScheme,
+&nbsp;        typography = PlaygroundTypography,
+&nbsp;        content = content,
+&nbsp;    )
+&nbsp;}
+&nbsp;*/
 </code>
 </pre>
 </div>
@@ -263,7 +272,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-09-21 07:11</div>
+    <div style="float:right;">generated on 2022-09-26 00:43</div>
 </div>
 </body>
 </html>
