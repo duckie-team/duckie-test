@@ -1,0 +1,427 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > QuackMenuFabItem</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: QuackMenuFabItem (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuackMenuFabItem</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.animation.AnimatedVisibility
+&nbsp;import androidx.compose.animation.core.animateFloatAsState
+&nbsp;import androidx.compose.animation.expandVertically
+&nbsp;import androidx.compose.animation.fadeIn
+&nbsp;import androidx.compose.animation.fadeOut
+&nbsp;import androidx.compose.animation.shrinkVertically
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.layout.Arrangement
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.Row
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.foundation.layout.width
+&nbsp;import androidx.compose.foundation.layout.wrapContentSize
+&nbsp;import androidx.compose.foundation.layout.wrapContentWidth
+&nbsp;import androidx.compose.foundation.lazy.LazyColumn
+&nbsp;import androidx.compose.foundation.lazy.itemsIndexed
+&nbsp;import androidx.compose.foundation.shape.CircleShape
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.runtime.NonRestartableComposable
+&nbsp;import androidx.compose.runtime.mutableStateListOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.draw.rotate
+&nbsp;import androidx.compose.ui.layout.onSizeChanged
+&nbsp;import androidx.compose.ui.platform.LocalDensity
+&nbsp;import androidx.compose.ui.unit.DpSize
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import team.duckie.quackquack.ui.animation.QuackAnimationSpec
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.component.internal.QuackText
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;import team.duckie.quackquack.ui.textstyle.QuackTextStyle
+&nbsp;
+&nbsp;private val QuackFabContainerElevation = 3.dp
+&nbsp;
+&nbsp;private val QuackFabContainerShape = CircleShape
+&nbsp;private val QuackFabMenuShape = RoundedCornerShape(
+&nbsp;    size = 12.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackFabContainerSize = 48.dp
+&nbsp;
+&nbsp;private val QuackFabIconResource = QuackIcon.Plus
+&nbsp;private val QuackFabIconTint = QuackColor.White
+&nbsp;private val QuackFabIconSize = DpSize(
+&nbsp;    width = 20.dp,
+&nbsp;    height = 20.dp,
+&nbsp;)
+&nbsp;private const val QuackFabIconRotate = 45f
+&nbsp;private val QuackFabMenuIconSize = DpSize(
+&nbsp;    width = 24.dp,
+&nbsp;    height = 24.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackFabContainerColor = QuackColor.DuckieOrange
+&nbsp;private val QuackFabMenuBackgroundColor = QuackColor.White
+&nbsp;private val QuackFabMenuItemColor = QuackColor.Black
+&nbsp;
+&nbsp;private val QuackFabMenuItemTextStyle = QuackTextStyle.Subtitle.change(
+&nbsp;    color = QuackFabMenuItemColor
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackFabMenuPadding = PaddingValues(
+&nbsp;    horizontal = 16.dp - 8.dp,
+&nbsp;    vertical = 20.dp - 8.dp,
+&nbsp;)
+&nbsp;private val QuackFabAndMenuSpace = 8.dp
+&nbsp;private val QuackFabMenuHorizontalPadding = 8.dp
+&nbsp;private val QuackMenuContentSpacedBy = 4.dp
+&nbsp;private val QuackFabMenuTextPadding = PaddingValues(
+&nbsp;    vertical = 3.dp + 8.dp,
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * 꽥꽥의 기본 FloatingActionButton 을 그립니다.
+&nbsp; *
+&nbsp; * @param icon 이 FAB 에 표시할 아이콘
+&nbsp; * @param onClick 이 FAB 이 클릭됐을 때 호출될 람다
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackFab(
+&nbsp;    icon: QuackIcon,
+&nbsp;    onClick: () -&gt; Unit,
+&nbsp;): Unit = QuackFabImpl(
+&nbsp;    icon = icon,
+&nbsp;    onClick = onClick,
+&nbsp;    rotate = 0f,
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * 꽥꽥의 기본 FloatingActionButton 을 실제로 그립니다.
+&nbsp; *
+&nbsp; * @param icon 이 FAB 에 표시할 아이콘
+&nbsp; * @param onClick 이 FAB 이 클릭됐을 때 호출될 람다
+&nbsp; * @param rotate [icon] 의 회전 정도
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackFabImpl(
+&nbsp;    icon: QuackIcon,
+&nbsp;    onClick: () -&gt; Unit,
+&nbsp;    rotate: Float,
+&nbsp;) {
+&nbsp;    QuackSurface(
+&nbsp;        modifier = Modifier.size(
+&nbsp;            size = QuackFabContainerSize,
+&nbsp;        ),
+&nbsp;        shape = QuackFabContainerShape,
+&nbsp;        backgroundColor = QuackFabContainerColor,
+&nbsp;        elevation = QuackFabContainerElevation,
+&nbsp;        onClick = onClick,
+&nbsp;    ) {
+&nbsp;        Box(
+&nbsp;            // needs for set size in box inlining
+&nbsp;            modifier = Modifier.size(
+&nbsp;                size = QuackFabIconSize,
+&nbsp;            ),
+&nbsp;        ) {
+&nbsp;            QuackImageInternal(
+&nbsp;                modifier = Modifier.rotate(
+&nbsp;                    degrees = rotate,
+&nbsp;                ),
+&nbsp;                src = icon,
+&nbsp;                overrideSize = QuackFabIconSize,
+&nbsp;                tint = QuackFabIconTint,
+&nbsp;            )
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackMenuFab] 에서 표시할 아이템
+&nbsp; *
+&nbsp; * @param icon 메뉴에 표시될 아이콘
+&nbsp; * @param text 메뉴에 표시될 텍스트
+&nbsp; */
+<b class="nc">&nbsp;@Immutable</b>
+&nbsp;public data class QuackMenuFabItem(
+<b class="nc">&nbsp;    public val icon: QuackIcon,</b>
+<b class="nc">&nbsp;    public val text: String,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackFab] 위에 팝업 메뉴를 추가로 그립니다.
+&nbsp; *
+&nbsp; * 꽥꽥의 경우 팝업이 있는 FAB 은 항상 [QuackIcon.Plus] 아이콘을 사용하고, [45도][QuackFabIconRotate] 회전하는
+&nbsp; * 형태를 갖고 있습니다. 또한 메뉴는 FAB 의 위치에서 8 dp 만큼 위로 떨어져 있습니다.
+&nbsp; * 이를 구현하기 위해 FAB 와 메뉴를 [Column] 으로 감싸 하나로 처리합니다.
+&nbsp; *
+&nbsp; * @param items 메뉴에 표시할 아이템들
+&nbsp; * @param expanded FAB 이 expand 됐는지 여부. 만약 true 이면
+&nbsp; * FAB 의 아이콘이 [45도][QuackFabIconRotate] 회전하고, 메뉴가 표시됩니다.
+&nbsp; * @param onFabClick FAB 이 클릭됐을 때 실행될 람다
+&nbsp; * @param onItemClick 메뉴의 아이템이 클릭됐을 때 실행될 람다
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackMenuFab(
+&nbsp;    items: PersistentList&lt;QuackMenuFabItem&gt;,
+&nbsp;    expanded: Boolean,
+&nbsp;    onFabClick: () -&gt; Unit,
+&nbsp;    onItemClick: (index: Int, item: QuackMenuFabItem) -&gt; Unit,
+&nbsp;) {
+&nbsp;    val density = LocalDensity.current
+&nbsp;    val textWidths = remember(
+&nbsp;        key1 = items,
+&nbsp;    ) {
+&nbsp;        mutableStateListOf(
+&nbsp;            elements = Array(
+&nbsp;                size = items.size,
+&nbsp;                init = { 0.dp },
+&nbsp;            )
+&nbsp;        )
+&nbsp;    }
+&nbsp;    val textWidthModifier = remember(
+&nbsp;        key1 = items,
+&nbsp;        key2 = textWidths.all { width -&gt;
+&nbsp;            width.value != 0f
+&nbsp;        },
+&nbsp;    ) {
+&nbsp;        when (
+&nbsp;            textWidths.all { width -&gt;
+&nbsp;                width.value != 0f
+&nbsp;            }
+&nbsp;        ) {
+&nbsp;            true -&gt; Modifier.width(
+&nbsp;                width = textWidths.max(),
+&nbsp;            )
+&nbsp;            else -&gt; Modifier.wrapContentWidth()
+&nbsp;        }
+&nbsp;    }
+&nbsp;    Column(
+&nbsp;        modifier = Modifier.wrapContentSize(),
+&nbsp;        verticalArrangement = Arrangement.spacedBy(
+&nbsp;            space = QuackFabAndMenuSpace,
+&nbsp;        ),
+&nbsp;        horizontalAlignment = Alignment.End,
+&nbsp;    ) {
+&nbsp;        AnimatedVisibility(
+&nbsp;            modifier = Modifier
+&nbsp;                .wrapContentSize()
+&nbsp;                .background(
+&nbsp;                    color = QuackFabMenuBackgroundColor.composeColor,
+&nbsp;                    shape = QuackFabMenuShape,
+&nbsp;                )
+&nbsp;                .clip(
+&nbsp;                    shape = QuackFabMenuShape,
+&nbsp;                ),
+&nbsp;            visible = expanded,
+&nbsp;            enter = fadeIn(
+&nbsp;                animationSpec = QuackAnimationSpec(),
+&nbsp;            ) + expandVertically(
+&nbsp;                animationSpec = QuackAnimationSpec(),
+&nbsp;            ),
+&nbsp;            exit = fadeOut(
+&nbsp;                animationSpec = QuackAnimationSpec(),
+&nbsp;            ) + shrinkVertically(
+&nbsp;                animationSpec = QuackAnimationSpec(),
+&nbsp;            ),
+&nbsp;        ) {
+&nbsp;            LazyColumn(
+&nbsp;                modifier = Modifier.wrapContentSize(),
+&nbsp;                contentPadding = QuackFabMenuPadding,
+&nbsp;            ) {
+&nbsp;                itemsIndexed(
+&nbsp;                    items = items,
+&nbsp;                    key = { _, item -&gt; item.text },
+&nbsp;                ) { index, item -&gt;
+&nbsp;                    Row(
+&nbsp;                        modifier = Modifier
+&nbsp;                            .wrapContentSize()
+&nbsp;                            .quackClickable(
+&nbsp;                                rippleEnabled = false,
+&nbsp;                                onClick = {
+&nbsp;                                    onItemClick(
+&nbsp;                                        /*index = */
+&nbsp;                                        index,
+&nbsp;                                        /*item = */
+&nbsp;                                        item,
+&nbsp;                                    )
+&nbsp;                                },
+&nbsp;                            ),
+&nbsp;                        verticalAlignment = Alignment.CenterVertically,
+&nbsp;                        horizontalArrangement = Arrangement.spacedBy(
+&nbsp;                            space = QuackMenuContentSpacedBy,
+&nbsp;                        ),
+&nbsp;                    ) {
+&nbsp;                        QuackImageInternal(
+&nbsp;                            modifier = Modifier.padding(
+&nbsp;                                start = QuackFabMenuHorizontalPadding,
+&nbsp;                            ),
+&nbsp;                            src = item.icon,
+&nbsp;                            overrideSize = QuackFabMenuIconSize,
+&nbsp;                            tint = QuackFabMenuItemColor,
+&nbsp;                        )
+&nbsp;                        QuackText(
+&nbsp;                            modifier = Modifier
+&nbsp;                                .then(
+&nbsp;                                    other = textWidthModifier,
+&nbsp;                                )
+&nbsp;                                .onSizeChanged { size -&gt;
+&nbsp;                                    with(
+&nbsp;                                        receiver = density,
+&nbsp;                                    ) {
+&nbsp;                                        textWidths[index] = size.width.toDp()
+&nbsp;                                    }
+&nbsp;                                }
+&nbsp;                                .padding(
+&nbsp;                                    paddingValues = QuackFabMenuTextPadding,
+&nbsp;                                )
+&nbsp;                                .padding(
+&nbsp;                                    end = QuackFabMenuHorizontalPadding,
+&nbsp;                                ),
+&nbsp;                            text = item.text,
+&nbsp;                            style = QuackFabMenuItemTextStyle,
+&nbsp;                        )
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;        QuackFabImpl(
+&nbsp;            icon = QuackFabIconResource,
+&nbsp;            onClick = onFabClick,
+&nbsp;            rotate = animateFloatAsState(
+&nbsp;                targetValue = if (expanded) QuackFabIconRotate else 0f,
+&nbsp;                animationSpec = QuackAnimationSpec(),
+&nbsp;            ).value,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

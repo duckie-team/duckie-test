@@ -1,0 +1,513 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > QuackBottomSheetItem</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: QuackBottomSheetItem (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuackBottomSheetItem</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [bottomSheet.kt] created by doro on 22. 9. 4. 오전 1:38
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.Spacer
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
+&nbsp;import androidx.compose.material.Divider
+&nbsp;import androidx.compose.material.ExperimentalMaterialApi
+&nbsp;import androidx.compose.material.ModalBottomSheetLayout
+&nbsp;import androidx.compose.material.ModalBottomSheetState
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.unit.DpSize
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor.Companion.Gray3
+&nbsp;import team.duckie.quackquack.ui.constant.QuackHeight
+&nbsp;import team.duckie.quackquack.ui.constant.QuackWidth
+&nbsp;import team.duckie.quackquack.ui.modifier.applyQuackSize
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;
+&nbsp;private val BottomSheetShape = RoundedCornerShape(
+&nbsp;    topStart = 16.dp,
+&nbsp;    topEnd = 16.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackBottomSheetHandleSize = DpSize(
+&nbsp;    width = 40.dp,
+&nbsp;    height = 4.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackBottomSheetHandleShape = RoundedCornerShape(
+&nbsp;    size = 2.dp,
+&nbsp;)
+&nbsp;private val QuackBottomSheetContentPadding = PaddingValues(
+&nbsp;    vertical = 8.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackBottomSheetPadding = PaddingValues(
+&nbsp;    vertical = 16.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackBottomSheetStartPadding = PaddingValues(
+&nbsp;    start = 16.dp,
+&nbsp;)
+&nbsp;
+&nbsp;private val QuackBottomSheetSubtitleItemHeight = 38.dp
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheet]를 구현합니다.
+&nbsp; *
+&nbsp; * @param useHandle BottomSheet 의 handle 을 사용할지에 대한 여부
+&nbsp; * @param bottomSheetState BottomSheet 의 상태값
+&nbsp; * @param sheetContent BottomSheet 의 sheetContent 에 그릴 화면
+&nbsp; * @param content BottomSheet 를 호출하는 나머지 화면
+&nbsp; */
+&nbsp;
+&nbsp;@OptIn(ExperimentalMaterialApi::class)
+&nbsp;@Composable
+&nbsp;public fun QuackBottomSheet(
+&nbsp;    useHandle: Boolean = false,
+&nbsp;    bottomSheetState: ModalBottomSheetState,
+&nbsp;    sheetContent: @Composable () -&gt; Unit,
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    ModalBottomSheetLayout(
+&nbsp;        modifier = Modifier.applyQuackSize(
+&nbsp;            width = QuackWidth.Fill,
+&nbsp;            height = QuackHeight.Fill,
+&nbsp;        ),
+&nbsp;        sheetContent = {
+&nbsp;            QuackBottomSheetContent(
+&nbsp;                useHandle = useHandle,
+&nbsp;                sheetContent = sheetContent,
+&nbsp;            )
+&nbsp;        },
+&nbsp;        sheetShape = BottomSheetShape,
+&nbsp;        sheetBackgroundColor = QuackColor.Transparent.composeColor,
+&nbsp;        sheetState = bottomSheetState,
+&nbsp;        scrimColor = QuackColor.Black80.composeColor,
+&nbsp;    ) {
+&nbsp;        content()
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackSimpleBottomSheet]를 구현합니다.
+&nbsp; *
+&nbsp; * @param bottomSheetState BottomSheet 의 상태값
+&nbsp; * @param items BottomSheet 에 나타날 목록형 아이템 데이터 값
+&nbsp; * @param onClick BottomSheet 의 목록형 아이템 클릭 이벤트
+&nbsp; * @param content BottomSheet 를 호출하는 나머지 화면
+&nbsp; */
+&nbsp;@OptIn(ExperimentalMaterialApi::class)
+&nbsp;@Composable
+&nbsp;public fun QuackSimpleBottomSheet(
+&nbsp;    bottomSheetState: ModalBottomSheetState,
+&nbsp;    items: PersistentList&lt;QuackBottomSheetItem&gt;,
+&nbsp;    onClick: (QuackBottomSheetItem) -&gt; Unit,
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    QuackBottomSheet(
+&nbsp;        bottomSheetState = bottomSheetState,
+&nbsp;        content = content,
+&nbsp;        sheetContent = {
+&nbsp;            QuackBottomSheetColumn {
+&nbsp;                QuackBottomSheetSubtitles(
+&nbsp;                    items = items,
+&nbsp;                    onClick = onClick,
+&nbsp;                )
+&nbsp;            }
+&nbsp;        },
+&nbsp;        useHandle = true,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackHeadlineBottomSheet]를 구현합니다.
+&nbsp; *
+&nbsp; * @param bottomSheetState BottomSheet 의 상태값
+&nbsp; * @param headline Headline 텍스트 값
+&nbsp; * @param items BottomSheet 에 나타날 목록형 아이템 데이터 값
+&nbsp; * @param onClick BottomSheet 의 목록형 아이템 클릭 이벤트
+&nbsp; * @param content BottomSheet 를 호출하는 나머지 화면
+&nbsp; */
+&nbsp;@OptIn(ExperimentalMaterialApi::class)
+&nbsp;@Composable
+&nbsp;public fun QuackHeadlineBottomSheet(
+&nbsp;    bottomSheetState: ModalBottomSheetState,
+&nbsp;    headline: String,
+&nbsp;    items: PersistentList&lt;QuackBottomSheetItem&gt;,
+&nbsp;    onClick: (QuackBottomSheetItem) -&gt; Unit,
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    QuackBottomSheet(
+&nbsp;        bottomSheetState = bottomSheetState,
+&nbsp;        content = content,
+&nbsp;        sheetContent = {
+&nbsp;            QuackBottomSheetColumn {
+&nbsp;                QuackBottomSheetHeadline(
+&nbsp;                    headline = headline,
+&nbsp;                )
+&nbsp;                Spacer(
+&nbsp;                    modifier = Modifier.padding(
+&nbsp;                        paddingValues = QuackBottomSheetContentPadding,
+&nbsp;                    ),
+&nbsp;                )
+&nbsp;                QuackBottomSheetSubtitles(
+&nbsp;                    items = items,
+&nbsp;                    onClick = onClick,
+&nbsp;                )
+&nbsp;            }
+&nbsp;        },
+&nbsp;        useHandle = true,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackSubtitleBottomSheet]를 구현합니다.
+&nbsp; *
+&nbsp; * @param bottomSheetState BottomSheet 의 상태값
+&nbsp; * @param items BottomSheet 에 나타날 목록형 아이템 데이터 값
+&nbsp; * @param subtitle Subtitle 텍스트 값
+&nbsp; * @param onClick BottomSheet 의 목록형 아이템 클릭 이벤트
+&nbsp; * @param content BottomSheet 를 호출하는 나머지 화면
+&nbsp; */
+&nbsp;@OptIn(ExperimentalMaterialApi::class)
+&nbsp;@Composable
+&nbsp;public fun QuackSubtitleBottomSheet(
+&nbsp;    bottomSheetState: ModalBottomSheetState,
+&nbsp;    subtitle: String,
+&nbsp;    items: PersistentList&lt;QuackBottomSheetItem&gt;,
+&nbsp;    onClick: (QuackBottomSheetItem) -&gt; Unit,
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    QuackBottomSheet(
+&nbsp;        bottomSheetState = bottomSheetState,
+&nbsp;        content = content,
+&nbsp;        sheetContent = {
+&nbsp;            QuackBottomSheetColumn {
+&nbsp;                QuackBottomSheetSubtitleItem(
+&nbsp;                    item = QuackBottomSheetItem(
+&nbsp;                        title = subtitle,
+&nbsp;                        isImportant = false,
+&nbsp;                    ),
+&nbsp;                    onClick = onClick,
+&nbsp;                )
+&nbsp;                Divider(
+&nbsp;                    modifier = Modifier.padding(
+&nbsp;                        paddingValues = QuackBottomSheetContentPadding
+&nbsp;                    ),
+&nbsp;                    color = Gray3.composeColor,
+&nbsp;                )
+&nbsp;                QuackBottomSheetSubtitles(
+&nbsp;                    items = items,
+&nbsp;                    onClick = onClick,
+&nbsp;                )
+&nbsp;            }
+&nbsp;        },
+&nbsp;        useHandle = true,
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetContent] 를 구현합니다.
+&nbsp; *
+&nbsp; * @param useHandle BottomSheet 의 handle을 사용할지 여부
+&nbsp; * @param sheetContent sheetContent 에서 그려질 @Composable 함수
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetContent(
+&nbsp;    useHandle: Boolean,
+&nbsp;    sheetContent: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    Column(
+&nbsp;        modifier = Modifier
+&nbsp;            .applyQuackSize(
+&nbsp;                width = QuackWidth.Fill,
+&nbsp;                height = QuackHeight.Wrap,
+&nbsp;            )
+&nbsp;            .background(
+&nbsp;                color = QuackColor.White.composeColor,
+&nbsp;            ),
+&nbsp;        horizontalAlignment = Alignment.CenterHorizontally,
+&nbsp;    ) {
+&nbsp;        QuackBottomSheetHandle(
+&nbsp;            useHandle = useHandle,
+&nbsp;        )
+&nbsp;        sheetContent()
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetHandle] 을 구현합니다.
+&nbsp; *
+&nbsp; * @param useHandle BottomSheet 의 handle을 사용할지 여부
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetHandle(
+&nbsp;    useHandle: Boolean,
+&nbsp;) {
+&nbsp;    Box(
+&nbsp;        modifier = Modifier
+&nbsp;            .fillMaxWidth()
+&nbsp;            .padding(
+&nbsp;                paddingValues = QuackBottomSheetContentPadding,
+&nbsp;            ),
+&nbsp;        contentAlignment = Alignment.Center,
+&nbsp;    ) {
+&nbsp;        if (useHandle) {
+&nbsp;            Box(
+&nbsp;                modifier = Modifier
+&nbsp;                    .size(
+&nbsp;                        size = QuackBottomSheetHandleSize,
+&nbsp;                    )
+&nbsp;                    .background(
+&nbsp;                        color = Gray3.composeColor,
+&nbsp;                    )
+&nbsp;                    .clip(
+&nbsp;                        shape = QuackBottomSheetHandleShape,
+&nbsp;                    )
+&nbsp;            )
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetSubtitleItem] 을 구현합니다.
+&nbsp; *
+&nbsp; * BottomSheet 의 목록형 UI를 나타내기 위해 필요한 함수입니다.
+&nbsp; *
+&nbsp; * @param item Subtitle 의 아이템 데이터 값
+&nbsp; * @param onClick Subtitle 을 onClick 했을 떄 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetSubtitleItem(
+&nbsp;    item: QuackBottomSheetItem,
+&nbsp;    onClick: (QuackBottomSheetItem) -&gt; Unit,
+&nbsp;) {
+&nbsp;    val textColor = when (item.isImportant) {
+&nbsp;        true -&gt; QuackColor.OrangeRed
+&nbsp;        else -&gt; QuackColor.Black
+&nbsp;    }
+&nbsp;
+&nbsp;    Box(
+&nbsp;        modifier = Modifier
+&nbsp;            .applyQuackSize(
+&nbsp;                width = QuackWidth.Fill,
+&nbsp;                height = QuackHeight.Custom(
+&nbsp;                    height = QuackBottomSheetSubtitleItemHeight,
+&nbsp;                ),
+&nbsp;            )
+&nbsp;            .quackClickable(
+&nbsp;                onClick = {
+&nbsp;                    onClick(item)
+&nbsp;                },
+&nbsp;            )
+&nbsp;            .padding(
+&nbsp;                paddingValues = QuackBottomSheetStartPadding,
+&nbsp;            ),
+&nbsp;        contentAlignment = Alignment.CenterStart,
+&nbsp;    ) {
+&nbsp;        QuackSubtitle(
+&nbsp;            text = item.title,
+&nbsp;            color = textColor,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetSubtitles] 를 구현합니다.
+&nbsp; *
+&nbsp; * @param items Subtitle 의 아이템 데이터 리스트 값
+&nbsp; * @param onClick Subtitle 을 onClick 했을 떄 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetSubtitles(
+&nbsp;    items: PersistentList&lt;QuackBottomSheetItem&gt;,
+&nbsp;    onClick: (QuackBottomSheetItem) -&gt; Unit,
+&nbsp;) {
+&nbsp;    items.forEach { item -&gt;
+&nbsp;        QuackBottomSheetSubtitleItem(
+&nbsp;            item = item,
+&nbsp;            onClick = onClick,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetHeadline] 을 구현합니다.
+&nbsp; *
+&nbsp; * [QuackHeadlineBottomSheet] 에서 패딩을 넣는 용도로 구현했습니다.
+&nbsp; *
+&nbsp; * @param headline 헤드라인 텍스트 값
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetHeadline(
+&nbsp;    headline: String,
+&nbsp;) {
+&nbsp;    Box(
+&nbsp;        modifier = Modifier.padding(
+&nbsp;            paddingValues = QuackBottomSheetStartPadding,
+&nbsp;        ),
+&nbsp;    ) {
+&nbsp;        QuackHeadLine2(
+&nbsp;            text = headline,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBottomSheetColumn] 은 BottomSheet 에서 공통적으로 사용되는 Column 입니다.
+&nbsp; *
+&nbsp; * 공통적으로 사용하는 Padding 를 재활용 가능합니다.
+&nbsp; * 또한 [ModalBottomSheetLayout] 의 sheetContent 를 한 번 더 감싸서 사용해야
+&nbsp; * RoundedCornerShape 의 모양을 완성할 수 있습니다.
+&nbsp; *
+&nbsp; * @param content sheetContent 에서 그려질 @Composable 함수
+&nbsp; */
+&nbsp;@Composable
+&nbsp;private fun QuackBottomSheetColumn(
+&nbsp;    content: @Composable () -&gt; Unit,
+&nbsp;) {
+&nbsp;    Column(
+&nbsp;        modifier = Modifier.padding(
+&nbsp;            paddingValues = QuackBottomSheetPadding,
+&nbsp;        ),
+&nbsp;    ) {
+&nbsp;        content()
+&nbsp;    }
+&nbsp;}
+&nbsp;
+<b class="nc">&nbsp;public data class QuackBottomSheetItem(</b>
+<b class="nc">&nbsp;    val title: String,</b>
+<b class="nc">&nbsp;    val isImportant: Boolean,</b>
+&nbsp;)
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

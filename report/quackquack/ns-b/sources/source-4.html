@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LifecycleKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.modifier</a>
+</div>
+
+<h1>Coverage Summary for Class: LifecycleKt (team.duckie.quackquack.ui.modifier)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">LifecycleKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/44)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LifecycleKt$lifecycle$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/27)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LifecycleKt$lifecycle$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LifecycleKt$lifecycle$1$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LifecycleKt$lifecycle$1$2$invoke$$inlined$onDispose$1</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/86)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.modifier
+&nbsp;
+&nbsp;import androidx.compose.runtime.DisposableEffect
+&nbsp;import androidx.compose.runtime.Stable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.composed
+&nbsp;import androidx.compose.ui.geometry.Offset
+&nbsp;import androidx.compose.ui.layout.onGloballyPositioned
+&nbsp;import androidx.compose.ui.layout.positionInWindow
+&nbsp;
+&nbsp;/**
+&nbsp; * 컴포저블의 생명주기 상태에 따라 주어진 콜백을 실행하는
+&nbsp; * [Modifier] 입니다.
+&nbsp; *
+&nbsp; * @param key [onDisappear] 상태를 재설정할 고유 키. 기본 값은 [Unit] 입니다.
+&nbsp; * @param onAppear 컴포저블이 보여졌을 떄 실행할 콜백
+&nbsp; * @param onDisappear 컴포저블이 사라졌을 때 실행할 콜백
+&nbsp; *
+&nbsp; * @return 생명주기에 따라 주어진 콜백을 실행하는 [Modifier]
+&nbsp; */
+&nbsp;@Stable
+<b class="nc">&nbsp;internal inline fun Modifier.lifecycle(</b>
+<b class="nc">&nbsp;    key: Any = Unit,</b>
+&nbsp;    crossinline onAppear: (offset: Offset) -&gt; Unit,
+&nbsp;    crossinline onDisappear: () -&gt; Unit,
+<b class="nc">&nbsp;) = composed {</b>
+<b class="nc">&nbsp;    onGloballyPositioned { coordinates -&gt;</b>
+<b class="nc">&nbsp;        onAppear(coordinates.positionInWindow())</b>
+&nbsp;    }
+<b class="nc">&nbsp;    DisposableEffect(</b>
+<b class="nc">&nbsp;        key1 = key,</b>
+&nbsp;    ) {
+<b class="nc">&nbsp;        onDispose(</b>
+<b class="nc">&nbsp;            onDisposeEffect = onDisappear,</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;    this
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

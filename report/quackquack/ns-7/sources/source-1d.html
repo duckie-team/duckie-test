@@ -1,0 +1,860 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TypographyKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: TypographyKt (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">TypographyKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    15.4%
+  </span>
+  <span class="absValue">
+    (2/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    6.2%
+  </span>
+  <span class="absValue">
+    (47/760)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    10.2%
+  </span>
+  <span class="absValue">
+    (33/323)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    9.8%
+  </span>
+  <span class="absValue">
+    (360/3662)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TypographyKt$QuackBody1$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackBody2$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackBody3$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackHeadLine2$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackSubtitle$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackSubtitle2$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackTitle1$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">TypographyKt$QuackTitle2$1</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    15.4%
+  </span>
+  <span class="absValue">
+    (2/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    6.2%
+  </span>
+  <span class="absValue">
+    (47/760)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    10.2%
+  </span>
+  <span class="absValue">
+    (33/323)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    9.8%
+  </span>
+  <span class="absValue">
+    (360/3662)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;@file:Suppress(&quot;unused&quot;, &quot;NewLineArgument&quot;)
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.Immutable
+&nbsp;import androidx.compose.runtime.NonRestartableComposable
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.text.SpanStyle
+&nbsp;import androidx.compose.ui.text.buildAnnotatedString
+&nbsp;import androidx.compose.ui.text.font.FontWeight
+&nbsp;import androidx.compose.ui.text.style.TextAlign
+&nbsp;import androidx.compose.ui.text.style.TextDecoration
+&nbsp;import androidx.compose.ui.text.style.TextOverflow
+&nbsp;import androidx.compose.ui.unit.sp
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import kotlinx.collections.immutable.toPersistentList
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.component.internal.QuackClickableText
+&nbsp;import team.duckie.quackquack.ui.component.internal.QuackText
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;import team.duckie.quackquack.ui.textstyle.QuackTextStyle
+&nbsp;
+&nbsp;// [Note] @NonRestartableComposable 안한 이유: 인자로 받은 Text 는 동적으로 바뀔 수 있음
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.HeadLine1] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackHeadLine1(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.HeadLine1.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.HeadLine2] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트가 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackHeadLine2(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.HeadLine2.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Title1] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackTitle1(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.Title1.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Title2] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackTitle2(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.Title2.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Subtitle] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackSubtitle(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.Subtitle.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Subtitle2] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackSubtitle2(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.Subtitle2.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Body1] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackBody1(
+<b class="pc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="pc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="pc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="pc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="pc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="pc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="pc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="pc">&nbsp;): Unit = QuackText(</b>
+<b class="fc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="fc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="fc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="fc">&nbsp;    text = text,</b>
+<b class="fc">&nbsp;    style = QuackTextStyle.Body1.change(</b>
+<b class="fc">&nbsp;        color = color,</b>
+<b class="fc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="fc">&nbsp;    singleLine = singleLine,</b>
+<b class="fc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Body2] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackBody2(
+<b class="pc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="pc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="pc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="pc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="pc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="pc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="pc">&nbsp;): Unit = QuackText(</b>
+<b class="fc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="fc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="fc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="fc">&nbsp;    text = text,</b>
+<b class="fc">&nbsp;    style = QuackTextStyle.Body2.change(</b>
+<b class="fc">&nbsp;        color = color,</b>
+<b class="fc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="fc">&nbsp;    singleLine = singleLine,</b>
+<b class="fc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackText] 에 [QuackTextStyle.Body3] 스타일을 적용하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄만 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackBody3(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;): Unit = QuackText(</b>
+<b class="nc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    text = text,</b>
+<b class="nc">&nbsp;    style = QuackTextStyle.Body3.change(</b>
+<b class="nc">&nbsp;        color = color,</b>
+<b class="nc">&nbsp;        textAlign = align,</b>
+&nbsp;    ),
+<b class="nc">&nbsp;    singleLine = singleLine,</b>
+<b class="nc">&nbsp;    overflow = overflow,</b>
+<b class="nc">&nbsp;)</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackHeadLine2] 에 원하는 부분에 원하는 색깔과 밑줄로 강조하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param underlineText 강조할 텍스트 리스트
+&nbsp; * @param underlineTextColor 강조할 Text 의 색깔
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param singleLine 텍스트를 한 줄로 사용할지 여부
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackUnderlineHeadLine2(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+&nbsp;    underlineText: PersistentList&lt;String&gt;,
+<b class="nc">&nbsp;    underlineTextColor: QuackColor = QuackColor.DuckieOrange,</b>
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    QuackText(</b>
+<b class="nc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        text = buildAnnotatedString {</b>
+<b class="nc">&nbsp;            append(text)</b>
+<b class="nc">&nbsp;            underlineText.forEach { highlightText -&gt;</b>
+<b class="nc">&nbsp;                val highlightStartIndex = text.indexOf(</b>
+<b class="nc">&nbsp;                    string = highlightText</b>
+&nbsp;                )
+<b class="nc">&nbsp;                if (highlightStartIndex != -1) {</b>
+<b class="nc">&nbsp;                    addStyle(</b>
+<b class="nc">&nbsp;                        style = SpanStyle(</b>
+<b class="nc">&nbsp;                            color = underlineTextColor.composeColor,</b>
+<b class="nc">&nbsp;                            textDecoration = TextDecoration.Underline,</b>
+&nbsp;                        ),
+<b class="nc">&nbsp;                        start = highlightStartIndex,</b>
+<b class="nc">&nbsp;                        end = highlightStartIndex + highlightText.length,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        },</b>
+<b class="nc">&nbsp;        style = QuackTextStyle.HeadLine2.change(</b>
+<b class="nc">&nbsp;            color = color,</b>
+<b class="nc">&nbsp;            textAlign = align,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        singleLine = singleLine,</b>
+<b class="nc">&nbsp;        overflow = overflow,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackUnderlineBody3] 에 원하는 부분에 원하는 색깔과 밑줄로 강조하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param underlineText 강조할 텍스트 리스트들
+&nbsp; * @param undelineTextColor 강조할 Text 의 색깔
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; * @param singleLine 텍스트를 한 줄로 사용할지 여부
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackUnderlineBody3(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+&nbsp;    underlineText: PersistentList&lt;String&gt;,
+<b class="nc">&nbsp;    undelineTextColor: QuackColor = QuackColor.DuckieOrange,</b>
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+&nbsp;
+<b class="nc">&nbsp;    QuackText(</b>
+<b class="nc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        text = buildAnnotatedString {</b>
+<b class="nc">&nbsp;            append(text)</b>
+<b class="nc">&nbsp;            underlineText.forEach { highlightText -&gt;</b>
+<b class="nc">&nbsp;                val highlightStartIndex = text.indexOf(</b>
+<b class="nc">&nbsp;                    string = highlightText</b>
+&nbsp;                )
+<b class="nc">&nbsp;                if (highlightStartIndex != -1) {</b>
+<b class="nc">&nbsp;                    addStyle(</b>
+<b class="nc">&nbsp;                        style = SpanStyle(</b>
+<b class="nc">&nbsp;                            color = undelineTextColor.composeColor,</b>
+<b class="nc">&nbsp;                            textDecoration = TextDecoration.Underline,</b>
+&nbsp;                        ),
+<b class="nc">&nbsp;                        start = highlightStartIndex,</b>
+<b class="nc">&nbsp;                        end = highlightStartIndex + highlightText.length,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        },</b>
+<b class="nc">&nbsp;        style = QuackTextStyle.Body3.change(</b>
+<b class="nc">&nbsp;            color = color,</b>
+<b class="nc">&nbsp;            textAlign = align,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        singleLine = singleLine,</b>
+<b class="nc">&nbsp;        overflow = overflow,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackUnderlineBody3] 에 원하는 부분에 원하는 색깔과 밑줄로 강조하여
+&nbsp; * 주어진 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param highlightText 강조할 텍스트 리스트들
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; * @param singleLine 텍스트를 한 줄로 사용할지 여부
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackHighlightBody1(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+&nbsp;    highlightText: PersistentList&lt;String&gt;,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+&nbsp;
+<b class="nc">&nbsp;    ) {</b>
+&nbsp;
+<b class="nc">&nbsp;    QuackText(</b>
+<b class="nc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        text = buildAnnotatedString {</b>
+<b class="nc">&nbsp;            append(text)</b>
+<b class="nc">&nbsp;            highlightText.forEach { highlightText -&gt;</b>
+<b class="nc">&nbsp;                val highlightStartIndex = text.indexOf(</b>
+<b class="nc">&nbsp;                    string = highlightText</b>
+&nbsp;                )
+<b class="nc">&nbsp;                if (highlightStartIndex != -1) {</b>
+<b class="nc">&nbsp;                    addStyle(</b>
+<b class="nc">&nbsp;                        style = SpanStyle(</b>
+<b class="nc">&nbsp;                            fontWeight = FontWeight.SemiBold,</b>
+<b class="nc">&nbsp;                            letterSpacing = 0.sp,</b>
+&nbsp;                        ),
+<b class="nc">&nbsp;                        start = highlightStartIndex,</b>
+<b class="nc">&nbsp;                        end = highlightStartIndex + highlightText.length,</b>
+&nbsp;                    )
+&nbsp;                }
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        },</b>
+<b class="nc">&nbsp;        style = QuackTextStyle.Body1.change(</b>
+<b class="nc">&nbsp;            color = color,</b>
+<b class="nc">&nbsp;            textAlign = align,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        singleLine = singleLine,</b>
+<b class="nc">&nbsp;        overflow = overflow,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBody2] 에 원하는 부분에 원하는 색깔, 밑줄, 굵기 처리, 해당 영역 이벤트 클릭
+&nbsp; * 등이 들어간 텍스트를 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param text 표시할 텍스트
+&nbsp; * @param highlightTextPairs (강조할 텍스트 및 그에 대응하는 클릭 이벤트) Pair 리스트
+&nbsp; * @param color 텍스트의 색상
+&nbsp; * @param highlightColor 강조할 Text 의 색깔
+&nbsp; * @param underlineEnabled 밑줄 처리 활성화할것인지 flag
+&nbsp; * @param highlightFontWeight 강조 처리하는 글자의 굵기
+&nbsp; * @param align 텍스트 정렬
+&nbsp; * @param rippleEnabled 텍스트 클릭시 ripple 발생 여부
+&nbsp; * @param singleLine 텍스트를 한 줄로 사용할지 여부
+&nbsp; * @param onClick 텍스트이 클릭됐을 때 실행할 람다식
+&nbsp; * @param overflow 텍스트 overflow 될 시 처리 방법
+&nbsp; * @param onClick 클릭 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+&nbsp;public fun QuackAnnotatedBody2(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    text: String,
+&nbsp;    highlightTextPairs: PersistentList&lt;Pair&lt;String, (() -&gt; Unit)?&gt;&gt;,
+<b class="nc">&nbsp;    color: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    highlightColor: QuackColor = QuackColor.Black,</b>
+<b class="nc">&nbsp;    underlineEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    highlightFontWeight: FontWeight = FontWeight.SemiBold,</b>
+<b class="nc">&nbsp;    align: TextAlign = TextAlign.Start,</b>
+<b class="nc">&nbsp;    rippleEnabled: Boolean = false,</b>
+<b class="nc">&nbsp;    singleLine: Boolean = false,</b>
+<b class="nc">&nbsp;    overflow: TextOverflow = TextOverflow.Clip,</b>
+<b class="nc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="nc">&nbsp;) {</b>
+&nbsp;    // QuackClickableText 에서 활용할 하이라이트 텍스트 목록
+&nbsp;    // 계산을 먼저 완료한 상태에서 컴포저블 작업에 들어가므로
+&nbsp;    // SnapshotStateList 로 만들 필요가 없음
+<b class="nc">&nbsp;    val highlightTextInfo = remember(</b>
+&nbsp;        key1 = highlightTextPairs,
+&nbsp;    ) {
+<b class="nc">&nbsp;        buildList {</b>
+&nbsp;            // 전체 문자열 내에서, 검색 시작 index offset
+<b class="nc">&nbsp;            var startIndexOffset = 0</b>
+<b class="nc">&nbsp;            highlightTextPairs.forEach { (targetText, targetTextClickEvent) -&gt;</b>
+<b class="nc">&nbsp;                val subStringStartIndex = text</b>
+<b class="nc">&nbsp;                    .substring(</b>
+<b class="nc">&nbsp;                        startIndex = startIndexOffset,</b>
+<b class="nc">&nbsp;                    ).indexOf(</b>
+<b class="nc">&nbsp;                        string = targetText,</b>
+&nbsp;                    )
+&nbsp;
+<b class="nc">&nbsp;                if (subStringStartIndex != -1) {</b>
+<b class="nc">&nbsp;                    val realStartIndex = startIndexOffset + subStringStartIndex</b>
+<b class="nc">&nbsp;                    val realEndIndex = realStartIndex + targetText.length</b>
+&nbsp;
+&nbsp;                    // 텍스트 클릭 이벤트 처리
+<b class="nc">&nbsp;                    targetTextClickEvent?.let {</b>
+&nbsp;                        // ClickEventTextInfo 데이터 추가
+<b class="nc">&nbsp;                        add(</b>
+<b class="nc">&nbsp;                            element = HighlightTextInfo(</b>
+<b class="nc">&nbsp;                                text = targetText,</b>
+<b class="nc">&nbsp;                                startIndex = realStartIndex,</b>
+<b class="nc">&nbsp;                                endIndex = realEndIndex,</b>
+<b class="nc">&nbsp;                                onClick = targetTextClickEvent,</b>
+&nbsp;                            ),
+&nbsp;                        )
+&nbsp;                    }
+&nbsp;
+<b class="nc">&nbsp;                    startIndexOffset = realEndIndex</b>
+&nbsp;                }
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    QuackClickableText(</b>
+<b class="nc">&nbsp;        modifier = modifier.quackClickable(</b>
+<b class="nc">&nbsp;            rippleEnabled = rippleEnabled,</b>
+<b class="nc">&nbsp;            onClick = onClick,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        clickEventTextInfo = highlightTextInfo.toPersistentList(),</b>
+<b class="nc">&nbsp;        text = buildAnnotatedString {</b>
+<b class="nc">&nbsp;            append(</b>
+<b class="nc">&nbsp;                text = text,</b>
+&nbsp;            )
+&nbsp;
+<b class="nc">&nbsp;            highlightTextInfo.forEach { (text, startIndex, endIndex, onClick) -&gt;</b>
+&nbsp;                // 텍스트 클릭 이벤트 처리
+<b class="nc">&nbsp;                onClick?.let {</b>
+&nbsp;                    // StringAnnotation 데이터 추가
+<b class="nc">&nbsp;                    addStringAnnotation(</b>
+<b class="nc">&nbsp;                        tag = text,</b>
+<b class="nc">&nbsp;                        annotation = &quot;&quot;,</b>
+<b class="nc">&nbsp;                        start = startIndex,</b>
+<b class="nc">&nbsp;                        end = endIndex,</b>
+&nbsp;                    )
+<b class="nc">&nbsp;                }</b>
+&nbsp;
+&nbsp;                // 스타일링 처리
+<b class="nc">&nbsp;                val textDecoration = TextDecoration.Underline.takeIf {</b>
+<b class="nc">&nbsp;                    underlineEnabled</b>
+&nbsp;                }
+<b class="nc">&nbsp;                addStyle(</b>
+<b class="nc">&nbsp;                    style = SpanStyle(</b>
+<b class="nc">&nbsp;                        color = highlightColor.composeColor,</b>
+<b class="nc">&nbsp;                        fontWeight = highlightFontWeight,</b>
+<b class="nc">&nbsp;                        letterSpacing = 0.sp,</b>
+<b class="nc">&nbsp;                        textDecoration = textDecoration,</b>
+&nbsp;                    ),
+<b class="nc">&nbsp;                    start = startIndex,</b>
+<b class="nc">&nbsp;                    end = endIndex,</b>
+&nbsp;                )
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        },</b>
+<b class="nc">&nbsp;        style = QuackTextStyle.Body2.change(</b>
+<b class="nc">&nbsp;            color = color,</b>
+<b class="nc">&nbsp;            textAlign = align,</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        singleLine = singleLine,</b>
+<b class="nc">&nbsp;        overflow = overflow,</b>
+<b class="nc">&nbsp;        defaultOnClick = onClick,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * 하이라이트 텍스트 처리를 위해 필요한 텍스트 정보
+&nbsp; *
+&nbsp; * @param text 텍스트 내용
+&nbsp; * @param startIndex 전체 텍스트 내에서 onClick 이벤트가 실행되는 시작 index
+&nbsp; * @param endIndex 전체 텍스트 내에서 onClick 이벤트가 실행되는 마지막 index
+&nbsp; * @param onClick 실행할 클릭 이벤트 (null 일 시 이벤트 없음)
+&nbsp; */
+&nbsp;@Immutable
+&nbsp;internal data class HighlightTextInfo(
+&nbsp;    val text: String,
+&nbsp;    val startIndex: Int,
+&nbsp;    val endIndex: Int,
+&nbsp;    val onClick: (() -&gt; Unit)? = null,
+&nbsp;)
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

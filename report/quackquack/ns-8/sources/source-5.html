@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TextFieldImplKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component.internal</a>
+</div>
+
+<h1>Coverage Summary for Class: TextFieldImplKt (team.duckie.quackquack.ui.component.internal)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">TextFieldImplKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (93/93)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component.internal
+&nbsp;
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.layout.IntrinsicMeasurable
+&nbsp;import androidx.compose.ui.layout.IntrinsicMeasureScope
+&nbsp;import androidx.compose.ui.layout.Measurable
+&nbsp;import androidx.compose.ui.layout.MeasurePolicy
+&nbsp;import androidx.compose.ui.layout.MeasureResult
+&nbsp;import androidx.compose.ui.layout.MeasureScope
+&nbsp;import androidx.compose.ui.layout.Placeable
+&nbsp;import androidx.compose.ui.layout.layoutId
+&nbsp;import androidx.compose.ui.unit.Constraints
+&nbsp;import androidx.compose.ui.unit.offset
+&nbsp;import team.duckie.quackquack.ui.component.QuackBasicTextField
+&nbsp;import team.duckie.quackquack.ui.component.internal.QuackTextFieldMeasurePolicy.Companion.rememberQuackTextFieldMeasurePolicy
+&nbsp;import team.duckie.quackquack.ui.util.ZeroConstraints
+&nbsp;import team.duckie.quackquack.ui.util.heightOrZero
+&nbsp;import team.duckie.quackquack.ui.util.layoutId
+&nbsp;import team.duckie.quackquack.ui.util.widthOrZero
+&nbsp;
+&nbsp;internal const val QuackTextFieldLayoutId = &quot;QuackTextFieldContent&quot;
+&nbsp;internal const val QuackTextFieldPlaceholderLayoutId = &quot;QuackTextFieldPlaceholderContent&quot;
+&nbsp;internal const val QuackTextFieldLeadingContentLayoutId = &quot;QuackTextFieldLeadingContent&quot;
+&nbsp;internal const val QuackTextFieldTrailingContentLayoutId = &quot;QuackTextFieldTrailingContent&quot;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackBasicTextField] 를 measure 하기 위한 [MeasurePolicy]
+&nbsp; *
+&nbsp; * @suppress 이 클래스는 직접 사용하면 안됩니다. 리컴포지션 퍼포먼스를 위해
+&nbsp; * remember 로 감싼 인스턴스를 반환하는 [rememberQuackTextFieldMeasurePolicy] 를
+&nbsp; * 사용하세요.
+&nbsp; */
+&nbsp;internal class QuackTextFieldMeasurePolicy private constructor() : MeasurePolicy {
+&nbsp;    companion object {
+&nbsp;        /**
+&nbsp;         * [QuackTextFieldMeasurePolicy] 을 [remember] 로 저장한 값을 반환합니다.
+&nbsp;         * 항상 같은 인스턴스를 사용해도 되므로 [remember] 의 key 가 지정되지 않습니다.
+&nbsp;         *
+&nbsp;         * @return remember 된 [QuackTextFieldMeasurePolicy] 의 인스턴스
+&nbsp;         */
+&nbsp;        @Composable
+&nbsp;        fun rememberQuackTextFieldMeasurePolicy() = remember {
+&nbsp;            QuackTextFieldMeasurePolicy()
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun MeasureScope.measure(
+&nbsp;        measurables: List&lt;Measurable&gt;,
+&nbsp;        constraints: Constraints,
+&nbsp;    ): MeasureResult {
+&nbsp;        var occupiedSpaceHorizontally = 0
+&nbsp;        val looseConstraints = constraints.copy(
+&nbsp;            minWidth = 0,
+&nbsp;            minHeight = 0,
+&nbsp;        )
+&nbsp;
+&nbsp;        // measure leading icon
+&nbsp;        val leadingPlaceable = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldLeadingContentLayoutId
+&nbsp;        }?.measure(
+&nbsp;            constraints = looseConstraints,
+&nbsp;        )
+&nbsp;        occupiedSpaceHorizontally += leadingPlaceable.widthOrZero()
+&nbsp;
+&nbsp;        // measure trailing icon
+&nbsp;        val trailingPlaceable = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldTrailingContentLayoutId
+&nbsp;        }?.measure(
+&nbsp;            constraints = looseConstraints.offset(
+&nbsp;                horizontal = -occupiedSpaceHorizontally,
+&nbsp;            ),
+&nbsp;        )
+&nbsp;        occupiedSpaceHorizontally += trailingPlaceable.widthOrZero()
+&nbsp;
+&nbsp;        // measure text field
+&nbsp;        val textFieldConstraints = constraints
+&nbsp;            .copy(
+&nbsp;                minHeight = 0,
+&nbsp;            )
+&nbsp;            .offset(
+&nbsp;                horizontal = -occupiedSpaceHorizontally,
+&nbsp;            )
+&nbsp;        val textFieldPlaceable = measurables.first { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldLayoutId
+&nbsp;        }.measure(
+&nbsp;            constraints = textFieldConstraints,
+&nbsp;        )
+&nbsp;        val placeholderPlaceable = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldPlaceholderLayoutId
+&nbsp;        }?.measure(
+&nbsp;            constraints = textFieldConstraints,
+&nbsp;        )
+&nbsp;
+&nbsp;        val width = calculateWidth(
+&nbsp;            textFieldWidth = textFieldPlaceable.width,
+&nbsp;            placeholderWidth = placeholderPlaceable.widthOrZero(),
+&nbsp;            leadingWidth = leadingPlaceable.widthOrZero(),
+&nbsp;            trailingWidth = trailingPlaceable.widthOrZero(),
+&nbsp;            constraints = constraints,
+&nbsp;        )
+&nbsp;        val height = calculateHeight(
+&nbsp;            textFieldHeight = textFieldPlaceable.height,
+&nbsp;            placeholderHeight = placeholderPlaceable.heightOrZero(),
+&nbsp;            leadingHeight = leadingPlaceable.heightOrZero(),
+&nbsp;            trailingHeight = trailingPlaceable.heightOrZero(),
+&nbsp;            constraints = constraints,
+&nbsp;        )
+&nbsp;
+&nbsp;        return layout(
+&nbsp;            width = width,
+&nbsp;            height = height,
+&nbsp;        ) {
+&nbsp;            placeTextField(
+&nbsp;                width = width,
+&nbsp;                height = height,
+&nbsp;                textFieldPlaceable = textFieldPlaceable,
+&nbsp;                placeholderPlaceable = placeholderPlaceable,
+&nbsp;                leadingPlaceable = leadingPlaceable,
+&nbsp;                trailingPlaceable = trailingPlaceable,
+&nbsp;            )
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun IntrinsicMeasureScope.maxIntrinsicHeight(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        width: Int,
+&nbsp;    ) = intrinsicHeight(
+&nbsp;        measurables = measurables,
+&nbsp;        width = width,
+&nbsp;    ) { intrinsicMeasurable, intrinsicWidth -&gt;
+&nbsp;        intrinsicMeasurable.maxIntrinsicHeight(
+&nbsp;            width = intrinsicWidth,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun IntrinsicMeasureScope.minIntrinsicHeight(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        width: Int,
+&nbsp;    ) = intrinsicHeight(
+&nbsp;        measurables = measurables,
+&nbsp;        width = width,
+&nbsp;    ) { intrinsicMeasurable, intrinsicWidth -&gt;
+&nbsp;        intrinsicMeasurable.minIntrinsicHeight(
+&nbsp;            width = intrinsicWidth,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun IntrinsicMeasureScope.maxIntrinsicWidth(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        height: Int,
+&nbsp;    ) = intrinsicWidth(
+&nbsp;        measurables = measurables,
+&nbsp;        height = height,
+&nbsp;    ) { intrinsicMeasurable, intrinsicHeight -&gt;
+&nbsp;        intrinsicMeasurable.maxIntrinsicWidth(
+&nbsp;            height = intrinsicHeight,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun IntrinsicMeasureScope.minIntrinsicWidth(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        height: Int,
+&nbsp;    ) = intrinsicWidth(
+&nbsp;        measurables = measurables,
+&nbsp;        height = height,
+&nbsp;    ) { intrinsicMeasurable, intrinsicHeight -&gt;
+&nbsp;        intrinsicMeasurable.minIntrinsicWidth(
+&nbsp;            height = intrinsicHeight,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * QuackTextField 를 배치할 수 있는 intrinsic 한 width 를 계산합니다.
+&nbsp;     *
+&nbsp;     * @param measurables QuackTextField 의 measurable 들
+&nbsp;     * @param height QuackTextField 레이아웃의 높이
+&nbsp;     * @param intrinsicMeasurer QuackTextField 의 intrinsic width 를 계산하는 함수
+&nbsp;     *
+&nbsp;     * @return QuackTextField 를 배치하기 위한 intrinsic width
+&nbsp;     */
+&nbsp;    private fun intrinsicWidth(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        height: Int,
+&nbsp;        intrinsicMeasurer: (
+&nbsp;            intrinsicMeasurable: IntrinsicMeasurable,
+&nbsp;            intrinsicHeight: Int,
+&nbsp;        ) -&gt; Int,
+&nbsp;    ): Int {
+&nbsp;        val textFieldWidth = intrinsicMeasurer(
+&nbsp;            measurables.first { measurable -&gt;
+&nbsp;                measurable.layoutId == QuackTextFieldLayoutId
+&nbsp;            },
+&nbsp;            height,
+&nbsp;        )
+&nbsp;
+&nbsp;        val placeholderWidth = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldPlaceholderLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                height,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        val leadingWidth = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldLeadingContentLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                height,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        val trailingWidth = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldTrailingContentLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                height,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        return calculateWidth(
+&nbsp;            textFieldWidth = textFieldWidth,
+&nbsp;            placeholderWidth = placeholderWidth,
+&nbsp;            leadingWidth = leadingWidth,
+&nbsp;            trailingWidth = trailingWidth,
+&nbsp;            constraints = ZeroConstraints,
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * QuackTextField 를 배치할 수 있는 intrinsic 한 height 를 계산합니다.
+&nbsp;     *
+&nbsp;     * @param measurables QuackTextField 의 measurable 들
+&nbsp;     * @param width QuackTextField 레이아웃의 넓이
+&nbsp;     * @param intrinsicMeasurer QuackTextField 의 intrinsic height 를 계산하는 함수
+&nbsp;     *
+&nbsp;     * @return QuackTextField 를 배치하기 위한 intrinsic height
+&nbsp;     */
+&nbsp;    private fun intrinsicHeight(
+&nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
+&nbsp;        width: Int,
+&nbsp;        intrinsicMeasurer: (
+&nbsp;            intrinsicMeasurable: IntrinsicMeasurable,
+&nbsp;            intrinsicWidth: Int,
+&nbsp;        ) -&gt; Int,
+&nbsp;    ): Int {
+&nbsp;        val textFieldHeight = intrinsicMeasurer(
+&nbsp;            measurables.first { measurable -&gt;
+&nbsp;                measurable.layoutId == QuackTextFieldLayoutId
+&nbsp;            },
+&nbsp;            width,
+&nbsp;        )
+&nbsp;
+&nbsp;        val placeholderHeight = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldPlaceholderLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                width,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        val leadingHeight = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldLeadingContentLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                width,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        val trailingHeight = measurables.find { measurable -&gt;
+&nbsp;            measurable.layoutId == QuackTextFieldTrailingContentLayoutId
+&nbsp;        }?.let { measurable -&gt;
+&nbsp;            intrinsicMeasurer(
+&nbsp;                measurable,
+&nbsp;                width,
+&nbsp;            )
+&nbsp;        } ?: 0
+&nbsp;
+&nbsp;        return calculateHeight(
+&nbsp;            textFieldHeight = textFieldHeight,
+&nbsp;            placeholderHeight = placeholderHeight,
+&nbsp;            leadingHeight = leadingHeight,
+&nbsp;            trailingHeight = trailingHeight,
+&nbsp;            constraints = ZeroConstraints,
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * TextField 배치에 사용되는 constraints 중에서 제일 큰 넓이를 계산합니다.
+&nbsp; *
+&nbsp; * @param textFieldWidth TextField 의 넓이
+&nbsp; * @param placeholderWidth placeholder 의 넓이
+&nbsp; * @param leadingWidth leading decoration item 의 넓이
+&nbsp; * @param trailingWidth trailing decoration item 의 넓이
+&nbsp; * @param constraints 배치하려는 TextField 레이아웃의 [Constraints]
+&nbsp; *
+&nbsp; * @return 인자로 주어진 넓이 중에서 제일 큰 넓이
+&nbsp; */
+&nbsp;private fun calculateWidth(
+&nbsp;    textFieldWidth: Int,
+&nbsp;    placeholderWidth: Int,
+&nbsp;    leadingWidth: Int,
+&nbsp;    trailingWidth: Int,
+&nbsp;    constraints: Constraints,
+<b class="fc">&nbsp;) = maxOf(</b>
+&nbsp;    a = textFieldWidth,
+<b class="fc">&nbsp;    b = maxOf(</b>
+&nbsp;        a = placeholderWidth,
+&nbsp;        b = leadingWidth,
+&nbsp;        c = trailingWidth,
+&nbsp;    ),
+<b class="fc">&nbsp;    c = constraints.minWidth,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * TextField 배치에 사용되는 constraints 중에서 제일 큰 높이를 계산합니다.
+&nbsp; *
+&nbsp; * @param textFieldHeight TextField 의 높이
+&nbsp; * @param placeholderHeight placeholder 의 높이
+&nbsp; * @param leadingHeight leading decoration item 의 높이
+&nbsp; * @param trailingHeight trailing decoration item 의 높이
+&nbsp; * @param constraints 배치하려는 TextField 레이아웃의 [Constraints]
+&nbsp; *
+&nbsp; * @return 인자로 주어진 높이 중에서 제일 큰 높이
+&nbsp; */
+&nbsp;private fun calculateHeight(
+&nbsp;    textFieldHeight: Int,
+&nbsp;    placeholderHeight: Int,
+&nbsp;    leadingHeight: Int,
+&nbsp;    trailingHeight: Int,
+&nbsp;    constraints: Constraints,
+<b class="fc">&nbsp;) = maxOf(</b>
+&nbsp;    a = textFieldHeight,
+<b class="fc">&nbsp;    b = maxOf(</b>
+&nbsp;        a = placeholderHeight,
+&nbsp;        b = leadingHeight,
+&nbsp;        c = trailingHeight,
+&nbsp;    ),
+<b class="fc">&nbsp;    c = constraints.minHeight,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * TextField 의 [Placeable] 들을 배치하기 위한 오프셋을 계산하여 배치합니다.
+&nbsp; *
+&nbsp; * @param width TextField 레이아웃의 넓이
+&nbsp; * @param height TextField 레이아웃의 높이
+&nbsp; * @param textFieldPlaceable TextField 의 [Placeable]
+&nbsp; * @param placeholderPlaceable placeholder 의 [Placeable]
+&nbsp; * @param leadingPlaceable leading decoration item 의 [Placeable]
+&nbsp; * @param trailingPlaceable trailing decoration item 의 [Placeable]
+&nbsp; */
+&nbsp;private fun Placeable.PlacementScope.placeTextField(
+&nbsp;    width: Int,
+&nbsp;    height: Int,
+&nbsp;    textFieldPlaceable: Placeable,
+&nbsp;    placeholderPlaceable: Placeable?,
+&nbsp;    leadingPlaceable: Placeable?,
+&nbsp;    trailingPlaceable: Placeable?,
+&nbsp;) {
+<b class="fc">&nbsp;    leadingPlaceable?.placeRelative(</b>
+<b class="fc">&nbsp;        x = 0,</b>
+<b class="fc">&nbsp;        y = Alignment.CenterVertically.align(</b>
+<b class="fc">&nbsp;            size = leadingPlaceable.height,</b>
+<b class="fc">&nbsp;            space = height,</b>
+&nbsp;        ),
+&nbsp;    )
+<b class="fc">&nbsp;    trailingPlaceable?.placeRelative(</b>
+<b class="fc">&nbsp;        x = width - trailingPlaceable.width,</b>
+<b class="fc">&nbsp;        y = Alignment.CenterVertically.align(</b>
+<b class="fc">&nbsp;            size = trailingPlaceable.height,</b>
+<b class="fc">&nbsp;            space = height,</b>
+&nbsp;        ),
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    textFieldPlaceable.placeRelative(</b>
+<b class="fc">&nbsp;        x = leadingPlaceable.widthOrZero(),</b>
+<b class="fc">&nbsp;        y = Alignment.CenterVertically.align(</b>
+<b class="fc">&nbsp;            size = textFieldPlaceable.height,</b>
+<b class="fc">&nbsp;            space = height,</b>
+&nbsp;        ),
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    placeholderPlaceable?.placeRelative(</b>
+<b class="fc">&nbsp;        x = leadingPlaceable.widthOrZero(),</b>
+<b class="fc">&nbsp;        y = Alignment.CenterVertically.align(</b>
+<b class="fc">&nbsp;            size = placeholderPlaceable.height,</b>
+<b class="fc">&nbsp;            space = height,</b>
+&nbsp;        ),
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

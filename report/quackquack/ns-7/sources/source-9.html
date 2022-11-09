@@ -1,0 +1,268 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DropDownKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: DropDownKt (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">DropDownKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/35)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/236)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">DropDownKt$QuackDropDown$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">DropDownKt$QuackDropDown$3</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/36)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/240)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * [dropDown.kt] created by doro on 22. 9. 4. 오전 1:21
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.border
+&nbsp;import androidx.compose.foundation.layout.Arrangement
+&nbsp;import androidx.compose.foundation.layout.PaddingValues
+&nbsp;import androidx.compose.foundation.layout.Row
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.shape.RoundedCornerShape
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.unit.DpSize
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import team.duckie.quackquack.ui.border.QuackBorder
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor.Companion.Gray3
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;
+<b class="nc">&nbsp;private val QuackDropDownPadding = PaddingValues(</b>
+<b class="nc">&nbsp;    start = 12.dp,</b>
+<b class="nc">&nbsp;    end = 8.dp,</b>
+<b class="nc">&nbsp;    top = 8.dp,</b>
+<b class="nc">&nbsp;    bottom = 8.dp,</b>
+&nbsp;)
+<b class="nc">&nbsp;private val QuackDropDownShape = RoundedCornerShape(8.dp)</b>
+<b class="nc">&nbsp;private val QuackDropDownSpace = 4.dp</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * QuackDropDown 을 구현합니다.
+&nbsp; * @param title DropDown 의 타이틀
+&nbsp; * @param onClick DropDown 클릭시 발생하는 이벤트
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackDropDown(
+&nbsp;    title: String,
+&nbsp;    onClick: () -&gt; Unit,
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    Row(</b>
+<b class="nc">&nbsp;        modifier = Modifier</b>
+<b class="nc">&nbsp;            .clip(</b>
+<b class="nc">&nbsp;                shape = QuackDropDownShape,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .border(</b>
+<b class="nc">&nbsp;                border = QuackBorder(</b>
+<b class="nc">&nbsp;                    color = Gray3,</b>
+<b class="nc">&nbsp;                ).asComposeBorder(),</b>
+<b class="nc">&nbsp;                shape = QuackDropDownShape,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .quackClickable {</b>
+<b class="nc">&nbsp;                onClick()</b>
+&nbsp;            }
+<b class="nc">&nbsp;            .background(</b>
+<b class="nc">&nbsp;                color = QuackColor.White.composeColor,</b>
+&nbsp;            )
+<b class="nc">&nbsp;            .padding(</b>
+<b class="nc">&nbsp;                paddingValues = QuackDropDownPadding,</b>
+&nbsp;            ),
+<b class="nc">&nbsp;        horizontalArrangement = Arrangement.spacedBy(</b>
+<b class="nc">&nbsp;            space = QuackDropDownSpace</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        verticalAlignment = Alignment.CenterVertically,</b>
+&nbsp;    ) {
+<b class="nc">&nbsp;        QuackBody1(</b>
+<b class="nc">&nbsp;            text = title,</b>
+&nbsp;        )
+<b class="nc">&nbsp;        QuackImage(</b>
+<b class="nc">&nbsp;            src = QuackIcon.ArrowDown,</b>
+<b class="nc">&nbsp;            overrideSize = DpSize(</b>
+<b class="nc">&nbsp;                width = 24.dp,</b>
+<b class="nc">&nbsp;                height = 24.dp,</b>
+&nbsp;            ),
+<b class="nc">&nbsp;        )</b>
+<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DividerKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: DividerKt (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">DividerKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/sungbinland/quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.foundation.background
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.height
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.NonRestartableComposable
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;
+<b class="nc">&nbsp;private val QuackDividerThickness = 1.dp</b>
+<b class="nc">&nbsp;private val QuackDividerColor = QuackColor.Gray3</b>
+&nbsp;
+&nbsp;/**
+&nbsp; * 덕키의 구분선 입니다.
+&nbsp; * 부모 컴포넌트의 가로 길이에 꽉 차게 그려집니다.
+&nbsp; *
+&nbsp; * @return Unit
+&nbsp; */
+&nbsp;@Composable
+&nbsp;@NonRestartableComposable
+<b class="nc">&nbsp;public fun QuackDivider(): Unit = Box(</b>
+<b class="nc">&nbsp;    modifier = Modifier</b>
+<b class="nc">&nbsp;        .fillMaxWidth()</b>
+<b class="nc">&nbsp;        .height(</b>
+<b class="nc">&nbsp;            height = QuackDividerThickness,</b>
+&nbsp;        )
+<b class="nc">&nbsp;        .background(</b>
+<b class="nc">&nbsp;            color = QuackDividerColor.composeColor,</b>
+&nbsp;        )
+&nbsp;)
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>

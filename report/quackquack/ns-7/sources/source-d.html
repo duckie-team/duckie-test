@@ -1,0 +1,438 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ImageKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">team.duckie.quackquack.ui.component</a>
+</div>
+
+<h1>Coverage Summary for Class: ImageKt (team.duckie.quackquack.ui.component)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">ImageKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    46.6%
+  </span>
+  <span class="absValue">
+    (27/58)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    69.6%
+  </span>
+  <span class="absValue">
+    (32/46)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    58.8%
+  </span>
+  <span class="absValue">
+    (234/398)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ImageKt$QuackImage$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackImageInternal$1</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackImageInternal$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.2%
+  </span>
+  <span class="absValue">
+    (55/56)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackImageInternal$3</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackImageInternal$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/22)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/121)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackImageInternal$5</td>
+    <td class="coverageStat"/>
+  </tr>
+  <tr>
+    <td class="name">ImageKt$QuackRoundImage$1</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    71.4%
+  </span>
+  <span class="absValue">
+    (5/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    44.1%
+  </span>
+  <span class="absValue">
+    (30/68)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    54.4%
+  </span>
+  <span class="absValue">
+    (43/79)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50.3%
+  </span>
+  <span class="absValue">
+    (289/575)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
+&nbsp; *
+&nbsp; * Licensed under the MIT.
+&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; */
+&nbsp;
+&nbsp;package team.duckie.quackquack.ui.component
+&nbsp;
+&nbsp;import androidx.compose.foundation.layout.Box
+&nbsp;import androidx.compose.foundation.layout.size
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.draw.clip
+&nbsp;import androidx.compose.ui.draw.paint
+&nbsp;import androidx.compose.ui.graphics.ColorFilter
+&nbsp;import androidx.compose.ui.layout.ContentScale
+&nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;import androidx.compose.ui.platform.LocalDensity
+&nbsp;import androidx.compose.ui.res.painterResource
+&nbsp;import androidx.compose.ui.unit.DpSize
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import coil.compose.AsyncImage
+&nbsp;import coil.request.ImageRequest
+&nbsp;import team.duckie.quackquack.ui.animation.AnimatedContentTransform
+&nbsp;import team.duckie.quackquack.ui.border.QuackSquircle
+&nbsp;import team.duckie.quackquack.ui.color.QuackColor
+&nbsp;import team.duckie.quackquack.ui.color.animateQuackColorAsState
+&nbsp;import team.duckie.quackquack.ui.icon.QuackIcon
+&nbsp;import team.duckie.quackquack.ui.modifier.quackClickable
+&nbsp;import team.duckie.quackquack.ui.util.runIf
+&nbsp;
+<b class="fc">&nbsp;private val QuackRoundImageSize = DpSize(</b>
+<b class="fc">&nbsp;    width = 72.dp,</b>
+<b class="fc">&nbsp;    height = 72.dp,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * 이미지 혹은 [QuackIcon] 을 표시합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param src 표시할 리소스. 만약 null 이 들어온다면 리소스를 그리지 않습니다.
+&nbsp; * @param overrideSize 리소스의 크기를 지정합니다. null 이 들어오면 기본 크기로 표시합니다.
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param rippleEnabled 이미지 클릭시 ripple 발생 여부
+&nbsp; * @param onClick 아이콘이 클릭됐을 때 실행할 람다식
+&nbsp; * @param contentScale 이미지에 들어갈 ContentScale 값
+&nbsp; */
+&nbsp;@Composable
+&nbsp;public fun QuackImage(
+<b class="fc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    src: Any?,
+<b class="fc">&nbsp;    overrideSize: DpSize? = null,</b>
+<b class="fc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="fc">&nbsp;    rippleEnabled: Boolean = true,</b>
+<b class="pc">&nbsp;    onClick: (() -&gt; Unit)? = null,</b>
+<b class="pc">&nbsp;    contentScale: ContentScale = ContentScale.Crop,</b>
+<b class="pc">&nbsp;): Unit = QuackImageInternal(</b>
+<b class="fc">&nbsp;    modifier = modifier.quackClickable(</b>
+<b class="fc">&nbsp;        rippleEnabled = rippleEnabled,</b>
+<b class="fc">&nbsp;        onClick = onClick,</b>
+&nbsp;    ),
+<b class="fc">&nbsp;    src = src,</b>
+<b class="fc">&nbsp;    overrideSize = overrideSize,</b>
+<b class="fc">&nbsp;    tint = tint,</b>
+<b class="fc">&nbsp;    contentScale = contentScale,</b>
+&nbsp;)
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackRoundImage] 를 구현합니다.
+&nbsp; *
+&nbsp; * @param modifier 컴포넌트의 Modifier =&gt; align과 padding등을 위하여 열어놨습니다.
+&nbsp; * @param src 표시할 이비지의 값
+&nbsp; * @param size 이미지의 사이즈 값
+&nbsp; */
+&nbsp;// TODO: 로딩 effect
+&nbsp;@Composable
+&nbsp;public fun QuackRoundImage(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    src: Any?,
+<b class="nc">&nbsp;    size: DpSize = QuackRoundImageSize,</b>
+<b class="nc">&nbsp;) {</b>
+<b class="nc">&nbsp;    QuackImageInternal(</b>
+<b class="nc">&nbsp;        modifier = modifier.clip(</b>
+<b class="nc">&nbsp;            shape = QuackSquircle(),</b>
+&nbsp;        ),
+<b class="nc">&nbsp;        src = src,</b>
+<b class="nc">&nbsp;        overrideSize = size,</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackImage] 를 실제로 그립니다. 내부에서 사용되는 컴포넌트이므로
+&nbsp; * [Modifier] 를 추가로 받습니다.
+&nbsp; *
+&nbsp; * @param modifier 이 컴포저블에서 사용할 [Modifier]
+&nbsp; * @param src 표시할 이미지의 값.
+&nbsp; * 만약 null 이 들어온다면 이미지를 그리지 않습니다.
+&nbsp; * @param overrideSize 리소스의 크기를 지정합니다. null 이 들어오면 기본 크기로 표시합니다.
+&nbsp; * @param tint 아이콘에 적용할 틴트 값
+&nbsp; * @param contentScale 이미지에 들어갈 contentScale 값
+&nbsp; */
+&nbsp;// TODO: 로딩 effect
+&nbsp;@Composable
+&nbsp;internal fun QuackImageInternal(
+<b class="nc">&nbsp;    modifier: Modifier = Modifier,</b>
+&nbsp;    src: Any?,
+<b class="pc">&nbsp;    overrideSize: DpSize? = null,</b>
+<b class="nc">&nbsp;    tint: QuackColor? = null,</b>
+<b class="pc">&nbsp;    contentScale: ContentScale = ContentScale.Crop,</b>
+<b class="pc">&nbsp;) {</b>
+<b class="pc">&nbsp;    if (src == null) return</b>
+<b class="fc">&nbsp;    val density = LocalDensity.current</b>
+<b class="fc">&nbsp;    val animatedTint by animateQuackColorAsState(</b>
+<b class="fc">&nbsp;        targetValue = tint ?: QuackColor.Transparent,</b>
+&nbsp;    )
+<b class="pc">&nbsp;    if (src is QuackIcon) {</b>
+<b class="pc">&nbsp;        AnimatedContentTransform(</b>
+<b class="fc">&nbsp;            targetState = src,</b>
+<b class="fc">&nbsp;            modifier = modifier,</b>
+<b class="fc">&nbsp;        ) { imageModel -&gt;</b>
+<b class="pc">&nbsp;            Box(</b>
+<b class="fc">&nbsp;                modifier = modifier</b>
+<b class="fc">&nbsp;                    .runIf(</b>
+<b class="fc">&nbsp;                        condition = overrideSize != null,</b>
+&nbsp;                    ) {
+<b class="fc">&nbsp;                        size(</b>
+<b class="fc">&nbsp;                            size = overrideSize!! * density.fontScale,</b>
+&nbsp;                        )
+&nbsp;                    }
+<b class="fc">&nbsp;                    .paint(</b>
+<b class="fc">&nbsp;                        painter = painterResource(</b>
+<b class="fc">&nbsp;                            id = imageModel.drawableId,</b>
+&nbsp;                        ),
+<b class="fc">&nbsp;                        colorFilter = animatedTint.toColorFilter(),</b>
+<b class="fc">&nbsp;                        contentScale = contentScale,</b>
+&nbsp;                    )
+&nbsp;            )
+&nbsp;        }
+&nbsp;        return
+&nbsp;    }
+<b class="nc">&nbsp;    AnimatedContentTransform(</b>
+<b class="nc">&nbsp;        targetState = src,</b>
+<b class="nc">&nbsp;        modifier = modifier,</b>
+<b class="nc">&nbsp;    ) { imageModel -&gt;</b>
+<b class="nc">&nbsp;        AsyncImage(</b>
+<b class="nc">&nbsp;            modifier = modifier.runIf(</b>
+<b class="nc">&nbsp;                condition = overrideSize != null,</b>
+&nbsp;            ) {
+<b class="nc">&nbsp;                size(</b>
+<b class="nc">&nbsp;                    size = overrideSize!!,</b>
+&nbsp;                )
+<b class="nc">&nbsp;                size(</b>
+<b class="nc">&nbsp;                    size = overrideSize * density.fontScale,</b>
+&nbsp;                )
+&nbsp;            },
+&nbsp;            model = ImageRequest
+<b class="nc">&nbsp;                .Builder(</b>
+<b class="nc">&nbsp;                    context = LocalContext.current,</b>
+&nbsp;                )
+<b class="nc">&nbsp;                .data(</b>
+<b class="nc">&nbsp;                    data = imageModel,</b>
+&nbsp;                )
+<b class="nc">&nbsp;                .runIf(</b>
+<b class="nc">&nbsp;                    condition = overrideSize != null,</b>
+&nbsp;                ) {
+<b class="nc">&nbsp;                    with(</b>
+&nbsp;                        receiver = density,
+&nbsp;                    ) {
+<b class="nc">&nbsp;                        val size = overrideSize!! * density.density</b>
+<b class="nc">&nbsp;                        size(</b>
+<b class="nc">&nbsp;                            width = size.width.roundToPx(),</b>
+<b class="nc">&nbsp;                            height = size.height.roundToPx(),</b>
+&nbsp;                        )
+&nbsp;                    }
+&nbsp;                }
+<b class="nc">&nbsp;                .build(),</b>
+<b class="nc">&nbsp;            colorFilter = animatedTint.toColorFilter(),</b>
+<b class="nc">&nbsp;            contentDescription = null,</b>
+<b class="nc">&nbsp;            contentScale = contentScale,</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackColor] 를 [ColorFilter] 로 변환합니다.
+&nbsp; *
+&nbsp; * @receiver 변환할 [QuackColor]
+&nbsp; * @return 변환된 [ColorFilter]. 만약 [QuackColor] 가 [QuackColor.Transparent] 이라면
+&nbsp; * null 을 반환합니다.
+&nbsp; */
+&nbsp;private fun QuackColor.toColorFilter() =
+<b class="fc">&nbsp;    if (this == QuackColor.Transparent) null</b>
+<b class="fc">&nbsp;    else ColorFilter.tint(</b>
+<b class="fc">&nbsp;        color = composeColor,</b>
+&nbsp;    )
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-09 06:01</div>
+</div>
+</body>
+</html>
