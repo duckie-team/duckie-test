@@ -121,21 +121,37 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.ui.unit.Constraints
 &nbsp;import androidx.compose.ui.unit.offset
 &nbsp;import team.duckie.quackquack.ui.component.QuackBasicTextField
+&nbsp;import team.duckie.quackquack.ui.component.QuackTextField
 &nbsp;import team.duckie.quackquack.ui.component.internal.QuackTextFieldMeasurePolicy.Companion.rememberQuackTextFieldMeasurePolicy
 &nbsp;import team.duckie.quackquack.ui.util.ZeroConstraints
 &nbsp;import team.duckie.quackquack.ui.util.heightOrZero
 &nbsp;import team.duckie.quackquack.ui.util.layoutId
 &nbsp;import team.duckie.quackquack.ui.util.widthOrZero
 &nbsp;
+&nbsp;/**
+&nbsp; * [QuackTextField] 자체의 레이아웃 아이디
+&nbsp; */
 &nbsp;internal const val QuackTextFieldLayoutId = &quot;QuackTextFieldContent&quot;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackTextField] 에 표시되는 placeholder 의 레이아웃 아이디
+&nbsp; */
 &nbsp;internal const val QuackTextFieldPlaceholderLayoutId = &quot;QuackTextFieldPlaceholderContent&quot;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackTextField] 에 표시되는 leading content 의 레이아웃 아이디
+&nbsp; */
 &nbsp;internal const val QuackTextFieldLeadingContentLayoutId = &quot;QuackTextFieldLeadingContent&quot;
+&nbsp;
+&nbsp;/**
+&nbsp; * [QuackTextField] 에 표시되는 trailing content 의 레이아웃 아이디
+&nbsp; */
 &nbsp;internal const val QuackTextFieldTrailingContentLayoutId = &quot;QuackTextFieldTrailingContent&quot;
 &nbsp;
 &nbsp;/**
 &nbsp; * [QuackBasicTextField] 를 measure 하기 위한 [MeasurePolicy]
 &nbsp; *
-&nbsp; * @suppress 이 클래스는 직접 사용하면 안됩니다. 리컴포지션 퍼포먼스를 위해
+&nbsp; * 이 클래스는 직접 사용하면 안됩니다. 리컴포지션 퍼포먼스를 위해
 &nbsp; * remember 로 감싼 인스턴스를 반환하는 [rememberQuackTextFieldMeasurePolicy] 를
 &nbsp; * 사용하세요.
 &nbsp; */
@@ -279,13 +295,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    }
 &nbsp;
 &nbsp;    /**
-&nbsp;     * QuackTextField 를 배치할 수 있는 intrinsic 한 width 를 계산합니다.
+&nbsp;     * [QuackTextField] 를 배치할 수 있는 intrinsic 한 width 를 계산합니다.
 &nbsp;     *
-&nbsp;     * @param measurables QuackTextField 의 measurable 들
-&nbsp;     * @param height QuackTextField 레이아웃의 높이
-&nbsp;     * @param intrinsicMeasurer QuackTextField 의 intrinsic width 를 계산하는 함수
+&nbsp;     * @param measurables [QuackTextField] 의 measurable 들
+&nbsp;     * @param height [QuackTextField] 레이아웃의 높이
+&nbsp;     * @param intrinsicMeasurer [QuackTextField] 의 intrinsic width 를 계산하는 함수
 &nbsp;     *
-&nbsp;     * @return QuackTextField 를 배치하기 위한 intrinsic width
+&nbsp;     * @return [QuackTextField] 를 배치하기 위한 intrinsic width
 &nbsp;     */
 &nbsp;    private fun intrinsicWidth(
 &nbsp;        measurables: List&lt;IntrinsicMeasurable&gt;,
@@ -525,7 +541,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-11-09 12:56</div>
+    <div style="float:right;">generated on 2022-11-09 13:10</div>
 </div>
 </body>
 </html>
