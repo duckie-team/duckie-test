@@ -154,8 +154,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import team.duckie.quackquack.ui.modifier.applyQuackSize
 &nbsp;import team.duckie.quackquack.ui.modifier.drawUnderBarWithAnimation
 &nbsp;import team.duckie.quackquack.ui.textstyle.QuackTextStyle
+&nbsp;import team.duckie.quackquack.ui.theme.LocalQuackTextFieldColors
 &nbsp;import team.duckie.quackquack.ui.util.DoNotUseDirectly
-&nbsp;import team.duckie.quackquack.ui.util.ProvideTextSelectionColors
 &nbsp;
 &nbsp;/**
 &nbsp; * QuackTextField 에서 표시할 텍스트의 [FontWeight] 에 따라 QuackTextField 의
@@ -437,6 +437,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    ),
 &nbsp;    keyboardActions: KeyboardActions = KeyboardActions(),
 &nbsp;) {
+&nbsp;    val quackTextFieldColors = LocalQuackTextFieldColors.current
+&nbsp;
 &nbsp;    // 리컴포지션이 되는 메인 조건은 Text 가 바뀌었을 때인데 그러면
 &nbsp;    // 어차피 항상 재계산 되므로 굳이 remember 를 할 필요가 없음
 &nbsp;    val isPlaceholder = text.isEmpty()
@@ -453,59 +455,57 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        ).asComposeStyle()
 &nbsp;    }
 &nbsp;
-&nbsp;    ProvideTextSelectionColors {
-&nbsp;        BasicTextField(
-&nbsp;            modifier = Modifier
-&nbsp;                .applyQuackSize(
-&nbsp;                    width = width,
-&nbsp;                    height = height,
-&nbsp;                )
-&nbsp;                .drawUnderBarWithAnimation(
-&nbsp;                    width = QuackTextFieldUnderBarHeight,
-&nbsp;                    color = QuackTextFieldColors.underBarColor(
-&nbsp;                        isError = isError,
-&nbsp;                    ),
-&nbsp;                )
-&nbsp;                .background(
-&nbsp;                    color = QuackColor.White.composeColor,
-&nbsp;                )
-&nbsp;                .padding(
-&nbsp;                    top = textStyle.calcQuackTextFieldTopPadding(),
-&nbsp;                    bottom = QuackTextFieldBottomPadding,
+&nbsp;    BasicTextField(
+&nbsp;        modifier = Modifier
+&nbsp;            .applyQuackSize(
+&nbsp;                width = width,
+&nbsp;                height = height,
+&nbsp;            )
+&nbsp;            .drawUnderBarWithAnimation(
+&nbsp;                width = QuackTextFieldUnderBarHeight,
+&nbsp;                color = QuackTextFieldColors.underBarColor(
+&nbsp;                    isError = isError,
 &nbsp;                ),
-&nbsp;            value = text,
-&nbsp;            onValueChange = onTextChanged,
-&nbsp;            textStyle = composeTextStyle,
-&nbsp;            keyboardOptions = keyboardOptions,
-&nbsp;            keyboardActions = keyboardActions,
-&nbsp;            // TextField is always single line
-&nbsp;            // TextArea is always multi line
-&nbsp;            singleLine = true,
-&nbsp;            cursorBrush = textFieldCursorColor.toBrush(),
-&nbsp;            decorationBox = { textField -&gt;
-&nbsp;                QuackTextFieldDecorationBox(
-&nbsp;                    textField = textField,
-&nbsp;                    // placeholder is displayed when text is empty
-&nbsp;                    placeholderContent = when (isPlaceholder &amp;&amp; placeholderText != null) {
-&nbsp;                        true -&gt; {
-&nbsp;                            {
-&nbsp;                                Text(
-&nbsp;                                    text = placeholderText,
-&nbsp;                                    style = composeTextStyle,
-&nbsp;                                    maxLines = 1,
-&nbsp;                                    softWrap = false,
-&nbsp;                                    overflow = TextOverflow.Ellipsis,
-&nbsp;                                )
-&nbsp;                            }
+&nbsp;            )
+&nbsp;            .background(
+&nbsp;                color = QuackColor.White.composeColor,
+&nbsp;            )
+&nbsp;            .padding(
+&nbsp;                top = textStyle.calcQuackTextFieldTopPadding(),
+&nbsp;                bottom = QuackTextFieldBottomPadding,
+&nbsp;            ),
+&nbsp;        value = text,
+&nbsp;        onValueChange = onTextChanged,
+&nbsp;        textStyle = composeTextStyle,
+&nbsp;        keyboardOptions = keyboardOptions,
+&nbsp;        keyboardActions = keyboardActions,
+&nbsp;        // TextField is always single line
+&nbsp;        // TextArea is always multi line
+&nbsp;        singleLine = true,
+&nbsp;        cursorBrush = quackTextFieldColors.textFieldCursorColor.toBrush(),
+&nbsp;        decorationBox = { textField -&gt;
+&nbsp;            QuackTextFieldDecorationBox(
+&nbsp;                textField = textField,
+&nbsp;                // placeholder is displayed when text is empty
+&nbsp;                placeholderContent = when (isPlaceholder &amp;&amp; placeholderText != null) {
+&nbsp;                    true -&gt; {
+&nbsp;                        {
+&nbsp;                            Text(
+&nbsp;                                text = placeholderText,
+&nbsp;                                style = composeTextStyle,
+&nbsp;                                maxLines = 1,
+&nbsp;                                softWrap = false,
+&nbsp;                                overflow = TextOverflow.Ellipsis,
+&nbsp;                            )
 &nbsp;                        }
-&nbsp;                        else -&gt; null
-&nbsp;                    },
-&nbsp;                    leadingContent = leadingContent,
-&nbsp;                    trailingContent = trailingContent,
-&nbsp;                )
-&nbsp;            },
-&nbsp;        )
-&nbsp;    }
+&nbsp;                    }
+&nbsp;                    else -&gt; null
+&nbsp;                },
+&nbsp;                leadingContent = leadingContent,
+&nbsp;                trailingContent = trailingContent,
+&nbsp;            )
+&nbsp;        },
+&nbsp;    )
 &nbsp;}
 &nbsp;
 &nbsp;/**
@@ -653,7 +653,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-11-09 11:14</div>
+    <div style="float:right;">generated on 2022-11-09 11:34</div>
 </div>
 </body>
 </html>
