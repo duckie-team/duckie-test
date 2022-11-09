@@ -59,7 +59,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/168)
+    (0/162)
   </span>
 </td>
 <td class="coverageStat">
@@ -67,7 +67,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/104)
+    (0/64)
   </span>
 </td>
 <td class="coverageStat">
@@ -75,7 +75,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/1049)
+    (0/896)
   </span>
 </td>
 </tr>
@@ -198,7 +198,42 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
   </tr>
   <tr>
-    <td class="name">TextareaKt$QuackTextAreaInternal$1$1$1</td>
+    <td class="name">TextareaKt$QuackTextAreaInternal$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/40)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/220)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TextareaKt$QuackTextAreaInternal$1$1$1$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -271,7 +306,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/10)
+    (0/11)
   </span>
 </td>
 <td class="coverageStat">
@@ -279,7 +314,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/176)
+    (0/184)
   </span>
 </td>
 <td class="coverageStat">
@@ -295,7 +330,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/1143)
+    (0/1210)
   </span>
 </td>
 </tr>
@@ -310,7 +345,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * Designed and developed by 2022 SungbinLand, Team Duckie
 &nbsp; *
 &nbsp; * Licensed under the MIT.
-&nbsp; * Please see full license: https://github.com/duckie-team/duckie-quack-quack/blob/main/LICENSE
+&nbsp; * Please see full license: https://github.com/duckie-team/quack-quack-android/blob/master/LICENSE
 &nbsp; */
 &nbsp;
 &nbsp;package team.duckie.quackquack.ui.component
@@ -338,6 +373,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.ui.text.font.FontWeight
 &nbsp;import androidx.compose.ui.text.input.ImeAction
 &nbsp;import androidx.compose.ui.text.input.KeyboardType
+&nbsp;import androidx.compose.ui.unit.Dp
 &nbsp;import androidx.compose.ui.unit.dp
 &nbsp;import androidx.compose.ui.zIndex
 &nbsp;import team.duckie.quackquack.ui.animation.QuackAnimationSpec
@@ -347,7 +383,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import team.duckie.quackquack.ui.component.internal.QuackText
 &nbsp;import team.duckie.quackquack.ui.modifier.applyQuackBorder
 &nbsp;import team.duckie.quackquack.ui.textstyle.QuackTextStyle
-&nbsp;import team.duckie.quackquack.ui.theme.LocalQuackTextFieldColors
+&nbsp;import team.duckie.quackquack.ui.util.ProvideTextSelectionColors
 &nbsp;
 &nbsp;/**
 &nbsp; * [QuackBorderTextArea] 의 테두리 속성을 계산합니다.
@@ -532,7 +568,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    doneAction: KeyboardActionScope.() -&gt; Unit,
 &nbsp;    isBordered: Boolean,
 <b class="nc">&nbsp;) {</b>
-<b class="nc">&nbsp;    val quackTextFieldColors = LocalQuackTextFieldColors.current</b>
 <b class="nc">&nbsp;    val isPlaceholder = text.isEmpty()</b>
 <b class="nc">&nbsp;    var isFocused by remember {</b>
 <b class="nc">&nbsp;        mutableStateOf(</b>
@@ -584,60 +619,62 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        else -&gt; null</b>
 &nbsp;    }
 &nbsp;
-<b class="nc">&nbsp;    Box(</b>
-<b class="nc">&nbsp;        modifier = Modifier</b>
-<b class="nc">&nbsp;            .wrapContentSize()</b>
-<b class="nc">&nbsp;            .clip(</b>
-<b class="nc">&nbsp;                shape = shape,</b>
-&nbsp;            )
-<b class="nc">&nbsp;            .applyQuackBorder(</b>
-<b class="nc">&nbsp;                enabled = isBordered,</b>
-<b class="nc">&nbsp;                border = animatedQuackBorderOrNull,</b>
-<b class="nc">&nbsp;                shape = shape,</b>
-&nbsp;            )
-<b class="nc">&nbsp;            .padding(</b>
-<b class="nc">&nbsp;                paddingValues = padding,</b>
-&nbsp;            ),
-&nbsp;    ) {
-<b class="nc">&nbsp;        if (isPlaceholder) {</b>
-<b class="nc">&nbsp;            QuackText(</b>
-<b class="nc">&nbsp;                modifier = Modifier</b>
-<b class="nc">&nbsp;                    .fillMaxWidth()</b>
-<b class="nc">&nbsp;                    .zIndex(</b>
-<b class="nc">&nbsp;                        zIndex = 0f,</b>
-&nbsp;                    ),
-<b class="nc">&nbsp;                text = placeholderText,</b>
-<b class="nc">&nbsp;                style = placeholderTextStyle,</b>
-&nbsp;            )
-&nbsp;        }
-<b class="nc">&nbsp;        BasicTextField(</b>
+<b class="nc">&nbsp;    ProvideTextSelectionColors {</b>
+<b class="nc">&nbsp;        Box(</b>
 <b class="nc">&nbsp;            modifier = Modifier</b>
-<b class="nc">&nbsp;                .zIndex(</b>
-<b class="nc">&nbsp;                    zIndex = 1f,</b>
+<b class="nc">&nbsp;                .wrapContentSize()</b>
+<b class="nc">&nbsp;                .clip(</b>
+<b class="nc">&nbsp;                    shape = shape,</b>
 &nbsp;                )
-<b class="nc">&nbsp;                .fillMaxWidth()</b>
-<b class="nc">&nbsp;                .requiredHeightIn(</b>
-<b class="nc">&nbsp;                    min = when (isBordered) {</b>
-<b class="nc">&nbsp;                        true -&gt; QuackBorderTextAreaDefaultHeight</b>
-<b class="nc">&nbsp;                        else -&gt; QuackTextAreaDefaultHeight</b>
+<b class="nc">&nbsp;                .applyQuackBorder(</b>
+<b class="nc">&nbsp;                    enabled = isBordered,</b>
+<b class="nc">&nbsp;                    border = animatedQuackBorderOrNull,</b>
+<b class="nc">&nbsp;                    shape = shape,</b>
+&nbsp;                )
+<b class="nc">&nbsp;                .padding(</b>
+<b class="nc">&nbsp;                    paddingValues = padding,</b>
+&nbsp;                ),
+&nbsp;        ) {
+<b class="nc">&nbsp;            if (isPlaceholder) {</b>
+<b class="nc">&nbsp;                QuackText(</b>
+<b class="nc">&nbsp;                    modifier = Modifier</b>
+<b class="nc">&nbsp;                        .fillMaxWidth()</b>
+<b class="nc">&nbsp;                        .zIndex(</b>
+<b class="nc">&nbsp;                            zIndex = 0f,</b>
+&nbsp;                        ),
+<b class="nc">&nbsp;                    text = placeholderText,</b>
+<b class="nc">&nbsp;                    style = placeholderTextStyle,</b>
+&nbsp;                )
+&nbsp;            }
+<b class="nc">&nbsp;            BasicTextField(</b>
+<b class="nc">&nbsp;                modifier = Modifier</b>
+<b class="nc">&nbsp;                    .zIndex(</b>
+<b class="nc">&nbsp;                        zIndex = 1f,</b>
+&nbsp;                    )
+<b class="nc">&nbsp;                    .fillMaxWidth()</b>
+<b class="nc">&nbsp;                    .requiredHeightIn(</b>
+<b class="nc">&nbsp;                        min = when (isBordered) {</b>
+<b class="nc">&nbsp;                            true -&gt; QuackBorderTextAreaDefaultHeight</b>
+<b class="nc">&nbsp;                            else -&gt; QuackTextAreaDefaultHeight</b>
+&nbsp;                        },
+&nbsp;                    )
+<b class="nc">&nbsp;                    .onFocusEvent { event -&gt;</b>
+<b class="nc">&nbsp;                        isFocused = event.isFocused</b>
 &nbsp;                    },
-&nbsp;                )
-<b class="nc">&nbsp;                .onFocusEvent { event -&gt;</b>
-<b class="nc">&nbsp;                    isFocused = event.isFocused</b>
-&nbsp;                },
-<b class="nc">&nbsp;            value = text,</b>
-<b class="nc">&nbsp;            onValueChange = onTextChanged,</b>
-<b class="nc">&nbsp;            keyboardOptions = KeyboardOptions(</b>
-<b class="nc">&nbsp;                keyboardType = KeyboardType.Text,</b>
-<b class="nc">&nbsp;                imeAction = ImeAction.Done,</b>
-&nbsp;            ),
-<b class="nc">&nbsp;            keyboardActions = KeyboardActions(</b>
-<b class="nc">&nbsp;                onAny = doneAction,</b>
-&nbsp;            ),
-<b class="nc">&nbsp;            textStyle = textStyle,</b>
-<b class="nc">&nbsp;            cursorBrush = quackTextFieldColors.textFieldCursorColor.toBrush(),</b>
-<b class="nc">&nbsp;        )</b>
-<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;                value = text,</b>
+<b class="nc">&nbsp;                onValueChange = onTextChanged,</b>
+<b class="nc">&nbsp;                keyboardOptions = KeyboardOptions(</b>
+<b class="nc">&nbsp;                    keyboardType = KeyboardType.Text,</b>
+<b class="nc">&nbsp;                    imeAction = ImeAction.Done,</b>
+&nbsp;                ),
+<b class="nc">&nbsp;                keyboardActions = KeyboardActions(</b>
+<b class="nc">&nbsp;                    onAny = doneAction,</b>
+&nbsp;                ),
+<b class="nc">&nbsp;                textStyle = textStyle,</b>
+<b class="nc">&nbsp;                cursorBrush = textFieldCursorColor.toBrush(),</b>
+<b class="nc">&nbsp;            )</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
 <b class="nc">&nbsp;}</b>
 &nbsp;
 </code>
@@ -663,7 +700,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-11-09 11:34</div>
+    <div style="float:right;">generated on 2022-11-09 11:41</div>
 </div>
 </body>
 </html>
