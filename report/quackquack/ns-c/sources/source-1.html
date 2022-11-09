@@ -325,8 +325,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * @receiver Sp 로 변환할 [Float]
 &nbsp; * @return receiver 로 받은 [Float] 를 [TextUnit] 중 Sp 로 변환한 값
 &nbsp; */
+&nbsp;@Suppress(&quot;NOTHING_TO_INLINE&quot;)
 &nbsp;@Stable
-&nbsp;private fun Float.toSp() = TextUnit(
+&nbsp;private inline fun Float.toSp() = TextUnit(
 &nbsp;    value = this,
 &nbsp;    type = TextUnitType.Sp,
 &nbsp;)
@@ -457,7 +458,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-11-09 12:13</div>
+    <div style="float:right;">generated on 2022-11-09 12:56</div>
 </div>
 </body>
 </html>

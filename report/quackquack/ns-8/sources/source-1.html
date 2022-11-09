@@ -59,7 +59,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/40)
+    (0/32)
   </span>
 </td>
 <td class="coverageStat">
@@ -67,7 +67,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/14)
+    (0/13)
   </span>
 </td>
 <td class="coverageStat">
@@ -75,7 +75,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/177)
+    (0/147)
   </span>
 </td>
 </tr>
@@ -98,7 +98,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/40)
+    (0/32)
   </span>
 </td>
 <td class="coverageStat">
@@ -106,7 +106,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/14)
+    (0/13)
   </span>
 </td>
 <td class="coverageStat">
@@ -114,7 +114,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/177)
+    (0/147)
   </span>
 </td>
 </tr>
@@ -142,6 +142,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import androidx.compose.ui.graphics.Color
 &nbsp;import androidx.compose.ui.zIndex
 &nbsp;
+&nbsp;/**
+&nbsp; * [QuackBackgroundDimmed] 의 기본 색상
+&nbsp; */
 <b class="nc">&nbsp;private val QuackDefaultBackgroundDimmedColor = Color.Black.copy(</b>
 <b class="nc">&nbsp;    alpha = 0.6f,</b>
 &nbsp;)
@@ -153,13 +156,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp; * 전체 화면을 주어진 dimmed color 로 꽉 채우는 방식이기 때문에 이 컴포저블을 사용하는
 &nbsp; * 루트 컴포저블의 레이아웃 범위가 `match_parent` 이여야 합니다.
 &nbsp; *
-&nbsp; * @param color dimmed 색상
 &nbsp; * @param zIndex dimmed 레이어의 z-index
 &nbsp; * @param enabled dimmed 를 활성화할지 여부
 &nbsp; */
 &nbsp;@Composable
 &nbsp;internal fun QuackBackgroundDimmed(
-<b class="nc">&nbsp;    color: Color = QuackDefaultBackgroundDimmedColor,</b>
 <b class="nc">&nbsp;    zIndex: Float = 0f,</b>
 &nbsp;    enabled: Boolean,
 <b class="nc">&nbsp;) {</b>
@@ -168,7 +169,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;            modifier = Modifier</b>
 <b class="nc">&nbsp;                .fillMaxSize()</b>
 <b class="nc">&nbsp;                .background(</b>
-<b class="nc">&nbsp;                    color = color,</b>
+<b class="nc">&nbsp;                    color = QuackDefaultBackgroundDimmedColor,</b>
 &nbsp;                )
 <b class="nc">&nbsp;                .zIndex(</b>
 <b class="nc">&nbsp;                    zIndex = zIndex,</b>
@@ -199,7 +200,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-11-09 12:13</div>
+    <div style="float:right;">generated on 2022-11-09 12:56</div>
 </div>
 </body>
 </html>
